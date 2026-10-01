@@ -240,3 +240,26 @@
   .v4-float, .v4-breathe { animation: none; }
   .v4-lift, .v4-lift:hover { transform: none; }
 }
+
+/* ============================================================
+   165 v.5 — "Emerald Colophon" footer surface
+   Cinematic dark anchor: deep emerald + luminous top glow.
+   (fixed-dark surface — kontras teks dijaga di KEDUA mode)
+   ============================================================ */
+.v4-footer-surface {
+  background-color: oklch(0.245 0.045 168);
+  background-image:
+    radial-gradient(54rem 22rem at 50% -14%, oklch(0.5 0.075 155 / 0.55), transparent 62%),
+    radial-gradient(42rem 20rem at 90% 114%, oklch(0.34 0.06 168 / 0.6), transparent 66%),
+    radial-gradient(30rem 18rem at 4% 110%, oklch(0.36 0.06 178 / 0.45), transparent 62%);
+}
+
+/* khatam (8-point star) lattice — identitas geometris TQN,
+   opacity rendah + mask fade agar teks tetap absolut terbaca */
+.v4-footer-lattice {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'><g fill='none' stroke='%23e9f5ee' stroke-opacity='0.07'><path d='M36 6 66 36 36 66 6 36Z'/><rect x='15' y='15' width='42' height='42'/></g></svg>");
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 74%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 74%);
+}
+
+/* kuningan oklch → hex padanan terang utk aksen footer gelap: #e3b95c */

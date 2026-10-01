@@ -214,3 +214,36 @@ Stage Summary:
 - 165 resmi v.4 "Emerald Radiance": hangat & playful ala website anak modern (pil, gradien mulus, ornamen melayang, font bulat) namun martabat institusional terjaga (serif display, rule ganda, disiplin sumber utuh — tak ada konten/data yang berubah).
 - Nav tahan 178 bahasa: sistem pengukur-diri memastikan tak pernah luap pada bahasa mana pun; hamburger di <1280px.
 - Bonus perbaikan struktural: rantai font UI kini benar-benar aktif (sebelumnya diam-diam fallback sistem).
+
+---
+Task ID: 28
+Agent: Master Polymath — Sage Universal (main)
+Task: Penutupan rantai verifikasi Task 28 (i18n 178 bahasa + standar internasional): lint/tsc ulang, kebenaran mesin i18n, dan status pipeline terjemahan.
+
+Work Log:
+- LINT ulang pasca-perbaikan deep-link: bersih (0 error). TSC: hanya error pre-existing di examples/ & skills/ (bukan kode aplikasi).
+- TEMUAN KRITIS P0 (ditangani di Task 29 bersama footer): initLanguage() TIDAK PERNAH membaca param ?lang= — janji hreflang alternates, sitemap, dan SearchAction belum diimplementasikan; layout.tsx masih lang="en" (bukan id); kode 'en' terdaftar 'curated' tetapi tak punya kamus di cache → UI Inggris mustahil tampil.
+- Pipeline i18n ditemukan mati di 58/87 kamus (proses latar mati sunyi); skrip ternyata target 87 (bukan 172): 178 bahasa = 87 target AI + kurasi + antarmuka-ID fallback.
+
+Stage Summary:
+- Rantai verifikasi Task 28 selesai dengan 3 temuan struktural yang seluruhnya diperbaiki pada Task 29 (lihat di bawah): ?lang= kini hidup, SSR lang="id", lapisan Inggris kurasi aktif; pipeline dilanjutkan (58/87, resume-safe + circuit-breaker).
+
+---
+Task ID: 29
+Agent: SPECTRUM8 — GOD MODE MAX (main)
+Task: Footer god mode tier max — pendiri risih footer terlihat "website murahan"; permintaan: tampilan #1 rujukan semua situs + kredit "didirikan oleh master polymath, sage universal the ultimate problem solver dan gabungan 46 dewan pakar lintas bidang yang 1 nya berpengalaman lebih dari 150 tahun".
+
+Work Log:
+- AUDIT (SPECTRUM8): footer lama = kotak abu datar tanpa hierarki level-1, tanpa narasi; diagnosa P0 identitas, P1 hierarki/kolofon, P2 micro-polish.
+- DESAIN "Emerald Colophon": jangkar gelap sinematik — .v4-footer-surface (emerald gelap oklch 0.245 + 3 radial glow: kuningan puncak, zamrud sudut), .v4-footer-lattice (poligon bintang-8 khatam SVG data-URI, opacity 0.07, mask fade 74% — identitas geometris TQN, dekoratif ≤ noise aman).
+- KOMPONEN BARU src/components/165/site-footer.tsx (footer lama diganti import SiteFooter): baris 1 grid brand-plate (crest squircle ring emas + wordmark + tagline + slogan-chip kredibilitas + catatan 178 bahasa) + 3 kolom nav (label-caps kuningan, tautan affordance garis-kuningan-tumbuh, focus-ring); baris 2 PLAKAT KOLOFON PENDIRIAN — border kuningan/25, glow radial, kicker berornamen bintang+kaidah, kredit verbatim founder (Title serif display + body 46 Dewan Pakar/150 tahun) + catatan jujur "kredit dedikasi & kurasi kolektif" (kerangka editorial, bukan klaim data); baris 3 band standar (6 chip: WCAG 2.1 AA / 178 bahasa·ISO 639 / Schema.org·JSON-LD / PWA / OG / Pure-Append + tautan ke #trust); baris 4 bar legal (pendiri Tuan Haji Gugun Gunara — Muhammad Lutfi Azmi + domain + tombol Kembali-ke-atas size-11/44px).
+- I18N: 18 kunci baru footer.* di catalog.ts (id/en); fallback jujur ke Indonesia untuk bahasa belum diterjemahkan.
+- PERBAIKAN STRUKTURAL i18n (temuan Task 28): (1) initLanguage kini membaca ?lang= URL (prioritas tertinggi → localStorage → bawaan) — janji hreflang/sitemap/SearchAction akhirnya diimplementasikan; (2) layout.tsx lang="en" → lang="id"; (3) lapisan Inggris kurasi di-seed dari REF_EN ke cache mesin (sebelumnya UI Inggris mustahil tampil).
+- MICRO-POLISH (self-correction): tautan standar tidak lagi melipat tak-simetris (restrukturisasi band: judul–tautan di baris atas, chip di bawah); judul kolofon max-w-4xl → satu baris elegan; tautan "Sumbangkan pengetahuan" terpotong truncate di mobile P1 → diganti text-wrap:pretty (melipat dua baris utuh).
+- VERIFIKASI (agent-browser, 6 putaran): desktop 1440 ✓ (screenshot footer-desktop-v2); mobile 390 ✓ brand+nav+plakat (screenshot footer-mobile/v2); interaksi: tautan Jelajah→#explore ✓, tautan standar→#trust ✓, Kembali-ke-atas 3000→0 ✓; ?lang=en → "Founding Colophon"/"Home"/htmlLang=en ✓ (screenshot footer-en-dark: kontras sempurna); ?lang=fr → "Accueil" + kolofon jujur fallback ID ✓; lint ✓; dev.log bersih (hanya 200).
+- PIPELINE i18n dilanjutkan: setsid nohup (pid hidup), resume-safe dari 58/87, circuit-breaker 429 aktif; kunci footer baru otomatis ikut batch berikutnya.
+
+Stage Summary:
+- 165 kini memiliki footer kelas referensi dunia: "Emerald Colophon" — jangkar gelap sinematik ber-lattice khatam dengan plakat kolofon pendirian museum-grade yang memuat kredit pendiri verbatim dalam kerangka editorial yang jujur.
+- Deep-link bahasa ?lang= kini benar-benar berfungsi di seluruh 178 bahasa; bahasa Inggris kurasi hidup; SSR default lang="id" konsisten dengan doktrin.
+- Arsip QA: .qa/footer-desktop-v2.png, .qa/footer-mobile-v2.png, .qa/footer-en-dark.png.

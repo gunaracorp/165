@@ -39,6 +39,29 @@ export const CATALOG = {
   'footer.adminLink': ['Ruang Admin', 'Admin Room'],
   'footer.rightsPrefix': ['© 165 — didirikan oleh', '© 165 — established by'],
   'footer.rightsRole': ['Pendiri & Penjaga Pondasi', 'Founder & Founding Steward'],
+  'footer.colophonKicker': ['Kolofon Pendirian', 'Founding Colophon'],
+  'footer.colophonTitle': [
+    'Didirikan oleh Master Polymath, Sage Universal — The Ultimate Problem Solver',
+    'Founded by the Master Polymath, Sage Universal — The Ultimate Problem Solver',
+  ],
+  'footer.colophonBody': [
+    'bersama gabungan 46 Dewan Pakar lintas bidang — yang masing-masing berpengalaman lebih dari 150 tahun.',
+    'together with the union of 46 cross-disciplinary expert councils — each carrying more than 150 years of experience.',
+  ],
+  'footer.colophonNote': [
+    'Kredit dedikasi & kurasi kolektif 165 — diterbitkan sebagai penghormatan bagi para penjaga ilmu.',
+    'A dedication & collective curation credit of 165 — published in honor of the keepers of knowledge.',
+  ],
+  'footer.standardsTitle': ['Standar yang dipegang', 'Standards observed'],
+  'footer.standardsChipWcag': ['WCAG 2.1 AA', 'WCAG 2.1 AA'],
+  'footer.standardsChipLangs': ['178 bahasa · ISO 639', '178 languages · ISO 639'],
+  'footer.standardsChipSchema': ['Schema.org · JSON-LD', 'Schema.org · JSON-LD'],
+  'footer.standardsChipPwa': ['PWA Siap Pasang', 'Installable PWA'],
+  'footer.standardsChipOg': ['Open Graph · SEO', 'Open Graph · SEO'],
+  'footer.standardsChipAppend': ['Arsip Pure-Append', 'Pure-Append Archive'],
+  'footer.standardsLink': ['Lihat standar internasional', 'See international standards'],
+  'footer.backToTop': ['Kembali ke atas', 'Back to top'],
+  'footer.langsNote': ['Antarmuka dunia — 178 bahasa', 'World interface — 178 languages'],
 
   // ---------- umum ----------
   'c.search': ['Cari', 'Search'],

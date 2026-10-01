@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { initLanguage, useI18n } from '@/lib/i18n'
 import type { CatalogKey } from '@/lib/i18n/catalog'
 import { LanguagePicker } from './language-picker'
+import { SiteFooter } from './site-footer'
 import { EntityProfile } from './entity-profile'
 import { QueryProvider } from './query-provider'
 import { HomeSection } from './sections/home'
@@ -300,67 +301,8 @@ export function InstitutionApp() {
         )}
       </main>
 
-      {/* ---------------- footer (sticky bottom via mt-auto) — v.4 rounded crest ---------------- */}
-      <footer className="bg-secondary/60 border-border/70 mt-14 overflow-hidden rounded-t-[2.5rem] border-t pb-[env(safe-area-inset-bottom)]">
-        <div aria-hidden className="bg-gradient-to-r from-primary via-[var(--brass)] to-teal-600 h-1 w-full" />
-        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <div>
-              <div className="flex items-center gap-2.5">
-                <span className="bg-gradient-to-br from-primary via-emerald-500 to-[var(--brass)] flex size-9 items-center justify-center rounded-2xl font-display text-[13px] font-bold text-white">165</span>
-                <p className="font-display text-lg font-semibold">165</p>
-              </div>
-              <p className="text-muted-foreground mt-2.5 text-[13px] leading-relaxed">
-                {t('footer.desc')}
-              </p>
-              <p className="text-muted-foreground mt-3 inline-flex items-center gap-1.5 text-[12px]">
-                <ShieldCheck className="size-3.5 text-[var(--brass)]" aria-hidden />
-                {t('footer.everyStatement')}
-              </p>
-            </div>
-            <nav aria-label="Footer — explore">
-              <p className="label-caps text-[12px] text-muted-foreground">{t('footer.colExplore')}</p>
-              <ul className="mt-2 space-y-1.5 text-[13px]">
-                {['explore', 'library', 'archive', 'research'].map((k) => (
-                  <li key={k}>
-                    <button onClick={() => navigate(k)} className="text-muted-foreground hover:text-foreground transition-colors">{t(`nav.${k}` as CatalogKey)}</button>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <nav aria-label="Footer — institution">
-              <p className="label-caps text-[12px] text-muted-foreground">{t('footer.colInstitution')}</p>
-              <ul className="mt-2 space-y-1.5 text-[13px]">
-                {[['about', 'nav.about'], ['trust', 'nav.trust'], ['documents', 'nav.documents'], ['academy', 'nav.academy'], ['media', 'nav.media'], ['seo', 'nav.seo']].map(([k, key]) => (
-                  <li key={k}>
-                    <button onClick={() => navigate(k)} className="text-muted-foreground hover:text-foreground transition-colors">{t(key as CatalogKey)}</button>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <div>
-              <p className="label-caps text-[12px] text-muted-foreground">{t('footer.colParticipate')}</p>
-              <ul className="mt-2 space-y-1.5 text-[13px]">
-                <li><button onClick={() => navigate('contribute')} className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.contributeLink')}</button></li>
-                <li><button onClick={() => navigate('contribute')} className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.correctionLink')}</button></li>
-                <li>
-                  <button
-                    onClick={() => navigate('admin')}
-                    className="text-muted-foreground inline-flex items-center gap-1 hover:text-foreground transition-colors"
-                    aria-label={t('footer.adminLink')}
-                  >
-                    <ShieldCheck className="size-3.5 text-[var(--brass)]" aria-hidden /> {t('footer.adminLink')}
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-border/70 mt-8 flex flex-col gap-1.5 border-t pt-5 text-[12px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-            <p>{t('footer.rightsPrefix')} <strong className="text-foreground font-medium">Tuan Haji Gugun Gunara — Muhammad Lutfi Azmi</strong>, {t('footer.rightsRole')}.</p>
-            <p className="font-mono">165.web.id</p>
-          </div>
-        </div>
-      </footer>
+      {/* ---------------- footer v.5 "Emerald Colophon" (sticky bottom via mt-auto) ---------------- */}
+      <SiteFooter onNavigate={navigate} />
       </div>
     </QueryProvider>
   )

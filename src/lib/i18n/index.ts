@@ -6,6 +6,7 @@ import { CATALOG, type CatalogKey } from './catalog'
 import { CURATED } from './dictionaries'
 import { AI_DICT_LOADERS } from '@/data/i18n/registry'
 import { DEFAULT_LANG, dirOf, getLanguage, isSupported, type LanguageDef } from './languages'
+import { REF_EN } from './catalog'
 
 const STORAGE_KEY = '165-lang'
 
@@ -20,9 +21,10 @@ let version = 0
 const cache = new Map<string, Strings>()
 const listeners = new Set<() => void>()
 
-// seed awal: bahasa bawaan + kurasi yang tersedia
+// seed awal: bahasa bawaan + kurasi + lapisan Inggris kurasi (hidup di CATALOG)
 cache.set(DEFAULT_LANG, {})
 for (const [code, dict] of Object.entries(CURATED)) cache.set(code, dict)
+cache.set('en', REF_EN as Strings)
 
 function emit() {
   version++
@@ -90,9 +92,21 @@ export function setLanguage(code: string) {
   })
 }
 
-/** dipanggil sekali dari app shell setelah hydration */
+/** dipanggil sekali dari app shell setelah hydration.
+ * Prioritas: ?lang= URL (deep-link hreflang/sitemap) → localStorage → bawaan. */
 export function initLanguage() {
   applyDocumentMeta(current)
+  // 1) param ?lang= — janji tautan hreflang & SearchAction
+  try {
+    const fromUrl = (new URLSearchParams(window.location.search).get('lang') ?? '').trim()
+    if (fromUrl && isSupported(fromUrl)) {
+      setLanguage(fromUrl)
+      return
+    }
+  } catch {
+    /* noop */
+  }
+  // 2) bahasa tersimpan
   try {
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored && isSupported(stored)) setLanguage(stored)
