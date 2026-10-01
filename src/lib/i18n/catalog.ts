@@ -95,7 +95,7 @@ export const CATALOG = {
   'home.statRecords': ['Catatan', 'Records'],
   'home.statRelations': ['Relasi bertipe', 'Typed relationships'],
   'home.statSanad': ['Rantai sanad', 'Sanad chains'],
-  'home.statSanadNote': ['kosong secara disiplin', 'empty by design'],
+  'home.statSanadNote': ['tercatat ber-sumber', 'recorded with sources'],
   'home.statEvidence': ['Tingkat bukti', 'Evidence levels'],
   'home.identityKicker': ['Institusinya', 'The institution'],
   'home.identityTitle': ['Sepuluh hal sekaligus — satu infrastruktur', 'Ten things at once — one infrastructure'],

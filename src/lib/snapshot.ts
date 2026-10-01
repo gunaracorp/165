@@ -31,6 +31,7 @@ type SnapshotRel = { id: string; fromEntityId: string; toEntityId: string; predi
 type SnapshotClaim = { id: string; claimEntityId: string; sourceEntityId: string; stance: string; note: string | null }
 type SnapshotColl = { id: string; collectionId: string; itemEntityId: string; order: number; note: string | null }
 type SnapshotVersion = { id: string; entityId: string; version: number; snapshot: string; changedBy: string; reason: string | null; createdAt: string }
+type SnapshotSanadLink = { id: string; sanadEntityId: string; order: number; fromName: string; toName: string; personEntityId: string | null; eraNote: string | null; evidenceLevel: string; verificationStatus: string; sourceRef: string | null; context: string | null }
 
 export type Snapshot = {
   meta: SnapshotMeta
@@ -40,6 +41,7 @@ export type Snapshot = {
   claimSources: SnapshotClaim[]
   collectionItems: SnapshotColl[]
   versions: SnapshotVersion[]
+  sanadLinks: SnapshotSanadLink[]
   contributions: { reference: string; kind: string; title: string; status: string; createdAt: string }[]
 }
 
@@ -112,6 +114,13 @@ export function snapshotProfile(slug: string): EntityProfileDTO | null {
     .map((c) => { const item = byId.get(c.itemEntityId); return item ? { order: c.order, note: c.note, item: toSummary(item) } : null })
     .filter((x): x is NonNullable<typeof x> => x !== null)
 
+  const sanadLinks = e.type === 'SANAD'
+    ? SNAPSHOT.sanadLinks
+        .filter((s) => s.sanadEntityId === e.id)
+        .sort((a, b) => a.order - b.order)
+        .map((s) => ({ order: s.order, fromName: s.fromName, toName: s.toName, eraNote: s.eraNote, evidenceLevel: s.evidenceLevel, verificationStatus: s.verificationStatus, sourceRef: s.sourceRef, context: s.context }))
+    : []
+
   return {
     ...toSummary(e),
     summary: e.summary, summaryId: e.summaryId, summaryAr: e.summaryAr,
@@ -120,6 +129,7 @@ export function snapshotProfile(slug: string): EntityProfileDTO | null {
     details: parseDetails(e.details),
     names: (namesByEntity.get(e.id) ?? []).map((n) => ({ name: n.name, language: n.language, kind: n.kind, note: n.note })),
     relationships: rels,
+    sanadLinks,
     stances,
     collectionItems,
     versions: SNAPSHOT.versions

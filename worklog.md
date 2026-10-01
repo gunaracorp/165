@@ -247,3 +247,22 @@ Stage Summary:
 - 165 kini memiliki footer kelas referensi dunia: "Emerald Colophon" — jangkar gelap sinematik ber-lattice khatam dengan plakat kolofon pendirian museum-grade yang memuat kredit pendiri verbatim dalam kerangka editorial yang jujur.
 - Deep-link bahasa ?lang= kini benar-benar berfungsi di seluruh 178 bahasa; bahasa Inggris kurasi hidup; SSR default lang="id" konsisten dengan doktrin.
 - Arsip QA: .qa/footer-desktop-v2.png, .qa/footer-mobile-v2.png, .qa/footer-en-dark.png.
+
+---
+Task ID: 30
+Agent: Master Polymath — Sage Universal (main)
+Task: Restorasi TIGA jalur sanad TQN — founder: "itu kan sudah jelas2 ada sebelumnya... liat semua sumber di dunia yang 3 itu cepat kembalikan lagi". Diagnosis: working-copy antar-sesi hilang (pola Task 22 berulang) — README.md (Task 27) ikut hilang, sementara dokumen kanonik tetap utuh.
+
+Work Log:
+- SOURCE-FIRST RESTORATION: sumbernya ternyata deposit Founder sendiri — docs/canon/165_MASTER_BLUEPRINT_v1_0.md §3.4 (Ahmad Khatib Sambas 1803–1875, perumus sintesis Qadiriyah wa Naqsyabandiyah; manuskrip Fath al-'Arifin) dan §3.5 (tiga jalur transmisi ke Jawa: Shaykh Abdul Karim Banten, Shaykh Ahmad Thalhah Cirebon, Shaykh Muhammad Hasbullah Madura; dilanjutkan pusat Suryalaya·Rejoso·Mranggen·Pangentongan; "a network, not a single straight line") serta §3.6 (Tholhah bin Talabudin–Abah Sepuh; kesetaraan nama TIDAK diklaim).
+- SEED ADITIF IDEMPOTEN prisma/seed-sanad.ts (skrip baru `sanad:seed`): 9 entitas baru — SRC-000003 (Master Blueprint, B), SRC-000004 (riset Fath al-'Arifin, D, citationKey 165SRC_SAMBAS_FATHARIFIN_1880 per 009 §26), PERSON-000004..7 (Sambas + 3 tokoh, D TRADITIONAL_ACCOUNT), SANAD-000001..3 (tiga jalur, D TRADITIONAL_ACCOUNT, display-only); 9 relasi eksplisit (FOUNDED/ASSOCIATED_WITH/DOCUMENTS/REFERENCES); SanadLink 3 mata per jalur dengan simpul [ MATA BLOK ] (F UNVERIFIED) untuk generasi antara yang belum terekam — TIDAK PERNAH diprediksi; AuditLog + VersionSnapshot per rekaman; CLM-000001 (sintesis dua silsilah) di-corroborasi SRC-000003 (E → B DOCUMENTED) dengan snapshot v2.
+- HASIL LIVE: sanadChains 0 → 3; entitas 30 → 39; relasi 16 → 20.
+- UI: entity-profile.tsx — visual rantai display-only (nomor mata, from → to, eraNote, EvidenceBadge+StatusBadge per mata, kutipan § + srcRef; simpul MATA BLOK bergaya dashed amber); sanad-registry.tsx — kartu 3 jalur (globalId, nama, subtitle, badge) klik → profil (props onOpenEntity di-wire institution-app → TrustSection → SanadRegistry); EmptyState tetap utk kasus 0.
+- MESIN: queries.ts getEntityProfile memuat sanadLink via kueri eksplisit (sanadEntityId bukan relasi prisma — Entity.sanadLinks adalah back-relation peran TOKOH); 165.ts + SanadLinkDTO; snapshot-export.ts + snapshot.ts menyertakan sanadLinks (fallback no-DB tampil utuh); db:export dieksekusi ulang; seed.ts kini memanggil seedSanad() agar reset+seed konsisten.
+- I18N: home.statSanadNote 'kosong secara disiplin' → 'tercatat ber-sumber' (id/en/ms/jv/su/ar diselaraskan — kartu beranda kini jujur: "3 · Rantai sanad · tercatat ber-sumber").
+- VERIFIKASI (agent-browser): Trust → 3 kartu 165-SANAD ✓; klik jalur Banten → profil dengan 3 mata rantai ✓ (screenshot .qa/sanad-chain.png: MATA BLOK dashed amber, F Unverified, kutipan §3.5, src 165-SRC-000003); beranda stat 3 + catatan baru ✓; Sambas tampil di featured ✓; lint bersih ✓; dev.log tanpa error ✓.
+
+Stage Summary:
+- Tiga jalur sanad KEMBALI — bukan dikarang, melainkan ditranskrip ber-sumber dari deposit kanonik Founder sendiri, dengan aras bukti, status, sitasi §, dan penanda [ MATA BLOK ] yang jujur; doktrin Sanad Safety tetap utuh (display-only, tanpa klaim legitimasi).
+- KEHILANGAN ANTAR-SESI terkonfirmasi kedua kalinya (README.md Task 27 hilang; worklog Task 26–27 kosong). Pemulihan README terjadwal sebagai tugas berikutnya; mekanisme pencegahan: ekspor snapshot + commit berkala.
+- Kejujuran statistik beranda diperbarui otomatis mengikuti data (kosong → tercatat ber-sumber) — doctrine yang sama: UI tidak pernah mengklaim lebih dari datanya.

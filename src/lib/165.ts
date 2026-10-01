@@ -109,6 +109,17 @@ export type EntitySummaryDTO = {
   region?: string | null
 }
 
+export type SanadLinkDTO = {
+  order: number
+  fromName: string
+  toName: string
+  eraNote?: string | null
+  evidenceLevel: string
+  verificationStatus: string
+  sourceRef?: string | null
+  context?: string | null
+}
+
 export type EntityProfileDTO = EntitySummaryDTO & {
   summary?: string | null; summaryId?: string | null; summaryAr?: string | null
   isExampleRecord: boolean; visibility: string
@@ -116,6 +127,7 @@ export type EntityProfileDTO = EntitySummaryDTO & {
   details?: Record<string, unknown> | null
   names: NameVariantDTO[]
   relationships: RelationshipDTO[]
+  sanadLinks?: SanadLinkDTO[]
   stances: { stance: string; note?: string | null; source: EntitySummaryDTO }[]
   collectionItems?: { order: number; note?: string | null; item: EntitySummaryDTO }[]
   versions: { version: number; changedBy: string; reason?: string | null; createdAt: string }[]

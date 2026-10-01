@@ -6,12 +6,18 @@
  *    Directive" → seeded as 165-SRC-000001 (Level B, DOCUMENTED).
  *  - Everything else is seeded as TRADITIONAL_ACCOUNT / UNVERIFIED with an
  *    explicit note that scholarly citations are pending source review.
- *  - NO sanad chains are created. NO teacher-student links are inferred.
- *  - NO books, manuscripts or media are fabricated. Those registries ship
+ *  - The founder has since deposited six canonical control documents
+ *    (Task 23, docs/canon/*.md) — including the Master Blueprint §3.4–3.6
+ *    that RECORDS the three TQN transmission lines. Sanad records are
+ *    therefore restored (additively) by prisma/seed-sanad.ts, cited to
+ *    those deposits, with honest [ MATA BLOK ] gap markers. Nothing is
+ *    invented: every node travels with its source.
+ *  - NO books/manuscripts/media are fabricated. Those registries ship
  *    empty by design, awaiting the Founder's archive.
  *  - Tradition is never presented as fact.
  */
 import { PrismaClient } from '@prisma/client'
+import { seedSanad } from './seed-sanad'
 
 const prisma = new PrismaClient()
 
@@ -370,11 +376,13 @@ async function main() {
     })
   }
 
-  // NOTE: sanad intentionally left EMPTY — Sanad Safety by design.
+  // sanad: TIGA jalur transmisi direstorasi ber-sumber (Task 30) —
+  // Master Blueprint §3.4–3.5, display-only, simpul [ MATA BLOK ] jujur.
+  await seedSanad(prisma)
 
   const counts = await prisma.entity.groupBy({ by: ['type'], _count: { type: true } })
   console.log('Seed complete:', counts.map((c) => `${c.type}=${c._count.type}`).join(' '))
-  console.log('Sanad registry: EMPTY by design.')
+  console.log('Sanad registry: 3 jalur tercatat ber-sumber (display-only).')
 }
 
 main().finally(() => prisma.$disconnect())

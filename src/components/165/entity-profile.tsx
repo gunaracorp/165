@@ -3,7 +3,7 @@
 // 165 — Entity Profile: consistent profile architecture per Master Directive §17
 // Header · Summary · Timeline · Relationships · Sources · Verification · Changelog · Related
 import { useMemo, useState } from 'react'
-import { ArrowLeft, ArrowRightLeft, CalendarClock, ExternalLink, Fingerprint, History, Scale, ScrollText, ShieldCheck, Languages } from 'lucide-react'
+import { ArrowLeft, ArrowRightLeft, CalendarClock, ExternalLink, Fingerprint, History, Link2, Scale, ScrollText, ShieldCheck, Languages } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { dateLabel, PREDICATES, type EntityProfileDTO, type RelationshipDTO } from '@/lib/165'
 import { EvidenceBadge, HonestNote, SkeletonCard, StatusBadge, TypeBadge, useApi } from './ui'
@@ -237,6 +237,57 @@ export function EntityProfile({ slug, onBack, onOpen }: { slug: string; onBack: 
           </ul>
         )}
       </section>
+
+      {/* sanad chain — display-only (only for type SANAD) */}
+      {p.type === 'SANAD' && (p.sanadLinks?.length ?? 0) > 0 && (
+        <section aria-labelledby="s-sanad" className="mt-6">
+          <h2 id="s-sanad" className="label-caps text-muted-foreground flex items-center gap-2 text-[13px]">
+            <Link2 className="size-3.5" aria-hidden /> Sanad chain — display-only ({p.sanadLinks!.length} links)
+          </h2>
+          <ol className="mt-3 space-y-2.5">
+            {p.sanadLinks!.map((s) => {
+              const mata = s.fromName.includes('MATA BLOK') || s.toName.includes('MATA BLOK')
+              return (
+                <li
+                  key={s.order}
+                  className={cn(
+                    'rounded-2xl border px-4 py-3.5',
+                    mata ? 'border-dashed border-amber-500/45 bg-amber-500/[0.05]' : 'border-border bg-card',
+                  )}
+                >
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                    <span
+                      className={cn(
+                        'flex size-6 shrink-0 items-center justify-center rounded-full font-mono text-[11px] font-bold',
+                        mata ? 'bg-amber-500/15 text-amber-600 dark:text-amber-400' : 'bg-[var(--brass)]/15 text-[var(--brass)]',
+                      )}
+                      aria-hidden
+                    >
+                      {s.order}
+                    </span>
+                    <p className="min-w-0 flex-1 text-sm leading-snug">
+                      <span className="font-medium">{s.fromName}</span>
+                      <span className="text-muted-foreground"> → </span>
+                      <span className={cn('font-medium', mata && 'text-amber-600 dark:text-amber-400')}>{s.toName}</span>
+                    </p>
+                    <div className="flex shrink-0 flex-wrap items-center gap-1.5">
+                      <EvidenceBadge level={s.evidenceLevel} withLabel />
+                      <StatusBadge status={s.verificationStatus} />
+                    </div>
+                  </div>
+                  {s.eraNote && <p className="text-muted-foreground mt-1.5 text-[12px]">{s.eraNote}</p>}
+                  {s.context && <p className="text-muted-foreground mt-1 text-[13px] leading-relaxed">{s.context}</p>}
+                  {s.sourceRef && <p className="text-muted-foreground/80 mt-1.5 font-mono text-[10px]">src: {s.sourceRef}</p>}
+                </li>
+              )
+            })}
+          </ol>
+          <HonestNote className="mt-3" tone="green">
+            Display-only. Simpul <span className="font-mono text-[12px]">[ MATA BLOK ]</span> menandai generasi yang belum terekam
+            dalam sumber yang dapat diakses — 165 tidak pernah memprediksi, menggabungkan, atau mengarang mata rantai.
+          </HonestNote>
+        </section>
+      )}
 
       {/* version history / changelog */}
       <section aria-labelledby="s-versions" className="mt-6">

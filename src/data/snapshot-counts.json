@@ -1,7 +1,7 @@
 {
- "entities": 30,
- "relations": 16,
- "sanadChains": 0,
+ "entities": 39,
+ "relations": 20,
+ "sanadChains": 3,
  "contributions": 1,
  "byType": {
   "CLAIM": 3,
@@ -9,12 +9,13 @@
   "DOCUMENT": 1,
   "EVENT": 2,
   "INSTITUTION": 1,
-  "PERSON": 3,
+  "PERSON": 7,
   "PLACE": 3,
   "RESEARCH": 1,
-  "SOURCE": 2,
+  "SANAD": 3,
+  "SOURCE": 4,
   "TERM": 10,
   "TRADITION": 3
  },
- "exportedAt": "2026-09-30T17:40:32.121Z"
+ "exportedAt": "2026-10-01T20:30:31.014Z"
 }

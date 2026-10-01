@@ -9,7 +9,7 @@ import { useI18n } from '@/lib/i18n'
 import { EvidenceBadge, HonestNote, Kicker, SectionHeading, StatusBadge } from '../ui'
 import { SanadRegistry } from '../sanad-registry'
 
-export function TrustSection() {
+export function TrustSection({ onOpenEntity }: { onOpenEntity?: (slug: string) => void }) {
   const { t } = useI18n()
   return (
     <div className="space-y-12">
@@ -84,7 +84,7 @@ export function TrustSection() {
       </section>
 
       {/* sanad safety */}
-      <SanadRegistry />
+      <SanadRegistry onOpenEntity={onOpenEntity} />
 
       {/* AI policy */}
       <section aria-labelledby="ai-h">

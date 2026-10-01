@@ -19,7 +19,7 @@ export type ExportResult = {
 }
 
 export async function exportSnapshot(): Promise<ExportResult> {
-  const [entities, nameVariants, relationships, claimSources, collectionItems, versions, contributions] =
+  const [entities, nameVariants, relationships, claimSources, collectionItems, versions, sanadLinks, contributions] =
     await Promise.all([
       db.entity.findMany({ orderBy: [{ type: 'asc' }, { primaryName: 'asc' }] }),
       db.nameVariant.findMany({ orderBy: { name: 'asc' } }),
@@ -27,6 +27,7 @@ export async function exportSnapshot(): Promise<ExportResult> {
       db.claimSource.findMany(),
       db.collectionItem.findMany({ orderBy: { order: 'asc' } }),
       db.versionSnapshot.findMany({ orderBy: { version: 'desc' } }),
+      db.sanadLink.findMany({ orderBy: { order: 'asc' } }),
       db.contribution.findMany({ orderBy: { createdAt: 'desc' } }),
     ])
 
@@ -50,6 +51,7 @@ export async function exportSnapshot(): Promise<ExportResult> {
     claimSources,
     collectionItems,
     versions: versions.slice(0, 400),
+    sanadLinks,
     contributions: contributions.map((c) => ({
       reference: c.reference, kind: c.kind, title: c.title,
       status: c.status, createdAt: c.createdAt.toISOString(),

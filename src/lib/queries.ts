@@ -73,6 +73,12 @@ export async function getEntityProfile(slug: string): Promise<EntityProfileDTO |
     })
     if (!e) return null
 
+    // mata rantai milik entitas SANAD (sanadEntityId bukan relasi prisma — kueri eksplisit;
+    // Entity.sanadLinks adalah back-relation peran TOKOH, bukan pemilik rantai)
+    const sanadLinks = e.type === 'SANAD'
+      ? await db.sanadLink.findMany({ where: { sanadEntityId: e.id }, orderBy: { order: 'asc' } })
+      : []
+
     const rels: RelationshipDTO[] = [
       ...e.outgoingRelations.map((r): RelationshipDTO => ({
         id: r.id, predicate: r.predicate, direction: 'OUT',
@@ -94,6 +100,11 @@ export async function getEntityProfile(slug: string): Promise<EntityProfileDTO |
       details: parseDetails(e.details),
       names: e.nameVariants.map((n) => ({ name: n.name, language: n.language, kind: n.kind, note: n.note })),
       relationships: rels,
+      sanadLinks: sanadLinks.map((s) => ({
+        order: s.order, fromName: s.fromName, toName: s.toName,
+        eraNote: s.eraNote, evidenceLevel: s.evidenceLevel, verificationStatus: s.verificationStatus,
+        sourceRef: s.sourceRef, context: s.context,
+      })),
       stances: e.claimsAsSubject.map((s) => ({ stance: s.stance, note: s.note, source: toSummary(s.source) })),
       collectionItems: e.collectionsOwned.map((c) => ({ order: c.order, note: c.note, item: toSummary(c.item) })),
       versions: e.versions.map((v) => ({ version: v.version, changedBy: v.changedBy, reason: v.reason, createdAt: v.createdAt.toISOString() })),
