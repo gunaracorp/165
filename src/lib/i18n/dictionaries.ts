@@ -73,6 +73,18 @@ const MS: Dict = {
   'lang.tierCurated': 'Kurasi penuh', 'lang.tierAI': 'Terjemahan AI', 'lang.tierCore': 'Antara muka Indonesia',
   'lang.defaultBadge': 'Lalai', 'lang.activeBadge': 'Aktif',
   'lang.hint': 'Bahasa lalai 165 ialah Indonesia. {curated} bahasa dikurasi penuh, {ai} bahasa diterjemahkan mesin AI, dan semua bahasa lain tetap boleh dipilih — antara mukanya mengikuti Bahasa Indonesia. Kandungan dokumen warisan dipaparkan dalam bahasa asalnya.',
+
+  // Task 32–33 — Manaqib & Rahasia
+  'nav.manaqib': 'Manaqib', 'nav.rahasia': 'Rahasia',
+  'sec.manaqib.kicker': 'Manaqib · Ghaus al-A\u2019zam', 'sec.manaqib.title': 'Manaqib Syaikh Abdul Qadir Al-Jailani',
+  'sec.rahasia.kicker': 'Rahasia Al-Qur\u2019an & Hadis', 'sec.rahasia.title': 'Rahasia Kitab Suci — dibuka dengan adab',
+  'mq.tab.riwayat': 'Riwayat Hidup', 'mq.tab.karya': 'Karya', 'mq.tab.silsilah': 'Silsilah', 'mq.tab.karamah': 'Karamah', 'mq.tab.hikam': 'Hikam', 'mq.tab.tqn': 'Dalam TQN', 'mq.tab.sumber': 'Sumber',
+  'mq.label.born': 'Dilahirkan', 'mq.label.died': 'Wafat', 'mq.label.school': 'Mazhab & jalan', 'mq.label.rest': 'Dikebumikan',
+  'mq.openProfile': 'Buka profil entiti 165', 'mq.source': 'Sumber',
+  'mq.sanadTitle': 'Papan Sanad — laluan TQN direkodkan',
+  'mq.sanadBody': 'Bilik Kepercayaan memaparkan tiga laluan penghantaran TQN ke Jawa — paparan sahaja, bersumber Master Blueprint §3.5, dengan simpul [ MATA BLOK ] yang jujur.',
+  'rh.tab.makna': 'Zahir & Batin', 'rh.tab.misteri': 'Misteri', 'rh.tab.ilmu': 'Ilmu Penjaga', 'rh.tab.peringatan': 'Peringatan', 'rh.tab.dzikir': 'Dhikr & Sirr',
+  'rh.meaning': 'Terjemahan maksud', 'rh.source': 'Sumber', 'rh.count': '{n} butir beraras',
 }
 
 const JV: Dict = {
@@ -143,6 +155,18 @@ const JV: Dict = {
   'lang.tierCurated': 'Kurasi wutuh', 'lang.tierAI': 'Terjemahan AI', 'lang.tierCore': 'Antarmuka Indonesia',
   'lang.defaultBadge': 'Gawan', 'lang.activeBadge': 'Aktif',
   'lang.hint': 'Basa gawan 165 yaiku Indonesia. {curated} basa dikurasi wutuh, {ai} basa diterjemahaké mesin AI, lan kabèh basa liyané isih bisa dipilih — antarmukané nut Basa Indonesia. Isi dokumen warisan ditampilaké ing basa asliné.',
+
+  // Task 32–33 — Manaqib & Rahasia
+  'nav.manaqib': 'Manaqib', 'nav.rahasia': 'Rahasia',
+  'sec.manaqib.kicker': 'Manaqib · Ghausul A\u2019zam', 'sec.manaqib.title': 'Manaqib Syekh Abdul Qodir Al-Jaelani',
+  'sec.rahasia.kicker': 'Rahasia Al-Qur\u2019an & Hadis', 'sec.rahasia.title': 'Rahasia Kitab Suci — dibuka kanthi adab',
+  'mq.tab.riwayat': 'Riwayat Urip', 'mq.tab.karya': 'Karya', 'mq.tab.silsilah': 'Silsilah', 'mq.tab.karamah': 'Karamah', 'mq.tab.hikam': 'Hikam', 'mq.tab.tqn': 'Ing TQN', 'mq.tab.sumber': 'Sumber',
+  'mq.label.born': 'Lair', 'mq.label.died': 'Seda', 'mq.label.school': 'Mazhab & margi', 'mq.label.rest': 'Dipendem',
+  'mq.openProfile': 'Bukak profil entitas 165', 'mq.source': 'Sumber',
+  'mq.sanadTitle': 'Papan Sanad — jalur TQN sing kacathet',
+  'mq.sanadBody': 'Ruang Kapercayan nuduhaké telung jalur transmisi TQN menyang Jawa — tampilan mung, sumberé Master Blueprint §3.5, kanthi simpul [ MATA BLOK ] sing jujur.',
+  'rh.tab.makna': 'Zahir & Batin', 'rh.tab.misteri': 'Karalokan', 'rh.tab.ilmu': 'Ilmu Pangayom', 'rh.tab.peringatan': 'Pepeling', 'rh.tab.dzikir': 'Dhikr & Sirr',
+  'rh.meaning': 'Tegese', 'rh.source': 'Sumber', 'rh.count': '{n} butir kanthi grade',
 }
 
 const SU: Dict = {
@@ -213,6 +237,18 @@ const SU: Dict = {
   'lang.tierCurated': 'Kurasi lengkep', 'lang.tierAI': 'Tarjamahan AI', 'lang.tierCore': 'Antarmuka Indonesia',
   'lang.defaultBadge': 'Bawaan', 'lang.activeBadge': 'Aktip',
   'lang.hint': 'Basa bawaan 165 nyaéta Indonesia. {curated} basa dikurasi lengkep, {ai} basa ditarjamahkeun mesin AI, jeung sakabéh basa séjénna tiasa dipilih — antarmukanana nut Basa Indonesia. Eusi dokumén warisan ditembangkeun dina basa asalna.',
+
+  // Task 32–33 — Manaqib & Rahasia
+  'nav.manaqib': 'Manaqib', 'nav.rahasia': 'Rahasia',
+  'sec.manaqib.kicker': 'Manaqib · Ghausul A\u2019zam', 'sec.manaqib.title': 'Manaqib Syékh Abdul Qodir Al-Jaelani',
+  'sec.rahasia.kicker': 'Rahasia Al-Qur\u2019an & Hadis', 'sec.rahasia.title': 'Rahasia Kitab Suci — dibuka ku adab',
+  'mq.tab.riwayat': 'Riwayat Hirup', 'mq.tab.karya': 'Karya', 'mq.tab.silsilah': 'Silsilah', 'mq.tab.karamah': 'Karamah', 'mq.tab.hikam': 'Hikam', 'mq.tab.tqn': 'Dina TQN', 'mq.tab.sumber': 'Sumber',
+  'mq.label.born': 'Lahir', 'mq.label.died': 'Tilar Dunya', 'mq.label.school': 'Madzhab & jalan', 'mq.label.rest': 'Dipeundean',
+  'mq.openProfile': 'Buka profil éntitas 165', 'mq.source': 'Sumber',
+  'mq.sanadTitle': 'Papan Sanad — jalur TQN nu kacatet',
+  'mq.sanadBody': 'Ruang Kapercayaan némbongkeun tilu jalur transmisi TQN ka Jawa — tampil wungkul, sumberna Master Blueprint §3.5, kalawan simpul [ MATA BLOK ] nu jujur.',
+  'rh.tab.makna': 'Zahir & Batin', 'rh.tab.misteri': 'Rahasia', 'rh.tab.ilmu': 'Ilmu Pangjaga', 'rh.tab.peringatan': 'Palélér', 'rh.tab.dzikir': 'Dzikr & Sirr',
+  'rh.meaning': 'Tarjamahan harti', 'rh.source': 'Sumber', 'rh.count': '{n} butir bagrade',
 }
 
 const AR: Dict = {
@@ -283,6 +319,18 @@ const AR: Dict = {
   'lang.tierCurated': 'منقحة كاملة', 'lang.tierAI': 'ترجمة ذكاء اصطناعي', 'lang.tierCore': 'واجهة إندونيسية',
   'lang.defaultBadge': 'افتراضية', 'lang.activeBadge': 'نشطة',
   'lang.hint': 'اللغة الافتراضية لـ 165 هي الإندونيسية. {curated} لغات منقحة كاملة، و{ai} لغة مترجمة بالذكاء الاصطناعي، وتبقى كل اللغات الأخرى قابلة للاختيار — فتتبع واجهتها اللغة الإندونيسية. ويظهر مضمون وثائق التراث بلغته الأصلية.',
+
+  // Task 32–33 — Manaqib & Rahasia
+  'nav.manaqib': 'المناقب', 'nav.rahasia': 'الأسرار',
+  'sec.manaqib.kicker': 'المناقب · الغوث الأعظم', 'sec.manaqib.title': 'مناقب الشيخ عبد القادر الجيلاني',
+  'sec.rahasia.kicker': 'أسرار القرآن والحديث', 'sec.rahasia.title': 'أسرار الكتاب والسنة — تُفتح بالأدب',
+  'mq.tab.riwayat': 'سيرته', 'mq.tab.karya': 'مؤلفاته', 'mq.tab.silsilah': 'سلسلته', 'mq.tab.karamah': 'كراماته', 'mq.tab.hikam': 'حكمه', 'mq.tab.tqn': 'في الطريقة', 'mq.tab.sumber': 'المصادر',
+  'mq.label.born': 'المولد', 'mq.label.died': 'الوفاة', 'mq.label.school': 'المذهب والمسلك', 'mq.label.rest': 'مقبرته',
+  'mq.openProfile': 'افتح سجل الكيان 165', 'mq.source': 'المصدر',
+  'mq.sanadTitle': 'لوحة السند — طرق الطريقة المسجلة',
+  'mq.sanadBody': 'يعرض بيت الثقة ثلاث طرق انتقال للطريقة إلى جاوة — عرض فقط، مستندة إلى المخطط الرئيسي §3.5، مع عقدة [ MATA BLOK ] الصادقة.',
+  'rh.tab.makna': 'الظاهر والباطن', 'rh.tab.misteri': 'الأسرار', 'rh.tab.ilmu': 'علوم الحفظ', 'rh.tab.peringatan': 'التحذيرات', 'rh.tab.dzikir': 'الذكر والسر',
+  'rh.meaning': 'ترجمة المعنى', 'rh.source': 'المصدر', 'rh.count': '{n} مدخلاً مصنفاً',
 }
 
 export const CURATED: Record<string, Dict> = { ms: MS, jv: JV, su: SU, ar: AR }

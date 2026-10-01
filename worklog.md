@@ -266,3 +266,48 @@ Stage Summary:
 - Tiga jalur sanad KEMBALI — bukan dikarang, melainkan ditranskrip ber-sumber dari deposit kanonik Founder sendiri, dengan aras bukti, status, sitasi §, dan penanda [ MATA BLOK ] yang jujur; doktrin Sanad Safety tetap utuh (display-only, tanpa klaim legitimasi).
 - KEHILANGAN ANTAR-SESI terkonfirmasi kedua kalinya (README.md Task 27 hilang; worklog Task 26–27 kosong). Pemulihan README terjadwal sebagai tugas berikutnya; mekanisme pencegahan: ekspor snapshot + commit berkala.
 - Kejujuran statistik beranda diperbarui otomatis mengikuti data (kosong → tercatat ber-sumber) — doctrine yang sama: UI tidak pernah mengklaim lebih dari datanya.
+
+---
+Task ID: 31
+Agent: Master Polymath — Sage Universal (main)
+Task: Pulihkan README.md — founder: "pulihkan README". Diagnosis worklog Task 30: README hasil Task 27 hilang antar-sesi (kehilangan kedua tercatat), pemulihan dijadwalkan sebagai tugas berikutnya.
+
+Work Log:
+- README.md ditulis ulang LEBIH LENGKAP dari versi lama: bilingual ID/EN penuh — identitas 165.web.id + pendiri, enam doktrin institusional (Source-First, bukti A–F, status jujur, pure-append, Sanad Safety + [ MATA BLOK ], ID global), tabel 15 ruang platform (termasuk dua ruang baru Manaqib & Rahasia), Tiga Jalur Sanad (restorasi Task 30, §3.4–3.5), 178 bahasa (6 kurasi + ±87 AI + 11 RTL + deep-link ?lang=), stack teknologi, prasyarat & 7 skrip (db:push, sanad:seed, db:export, docs:gen, i18n:gen…), tata kelola dokumen kanonik (docs/canon + verbatim doctrine), protokol kualitas (lint + Agent Browser + .qa/), deployment, STATUS TERBUKA JUJUR (deposit yang ditunggu), dan kolofon kredit pendiri verbatim.
+- TANPA PLACEHOLDER: `<pemilik>/<owner>` dihapus dari muka bumi — domain 165.web.id jadi acuan kanonik, repositori publik dinyatakan jujur "akan diumumkan pendiri".
+
+Stage Summary:
+- README pulih & naik kelas: satu halaman yang membuat siapa pun (dev, penerjemah, kontributor) paham seluruh institusi dalam 5 menit — tanpa satu pun janji kosong.
+
+---
+Task ID: 32
+Agent: Master Polymath — Sage Universal (main)
+Task: Manaqib Syekh Abdul Qodir Al-Jaelani LENGKAP (amanah founder #2) — arsip, ruang UI, dan integrasi graf pengetahuan, semua Source-First.
+
+Work Log:
+- DATA (src/data/manaqib/al-jilani.ts): identitas lengkap (nama, gelar, lahir Ramadan 470 H, wafat 8 Syawal 561 H, Hanbali, Maqam ar-Rusafah) + LEDE + catatan KEJUJURAN GENRE; 12 babak RIWAYAT (kelahiran → yatim → hijrah ±18 th → studi Baghdad (ijazah al-Ghunya) → mashyakhat ar-ru'us 25 th → khithab 521 H → madrasah-ribath 528 H → 33 th mengajar → Fath ar-Rabbani 62 khutbah → wafat → penyebaran Qadiriyyah → majelis manaqib Nusantara) masing-masing ber-grade C/D + status + sitasi (al-Ghunya, Ibn Rajab adh-Dhail, adz-Dhahabi Siyar, Ibn Katsir, al-Fuyudat); 6 KARYA (al-Ghunya, Fath ar-Rabbani, Futuh al-Ghaib, Sirr al-Asrar, Jila' al-Khatir, Malfuzat); SILSILAH Qadiriyyah 13 mata dengan CATATAN VARIAN JUJUR (mata ke-3: Hasan al-Bashri "pintu tawajjuh"; mata ke-10: Abdul Aziz ath-Thamimi dihilangkan sebagian ijazah) — grade C TRADITIONAL_ACCOUNT, BUKAN ijazah terverifikasi; 10 KARAMAH dipisah genre (Manaqib = TRADITIONAL_ACCOUNT; yang tercatat sejarawan = DOCUMENTED); 5 HIKAM (kutipan apa adanya vs "Parafrase inti" berlabel — nol fabrikasi); 4 kartu DALAM TQN (eponim Qodiriyah, "Tuan Syekh" = working assumption Blueprint, dhikr jahir vs khafi, tiga jalur ke Nusantara); 10 SUMBER; catatan penutup mengundang deposit internal pesantren.
+- UI (sections/manaqib.tsx): kartu identitas v4-mesh + grid lahir/wafat/mazhab/makam + chip gelar + tombol profil entitas; 7 tab (Riwayat/Karya/Silsilah/Karamah/Hikam/TQN/Sumber) gaya pill v.4; timeline vertikal, karamah max-h-[36rem] nice-scroll; badge bukti & status di SETIAP butir; bilingual via lang (id/en).
+- GRAF (prisma/seed-manaqib.ts, additive idempoten, dipanggil seed.ts): 10 entitas baru — 6 BOOK (al-Ghunya…Malfuzat, Malfuzat TRADITIONAL_ACCOUNT) + 4 SOURCE (SRC-000005 Iranica C, SRC-000006 Fuyudat C/TRADITIONAL_ACCOUNT, SRC-000007 Siyar C, SRC-000008 Dhail C) + 12 relasi (AUTHORED ×6, LINEAGE_FOUNDER_OF → TRAD-000002, DOCUMENTS ×5, Sambas ASSOCIATED_WITH Qadiriyya per §3.4); PERSON-000002 DIPERKAYA & di-corroborasi deposit §3.2 (Level B): D → C DOCUMENTED, VersionSnapshot v2 + AuditLog, per-node sanad TETAP tidak diklaim. Seed live: 39 → 49 entitas, relasi 20 → 32; db:export diperbarui (BOOK 6, SOURCE 8).
+- I18N: 15 kunci mq.* + nav.manaqib + sec.manaqib.* di catalog.ts; ditambahkan pula ke 4 kamus kurasi (ms/jv/su/ar) manual.
+- VERIFIKASI (agent-browser): desktop 1440 — nav 13 pill tanpa luap, Manaqib = #manaqib ✓, 12 babak riwayat ✓, tab Silsilah ✓ (catatan varian tampil), tab Karamah = 10 kartu ✓, klik "Buka profil entitas 165" → profil PERSON-000002 dengan RELATIONSHIPS (12) ✓ (6 kitab + Blueprint + Iranica + Fuyudat + Siyar + Dhail + Qadiriyya); ?lang=en → "The Manaqib of Shaykh Abd al-Qadir al-Jilani" ✓; mobile 390 — scrollWidth = 390 (tanpa overflow) ✓; konsol & pageerrors bersih ✓; lint ✓.
+- Temuan teknis diperbaiki saat penulisan: escape \u201ulum terpotong parser (2×) → dibereskan; helper t() di pindah ke import atas.
+
+Stage Summary:
+- Manaqib Al-Jaelani kini lengkap di 165: satu ruang tujuh-tab ber-grade yang memuliakan beliau dengan BUKTI — riwayat sejarah vs genre manakib dipisah jujur, silsilah klasik tampil dengan catatan variannya, dan graf pengetahuan menyambung tokoh, kitab, dan sumber klasiknya (12 relasi) tanpa satu pun klaim ijazah yang dikarang.
+- Arsip QA: .qa/manaqib-identity.png, .qa/manaqib-silsilah.png, .qa/manaqib-karamah.png, .qa/manaqib-entity-profile.png, .qa/manaqib-en.png, .qa/manaqib-mobile.png.
+
+---
+Task ID: 33
+Agent: Master Polymath — Sage Universal (main)
+Task: Rahasia Al-Qur'an & Hadis (amanah founder #3) — arsip lima pilar + ruang UI, adab terhadap rahasia, nol fabrikasi Arab.
+
+Work Log:
+- DATA (src/data/rahasia/kitab-suci.ts): 25 butir dalam 5 pilar — (1) ZAHIR & BATIN: muhkam-mutasyabihat (3:7, A), athar zahir-batin-7-batin (grade D jujur — masyhur, sanad diperselisihkan), Jawahir al-Qur'an al-Ghazali (C), pagar batin-tanpa-syariat (D); (2) MISTERI YANG MEMANG DISEMBUNYIKAN: Lailatul Qadar (97:1–3 A + hadis Bukhari/Muslim), ruh (17:85 A), huruf muqatta'at (A teks + C tafsir, dua takaran dalam satu butir), lima kunci gaib (31:34 A), Lauhul Mahfuzh (57:22 A), sab'ah ahruf (Bukhari B); (3) ILMU PENJAGA: ulumul Qur'an/al-Itqan (C), sanad-matan musthalah (C), tafsir ma'tsur vs ra'yi (C), maqasid Syathibi–Ibnu 'Asyur (C), tadabbur (47:24 A); (4) PERINGATAN: larangan hadis palsu (Muslim B), alat cek hadis viral (al-Maudhu'at dkk., C), israiliyyat (C), gaib hanya Allah (27:65 A) menutup pasar ramal, dan — ironi yang mengajarkan — "man takallama fi'l-Qur'ani bi ra'yihi" ditampilkan D DISPUTED: peringatannya pun di-grade; (5) DZIKR & SIRR: ihsan hadis Jibril (Muslim B), hadis qudsi "Ana 'inda zanni 'abdi bi" (Bukhari-Muslim B), 2:152 (A), lathaif DILABELI JUJUR sebagai terminologi tasawuf (C TRADITIONAL_ACCOUNT), jahir–khafi bertemu di syariat (Blueprint §3.3 B). Teks Arab HANYA yang verbatim mushaf/kitab induk (11 panel); terjemahan berlabel "terjemahan makna".
+- UI (sections/rahasia.tsx): 5 tab pilar (Zahir & Batin/Misteri/Ilmu Penjaga/Peringatan/Dzikr & Sirr) + ikon; lede pilar + penghitung "{n} butir ber-grade"; panel Arab dir="rtl" lang="ar" font-serif leading-[2.1] dengan bar terjemahan makna; badge bukti A–D di tiap butir; catatan amber untuk rahasia kejujuran.
+- WIRING: nav.rahasia + sec.rahasia.* + rh.* di catalog.ts & 4 kamus kurasi; NAV institution-app (13 item), router #rahasia, footer kolom Jelajah + Manaqib + Rahasia.
+- VERIFIKASI (agent-browser): #rahasia ✓ 5 tab ✓; tab Misteri = 4 panel Arab RTL ✓; tab Peringatan menampilkan status DISPUTED apa adanya ✓; ?lang=en → "Sacred Secrets — opened with adab" + "Meaning translation" ✓; mobile 390 tanpa overflow ✓; tautan footer Manaqib→#manaqib & Secrets→#rahasia ✓; konsol bersih, pageerrors nol, dev.log hanya 200 ✓; /api/stats: total 49, sanadChains 3 ✓.
+- Pipeline lanjutan: skrip scripts/gen-i18n-topup.ts baru (mengisi HANYA kunci hilang di kamus AI lama, resume-safe, konkurensi 2 + backoff) + ekstraksi TARGETS ke scripts/gen-i18n-targets.ts (dipakai bersama gen-i18n.ts); topup diluncurkan latar — 59 bahasa antrean, kunci jatuh hormat ke Indonesia sementara menunggu (jujur, tak pernah kosong).
+
+Stage Summary:
+- Ruang "Rahasia" menjadi bantahan terhormat atas pasar bebas rahasia palsu: yang disembunyikan Allah tetap disembunyikan, yang dibukakan dikembalikan pada ilmunya, yang dipalsukan ditelanjangi takarannya — bahkan hadis peringatan pun diberi grade, memperlihatkan disiplin 165 bekerja pada dirinya sendiri.
+- Arsip QA: .qa/rahasia-makna.png, .qa/rahasia-misteri-arab.png, .qa/rahasia-peringatan.png, .qa/rahasia-en.png, .qa/rahasia-mobile.png, .qa/footer-link-rahasia.png.

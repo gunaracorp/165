@@ -1,9 +1,10 @@
 {
- "entities": 39,
- "relations": 20,
+ "entities": 49,
+ "relations": 32,
  "sanadChains": 3,
  "contributions": 1,
  "byType": {
+  "BOOK": 6,
   "CLAIM": 3,
   "COLLECTION": 1,
   "DOCUMENT": 1,
@@ -13,9 +14,9 @@
   "PLACE": 3,
   "RESEARCH": 1,
   "SANAD": 3,
-  "SOURCE": 4,
+  "SOURCE": 8,
   "TERM": 10,
   "TRADITION": 3
  },
- "exportedAt": "2026-10-01T20:30:31.014Z"
+ "exportedAt": "2026-10-01T22:11:53.588Z"
 }

@@ -56,7 +56,7 @@ function ColHead({ children }: { children: React.ReactNode }) {
   )
 }
 
-const EXPLORE_KEYS = ['explore', 'library', 'archive', 'research'] as const
+const EXPLORE_KEYS = ['explore', 'library', 'archive', 'research', 'manaqib', 'rahasia'] as const
 
 const INSTITUTION_ITEMS: ReadonlyArray<readonly [section: string, key: CatalogKey]> = [
   ['about', 'nav.about'],

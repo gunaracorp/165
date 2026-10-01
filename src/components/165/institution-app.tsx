@@ -16,6 +16,8 @@ import { ExploreSection } from './sections/explore'
 import { ArchiveSection, LibrarySection, MediaSection } from './sections/library'
 import { ResearchSection } from './sections/research'
 import { AcademySection } from './sections/academy'
+import { ManaqibSection } from './sections/manaqib'
+import { RahasiaSection } from './sections/rahasia'
 import { TrustSection } from './sections/trust'
 import { AboutSection } from './sections/about'
 import { SeoSection } from './sections/seo'
@@ -30,6 +32,8 @@ const NAV = [
   { key: 'archive', label: 'Archive' },
   { key: 'research', label: 'Research' },
   { key: 'academy', label: 'Academy' },
+  { key: 'manaqib', label: 'Manaqib' },
+  { key: 'rahasia', label: 'Secrets' },
   { key: 'media', label: 'Media' },
   { key: 'trust', label: 'Trust & Method' },
   { key: 'about', label: 'About 165' },
@@ -290,6 +294,8 @@ export function InstitutionApp() {
             {section === 'archive' && <ArchiveSection onOpenEntity={openEntity} onNavigate={navigate} />}
             {section === 'research' && <ResearchSection onOpenEntity={openEntity} onNavigate={navigate} />}
             {section === 'academy' && <AcademySection onOpenEntity={openEntity} />}
+            {section === 'manaqib' && <ManaqibSection onOpenEntity={openEntity} />}
+            {section === 'rahasia' && <RahasiaSection />}
             {section === 'media' && <MediaSection onOpenEntity={openEntity} onNavigate={navigate} />}
             {section === 'trust' && <TrustSection onOpenEntity={openEntity} />}
             {section === 'about' && <AboutSection onOpenEntity={openEntity} onNavigate={navigate} />}

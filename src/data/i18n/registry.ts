@@ -61,6 +61,7 @@ export const AI_DICT_LOADERS: Record<string, () => Promise<DictModule>> = {
   "uz": () => import("./uz.json"),
   "vi": () => import("./vi.json"),
   "xh": () => import("./xh.json"),
+  "yo": () => import("./yo.json"),
   "zh": () => import("./zh.json"),
   "zu": () => import("./zu.json"),
 }

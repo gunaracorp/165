@@ -18,6 +18,7 @@
  */
 import { PrismaClient } from '@prisma/client'
 import { seedSanad } from './seed-sanad'
+import { seedManaqib } from './seed-manaqib'
 
 const prisma = new PrismaClient()
 
@@ -379,6 +380,10 @@ async function main() {
   // sanad: TIGA jalur transmisi direstorasi ber-sumber (Task 30) —
   // Master Blueprint §3.4–3.5, display-only, simpul [ MATA BLOK ] jujur.
   await seedSanad(prisma)
+
+  // manaqib: kitab-kitab, sumber klasik & perkaya PERSON-000002 (Task 32) —
+  // corroborated Master Blueprint §3.2, per-node sanad tetap tidak diklaim.
+  await seedManaqib(prisma)
 
   const counts = await prisma.entity.groupBy({ by: ['type'], _count: { type: true } })
   console.log('Seed complete:', counts.map((c) => `${c.type}=${c._count.type}`).join(' '))
