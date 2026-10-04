@@ -1,0 +1,241 @@
+     1→     1→     1→# 165 — MASTER BUILD WORKLOG
+     2→     2→     2→
+     3→     3→     3→Single shared worklog. Each agent MUST append (never overwrite) a section using the template:
+     4→     4→     4→
+     5→     5→     5→---
+     6→     6→     6→Task ID: <id>
+     7→     7→     7→Agent: <name>
+     8→     8→     8→Task: <task>
+     9→     9→     9→
+    10→    10→    10→Work Log:
+    11→    11→    11→- ...
+    12→    12→    12→
+    13→    13→    13→Stage Summary:
+    14→    14→    14→- ...
+    15→    15→    15→
+    16→    16→    16→---
+    17→    17→    17→Task ID: 0
+    18→    18→    18→Agent: Chief Digital Architect (main)
+    19→    19→    19→Task: PHASE 0 — Discovery: inventory, read, extract, cross-reference all sources; produce Master Discovery Report before coding.
+    20→    20→    20→
+    21→    21→    21→Work Log:
+    22→    22→    22→- Inventoried `/home/z/my-project/upload/` → EMPTY. All 7 declared source files (001–006 incl. Constitutions, Founder's Charter, Master Blueprint) NOT FOUND.
+    23→    23→    23→- Read the 165 Website Master Build Directive in full (single accessible primary source).
+    24→    24→    24→- Inspected project scaffold: Next.js 16 App Router, TS 5, Prisma 6 + SQLite (`db/custom.db`), shadcn/ui full set, Tailwind 4.
+    25→    25→    25→- Produced `/home/z/my-project/docs/DISCOVERY-REPORT.md` (Sections A–H) with explicit `REQUIRES FOUNDER DECISION` flags:
+    26→    26→    26→  * Charter documents absent — no page may claim to represent them.
+    27→    27→    27→  * Founder dual-name ("Gugun Gunara — Muhammad Lutfi Azmi") represented as ONE person with two name variants pending decision.
+    28→    28→    28→  * Founding date unknown — recorded as precision-UNKNOWN event.
+    29→    29→    29→  * Sanad registry ships EMPTY by design (safety), Library/Media ship with honest empty states (no fabrication).
+    30→    30→    30→- Environment constraint accepted: single visible route `/` → full institutional experience as client-side SPA + API routes.
+    31→    31→    31→
+    32→    32→    32→Stage Summary:
+    33→    33→    33→- Discovery delivered. Build authorized under Minimum Viable Institution principle.
+    34→    34→    34→- Single evidence source for seed data: `165-SRC-000001` = Master Build Directive (Level B).
+    35→    35→    35→- Phases 1–6 (architecture, design system, foundation, core knowledge, archive/research scaffolds, trust spine) proceed next.
+    36→    36→    36→
+    37→    37→    37→---
+    38→    38→    38→Task ID: 1
+    39→    39→    39→Agent: Chief Digital Architect (main)
+    40→    40→    40→Task: PHASE 1 — Database architecture (entity & relationship model) + seed.
+    41→    41→    41→
+    42→    42→    42→Work Log:
+    43→    43→    43→- Wrote prisma/schema.prisma: Entity (16 types, globalId scheme 165-XXX-000001, precision-aware dating, multilingual summaries, evidenceLevel A–F, 7 verification statuses, privacy visibility), NameVariant, Relationship (27 predicates, sourced+statused), ClaimSource (SUPPORTED_BY/DISPUTED_BY), SanadLink (display-only), CollectionItem, VersionSnapshot, AuditLog, Contribution (10 workflow states).
+    44→    44→    44→- Fixed bidirectional relation declarations; db:push OK (SQLite, db/custom.db).
+    45→    45→    45→- Wrote prisma/seed.ts (idempotent, audit + v1 snapshot per entity). Seed policy: ONLY traceable to 165-SRC-000001 (Master Build Directive, Level B); traditions marked TRADITIONAL_ACCOUNT; unasserted claim (Cianjur origin) left UNVERIFIED with no stance; NO books/manuscripts/media fabricated; sanad EMPTY by design.
+    46→    46→    46→- Seeded: 30 entities (3 persons, 3 traditions, 3 places, 10 terms, 2 sources, 2 events, 3 claims, 1 institution, 1 collection, 1 document, 1 research), 16 relationships, 3 claim-stances.
+    47→    47→    47→
+    48→    48→    48→Stage Summary:
+    49→    49→    49→- Data layer honors: evidence system, critical historical rule, sanad safety, no-fabrication, never-delete-silently.
+    50→    50→    50→
+    51→    51→    51→---
+    52→    52→    52→Task ID: 3
+    53→    53→    53→Agent: Chief Digital Architect (main)
+    54→    54→    54→Task: PHASE 3 — API layer.
+    55→    55→    55→
+    56→    56→    56→Work Log:
+    57→    57→    57→- Built route handlers: /api/entities (list+search+stats), /api/entities/[slug] (full profile with bidirectional relations, stances, versions), /api/search (grouped), /api/stats, /api/timeline (undated-last ordering), /api/graph, /api/terms, /api/ask (retrieval-only, non-fabricating, sanad-sensitive notice, per-IP rate limit), /api/contribute (POST zod-validated + reference 165-SUB-YYYY-NNNNN; GET status lookup; rate-limited; audit-logged).
+    58→    58→    58→- All verified live via curl + browser.
+    59→    59→    59→
+    60→    60→    60→Stage Summary:
+    61→    61→    61→- No public write path to Entity exists — contribution ≠ publication enforced at API level.
+    62→    62→    62→
+    63→    63→    63→---
+    64→    64→    64→Task ID: 4
+    65→    65→    65→Agent: Chief Digital Architect (main)
+    66→    66→    66→Task: PHASE 2+4 — Design system & core frontend (single-route SPA per sandbox constraint).
+    67→    67→    67→
+    68→    68→    68→Work Log:
+    69→    69→    69→- globals.css: institutional palette (parchment bg, deep-green ink/primary, brass accent — no blue/indigo), serif display stack (Iowan/Palatino/Georgia), Amiri Arabic stack, parchment texture, double-rule divider, small-caps labels, custom scrollbars.
+    70→    70→    70→- Components (src/components/165/): ui.tsx (EvidenceBadge, StatusBadge, TypeBadge, SectionHeading, EmptyState, HonestNote, useApi via TanStack Query), entity-card, entity-profile (§17 profile architecture: header/summary/dates/details/name-variants/claim-stances/collection/relationships grouped+badged/version history/verification footer), knowledge-graph (dependency-free SVG radial, 30 nodes, type-colored, traditional-account edges dashed, focus isolation), ask165, sanad-registry, query-provider.
+    71→    71→    71→- Sections: home (hero+founder recognition+10-identity grid+trust strip+featured+Ask165+deposit-transparency banner), explore (search/timeline/atlas/graph tabs), library+archive+media (honest empty states), research (sources/claims/research), academy (curriculum+live glossary), trust (how-165-knows, evidence levels, statuses, critical historical rule, sanad policy, AI 5 commitments, no-pay-to-verify, dispute), about (institution+flags FLAG-01..04, founder anti-cult, governance councils+roles, ethics, contact), contribute (workflow viz, form with validation+consent, reference tracking).
+    72→    72→    72→- institution-app.tsx: sticky header nav + mobile menu, section router, profile overlay, sticky footer (min-h-screen flex + mt-auto), skip-link, aria labels.
+    73→    73→    73→- Fixed lint (react-hooks/set-state-in-effect) by migrating useApi to TanStack Query with QueryProvider.
+    74→    74→    74→- layout.tsx: institutional metadata, OG, canonical, keywords.
+    75→    75→    75→
+    76→    76→    76→Stage Summary:
+    77→    77→    77→- Full IA from Directive §10 implemented within single-route constraint; design honors §30 (dignified, scholarly, timeless).
+    78→    78→    78→
+    79→    79→    79→---
+    80→    80→    80→Task ID: 7
+    81→    81→    81→Agent: Chief Digital Architect (main)
+    82→    82→    82→Task: End-to-end self-verification with Agent Browser + fixes.
+    83→    83→    83→
+    84→    84→    84→Work Log:
+    85→    85→    85→- Fixed: font-display/arabic tokens not emitted (moved to non-inline @theme block) — verified serif + arabic render.
+    86→    86→    86→- Fixed: stale palette (reload) — parchment bg confirmed via computed style lab(96.5,-0.3,3.4).
+    87→    87→    87→- Golden path verified in browser: home render; profile 165 (badges B/Documented, 6 relationships, version history); search "tqn" → 7 grouped result types; timeline (2025 event + undated honesty section); knowledge graph (30 nodes; click isolates neighbourhood: 23 dimmed, focus ring); trust (evidence levels, sanad empty-by-design, critical historical rule); Ask 165 grounded answer with globalId citations; Ask 165 unanswerable/sanad question → honest non-fabricating response + sanad safety notice; contribute submit → 165-SUB-2026-00001 → status lookup works; about flags + founder anti-cult pane; library/archive honest states.
+    88→    88→    88→- Mobile (iPhone 14): hamburger menu, stacked hero, natural footer push (docH 5617 > 844). Desktop restored 1280x800.
+    89→    89→    89→- Final lint clean; recent dev.log shows only 200s (earlier 500s were HMR-transient during hook→provider refactor, resolved).
+    90→    90→    90→
+    91→    91→    91→Stage Summary:
+    92→    92→    92→- Browser-verified interactivity is the standard of done — met. Zero console errors on final pass.
+    93→    93→    93→- Documentation delivered: docs/DISCOVERY-REPORT.md, docs/ARCHITECTURE-DECISIONS.md (ADR-001..010 + data dictionary + API surface), worklog.md.
+    94→    94→    94→
+    95→    95→    95→---
+    96→    96→    96→Task ID: 8-b
+    97→    97→    97→Agent: frontend-styling-expert
+    98→    98→    98→Task: UrlDirectory component (SEO section)
+    99→    99→    99→
+   100→   100→   100→Work Log:
+   101→   101→   101→- Read worklog.md (context/conventions), src/lib/seo-blueprint.ts (verified API: generateUrlIndex() → 1200 UrlRow[], TEMPLATE_CATALOG, PAGE_MAP_TOTAL), sibling seo-templates.tsx (tone, KIND_HUE palette, badge style), ui.tsx (shared primitives), sections/seo.tsx (integration point — already imports { UrlDirectory } from '../seo/url-directory').
+   102→   102→   102→- Created src/components/165/seo/url-directory.tsx ('use client'): minimal header row ("Peta Sitemap — Fase 1" + muted count line + brass Network badge chip); responsive toolbar (Search icon inside shadcn Input "Cari URL atau slug…", shadcn Select "Semua tipe" + one option per catalog entry with count, aria-live result count "Menampilkan X–Y dari N URL" in id-ID); shadcn Table in rounded-md border bg-card wrapper with exact "nice-scroll max-h-[460px] overflow-y-auto" scroll div and sticky header.
+   103→   103→   103→- Columns: URL (mono 12.5px, truncate + title), Tipe (KindBadge reusing seo-templates.tsx KIND_HUE values verbatim, inline-flex span with ${hue}14/${hue}55/${hue} inline style), Skema (mono 12px), Prioritas (mono right-aligned toFixed(1)), Diperbarui (mono 12px, hidden md:table-cell).
+   104→   104→   104→- Pagination: 25 rows/page; Prev/Next outline sm buttons with aria-labels, "Halaman i dari j" text, ≤7-number centered window with ellipses (pageWindow helper, e.g. 1 … 4 5 6 … 48); page resets to 1 inside search/filter handlers (no setState-in-effect, honoring project lint fix history); current page clamped defensively.
+   105→   105→   105→- Empty state reuses shared EmptyState primitive (SearchX icon, dashed border) with exact copy "Tidak ada URL yang cocok dengan filter." + a small "Bersihkan filter" reset button.
+   106→   106→   106→- Performance: generateUrlIndex() memoized once (useMemo []), filtered list memoized, only the 25-row slice rendered. No blue/indigo anywhere; institutional tokens only (border-border, bg-card, bg-secondary, text-muted-foreground, var(--brass)).
+   107→   107→   107→- Verification: bunx tsc --noEmit → zero errors in url-directory.tsx; bun run lint → clean.
+   108→   108→   108→
+   109→   109→   109→Stage Summary:
+   110→   110→   110→- UrlDirectory shipped and wired to the already-imported usage in sections/seo.tsx; planned sitemap browsable (search + type filter + pagination over all 1.200 rows) without rendering the full list at once.
+   111→   111→   111→- Note for orchestrator: pre-existing unrelated type errors exist elsewhere (examples/, skills/, sections/home.tsx, and sections/seo.tsx line 7 imports lucide `Sitemap` which does not exist in lucide-react 0.525.0 — my file uses `Network` instead). url-directory.tsx itself is fully clean.
+   112→   112→   112→
+   113→   113→   113→---
+   114→   114→   114→Task ID: 8
+   115→   115→   115→Agent: Chief Digital Architect (main) + frontend-styling-expert (8-b)
+   116→   116→   116→Task: PHASE 8 — SEO & Page Architecture: "pages search engines love" at 1.000+ page scale (founder request: eternal pages).
+   117→   117→   117→
+   118→   118→   118→Work Log:
+   119→   119→   119→- Wrote src/lib/seo-blueprint.ts: 10-template catalog (person/term/book/event/place/institution/sanad/collection/article/faq), phase-1 page map totaling 1.200 URLs, release phases (150→350→215→485), URL index generator (real seed slugs first, clearly-synthetic slugs for the rest — no fabricated names), 10 honest preview entities reusing EVIDENCE_LEVELS/VERIFICATION_STATUSES vocab, per-template publication GATES, JSON-LD builders (Person/Book/DefinedTerm/Event/Place/Organization/ItemList/CollectionPage/Article/FAQPage + BreadcrumbList), base 12-point SEO checklist, meta title/description helpers.
+   120→   120→   120→- Built src/components/165/seo/seo-templates.tsx: TemplateGallery — template selector + 4 tabs per template: live page preview (breadcrumb, status/evidence badges, Arabic display, infobox, sanad chain viz with honest "menunggu kolasi" node, FAQ accordion, citation box with Global ID), SERP simulation with title/description length meters, JSON-LD viewer with copy button, SEO checklist + amber publication-gate panel.
+   121→   121→   121→- [8-b via frontend-styling-expert] Built src/components/165/seo/url-directory.tsx: 1.200-URL directory — search, type filter (Radix Select), 25/page pagination with 7-number window, kind-hued badges, aria-live count, EmptyState reset, memoized rows.
+   122→   122→   122→- Built src/components/165/sections/seo.tsx: hero stats (1.200+ · 10 · 3 · 12+), 6 pillars (JSON-LD, internal-link mesh, E-E-A-T, stable URL+Global ID, trilingual hreflang, SSR), page-map table + phases + doctrine note ("jumlah halaman tidak pernah mengalahkan kebenaran halaman"), gallery, directory, 6 technical-foundation cards (URL/ID, sitemap shards, robots, CWV targets, hreflang map, dateModified/versioning), E-E-A-T quartet, "Dibangun untuk Keabadian" strip (versioning, no silent deletion, permanent citation, 3-2-1), live-now note, contribute CTA.
+   123→   123→   123→- Wired NAV (added "SEO", footer link "SEO & Pages"); REAL SEO infra: layout.tsx + Organization/WebSite JSON-LD scripts, hreflang id/en/ar/x-default, googleBot robots, viewport themeColor; new app/sitemap.ts (honest: only real URLs listed; full 1.200 map documented in section) and app/robots.ts (allow knowledge, disallow /api/ + /search; removed conflicting public/robots.txt).
+   124→   124→   124→- Fixed pre-existing home.tsx error (EVENT icon undefined → CalendarDays + import).
+   125→   125→   125→- Fixed lucide 0.525 issue: Sitemap icon not exported → ListTree alias.
+   126→   126→   126→
+   127→   127→   127→Stage Summary:
+   128→   128→   128→- Browser-verified (Agent Browser): SEO nav → all sections render; template switching + all 4 tabs work (sanad JSON-LD shows ItemList with honest pending node); directory search "khatm"→2, filter Profil Tokoh→250, pagination 26–50 ✓; console clean; mobile iPhone 14: hamburger→SEO ok, template selector scroll-x, footer naturally pushed (5642px doc). Desktop full-page screenshot reviewed — palette/typography on-institution.
+   129→   129→   129→- SEO infra live: /robots.txt 200, /sitemap.xml 200, canonical + 4 hreflang links + 3 JSON-LD blocks in homepage HTML.
+   130→   130→   130→- Doctrine preserved: every preview entity labeled demo, evidence levels shown, publication gates visible, no fabricated sanad/names (synthetic slugs only).
+   131→   131→   131→
+   132→   132→   132→---
+   133→   133→   133→Task ID: 9
+   134→   134→   134→Agent: Chief Digital Architect (main)
+   135→   135→   135→Task: "Bahasa semua negara" — global multilingual system: world language registry (113 languages), 198-country coverage map, 54-language chrome translation, header picker, dedicated Languages section, RTL support.
+   136→   136→   136→
+   137→   137→   137→Work Log:
+   138→   138→   138→- Built src/lib/i18n/languages.ts: WorldLang registry (113 languages: 3 native core id/en/ar, 51 machine-assisted, 59 in-preparation incl. km/ka/si/la/hy/kl), full COUNTRIES registry (198 countries & territories, ISO alpha-2, primary languages first, 5 regions: Africa 54 / Americas 36 / Asia 49 / Europe 45 / Oceania 14), helpers (countryStatus, countriesCountFor, langCounts, SELECTABLE_LANGS, isRtl; RTL = ar/ur/fa/ps/he/dv).
+   139→   139→   139→- Built src/lib/i18n/translations.ts: 46-key chrome dictionary (nav, tagline, hero kicker/title/lede/CTAs, footer, languages-page strings) for 54 languages — en canonical + id/ar native + 51 machine-assisted (ms/jv/su/tr/ur/fa/ps/fr/es/pt/de/it/nl/ru/uk/pl/cs/sk/bg/sr/hr/mk/sl/ro/hu/el/da/sv/nb/fi/et/lv/lt/zh/ja/ko/vi/th/hi/bn/ta/he/sw/af/sq/bs/az/kk/uz/tl/am); per-key English fallback via getDict().
+   140→   140→   140→- Built src/lib/i18n/store.ts: SSR-safe module store via useSyncExternalStore (no setState-in-effect), localStorage persistence ('165.lang'), setLang side-effect writes <html lang/dir>, useT() merged dict hook, DEFAULT_LANG='en' (no regression to verified English chrome).
+   141→   141→   141→- Built src/components/165/language-picker.tsx: header Popover — search (code/native/English), status-grouped list (native emerald / assisted amber) with counts, native names + RTL marker, active check, honest truncation footnote; closes + resets on select.
+   142→   142→   142→- Built src/components/165/sections/languages.tsx: LanguagesSection — 4 stat cards (198/113/3/51), amber honesty note (translation status = evidence discipline), coverage explorer (search + region Select + grouped scrollable country list max-h-520, language chips clickable to switch when available, prep chips tooltip-only, country status ✓Tersedia/Partial), full 113-language registry table (max-h-460 sticky header, row-click switch), status legend, "Adopt a language" CTA → contribute (never paid, always credited).
+   143→   143→   143→- Wired institution-app.tsx: NAV now dict-driven + 'languages' section added; LanguagePicker in desktop nav and compact header row; desktop nav breakpoint lg→xl (11 items); documentElement lang/dir sync effect; footer fully translated + Languages link; wordmark tagline translated.
+   144→   144→   144→- Wired sections/home.tsx hero: kicker/title/lede/3 CTAs via useT (founder line stays proper-noun).
+   145→   145→   145→- Verification (Agent Browser): Arabic switch → dir=rtl lang=ar, nav الرئيسية, hero Arabic, footer Arabic; Languages page in ar/id/ur/ja — stats 198/113/3/51, 198 country rows, 113 table rows; Malaysia search 1/198; Indonesia row shows id/jv/su chips; clicking 'id' chip → LTR Indonesian (localStorage persisted across reload); Myanmar → "Sebagian — kembali ke Inggris" + prep tooltip; registry search 日本語 → row click → lang=ja; Urdu via picker → RTL chrome; mobile iPhone 14: compact header (picker+hamburger), Urdu RTL hero renders, footer pushed (docH 5550); desktop 1280 Indonesian full page screenshot reviewed; profile overlay + API flows unaffected; console clean; dev.log 200s only; bun run lint clean; tsc clean in project files (pre-existing examples/skills errors unchanged).
+   146→   146→   146→
+   147→   147→   147→Stage Summary:
+   148→   148→   148→- 165 now speaks the languages of all nations: every one of 198 countries/territories is mapped to its language(s); 54 languages deliver a translated interface; 113 are tracked; 6 RTL languages flip document direction.
+   149→   149→   149→- Honesty discipline preserved: machine-assisted translations are labelled as such until native review (same as evidence levels); in-preparation languages fall back to English with explicit "Partial" status; adopt-a-language path routes through the contribute workflow (No Pay-to-Verify).
+   150→   150→   150→- Language is treated as data (19-entity model includes Language): registry codes/ISO mapping ready to become real Language entities in a later phase; hreflang currently still id/en/ar core — expansion gated on native review per doctrine "jumlah halaman tidak pernah mengalahkan kebenaran halaman".
+   151→   151→   151→
+   152→   152→   152→---
+   153→   153→   153→Task ID: 10
+   154→   154→   154→Agent: Chief Digital Architect (main)
+   155→   155→   155→Task: Founder-directed sanad recording (Jalur Karawang — Abah Ganda · Jalur Al-Bantani — Abah Haji Sukanta · Jalur TQN Suryalaya — Abah Anom) + Full Google SEO.
+   156→   156→   156→
+   157→   157→   157→Work Log:
+   158→   158→   158→- Web research (12+ searches, 5 page reads; evidence files in research/): located the Founder-authored numbered silsilah list (KASKUS, 13-12-2023, "Penyusun: Al Faqir Santri Angon Gugun Gunara", #TQN165) = chain source; suryalaya.org official Sejarah TQN page (Tholhah #35, Abah Sepuh #36 + khirqah at 72 + founding 7 Rajab 1323 H/5 Sep 1905, Abah Anom 5th son & successor); community cross-checks (Facebook "warid ti ahmad kazim bin asnawi banten" for Karawang←Kadzim; Instagram/Scribd-thesis for Ahmad Sukanta bin Salmin 1935–2015, TQN Asnawiyah Pandeglang; blogspot testimony Abah Anom silsilah ke-37, † 5 Sep 2011 at 96); noted public succession dispute after Abah Anom → recorded, not adjudicated.
+   159→   159→   159→- Built src/lib/sanad-data.ts: 8 evidence-graded sources (S1 = founder-authored list, Level B/DOCUMENTED — same class as Master Directive; S2 suryalaya.org C; S3/S5/S6 community E; S4/S7/S8 published C); shared spine 34→1 (incl. Qadiri founder #19 al-Jaelani via #18 al-Majzumi + Naqshbandi founder insertion #22 Baha'udin; faithful-reproduction note: numeral 20 skipped, 22 used twice); Banten/Asnawi segment 38→35 (Kadzim Asnawi Menes ← Suhari Cibeber ← Muhammad Asnawi Caringin ← Abdul Karim Tanara); Suryalaya segment 37→34; two terminals #39a/#39b; SANAD_POLICY notes (ID/EN): safety, collation-open, numbering, succession.
+   160→   160→   160→- New /api/sanad (static, read-only): 3 chains (39/39/37 nodes) + 8 sources + policy + meta.
+   161→   161→   161→- prisma/seed-sanad.ts (additive, idempotent, never wipes): created 165-SRC-000003 (source), 165-SANAD-000001..000003 (jalur entities, B/B/C + TRADITIONAL_ACCOUNT, name variants incl. "Abah Ganda"/"Abah Haji Sukanta"), 6 relationships (DOCUMENTS ×3, LINEAGE_OF→165-TRAD-000001 ×3), audit + v1 snapshots. NO person entities, NO student-of graph links (sanad safety preserved).
+   162→   162→   162→- Rewrote sanad-registry.tsx: 3-jalur tab selector with evidence/status badges, active-jalur header (globalId, node count, terminal rank), full vertical chain visualization (rank chips, brass founder-of badges "Pendiri TQN/Qodiriah/Naqsabandiyah", RASUL/APEX styling, "murid dari" connectors, per-node source chips), honest notes (reproduksi setia, catatan suksesi on Suryalaya, kolasi Level A terbuka), evidence-graded source panel (max-h-96 nice-scroll, external nofollow links), contribute CTA. Wired in Trust section (unchanged placement).
+   163→   163→   163→- FULL SEO: layout.tsx → metadataBase, ID-first title/description with jalur names + keywords (sanad TQN, TQN Suryalaya, Abah Anom, Abah Ganda Karawang, Abah Haji Sukanta, Ahmad Khatib Sambas…), authors/creator/publisher/category, OG locale id_ID + alternates + og-image 1200×630 (scripts/generate-og.mjs, sharp SVG→PNG, institutional parchment/brass design), twitter large card, robots googleBot max-preview, canonical + 4 hreflang; 4 JSON-LD blocks: Organization(+Person founder), WebSite+SearchAction, WebPage, ItemList of the 3 recorded jalur; html lang default → id.
+   164→   164→   164→- Made SearchAction HONEST: institution-app reads /?q= (→ Explore with prefilled+submitted search) and /?section= (12 valid keys) once after mount (deferred callback to satisfy react-hooks/set-state-in-effect), then history.replaceState to '/' ; ExploreSection/SearchView accept initialQuery prop.
+   165→   165→   165→- Added app/manifest.ts (PWA: name/short_name/theme #1e3a2f, icons logo.svg + og-image).
+   166→   166→   166→- Fixed tsc (SanadJalur.terminal removed). Verified: /api/sanad 39/39/37 nodes; SANAD entities searchable ("suryalaya", "jalur" → 3 Sanad cards); entity profile 165-SANAD-000001 renders (badges, chainSourceRef, ID version link); robots.txt/sitemap.xml/manifest.webmanifest/og-image.png all 200; 4 JSON-LD blocks in served HTML.
+   167→   167→   167→- Agent Browser verified (desktop 1280×800 + iPhone 14): Trust → Sanad registry tabs switch (Karawang 39, Al-Bantani 39, Suryalaya 37 nodes); founder badge + shared spine + apex rows render; source panel with S1..S8; /?q=suryalaya lands on Global Search with prefilled query + results incl. "Jalur TQN Suryalaya"; /?section=trust deep-link works; mobile menu → trust → jalur cards stack, footer pushed; dev.log 200s only.
+   168→   168→   168→- Known pre-existing (verified via git-stash baseline test): Radix Popover aria-controls hydration id mismatch in LanguagePicker (dev-only warning, cosmetic, present before this task).
+   169→   169→   169→
+   170→   170→   170→Stage Summary:
+   171→   171→   171→- The three Founder-directed jalur are now institutionally RECORDED and publicly displayed, complete to the apex (39/39/37 levels), each node source-chipped, each chain evidence-graded and TRADITIONAL_ACCOUNT — recorded, never generated; 165 certifies nothing.
+   172→   172→   172→- Full SEO foundation live: metadata + OG/Twitter + 4 structured-data blocks + honest SearchAction + manifest + robots/sitemap; Google, Bing and AI assistants can read the institution, its founder, and the three jalur without guessing.
+   173→   173→   173→- Lint clean; tsc clean in project files; browser-verified on desktop and mobile.
+   174→   174→   174→
+   175→   175→   175→---
+   176→   176→   176→Task ID: 11
+   177→   177→   177→Agent: Chief Digital Architect (main)
+   178→   178→   178→Task: "Hijau NU · Hijau Nabi Khidir" color system upgrade — full-spectrum green identity + light/dark modes (founder request: upgrade warna HIJAU NU & Hijau Khidir, no clashing colors, bright & pleasant, dark + light mode).
+   179→   179→   179→
+   180→   180→   180→Work Log:
+   181→   181→   181→- Rebuilt globals.css as the "Hijau NU · Hijau Nabi Khidir" system: light mode "Cerah Khidir" (bright green-breathing paper bg oklch(0.982 0.012 148), HIJAU NU primary oklch(0.465 0.115 156), vivid --khidr accent, gold counterpoint); dark mode "Malam Zikir" (deep pine-night bg oklch(0.168 0.026 168), luminous --khidr oklch(0.79 0.125 158) primary, glowing brass). Added tokens: --khidr, --khidr-soft, --brass-text, 16 --etype-* entity hues (light+dark pairs), graph vars (--graph-ring/label/label-strong, --edge-traditional/unverified/documented), --tex-a/b texture vars. Added color-scheme per mode, green ::selection, green-tinted scrollbars, signature utilities: .nu-gradient-bar (NU→Khidir→gold identity line), .glow-khidr (hero life-wash), .life-gradient-text (NU→Khidir→gold gradient text).
+   182→   182→   182→- New src/lib/theme/store.ts: SSR-safe useSyncExternalStore store ('165.theme' localStorage), system-preference fallback, applyTheme toggling <html>.dark, THEME_BOOT_SCRIPT anti-FOUC snippet injected as first child of <body> in layout.tsx; viewport themeColor now media-paired (light/dark).
+   183→   183→   183→- New src/components/165/theme-toggle.tsx: hydration-safe Sun/Moon toggle (icon visibility CSS-driven via dark: variants), mounted in desktop nav + compact mobile header.
+   184→   184→   184→- Dark-proofed every tone: ui.tsx TONE map now carries dark: pairs for emerald/green/teal/amber/orange/rose/stone/brass (auto-fixes EvidenceBadge, StatusBadge, HonestNote sitewide); 'sky' tone remapped to jade/teal to keep the no-blue rule. TYPE_HUE replaced by etypeColor/etypeStyle helpers using CSS vars + color-mix (mode-adaptive TypeBadge).
+   185→   185→   185→- Component sweep: sanad-registry (#6b4f18 → var(--brass-text); RASUL node dual-mode; founder badges adaptive), knowledge-graph (all SVG hex → vars: edges/ring/labels + legend), entity-profile (EXAMPLE badge, SUPPORTED/DISPUTED stances dual), contribute (all rose/amber/emerald alerts dual), languages + language-picker (status dots dual, active chip khidr), ask165 (sanad notice, error → var(--etype-claim)), seo-templates + url-directory (KIND_HUE → var(--etype-*) + color-mix hueStyle).
+   186→   186→   186→- Green-identity pass: all accent icons/labels switched from brass to --khidr across home/explore/trust/about/academy/seo/languages/research/contribute/entity-profile/sanad-registry/ask165/seo-templates/url-directory/language-picker/footer/header; brass retained as warm counterpoint (borders, washes, founder-of badges, master-principle panel). Hero upgraded: glow-khidr wash + life-gradient "165" numeral; timeline dots/years → khidr.
+   187→   187→   187→- Brand collateral: manifest theme_color #166534 / bg #f2f9f3; OG image generator re-paletted (NU green, Khidir #22a35c, brass gradient bars) and og-image.png regenerated.
+   188→   188→   188→- Verification: bun run lint clean; tsc clean in project files. Agent Browser (desktop 1280×800 + iPhone 14): light home hero/trust strip/identity/master-principle/featured/footer ✓; toggle → dark verified (documentElement.dark, bg lab ≈ 4.5%); dark home/trust (jalur tabs incl. Suryalaya active gold, RASUL green node, honest notes), knowledge graph (edges/nodes/labels readable, no white circles), SEO gallery (color-mix badges), Research sources, entity profile overlay, Ask165 golden path (grounded answer + F/B badges readable) ✓; persistence across reload (localStorage '165.theme', dark stays after reload) ✓; console zero errors/warnings; dev.log 200s only. Fixed stale-CSS confusion by full dev-server restart (Turbopack HMR had not reloaded globals.css).
+   189→   189→   189→
+   190→   190→   190→Stage Summary:
+   191→   191→   191→- 165 now wears Hijau NU as its institutional identity with Hijau Nabi Khidir as the living accent and gold as counterpoint — one harmonious family across every screen, no clashing colors, bright in light and luminous in dark.
+   192→   192→   192→- Terang ⇄ Gelap is a first-class institutional feature: instant toggle, persisted choice, OS-aware default, no flash of wrong theme, mobile + desktop, with footer/header/nav/badges/graph/OG all mode-aware.
+   193→   193→   193→- All evidence-graded badges, sanad chain nodes, entity hues and SEO template chips now derive from CSS variables — future screens inherit both modes automatically.
+   194→   194→   194→
+   195→   195→   195→---
+   196→   196→   196→Task ID: 12
+   197→   197→   197→Agent: Chief Digital Architect (main)
+   198→   198→   198→Task: Fix Radix Popover hydration mismatch in LanguagePicker (user-reported console error: aria-controls radix-_R_* id mismatch, "A tree hydrated but some attributes of the server rendered HTML didn't match").
+   199→   199→   199→
+   200→   200→   200→Work Log:
+   201→   201→   201→- Diagnosed: the two header LanguagePickers (desktop nav + compact header) were the ONLY Radix components rendered during SSR; their aria-controls ids come from React useId (tree-position-derived). curl proved fresh SSR HTML is stable (radix-_R_2t55eqlb_ / _R_n55eqlb_ = exact server ids in the user's report), so the mismatch came from the user's long-lived preview session holding a client bundle from a different code generation than the served HTML (many HMR updates since Task 9 created the picker). Same class of risk exists in production (stale HTML + new JS deployment).
+   202→   202→   202→- Root fix in src/components/165/language-picker.tsx: Radix Popover now mounts ONLY while open. Closed state renders a plain button with identical markup/classes (aria-haspopup, aria-expanded, same label) → SSR HTML and first client render always match by construction; Radix's useId-based ids never exist in server HTML, so the mismatch is structurally impossible (dev HMR + prod stale-pairing both immunized).
+   203→   203→   203→- A11y preserved/improved: on open, focus lands in the search field (onOpenAutoFocus preventDefault + autoFocus on Input); on close, focus is restored to the trigger (onCloseAutoFocus preventDefault + triggerRef focus). Escape/outside-click closing unchanged (Radix).
+   204→   204→   204→- Verified: curl fresh SSR → zero radix-_R_ ids, both "Language: English" triggers present; bun run lint clean; Agent Browser fresh session: load → 0 hydration/mismatch console messages; picker open → search "indo" filters → select Bahasa Indonesia → html lang=id, localStorage '165.lang'=id, nav localized (Beranda/Jelajah/Perpustakaan); switch back to EN ok; theme toggle DARK on ⇄ LIGHT on (localStorage '165.theme'); dark screenshot reviewed (Malam Zikir palette intact, no clashes); iPhone 14 compact header picker opens/searches/closes via Escape; dev.log 200s only, zero 500/404.
+   205→   205→   205→
+   206→   206→   206→Stage Summary:
+   207→   207→   207→- The long-standing (pre-Task-10) hydration warning is now permanently eliminated by construction, not by suppression — no suppressHydrationWarning, no mounted-gate flicker, full Radix a11y retained whenever the picker is open.
+   208→   208→   208→- Language picker is now lighter on SSR (no Radix roots in initial HTML). No other component was SSR-rendering Radix primitives, so no further hardening needed.
+   209→   209→   209→
+   210→   210→   210→---
+   211→   211→   211→Task ID: 13
+   212→   212→   212→Agent: Chief Digital Architect (main)
+   213→   213→   213→Task: README.md "terlengkap yang pernah ada" — Bahasa Indonesia penuh (permintaan pendiri: god mode tier max, lengkap & keren).
+   214→   214→   214→
+   215→   215→   215→Work Log:
+   216→   216→   216→- Fact-gathering pass over the entire codebase before writing a single line: package.json (scripts, deps), prisma/schema.prisma (9 models, 16 entity types, precision dating, 7 statuses), src/lib/165.ts (vocabularies: 26 paired predicates, A–F levels, 8 contribution kinds), src/lib/sanad-data.ts (S1–S8 exact titles/publishers/levels, spine #34 convergence, numbering quirks, succession note), src/lib/i18n/languages.ts + translations.ts (counted precisely: 113 tracked = 3 native + 51 assisted + 59 prep; 54 installed; 53 active dictionaries; 198 countries by region; RTL = ar/dv/fa/he/ps/ur), src/lib/seo-blueprint.ts (10 templates summing exactly 1.200, release phases 150/350/215/485, gates), globals.css (exact oklch tokens for both modes), ARCHITECTURE-DECISIONS.md (ADR-001..010), API routes listing (11 handlers), .env (DATABASE_URL), research/ (21 evidence files).
+   217→   217→   217→- Wrote README.md (1.080 lines, Indonesian only, no emojis): centered ASCII+badge header, manifesto quote, 30-section linked Daftar Isi; sections: ringkasan eksekutif, fakta cepat, mengapa 165 ada, pengakuan pendiri (anti-kultus ADR-009), 10 doktrin institusional, sistem bukti A–F + 7 status + kaidah sejarah kritis, arsitektur (stack + ADR ringkas), model data (Global ID scheme, presisi tanggal, predikat), referensi API (11 endpoint + contoh curl), 12 bagian SPA, registri sanad 3 jalur (tabel + sumber S1–S8 + kebijakan penomoran setia + catatan suksesi), sistem bahasa global (status native/assisted/prep), sistem desain Hijau NU · Hijau Nabi Khidir (token oklch terang/gelap, 16 etype hues, utilitas tanda tangan, tipografi), mode terang/gelap (anti-FOUC), SEO full Google (1.200 URL, fase, infra hidup, E-E-A-T), Ask 165 non-fabrikasi, alur kontribusi, preservasi, keamanan, pemasangan + referensi perintah, struktur direktori, kualitas & verifikasi, batasan yang diakui terbuka, peta jalan, glosarium, 12 FAQ, dokumen internal, status hukum/lisensi (jujur: belum ditetapkan), kredit, penutup-manifesto.
+   218→   218→   218→- 7 diagram Mermaid (arsitektur, ER, rantai sanad BT dengan konvergensi #34, alur bahasa, sequence anti-FOUC tema, pipeline Ask 165, state machine kontribusi); 36 tabel; 9 badge shields berwarna keluarga hijau institusional; semua jangkar daftar isi dicocokkan dengan slug GitHub (diperiksa satu per satu); tanpa emoji; seluruh angka diverifikasi terhadap kode, bukan dari ingatan.
+   219→   219→   219→
+   220→   220→   220→Stage Summary:
+   221→   221→   221→- README.md kini adalah peta institusi yang lengkap dan akurat: siapa pendirinya, apa doktrinnya, bagaimana buktinya, bagaimana arsitekturnya, bagaimana menjalankannya, apa batasannya, dan ke mana ia melangkah — semuanya Bahasa Indonesia.
+   222→   222→   222→- Nol fabrikasi dalam dokumentasi: setiap tabel (sanad, bahasa, SEO, bukti) dicocokkan baris-per-baris dengan sumber kode/proyek pada saat penulisan.
+   223→   223→   223→
+   224→   224→   224→---
+   225→   225→   225→Task ID: 14
+   226→   226→   226→Agent: Chief Digital Architect (main)
+   227→   227→   227→Task: Update README.md based on the Founder's second personal site (https://www.prabudanling.web.id/) — enrich & complete the Founder's identity ("identitasku juga lengkapi keluarkan"), per Founder's direct request.
+   228→   228→   228→
+   229→   229→   229→Work Log:
+   230→   230→   230→- Fetched https://www.prabudanling.web.id/ via page_reader (title: "Santri Angon | Prabu Danling — Tech Futurist • Master Sage Polymath"); extracted full text content.
+   231→   231→   231→- Archived the raw capture as research/p8-prabudanling-founder-profile.json (P-series convention, next after P1–P7) — Source-First Protocol: no claim without a stored source.
+   232→   232→   232→- Key identity facts extracted and cross-referenced: full credentials "Tn. H. Gugun Gunara, CMC, MBA, CFA, PMP, Six Sigma Black Belt (Muhammad Lutfi Azmi)"; titles Tech Futurist · Master Sage Polymath · Senior Konsultan Bisnis & IT; "Satu Jiwa, Empat Dimensi" framework (Duniawi=Gugun Gunara / Ruhani=Muhammad Lutfi Azmi / Eksekusi=Prabu Danling / Refleksi=Santri Angon); 7 Polymath disciplines; civilizational mission (1 miliar jiwa · 500 buku · 100 jurnal); Sundanese motto "Prak burukeun… Ulah edan, kudu eling"; writing since 2009; Dream Log 156 dreams; newsletter + multiregional social presence.
+   233→   233→   233→- CRITICAL cross-reference discovered: Source S1 (the genealogy list founding the sanad registry) was signed on KASKUS as "Al Faqir Santri Angon Gugun Gunara" — the second site now documents "Santri Angon" as the Founder's own reflection dimension. Two independent self-published sources now corroborate: the genealogy compiler IS the platform Founder. Documented as evidence-based finding, not interpretation.
+   234→   234→   234→- README.md updated (1081 → 1214 lines): header founder line now carries full credentials + mission quote + new badge "Ranah Pribadi Pendiri — prabudanling.web.id"; Fakta Cepat +3 rows (dimensi identitas, ranah pribadi, misi peradaban); Section 4 expanded with 4.1–4.5 (Satu Jiwa Empat Dimensi table + NameVariant sync note kept additive per ADR-009/FLAG-02 spirit + S1 cross-trail + 7 disciplines + Misi Peradaban + motto/eling-dzikr note + "Dua Ranah, Satu Jiwa" ecosystem diagram + full source citation with access date); Section 27 research row 21→22 files (P8); Section 28 trademarks now distinguish institution-owned vs Founder-owned ("Santri Angon", "Prabu Danling"); Section 29 credits updated (credentials, S1 signature now documented as Founder's reflection dimension, new personal-site row); Section 30 closing adds the Founder's motto binding both realms; footer now names both realms; Glossary +3 entries (Angon, Eling, Al Faqir).
+   235→   235→   235→- Tooling note: MultiEdit here is NOT atomic — run 1 applied edits 1–10 then failed on the glossary row (missing ** bold markers in old_str), run 2 re-applied edit 1 (badge duplication) then stopped. Recovered via state audit (python checks) + 4 targeted single Edits (dedupe badge, glossary, closing motto, footer). Final verification: badge count=1, all 30 numbered H2 sections intact in order, code fences balanced (28 markers), zero remnants of old founder lines, 1214 lines total.
+   236→   236→   236→- App untouched (docs-only change): dev server health confirmed via dev.log tail, no runtime impact.
+   237→   237→   237→
+   238→   238→   238→Stage Summary:
+   239→   239→   239→- README now documents the Founder's complete public identity, sourced from the Founder's own second site, archived as research/p8, with the S1 signature cross-link closing the identity loop — "dua ranah, satu jiwa" is now institutional record, still fully compliant with evidence grading and the no-silent-changes doctrine.
+   240→   240→   240→- Registry sync (adding "Prabu Danling" and "Santri Angon" as NameVariant ALIAS rows on 165-PERSON-000001) is flagged in README 4.1 as an additive candidate awaiting Founder instruction — deliberately NOT applied to the data layer without direction.
+   241→   241→   241→

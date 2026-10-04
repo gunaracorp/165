@@ -1,0 +1,769 @@
+     1→# 165.web.id — MASTER BLUEPRINT v1.0
+     2→## TQN Qodiriyah wa Naqsyabandiyah Global Knowledge, Heritage & Digital Preservation Platform
+     3→
+     4→**Status:** Master working document / permanent strategic baseline  
+     5→**Version:** 1.0  
+     6→**Date:** 1 October 2026  
+     7→**Working assumption:** In this blueprint, “Tuan Syekh” refers to Shaykh `Abd al-Qadir al-Jilani; the wider institutional scope is TQN Qodiriyah wa Naqsyabandiyah.
+     8→
+     9→---
+    10→
+    11→## 1. MASTER IDEA
+    12→
+    13→165.web.id must not be treated as a normal religious website or as an extension of social media.
+    14→
+    15→It should be designed as a **digital knowledge, heritage, education, documentation, preservation and community infrastructure** for TQN Qodiriyah wa Naqsyabandiyah, with a global audience and a rigorous editorial provenance system.
+    16→
+    17→### Core mission
+    18→1. Preserve: manuscripts, books, photographs, audio, video, oral histories, biographies, places and institutional records.
+    19→2. Explain: history, concepts, terminology, figures and intellectual genealogy in accessible language.
+    20→3. Verify: distinguish documented history, institutional/traditional narratives, and 165 interpretation.
+    21→4. Connect: researchers, students, communities, institutions, archives and contributors.
+    22→5. Serve: provide useful educational and community resources without pretending that a website replaces the living spiritual teacher, authorized institution, or legitimate spiritual transmission.
+    23→
+    24→### Proposed positioning
+    25→> **165.web.id — The Global Knowledge, Heritage & Digital Preservation Platform for TQN Qodiriyah wa Naqsyabandiyah.**
+    26→
+    27→Possible Indonesian positioning:
+    28→> **165.web.id — Pusat Pengetahuan, Warisan, Dokumentasi dan Pelestarian Digital TQN Qodiriyah wa Naqsyabandiyah untuk dunia.**
+    29→
+    30→---
+    31→
+    32→## 2. THE 165 EDITORIAL CONSTITUTION
+    33→
+    34→Every important page should follow five rules.
+    35→
+    36→### Rule A — Provenance before eloquence
+    37→Every historical claim should have a source, author/institution, date, and—where relevant—page/manuscript reference.
+    38→
+    39→### Rule B — Three truth layers
+    40→Label information as:
+    41→- **Documented History** — supported by traceable historical/academic/archival sources.
+    42→- **TQN/Institutional Tradition** — a lineage, recollection, hagiographic account, or institutional narrative presented as such.
+    43→- **165 Interpretation** — a contemporary educational or strategic synthesis created by 165.
+    44→
+    45→### Rule C — No invented silsilah
+    46→165 should never manufacture, “complete,” or silently reconcile a lineage that is contested or insufficiently documented. Publish competing versions with attribution and source notes when needed.
+    47→
+    48→### Rule D — Spiritual authority is not created by a website
+    49→Website membership, badges, subscriptions, or digital status must never be presented as equivalent to talqin, bai‘at, khirqah, ijazah, kemursyidan, or other forms of authorized spiritual transmission.
+    50→
+    51→### Rule E — Preserve the difference between education and initiation
+    52→Educational content can be public. Restricted spiritual practices, confidential guidance, or materials that a particular TQN authority considers non-public should only be published with appropriate authorization.
+    53→
+    54→---
+    55→
+    56→## 3. HISTORY: FROM THE UPSTREAM TO THE DIGITAL PRESENT
+    57→
+    58→### 3.1 The wider Sufi context
+    59→Tarekat should be introduced within the wider history of Islamic spirituality rather than appearing to begin abruptly with one organization. 165 should explain the relationship among **Islam — shari‘ah — tasawwuf — tariqah — adab — dzikr — suluk — ihsan**, while making clear that these terms have varied usages across periods and schools.
+    60→
+    61→The website should avoid treating one later institutional form as identical to the entire history of Sufism.
+    62→
+    63→### 3.2 Qadiriyya and Shaykh `Abd al-Qadir al-Jilani
+    64→`Abd al-Qadir al-Jilani (1077/78–1166) was a Hanbali scholar, preacher and Sufi shaykh associated with Baghdad; the Qadiri order took his name and developed historically after him. Encyclopaedia Iranica identifies him as the eponymous founder of the Qadiri order.  
+    65→
+    66→**165 lesson:** authority is preserved through learning, adab, practice and transmission—not merely through branding.
+    67→
+    68→### 3.3 Naqshbandiyya and Baha al-Din Naqshband
+    69→Baha al-Din Naqshband (1318–1389) became the eponym of the Naqshbandiyya, one of the major Sufi orders. Encyclopaedia Iranica notes the importance of disciplined adherence to shari‘ah and silent dhikr within the early Naqshbandi tradition.  
+    70→
+    71→**165 lesson:** inwardness and disciplined conduct should not be separated from outward ethical life.
+    72→
+    73→### 3.4 Ahmad Khatib Sambas and the TQN formation
+    74→Modern academic literature commonly identifies Shaykh Ahmad Khatib Sambas (1803–1875) as the Nusantara shaykh who formulated the Qadiriyah wa Naqsyabandiyah synthesis in the nineteenth century. Research based on manuscripts of *Fath al-‘Arifin* provides evidence that Ahmad Khatib had transmission links through both Qadiriyah and Naqshbandiyah.  
+    75→
+    76→**165 lesson:** TQN carries an important Nusantara intellectual history; it should be documented as a serious historical and scholarly subject, not merely as folklore.
+    77→
+    78→### 3.5 Transmission into Java
+    79→Research on the genealogy and spread of TQN in Java identifies major transmission lines through figures such as Shaykh Abdul Karim Banten, Shaykh Ahmad Thalhah Cirebon, and Shaykh Muhammad Hasbullah Madura, followed by several major centers in Java including Suryalaya, Rejoso, Mranggen and Pangentongan.  
+    80→
+    81→**165 lesson:** the history of TQN is a network, not a single straight line.
+    82→
+    83→### 3.6 Suryalaya and Abah Sepuh
+    84→The official history of Pondok Pesantren Suryalaya places the establishment of the pesantren at Godebag on 5 September 1905 and describes the role of Shaykh Tholhah bin Talabudin of Cirebon in supporting and authorizing Abah Sepuh within the TQN tradition. The exact biographical chronology should always be sourced because some details differ across institutional and scholarly materials.  
+    85→
+    86→**165 lesson:** institutions survive when spiritual teaching becomes disciplined education, community service and stewardship of place.
+    87→
+    88→### 3.7 Abah Anom
+    89→The Suryalaya record describes KH A. Shohibulwafa Tajul Arifin (Abah Anom) as born in 1915 and succeeding Abah Sepuh in 1956. Under his leadership, Suryalaya expanded education, community development and the Inabah rehabilitation initiative, alongside the continued dissemination of TQN. Academic literature also studies his educational and social roles.  
+    90→
+    91→**165 lesson:** a spiritual tradition can generate institutions that respond to real social needs while remaining rooted in its ethical vocabulary.
+    92→
+    93→### 3.8 From physical heritage to digital heritage
+    94→This is the point where **165 begins as a contemporary project**. 165 should not claim to be a historical continuation unless that institutional authority is formally established. Its role can be defined more modestly and powerfully: **to document, preserve, explain, connect and make discoverable the history and heritage of TQN for future generations.**
+    95→
+    96→**165 lesson:** the digital age creates a new amanah—preventing loss, distortion, disappearance and fragmentation of knowledge.
+    97→
+    98→---
+    99→
+   100→## 4. THE HIKMAH FRAMEWORK
+   101→
+   102→Every major historical article should end with a short “Hikmah untuk Zaman Ini” section.
+   103→
+   104→Recommended five recurring themes:
+   105→1. **Adab before influence.**
+   106→2. **Ilmu before certainty.**
+   107→3. **Silsilah before claims of authority.**
+   108→4. **Khidmah before prestige.**
+   109→5. **Preservation before virality.**
+   110→
+   111→These are 165’s educational interpretations, not quotations attributed to historical shuyukh unless separately sourced.
+   112→
+   113→---
+   114→
+   115→## 5. THE WEBSITE AS THE SOURCE OF TRUTH
+   116→
+   117→Social platforms should distribute attention. **The website should hold the canonical record.**
+   118→
+   119→### Primary navigation
+   120→1. Home
+   121→2. About 165
+   122→3. History
+   123→4. Silsilah
+   124→5. Masters & Figures
+   125→6. Teachings & Concepts
+   126→7. Library
+   127→8. Manuscripts & Heritage
+   128→9. Timeline
+   129→10. Places & Institutions
+   130→11. Research & Publications
+   131→12. Media Archive
+   132→13. Community
+   133→14. News & Events
+   134→15. Preservation Lab
+   135→16. Contact / Contribute
+   136→
+   137→### Core databases / entities
+   138→Every important object should be represented as structured data:
+   139→- Person
+   140→- Shaykh / Mursyid
+   141→- Institution
+   142→- Place
+   143→- Event
+   144→- Text / Book / Manuscript
+   145→- Photograph
+   146→- Audio
+   147→- Video
+   148→- Oral history
+   149→- Practice / Concept
+   150→- Source / Reference
+   151→- Collection
+   152→- Contributor
+   153→- Rights record
+   154→
+   155→### Permanent identifiers
+   156→Create stable IDs such as:
+   157→- `165-PER-0001` Person
+   158→- `165-TXT-0001` Text
+   159→- `165-MSS-0001` Manuscript
+   160→- `165-IMG-0001` Photograph
+   161→- `165-AUD-0001` Audio
+   162→- `165-VID-0001` Video
+   163→- `165-PLC-0001` Place
+   164→- `165-EVT-0001` Event
+   165→- `165-SRC-0001` Source
+   166→- `165-HIS-0001` Historical article
+   167→
+   168→Do not rely only on titles or filenames as identifiers.
+   169→
+   170→### Page-level provenance block
+   171→Each archival or historical page should visibly provide:
+   172→- source status
+   173→- original source
+   174→- author / institution
+   175→- date
+   176→- language
+   177→- rights status
+   178→- transcription / translation status
+   179→- editorial reviewer
+   180→- version number
+   181→- date last reviewed
+   182→- related records
+   183→
+   184→For long-term digital preservation, 165 can model preservation metadata around PREMIS concepts such as Objects, Events, Rights and Agents. PREMIS is maintained by the Library of Congress as an international standard for preservation metadata. 
+   185→
+   186→### Accessibility
+   187→Design toward WCAG 2.2 accessibility principles so the archive is usable by people with disabilities. WCAG is the W3C international standard for web accessibility. 
+   188→
+   189→---
+   190→
+   191→## 6. WHAT THE WEBSITE SHOULD FEEL LIKE
+   192→
+   193→The visual language should be **sacred, archival, scholarly, calm, contemporary and unmistakably Nusantara**.
+   194→
+   195→Avoid:
+   196→- excessive ornament
+   197→- pseudo-Arabic visual clichés
+   198→- sensational miracle imagery
+   199→- claims such as “the only true…” without authoritative basis
+   200→- a social-feed appearance as the homepage
+   201→
+   202→Prefer:
+   203→- deep editorial typography
+   204→- manuscript/document textures used sparingly
+   205→- historical maps and timelines
+   206→- documentary photography
+   207→- clear source labels
+   208→- bilingual content
+   209→- restrained motion
+   210→- fast search
+   211→- generous whitespace
+   212→
+   213→---
+   214→
+   215→## 7. SOCIAL MEDIA ARCHITECTURE
+   216→
+   217→### The central rule
+   218→**One canonical source → many formats → all routes return to 165.web.id.**
+   219→
+   220→### Instagram
+   221→Role: visual gateway and daily discovery.
+   222→
+   223→Formats:
+   224→- 6–10 slide historical carousel
+   225→- portrait of a figure + verified facts
+   226→- “1 istilah 165”
+   227→- timeline cards
+   228→- archive close-ups
+   229→- short reels
+   230→
+   231→CTA pattern:
+   232→> “Baca sumber lengkap di 165.web.id — ID: 165-HIS-xxxx”
+   233→
+   234→### Facebook
+   235→Role: community and long-form conversation.
+   236→
+   237→Use for:
+   238→- longer historical posts
+   239→- event information
+   240→- community stories
+   241→- photo albums
+   242→- livestream notices
+   243→- article distribution
+   244→
+   245→### TikTok
+   246→Role: historical storytelling for first-time learners.
+   247→
+   248→Series examples:
+   249→- “TQN dalam 60 Detik”
+   250→- “Siapa Syekh Ahmad Khatib Sambas?”
+   251→- “Membaca Silsilah dengan Benar”
+   252→- “Arsip Bicara”
+   253→- “Legenda vs Dokumen”
+   254→
+   255→The final line of every video should point to a canonical 165 article or archive record.
+   256→
+   257→### X
+   258→Role: scholarly snippets, threads, citations, announcements and networking.
+   259→
+   260→### LinkedIn
+   261→Role: institutional legitimacy and partnerships.
+   262→
+   263→Use for:
+   264→- digital preservation
+   265→- research partnerships
+   266→- heritage projects
+   267→- academic collaboration
+   268→- technology and archive initiatives
+   269→- organizational announcements
+   270→
+   271→### Additional platform to add
+   272→**YouTube** should be treated as a major long-form archive: lectures, oral history, documentary episodes, interviews and recorded conversations. Use the website as the canonical catalogue for each video.
+   273→
+   274→Later, consider a controlled WhatsApp/Telegram layer for community communication, not as the main knowledge archive.
+   275→
+   276→---
+   277→
+   278→## 8. THE 1 → 7 CONTENT ENGINE
+   279→
+   280→For every major research item, produce:
+   281→
+   282→1. One canonical website article.
+   283→2. One research/source card.
+   284→3. One Instagram carousel.
+   285→4. One short video for TikTok/Reels.
+   286→5. One Facebook long-form post.
+   287→6. One X thread.
+   288→7. One YouTube long-form or short archive piece when the subject warrants it.
+   289→
+   290→This makes social media an **outreach layer**, rather than a second competing archive.
+   291→
+   292→---
+   293→
+   294→## 9. MEMBERSHIP: SHOULD 165 HAVE IT?
+   295→
+   296→### Recommendation for the architecture
+   297→**Yes, but not as the first thing to build.** Start with a free public knowledge layer, then add accounts when users have a reason to log in.
+   298→
+   299→### Phase 1 — No mandatory login
+   300→Anyone can read, search, browse, listen and view the public archive.
+   301→
+   302→### Phase 2 — Free 165 account
+   303→Users can:
+   304→- bookmark articles
+   305→- save archive items
+   306→- subscribe to themes
+   307→- register for events
+   308→- receive newsletters
+   309→- track learning modules
+   310→
+   311→### Phase 3 — Contributor account
+   312→Verified contributors can:
+   313→- submit photographs
+   314→- submit oral-history leads
+   315→- suggest corrections
+   316→- contribute metadata
+   317→- submit collections for review
+   318→
+   319→### Phase 4 — Institutional / research account
+   320→Researchers, schools, pesantren, archives and partner institutions can receive controlled access to selected datasets or research workflows.
+   321→
+   322→### Important boundary
+   323→A digital account should **not** be named or described as proof of being a murid, ikhwan, disciple, or recipient of talqin unless the relevant authorized institution explicitly defines such a system.
+   324→
+   325→The website should never imply that clicking “Join” creates spiritual affiliation.
+   326→
+   327→---
+   328→
+   329→## 10. THE 165 COMMUNITY LADDER
+   330→
+   331→Public visitor → Registered reader → Learner → Contributor → Researcher → Institutional partner.
+   332→
+   333→Spiritual initiation and formal tarekat authority should remain a separate domain governed by the legitimate spiritual authorities and institutions concerned.
+   334→
+   335→---
+   336→
+   337→## 11. INTERNATIONALIZATION
+   338→
+   339→Launch with:
+   340→- Indonesian
+   341→- English
+   342→
+   343→Build the CMS so Arabic and additional languages can be added without rebuilding the database.
+   344→
+   345→Every translation must point back to one canonical source record. Do not allow translations to become uncontrolled independent versions of historical facts.
+   346→
+   347→### Recommended translation discipline
+   348→- proper names remain stable
+   349→- Arabic terms have a consistent transliteration policy
+   350→- titles of classical works retain original form + translated explanation
+   351→- disputed translations are marked
+   352→- quotations preserve original language where possible
+   353→
+   354→---
+   355→
+   356→## 12. ARCHIVE & PRESERVATION POLICY
+   357→
+   358→165 should behave like a digital archive, not only a blog.
+   359→
+   360→### Minimum preservation stack
+   361→- master files kept separately from web derivatives
+   362→- 3-2-1 backup strategy
+   363→- checksums / fixity checks for archival files
+   364→- versioned metadata
+   365→- rights records
+   366→- controlled vocabularies
+   367→- persistent identifiers
+   368→- periodic restoration tests
+   369→- documented ingest workflow
+   370→
+   371→For images/manuscripts, store an archival master and separate web derivatives. For important media, retain the original acquisition file where rights allow.
+   372→
+   373→### Archive ingest workflow
+   374→Receive → identify → rights check → scan/transfer → checksum → metadata → description → editorial review → publish derivative → preserve master → audit.
+   375→
+   376→---
+   377→
+   378→## 13. RESEARCH & CITATION POLICY
+   379→
+   380→For every serious historical page:
+   381→
+   382→**Primary sources:** manuscripts, archival documents, institutional records, contemporary testimony.  
+   383→**Secondary sources:** scholarly books and peer-reviewed research.  
+   384→**Tertiary sources:** encyclopedias, summaries and educational pages.
+   385→
+   386→When sources disagree:
+   387→> “Version A — source …”
+   388→> “Version B — source …”
+   389→> “165 editorial note — evidence currently available …”
+   390→
+   391→Do not silently select the most flattering version.
+   392→
+   393→---
+   394→
+   395→## 14. THE 165 MASTER TIME SCHEDULE — 12 MONTHS
+   396→
+   397→### Phase 0 — Weeks 1–2: Foundation
+   398→Deliverables:
+   399→- 165 mission
+   400→- editorial constitution
+   401→- authority boundary
+   402→- brand architecture
+   403→- domain structure
+   404→- document registry
+   405→
+   406→### Phase 1 — Weeks 3–6: Historical foundation
+   407→Deliverables:
+   408→- master chronology
+   409→- Qadiriyya dossier
+   410→- Naqshbandiyya dossier
+   411→- Ahmad Khatib Sambas dossier
+   412→- TQN Java genealogy map
+   413→- Suryalaya dossier
+   414→- Abah Sepuh dossier
+   415→- Abah Anom dossier
+   416→
+   417→### Phase 2 — Weeks 7–12: Website MVP
+   418→Deliverables:
+   419→- homepage
+   420→- history
+   421→- masters
+   422→- timeline
+   423→- glossary
+   424→- library shell
+   425→- source pages
+   426→- search
+   427→- contact/contribute
+   428→- bilingual architecture
+   429→
+   430→### Phase 3 — Weeks 13–20: Digital archive
+   431→Deliverables:
+   432→- archive database
+   433→- metadata schema
+   434→- ingest workflow
+   435→- rights workflow
+   436→- image/audio/video catalogue
+   437→- backup and preservation system
+   438→
+   439→### Phase 4 — Weeks 21–28: Content engine
+   440→Deliverables:
+   441→- 12 recurring social series
+   442→- monthly documentary cycle
+   443→- editorial calendar
+   444→- 1→7 content production workflow
+   445→
+   446→### Phase 5 — Weeks 29–36: Community
+   447→Deliverables:
+   448→- free account
+   449→- bookmarks
+   450→- newsletter
+   451→- events
+   452→- contributor submission form
+   453→- moderation rules
+   454→
+   455→### Phase 6 — Weeks 37–44: Global research network
+   456→Deliverables:
+   457→- English research portal
+   458→- researcher profile pages
+   459→- partner directory
+   460→- oral-history program
+   461→- international collaboration kit
+   462→
+   463→### Phase 7 — Weeks 45–52: 165 v1.0
+   464→Deliverables:
+   465→- full editorial audit
+   466→- source audit
+   467→- accessibility audit
+   468→- security audit
+   469→- backup restore test
+   470→- rights audit
+   471→- bilingual review
+   472→- public launch
+   473→- annual archive report
+   474→
+   475→---
+   476→
+   477→## 15. WEEKLY OPERATING RHYTHM
+   478→
+   479→Monday — Research & source verification  
+   480→Tuesday — Writing & editorial  
+   481→Wednesday — Archive ingestion / metadata  
+   482→Thursday — Visual / video production  
+   483→Friday — Publication & community response  
+   484→Saturday — QA, corrections and backlog cleanup  
+   485→Sunday — planning / rest / long-form reading
+   486→
+   487→### Monthly rhythm
+   488→Week 1: new history dossier  
+   489→Week 2: figure / place  
+   490→Week 3: archive object  
+   491→Week 4: synthesis / documentary / community story
+   492→
+   493→---
+   494→
+   495→## 16. HULU → HILIR MASTER TASK LIST
+   496→
+   497→### A. Identity & Governance
+   498→001. Freeze the official name of the platform.
+   499→002. Freeze the mission statement.
+   500→003. Define the legal/organizational status of 165.
+   501→004. Define relationship between 165 and existing TQN institutions.
+   502→005. Define who may speak for 165.
+   503→006. Define who may approve historical claims.
+   504→007. Create editorial constitution.
+   505→008. Create corrections policy.
+   506→009. Create conflict-of-interest policy.
+   507→010. Create public contact and escalation policy.
+   508→
+   509→### B. Source & Historical Research
+   510→011. Build master bibliography.
+   511→012. Build primary-source register.
+   512→013. Build institutional-source register.
+   513→014. Build scholarly-source register.
+   514→015. Build source reliability taxonomy.
+   515→016. Build master chronology.
+   516→017. Write Qadiriyya history.
+   517→018. Write Naqshbandiyya history.
+   518→019. Write Ahmad Khatib Sambas dossier.
+   519→020. Write TQN Java genealogy dossier.
+   520→
+   521→### C. Silsilah & People
+   522→021. Build people database.
+   523→022. Define person naming conventions.
+   524→023. Define transliteration policy.
+   525→024. Build lineage data model.
+   526→025. Separate spiritual lineage from biological genealogy.
+   527→026. Add source citation to every lineage edge.
+   528→027. Add confidence/status labels to contested links.
+   529→028. Create master shaykh profile template.
+   530→029. Create institutional profile template.
+   531→030. Build Suryalaya / Abah Sepuh / Abah Anom dossiers.
+   532→
+   533→### D. Knowledge Architecture
+   534→031. Define top-level categories.
+   535→032. Define controlled vocabulary.
+   536→033. Define glossary schema.
+   537→034. Define text/book schema.
+   538→035. Define manuscript schema.
+   539→036. Define media schema.
+   540→037. Define event schema.
+   541→038. Define place schema.
+   542→039. Define source schema.
+   543→040. Assign permanent IDs.
+   544→
+   545→### E. Website UX
+   546→041. Design information architecture.
+   547→042. Design homepage.
+   548→043. Design history page.
+   549→044. Design timeline.
+   550→045. Design silsilah explorer.
+   551→046. Design figure pages.
+   552→047. Design library page.
+   553→048. Design archive search.
+   554→049. Design contribute page.
+   555→050. Design multilingual switcher.
+   556→
+   557→### F. Technical Build
+   558→051. Configure repository.
+   559→052. Configure CMS.
+   560→053. Configure database.
+   561→054. Configure media storage.
+   562→055. Configure CDN/web delivery.
+   563→056. Configure search engine.
+   564→057. Configure structured metadata.
+   565→058. Configure analytics with privacy controls.
+   566→059. Configure backups.
+   567→060. Configure security and access roles.
+   568→
+   569→### G. Digital Preservation
+   570→061. Create ingest checklist.
+   571→062. Create checksum process.
+   572→063. Define archival master formats.
+   573→064. Define web derivative formats.
+   574→065. Create rights metadata.
+   575→066. Create preservation event logs.
+   576→067. Create backup rotation.
+   577→068. Test restore procedures.
+   578→069. Create archive audit schedule.
+   579→070. Create disaster-recovery plan.
+   580→
+   581→### H. Content Production
+   582→071. Create 12 permanent editorial series.
+   583→072. Create first 30 canonical articles.
+   584→073. Create first 100 glossary entries.
+   585→074. Create first 25 figure dossiers.
+   586→075. Create first 25 archive object records.
+   587→076. Create first 12 timeline modules.
+   588→077. Create first 10 oral-history interviews.
+   589→078. Create first 10 documentary videos.
+   590→079. Create English versions of priority pages.
+   591→080. Create monthly editorial calendar.
+   592→
+   593→### I. Social Ecosystem
+   594→081. Register/secure official handles.
+   595→082. Create unified bios.
+   596→083. Create link architecture back to 165.
+   597→084. Launch Instagram system.
+   598→085. Launch Facebook system.
+   599→086. Launch TikTok system.
+   600→087. Launch X system.
+   601→088. Launch LinkedIn system.
+   602→089. Launch YouTube archive.
+   603→090. Implement 1→7 content engine.
+   604→
+   605→### J. Community & Membership
+   606→091. Define public vs registered content.
+   607→092. Build free account system.
+   608→093. Build bookmarks.
+   609→094. Build newsletter subscriptions.
+   610→095. Build event registration.
+   611→096. Build contributor submission form.
+   612→097. Build contributor review workflow.
+   613→098. Build moderation system.
+   614→099. Build privacy/data-retention policy.
+   615→100. Launch membership only after a real use case is validated.
+   616→
+   617→### K. Globalization & Partnerships
+   618→101. Build English research portal.
+   619→102. Build institution directory.
+   620→103. Create research partnership kit.
+   621→104. Create archive donation / deposit kit.
+   622→105. Create oral-history consent form.
+   623→106. Create volunteer/research contributor handbook.
+   624→107. Create international press kit.
+   625→108. Create academic citation guide.
+   626→109. Create public API/data-export roadmap.
+   627→110. Create international advisory network plan.
+   628→
+   629→### L. Launch & Stewardship
+   630→111. Run source audit.
+   631→112. Run terminology audit.
+   632→113. Run translation audit.
+   633→114. Run accessibility audit.
+   634→115. Run mobile audit.
+   635→116. Run security audit.
+   636→117. Run backup restoration test.
+   637→118. Run rights audit.
+   638→119. Publish 165 Transparency / About the Archive page.
+   639→120. Publish 165 v1.0 and begin annual stewardship cycle.
+   640→
+   641→---
+   642→
+   643→## 17. THE FIRST 10 THINGS TO DO NOW
+   644→
+   645→Do not start by building every page.
+   646→
+   647→**Task 001** — Freeze 165’s mission and scope.  
+   648→**Task 002** — Freeze 165’s relationship to TQN and its institutions.  
+   649→**Task 007** — Approve the Editorial Constitution.  
+   650→**Task 011** — Open the Master Bibliography.  
+   651→**Task 016** — Build the Master Chronology.  
+   652→**Task 021** — Start the People Database.  
+   653→**Task 031** — Freeze the Information Architecture.  
+   654→**Task 051** — Set up the repository/CMS architecture.  
+   655→**Task 071** — Define the permanent editorial series.  
+   656→**Task 081** — Secure the official social identities and unify the bios.
+   657→
+   658→**Do not move to large-scale content production until Tasks 001–016 have a stable baseline.**
+   659→
+   660→---
+   661→
+   662→## 18. THE PERMANENT CONTENT SERIES
+   663→
+   664→1. **History of TQN**
+   665→2. **Faces of the Chain**
+   666→3. **Archive of the Month**
+   667→4. **Manuscript of the Month**
+   668→5. **One Term / Satu Istilah**
+   669→6. **Timeline 165**
+   670→7. **Place of the Path**
+   671→8. **Oral History 165**
+   672→9. **Research Notes**
+   673→10. **Hikmah for Today**
+   674→11. **From the Archive**
+   675→12. **165 Global Voices**
+   676→
+   677→---
+   678→
+   679→## 19. A MODEL ARTICLE TEMPLATE
+   680→
+   681→# Title
+   682→
+   683→**Summary**  
+   684→Two or three sentences.
+   685→
+   686→**What is documented?**  
+   687→Short factual section.
+   688→
+   689→**Sources**  
+   690→Primary and secondary references.
+   691→
+   692→**Historical context**  
+   693→Explanation.
+   694→
+   695→**TQN tradition / institutional account**  
+   696→Clearly attributed.
+   697→
+   698→**What scholars say**  
+   699→Attributed where applicable.
+   700→
+   701→**Hikmah untuk zaman ini**  
+   702→165 interpretation.
+   703→
+   704→**Related people / places / texts**  
+   705→Linked records.
+   706→
+   707→**Archive metadata**  
+   708→ID, version, rights, editorial review date.
+   709→
+   710→---
+   711→
+   712→## 20. THE 165 QUALITY BAR
+   713→
+   714→Every flagship page should pass six tests:
+   715→
+   716→**Truth** — Are claims sourced?  
+   717→**Context** — Is historical context adequate?  
+   718→**Transmission** — Is lineage/authority distinguished from biography?  
+   719→**Language** — Is translation careful?  
+   720→**Preservation** — Can the record be found and understood years later?  
+   721→**Usefulness** — Does the page help a reader do or understand something?
+   722→
+   723→---
+   724→
+   725→## 21. THE STRATEGIC END STATE
+   726→
+   727→By the mature stage, 165 should feel like a hybrid of:
+   728→
+   729→- a scholarly reference work,
+   730→- a digital archive,
+   731→- a heritage institution,
+   732→- an educational platform,
+   733→- a documentary media network,
+   734→- and a community gateway.
+   735→
+   736→The website is the **memory**.
+   737→
+   738→The social channels are the **voice and doorway**.
+   739→
+   740→The archive is the **evidence**.
+   741→
+   742→The editorial system is the **discipline**.
+   743→
+   744→The community is the **living network**.
+   745→
+   746→And the spiritual tradition itself must remain larger than the platform that documents it.
+   747→
+   748→---
+   749→
+   750→## 22. RESEARCH NOTES / STARTING SOURCES
+   751→
+   752→- Encyclopaedia Iranica, “`Abd-al-Qader Jilani” — biographical and historical context for the Qadiri tradition.
+   753→- Encyclopaedia Iranica, “Baha-al-Din Naqshband” — historical context for the Naqshbandi tradition.
+   754→- Kementerian Agama journal article: “Petunjuk Baru Silsilah Ahmad Khatib Sambas: Tiga Teks Tulisan Melayu” — manuscript evidence regarding Ahmad Khatib Sambas and both Qadiriyah/Naqshbandiyah links.
+   755→- Al-A‘raf journal article: “Genealogi dan Penyebaran Thariqah Qadiriyah wa Naqshbandiyah di Jawa.”
+   756→- AVATARA journal article on the development of TQN in East Java under KH Mustain Romly.
+   757→- Official Pondok Pesantren Suryalaya history pages for institutional chronology and Suryalaya tradition.
+   758→- Journal studies on TQN Suryalaya and Abah Anom.
+   759→- Library of Congress PREMIS for digital-preservation metadata concepts.
+   760→- W3C WCAG for accessibility requirements.
+   761→
+   762→---
+   763→
+   764→## 23. GOVERNING PRINCIPLE
+   765→
+   766→> **165 should preserve the memory of the path without pretending to become the path.**
+   767→
+   768→That sentence should remain visible to the team throughout the project.
+   769→

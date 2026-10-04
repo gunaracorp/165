@@ -311,3 +311,24 @@ Work Log:
 Stage Summary:
 - Ruang "Rahasia" menjadi bantahan terhormat atas pasar bebas rahasia palsu: yang disembunyikan Allah tetap disembunyikan, yang dibukakan dikembalikan pada ilmunya, yang dipalsukan ditelanjangi takarannya — bahkan hadis peringatan pun diberi grade, memperlihatkan disiplin 165 bekerja pada dirinya sendiri.
 - Arsip QA: .qa/rahasia-makna.png, .qa/rahasia-misteri-arab.png, .qa/rahasia-peringatan.png, .qa/rahasia-en.png, .qa/rahasia-mobile.png, .qa/footer-link-rahasia.png.
+
+---
+Task ID: 34
+Agent: Master Polymath — Sage Universal (main)
+Task: Audit "sudah dimasukan belum?" atas 8 dokumen tata kelola yang didepositkan Founder (upload/), lalu melengkapi yang hilang. Temuan audit: docs/canon sudah memuat 6 dokumen IDENTIK byte-per-byte (000, 007, 008, 009, Master Blueprint, Arsitektur Sistem — diverifikasi diff), tetapi DUA dokumen belum masuk: 010 Correction, Retraction & Dispute Policy dan 011 Ethics, Conflict of Interest & Transparency Policy.
+
+Work Log:
+- SELURUH 8 dokumen unggahan dibaca tuntas (±10.800 baris): Master Blueprint (23 §), Master System Architecture (1+144=145), Doc 000 (30 §, 144-dok/12-lapis, status codes, decision register), Doc 007 (45 §, decision rights Level 0–4, RACI, non-negotiables), Doc 008 (87 §, E1–E5, silsilah, AI hallucination control), Doc 009 (80 §, 165-SRC/CLM, claim mapping), Doc 010 (100 §, koreksi A–F, S0–S3, retraction, 165-COR/165-DSP), Doc 011 (123 §, COI, 165-COI, pay-to-legitimacy, Sunlight Test, zero-tolerance).
+- DEPOSIT VERBATIM: 010 & 011 → docs/canon/ (diff-identik dengan upload); docs:gen → bundle 8 dokumen (207,6 KB).
+- REGISTRY: src/lib/documents.ts + 2 entri (010: kode/kind/status/role/layer; 011 idem) — keduanya Layer 01 Constitutional & Governance sesuai Doc 000 §5; koreksi kecil layer 009 (sebelumnya "Layer 09 — Research & Scholarship" → "Layer 01") menyesuaikan arsitektur kanonik Doc 000.
+- I18N DELAPAN: catalog.ts (id+en: home.docsTitle, home.depositBody, sec.documents.lede, docs.searchPlaceholder) → "Delapan/Eight"; 4 kamus kurasi (ms/jv/su/ar) diselaraskan manual; 236 kunci tua ("enam") dicabut dari 59 kamus AI; gen-i18n-topup.ts dijalankan hingga 59/59 lengkap, 0 sisa kunci, 0 jejak "enam/six/ست وثائق" (translate: TR "Sekiz", DE "acht", PT "Oito"…).
+- DB (Doc 010 §30): ringkasan 165-SRC-000003 "six/enam canonical documents" → "eight/delapan" dengan VersionSnapshot v3 + AuditLog (nilai lama dipelihara — pure-append); db:export dieksekusi ulang (49 entitas, 32 relasi, 3 sanad).
+- README: 3 titik "6 dokumen/enam" → "8 dokumen/delapan" (tabel ruang, § tata kelola kanonik, status tercatat).
+- VERIFIKASI (agent-browser): #documents → lede "Delapan dokumen…" ✓; kartu 165-010 & 165-011 tampil ✓; pembaca 010: TOC 106 bagian, konten verbatim (S0–S3, RETRACTION §) ✓; pencarian lintas-dokumen "conflict of interest" → 11 potongan dari 000/010/011 ✓; pembaca 011 ✓; beranda: docsTitle + banner deposit menyebut Kebijakan Koreksi 010 & Kebijakan Etika 011 ✓; ?lang=en → "The eight governing documents…" ✓; mobile 390 scrollWidth=390 ✓; /api/stats 49/32/3 ✓; console 0 error; dev.log hanya 200 (error transien "missing from bundle" hanya pada jendela antara edit registry dan docs:gen — pulih sendiri via Fast Refresh); lint bersih ✓.
+- OPS: pipeline topup terbukti mati-mati saat setsid di shell ini → pola baru: jalankan foreground ber-putaran resume-safe hingga antrean kosong (catatan untuk sesi berikutnya).
+- QA: .qa/docs8-home-banner.png, .qa/docs8-shelf.png, .qa/docs8-011-reader.png, .qa/docs8-mobile.png.
+
+Stage Summary:
+- Jawaban audit atas pertanyaan Founder: kini YA — 8 dari 8 dokumen tata kelola terdeposit verbatim, terdaftar, terbaca utuh di Ruang Dokumen, tercari lintas-dokumen, dan diumumkan jujur di beranda dalam 178 bahasa.
+- Lapisan Konstitusional 165 kini berdiri dari 000 s.d. 011 (menunggu 012 Authority, Attribution & Representation + rekonsiliasi 001–006 sesuai Doc 000 §30/§24).
+- Sengketa nol dengan dokumen: yang berubah hanya metadata publikasi situs; teks dokumen tidak disentuh satu bit pun.

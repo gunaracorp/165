@@ -1,5 +1,5 @@
 // 165 — Registry dokumen kanonik (Master Control, Governance, Konstitusi Editorial,
-// Kebijakan Sumber, Master Blueprint, Arsitektur Sistem).
+// Kebijakan Sumber, Kebijakan Koreksi, Kebijakan Etika, Master Blueprint, Arsitektur Sistem).
 // Isi dokumen disalin VERBATIM dari docs/canon/*.md ke dalam bundle (lihat scripts/gen-documents.ts).
 // Prinsip Source-First: yang tampil di situs adalah dokumen aslinya, bukan parafrasa.
 import { CANON_DOCS, CANON_GENERATED_AT, type CanonDoc } from '@/data/documents/canon'
@@ -101,7 +101,33 @@ const REGISTRY: Array<DocMeta & { file: string }> = [
     status: 'MASTER DRAFT — CONTROL BASELINE',
     version: 'v1.0',
     role: 'Anatomi sumber 165: Source ID kanonik, jenis & kelas sumber, objek klaim, model sumber→klaim, status bukti, penilaian sumber, kebijakan sumber primer/oral/arsip keluarga, sitasi publik & researcher mode, source graph & reverse lookup, kebijakan sitasi AI, sampai model database registry sumber.',
-    layer: 'Layer 09 — Research & Scholarship',
+    layer: 'Layer 01 — Constitutional & Governance',
+  },
+  {
+    key: '010',
+    file: '010_165_CORRECTION_RETRACTION_AND_DISPUTE_POLICY_v1_0.md',
+    code: '010',
+    docId: '165-010',
+    title: '165 Correction, Retraction & Dispute Policy',
+    subtitle: 'Cara 165 berubah tanpa kehilangan sejarah perubahannya',
+    kind: 'Kebijakan',
+    status: 'MASTER DRAFT — CORRECTION, RETRACTION & DISPUTE BASELINE',
+    version: 'v1.0',
+    role: 'Mekanika koreksi 165: enam tipe koreksi A–F, tingkat keparahan S0–S3, alur triage, status koreksi, koreksi senyap vs material, riwayat versi, retraction vs deletion, pensiunan sumber, sengketa silsilah/tanggal/identitas/kutipan/manuskrip, propagasi koreksi ke AI & graf pengetahuan, buku besar 165-COR & 165-DSP, hingga budaya koreksi tanpa dendam.',
+    layer: 'Layer 01 — Constitutional & Governance',
+  },
+  {
+    key: '011',
+    file: '011_165_ETHICS_CONFLICT_OF_INTEREST_AND_TRANSPARENCY_POLICY_v1_0.md',
+    code: '011',
+    docId: '165-011',
+    title: '165 Ethics, Conflict of Interest & Transparency Policy',
+    subtitle: 'Integritas ketika uang, kepentingan, dan kekuasaan hadir',
+    kind: 'Kebijakan',
+    status: 'MASTER DRAFT — ETHICS & TRANSPARENCY BASELINE',
+    version: 'v1.0',
+    role: 'Perisai integritas 165: definisi konflik kepentingan (actual/potential/perceived), register 165-COI, materialitas & recusal, etika sponsor-donor-partnership, larangan pay-to-legitimacy, batas komersial spiritual, etika data-privasi-AI, whistleblowing tanpa retaliasi, uji Sunlight & Future Historian, area zero-tolerance, hingga formula etika Disclose→Assess→Separate→Decide→Record→Review.',
+    layer: 'Layer 01 — Constitutional & Governance',
   },
 ]
 

@@ -65,7 +65,7 @@
 | **Manaqib** | **Manaqib Syekh Abdul Qodir Al-Jaelani lengkap** — riwayat hidup, karya, silsilah Qadiriyyah, karamah ber-grade, hikam, posisi dalam TQN, bibliografi |
 | **Rahasia** | **Rahasia Al-Qur'an & Hadis** — lapisan makna zahir-batin, misteri yang memang disembunyikan, ilmu penjaga, peringatan kejujuran, dzikr & sirr dalam TQN |
 | **Tentang / About** | Sejarah & tata kelola institusi |
-| **Dokumen / Documents** | Ruang Dokumen — **6 dokumen kendali kanonik verbatim** (Master Control 000, Tata Kelola 007, Konstitusi Editorial 008, Kebijakan Sumber & Sitasi 009, Master Blueprint, Arsitektur Sistem) |
+| **Dokumen / Documents** | Ruang Dokumen — **8 dokumen kendali kanonik verbatim** (Master Control 000, Tata Kelola 007, Konstitusi Editorial 008, Kebijakan Sumber & Sitasi 009, Kebijakan Koreksi & Sengketa 010, Kebijakan Etika & Transparansi 011, Master Blueprint, Arsitektur Sistem) |
 | **SEO** | Arsitektur 1.200+ halaman permanen, data terstruktur, hreflang 178 bahasa |
 | **Kontribusi / Contribute** | Alur kiriman publik → telaah dewan → publikasi (kontribusi ≠ publikasi) |
 | **Ruang Admin / Admin** | Konsol kurasi internal |
@@ -132,7 +132,7 @@ bun run dev              # http://localhost:3000
 
 ## 📜 Tata Kelola & Dokumen Kanonik — Governance & Canonical Documents
 
-Enam dokumen kendali didepositkan pendiri dan **dibaca verbatim** di Ruang Dokumen — tanpa parafrasa, dengan ID kanonik, versi, dan status masing-masing. Sumber kebenaran fisiknya: `docs/canon/*.md`; salinan situs diregenerasi lewat `bun run docs:gen`. Perubahan hanya lewat alur tata kelola — **tidak pernah disunting diam-diam**.
+Delapan dokumen kendali didepositkan pendiri dan **dibaca verbatim** di Ruang Dokumen — tanpa parafrasa, dengan ID kanonik, versi, dan status masing-masing. Sumber kebenaran fisiknya: `docs/canon/*.md`; salinan situs diregenerasi lewat `bun run docs:gen`. Perubahan hanya lewat alur tata kelola — **tidak pernah disunting diam-diam**.
 
 Rekam kelembagaan berjalan di `worklog.md` (pure-append, satu arsip bersama untuk semua agen).
 
@@ -150,7 +150,7 @@ Siap Vercel (standalone). Snapshot `heritage-snapshot.json` membuat UI tetap utu
 
 ## 📈 Status Terbuka (jujur)
 
-- **Tercatat:** 6 dokumen kanonik, 3 jalur sanad, entitas & relasi ber-grade, Manaqib lengkap, Rahasia Kitab Suci, 178 bahasa.
+- **Tercatat:** 8 dokumen kanonik, 3 jalur sanad, entitas & relasi ber-grade, Manaqib lengkap, Rahasia Kitab Suci, 178 bahasa.
 - **Ditunggu deposit:** Founder's Charter & dokumen yang masih dideklarasikan, dossier ijazah per-generasi (Qadiriyya & Naqshbandiyya), arsip kitab & manuskrip internal, dokumentasi praktik majelis lokal.
 
 ---

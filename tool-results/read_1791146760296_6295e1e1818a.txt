@@ -1,0 +1,1102 @@
+     1→# 007 — 165 GOVERNANCE & DECISION RIGHTS
+     2→
+     3→**Project:** 165.web.id  
+     4→**Institutional Vision:** TQN Qodiriyah wa Naqsyabandiyah Global Knowledge, Heritage & Digital Preservation Platform  
+     5→**Document ID:** 165-007  
+     6→**Version:** 1.0  
+     7→**Status:** MASTER DRAFT — GOVERNANCE BASELINE  
+     8→**Owner:** Founder & Chief Architect — 165.web.id  
+     9→**Canonical Language:** Bahasa Indonesia  
+    10→**Prepared:** 2026-10-01  
+    11→
+    12→---
+    13→
+    14→# 1. PURPOSE
+    15→
+    16→Dokumen ini menetapkan arsitektur tata kelola dan **decision rights** untuk 165.
+    17→
+    18→Tujuannya adalah memastikan bahwa:
+    19→
+    20→- keputusan dibuat oleh pihak yang tepat,
+    21→- tanggung jawab tidak tumpang tindih,
+    22→- kewenangan founder jelas,
+    23→- kepentingan institusi terlindungi,
+    24→- kualitas ilmiah dan editorial terlindungi,
+    25→- aset dan arsip terlindungi,
+    26→- keputusan dapat diaudit,
+    27→- konflik dapat diselesaikan,
+    28→- organisasi dapat tumbuh tanpa kehilangan arah,
+    29→- dan 165 dapat tetap berjalan lintas generasi.
+    30→
+    31→Dokumen ini merupakan **governance framework internal**. Ia tidak dengan sendirinya menggantikan anggaran dasar, badan hukum, kontrak kerja, peraturan negara, atau dokumen legal lain yang berlaku.
+    32→
+    33→---
+    34→
+    35→# 2. GOVERNANCE PHILOSOPHY
+    36→
+    37→165 dibangun dengan prinsip:
+    38→
+    39→> **Clear authority, accountable power, documented decisions, protected mission.**
+    40→
+    41→Empat asas utamanya:
+    42→
+    43→## 2.1 Mission Protection
+    44→
+    45→Visi dan misi inti 165 tidak boleh berubah hanya karena pergantian orang, tren teknologi, tekanan komersial, atau kepentingan jangka pendek.
+    46→
+    47→## 2.2 Authority With Accountability
+    48→
+    49→Kewenangan selalu disertai kewajiban untuk menjelaskan alasan keputusan dan dampaknya.
+    50→
+    51→## 2.3 Domain Expertise
+    52→
+    53→Keputusan teknis harus ditentukan oleh orang yang memiliki kompetensi relevan.
+    54→
+    55→Contoh:
+    56→
+    57→- keputusan scholarly → research authority,
+    58→- keputusan archive → archive authority,
+    59→- keputusan security → security authority,
+    60→- keputusan finance → finance authority.
+    61→
+    62→## 2.4 Separation of Roles
+    63→
+    64→Tidak semua keputusan boleh diambil oleh orang yang sama.
+    65→
+    66→165 harus menghindari:
+    67→
+    68→> one person = creator + reviewer + approver + financial controller
+    69→
+    70→untuk keputusan yang berdampak tinggi.
+    71→
+    72→---
+    73→
+    74→# 3. GOVERNANCE OBJECTIVES
+    75→
+    76→Governance 165 harus menjaga lima kepentingan sekaligus:
+    77→
+    78→1. **Mission**
+    79→2. **Historical & scholarly integrity**
+    80→3. **Heritage and archive preservation**
+    81→4. **Operational sustainability**
+    82→5. **Financial sustainability**
+    83→
+    84→Tidak boleh ada satu kepentingan yang secara otomatis menghapus empat lainnya.
+    85→
+    86→---
+    87→
+    88→# 4. GOVERNANCE STRUCTURE
+    89→
+    90→Arsitektur target:
+    91→
+    92→```text
+    93→                     165 MISSION
+    94→                          │
+    95→                       FOUNDER
+    96→                          │
+    97→              FOUNDER'S RESERVED POWERS
+    98→                          │
+    99→                 ┌────────┴────────┐
+   100→                 │                 │
+   101→            GOVERNING BODY    ADVISORY COUNCIL
+   102→                 │                 │
+   103→                 └────────┬────────┘
+   104→                          │
+   105→                   EXECUTIVE / CEO
+   106→                          │
+   107→        ┌─────────┬───────┼────────┬─────────┐
+   108→        │         │       │        │         │
+   109→     Editorial Research Archive   Technology Finance
+   110→        │         │       │        │         │
+   111→        └─────────┴───────┼────────┴─────────┘
+   112→                          │
+   113→                    Operations Team
+   114→                          │
+   115→             Community / Contributors
+   116→```
+   117→
+   118→Struktur di atas adalah **target-state architecture**, bukan pernyataan bahwa seluruh posisi tersebut sudah ada saat ini.
+   119→
+   120→---
+   121→
+   122→# 5. GOVERNANCE BODIES
+   123→
+   124→## 5.1 Founder
+   125→
+   126→Founder adalah penjaga visi, identitas, dan kontinuitas strategis 165.
+   127→
+   128→Founder tidak harus menjadi pengambil seluruh keputusan operasional sehari-hari.
+   129→
+   130→Peran founder adalah terutama:
+   131→
+   132→- menjaga mission,
+   133→- menjaga identity,
+   134→- menjaga constitutional principles,
+   135→- menetapkan strategic direction,
+   136→- melindungi founder-created intellectual property sesuai aturan yang berlaku,
+   137→- mengangkat atau menyetujui pejabat strategis,
+   138→- menjaga continuity,
+   139→- dan memastikan 165 tidak keluar dari mandat dasarnya.
+   140→
+   141→---
+   142→
+   143→# 6. FOUNDER'S RESERVED POWERS
+   144→
+   145→Founder memiliki reserved powers pada keputusan yang menyentuh identitas dan keberlangsungan fundamental 165.
+   146→
+   147→Reserved powers yang disarankan:
+   148→
+   149→### A. Identity
+   150→
+   151→Persetujuan terhadap perubahan:
+   152→
+   153→- official name,
+   154→- core mission,
+   155→- core vision,
+   156→- foundational brand,
+   157→- constitutional purpose.
+   158→
+   159→### B. Mission
+   160→
+   161→Persetujuan terhadap perubahan besar yang menggeser 165 dari knowledge/heritage/preservation platform menjadi model yang secara substansial berbeda.
+   162→
+   163→### C. Structural Change
+   164→
+   165→Persetujuan terhadap:
+   166→
+   167→- merger,
+   168→- dissolution,
+   169→- sale of core institutional assets,
+   170→- transfer of controlling rights,
+   171→- fundamental governance restructuring.
+   172→
+   173→### D. Core IP
+   174→
+   175→Persetujuan atas pelepasan atau transfer aset IP inti yang secara material menentukan identitas 165, subject to applicable law and formal legal instruments.
+   176→
+   177→### E. Succession Framework
+   178→
+   179→Founder berwenang mengusulkan atau menetapkan mekanisme succession sebagaimana diatur dalam Founder Charter dan dokumen konstitusional.
+   180→
+   181→### F. Mission Safeguard
+   182→
+   183→Founder dapat meminta review khusus apabila keputusan organisasi dinilai berpotensi mengubah mission secara fundamental.
+   184→
+   185→**Catatan:** reserved powers harus diterjemahkan ke instrumen legal yang sesuai apabila 165 menjadi badan hukum atau struktur korporasi formal.
+   186→
+   187→---
+   188→
+   189→# 7. LIMITS OF FOUNDER AUTHORITY
+   190→
+   191→Founder authority bukan berarti founder boleh melakukan seluruh hal tanpa kontrol.
+   192→
+   193→Untuk keputusan tertentu, founder harus tetap tunduk pada:
+   194→
+   195→- hukum yang berlaku,
+   196→- contractual obligations,
+   197→- fiduciary duties apabila berlaku,
+   198→- rights of donors/contributors,
+   199→- privacy obligations,
+   200→- intellectual-property law,
+   201→- archival rights,
+   202→- scholarly integrity,
+   203→- documented governance procedures.
+   204→
+   205→Founder tidak boleh mengubah fakta sejarah hanya karena kepentingan branding.
+   206→
+   207→Founder juga tidak boleh memperlakukan otoritas spiritual TQN sebagai aset komersial pribadi 165.
+   208→
+   209→---
+   210→
+   211→# 8. GOVERNING BODY
+   212→
+   213→Untuk fase institusional, 165 dapat memiliki **Governing Board / Dewan Pengarah**.
+   214→
+   215→Fungsi:
+   216→
+   217→- mission oversight,
+   218→- strategic oversight,
+   219→- risk oversight,
+   220→- financial oversight,
+   221→- executive accountability,
+   222→- major institutional approval.
+   223→
+   224→Board bukan pengganti founder.
+   225→
+   226→Board juga bukan pengganti otoritas spiritual TQN.
+   227→
+   228→Board bertugas mengelola tata kelola institusi 165.
+   229→
+   230→---
+   231→
+   232→# 9. ADVISORY COUNCIL
+   233→
+   234→165 dapat memiliki beberapa advisory councils berdasarkan domain.
+   235→
+   236→Contoh:
+   237→
+   238→### Historical & Islamic Studies Advisory Council
+   239→Untuk:
+   240→
+   241→- sejarah,
+   242→- tasawuf,
+   243→- TQN studies,
+   244→- manuscript studies.
+   245→
+   246→### Heritage & Archives Advisory Council
+   247→Untuk:
+   248→
+   249→- archives,
+   250→- conservation,
+   251→- metadata,
+   252→- digital preservation.
+   253→
+   254→### Technology & AI Advisory Council
+   255→Untuk:
+   256→
+   257→- software architecture,
+   258→- AI governance,
+   259→- cybersecurity,
+   260→- data infrastructure.
+   261→
+   262→### Global & Institutional Advisory Council
+   263→Untuk:
+   264→
+   265→- universities,
+   266→- libraries,
+   267→- museums,
+   268→- international partnerships.
+   269→
+   270→Advisory council memberi nasihat dan review.
+   271→
+   272→Ia tidak otomatis memiliki executive authority kecuali diberikan secara tertulis.
+   273→
+   274→---
+   275→
+   276→# 10. EXECUTIVE LEADERSHIP
+   277→
+   278→Ketika 165 berkembang, fungsi operasional dapat dipisahkan dari founder.
+   279→
+   280→Target structure:
+   281→
+   282→| Role | Primary Responsibility |
+   283→|---|---|
+   284→| Founder / Chief Architect | Mission, vision, continuity, strategic architecture |
+   285→| CEO / Executive Director | Overall execution |
+   286→| COO | Operations |
+   287→| Chief Research Officer | Research & scholarly standards |
+   288→| Chief Archivist / Heritage Director | Archive & preservation |
+   289→| CTO | Technology |
+   290→| CISO / Security Lead | Cybersecurity |
+   291→| CFO / Finance Lead | Finance & controls |
+   292→| Editorial Director | Publications & editorial |
+   293→| Community Director | Community |
+   294→| Partnerships Director | Institutional relations |
+   295→| Growth / Media Director | Distribution & audience |
+   296→
+   297→Tidak semua posisi harus dibentuk sekarang.
+   298→
+   299→**Rule: structure follows operational need.**
+   300→
+   301→---
+   302→
+   303→# 11. DECISION RIGHTS MODEL
+   304→
+   305→Setiap keputusan penting harus memiliki empat fungsi:
+   306→
+   307→### PROPOSE
+   308→Siapa yang mengusulkan?
+   309→
+   310→### REVIEW
+   311→Siapa yang memeriksa?
+   312→
+   313→### APPROVE
+   314→Siapa yang memiliki hak menyetujui?
+   315→
+   316→### EXECUTE
+   317→Siapa yang melaksanakan?
+   318→
+   319→Model ini mencegah kebingungan.
+   320→
+   321→---
+   322→
+   323→# 12. DECISION AUTHORITY LEVELS
+   324→
+   325→## LEVEL 0 — INDIVIDUAL / ROUTINE
+   326→
+   327→Contoh:
+   328→
+   329→- penjadwalan post,
+   330→- typo correction,
+   331→- resizing visual,
+   332→- routine admin.
+   333→
+   334→Dapat didelegasikan.
+   335→
+   336→## LEVEL 1 — DOMAIN DECISION
+   337→
+   338→Contoh:
+   339→
+   340→- editorial format,
+   341→- technical implementation,
+   342→- archive metadata,
+   343→- research workflow.
+   344→
+   345→Diputuskan oleh domain lead.
+   346→
+   347→## LEVEL 2 — CROSS-FUNCTIONAL
+   348→
+   349→Contoh:
+   350→
+   351→- perubahan taxonomy,
+   352→- perubahan website IA,
+   353→- launch membership,
+   354→- major content campaign.
+   355→
+   356→Memerlukan cross-functional review.
+   357→
+   358→## LEVEL 3 — STRATEGIC
+   359→
+   360→Contoh:
+   361→
+   362→- major partnership,
+   363→- major revenue model,
+   364→- significant technology migration,
+   365→- international expansion.
+   366→
+   367→Memerlukan executive + appropriate governing approval.
+   368→
+   369→## LEVEL 4 — RESERVED / CONSTITUTIONAL
+   370→
+   371→Contoh:
+   372→
+   373→- mission change,
+   374→- dissolution,
+   375→- transfer of core IP,
+   376→- major structural transformation.
+   377→
+   378→Founder + governing mechanism sesuai constitutional framework.
+   379→
+   380→---
+   381→
+   382→# 13. DECISION RIGHTS MATRIX
+   383→
+   384→| Decision Area | Propose | Review | Approve | Execute |
+   385→|---|---|---|---|---|
+   386→| Mission | Founder | Governing Body | Reserved Authority | Executive |
+   387→| Brand identity | Brand Lead | Founder | Founder / delegated authority | Brand Team |
+   388→| Historical article | Research/Editorial | Subject reviewer | Editorial authority | Editorial |
+   389→| Historical claim correction | Anyone | Research reviewer | Editorial authority | Editorial |
+   390→| Manuscript accession | Archivist | Heritage reviewer | Archive authority | Archive team |
+   391→| Archive publication rights | Archivist | Legal/rights review | Authorized authority | Archive team |
+   392→| Website UX | Product | Tech + UX | Product authority | Tech team |
+   393→| Security architecture | CTO/Security | Security review | Executive authority | Tech/Security |
+   394→| New revenue product | Business | Finance + Legal + Mission review | Executive / Board threshold | Business team |
+   395→| Major partnership | Partnerships | Legal + Mission + Risk | Executive / Board threshold | Partnerships |
+   396→| Public institutional statement | Communications | Relevant domain review | Authorized spokesperson | Communications |
+   397→| AI-generated historical content | AI/Product | Research + Editorial | Editorial authority | AI/Content system |
+   398→| New country expansion | Strategy | Legal + Finance + Research | Executive / Board threshold | Expansion team |
+   399→| Core IP transfer | Founder/Board | Legal | Reserved authority | Authorized officers |
+   400→| Dissolution | Governing body | Legal + Founder | Constitutional mechanism | Authorized officers |
+   401→
+   402→---
+   403→
+   404→# 14. RACI STANDARD
+   405→
+   406→For major projects use:
+   407→
+   408→- **R — Responsible**
+   409→- **A — Accountable**
+   410→- **C — Consulted**
+   411→- **I — Informed**
+   412→
+   413→Rule:
+   414→
+   415→> Every significant initiative must have exactly one accountable decision owner unless the governing document explicitly requires joint authority.
+   416→
+   417→---
+   418→
+   419→# 15. CONFLICT OF INTEREST
+   420→
+   421→Every person with material decision authority should disclose relevant conflicts.
+   422→
+   423→Examples:
+   424→
+   425→- vendor relationship,
+   426→- financial interest,
+   427→- family interest,
+   428→- publication conflict,
+   429→- institutional competition,
+   430→- undisclosed sponsorship.
+   431→
+   432→A conflicted person may be:
+   433→
+   434→- consulted for expertise,
+   435→- but excluded from approval,
+   436→- or required to abstain,
+   437→
+   438→depending on severity.
+   439→
+   440→---
+   441→
+   442→# 16. EDITORIAL INDEPENDENCE
+   443→
+   444→Commercial interests must not dictate historical conclusions.
+   445→
+   446→For example:
+   447→
+   448→A sponsor may fund:
+   449→
+   450→> digitization of an archive
+   451→
+   452→but may not dictate:
+   453→
+   454→> what the archive must conclude historically.
+   455→
+   456→Sponsored content must be clearly distinguishable from editorial research.
+   457→
+   458→---
+   459→
+   460→# 17. SCHOLARLY REVIEW
+   461→
+   462→For historically sensitive claims:
+   463→
+   464→```text
+   465→AUTHOR
+   466→  ↓
+   467→SOURCE CHECK
+   468→  ↓
+   469→RESEARCH REVIEW
+   470→  ↓
+   471→EDITORIAL REVIEW
+   472→  ↓
+   473→PUBLICATION
+   474→```
+   475→
+   476→For highly controversial claims:
+   477→
+   478→```text
+   479→AUTHOR
+   480→  ↓
+   481→PRIMARY SOURCE REVIEW
+   482→  ↓
+   483→SPECIALIST REVIEW
+   484→  ↓
+   485→EDITORIAL REVIEW
+   486→  ↓
+   487→PUBLISH WITH EVIDENCE STATUS
+   488→```
+   489→
+   490→The system should preserve uncertainty instead of forcing false certainty.
+   491→
+   492→---
+   493→
+   494→# 18. ARCHIVE DECISION RULE
+   495→
+   496→The authority to publish a digital object is not identical to ownership of the underlying object.
+   497→
+   498→Before publication:
+   499→
+   500→1. verify provenance,
+   501→2. determine rights,
+   502→3. determine consent,
+   503→4. classify sensitivity,
+   504→5. assign metadata,
+   505→6. determine access level,
+   506→7. preserve master copy,
+   507→8. create publication derivative.
+   508→
+   509→---
+   510→
+   511→# 19. FINANCIAL GOVERNANCE
+   512→
+   513→Financial powers must be separated.
+   514→
+   515→Recommended controls:
+   516→
+   517→### Founder/Board
+   518→Strategic budget approval.
+   519→
+   520→### Finance Lead
+   521→Accounting and reporting.
+   522→
+   523→### Operations
+   524→Execution within approved budget.
+   525→
+   526→### Independent review
+   527→Periodic review/audit appropriate to organization size and legal structure.
+   528→
+   529→High-value transactions should require dual authorization.
+   530→
+   531→---
+   532→
+   533→# 20. PROCUREMENT
+   534→
+   535→Vendor selection should consider:
+   536→
+   537→- capability,
+   538→- security,
+   539→- cost,
+   540→- sustainability,
+   541→- interoperability,
+   542→- contractual rights,
+   543→- exit strategy.
+   544→
+   545→Do not select technology vendors solely because they are cheap.
+   546→
+   547→Critical vendors require:
+   548→
+   549→- data export capability,
+   550→- backup,
+   551→- contract review,
+   552→- termination plan,
+   553→- ownership clarity.
+   554→
+   555→---
+   556→
+   557→# 21. DELEGATION
+   558→
+   559→Founder and executives should delegate authority using written scopes.
+   560→
+   561→Every delegation defines:
+   562→
+   563→- authority,
+   564→- limits,
+   565→- budget,
+   566→- duration,
+   567→- reporting,
+   568→- revocation condition.
+   569→
+   570→Delegation does not automatically transfer ultimate accountability.
+   571→
+   572→---
+   573→
+   574→# 22. EMERGENCY AUTHORITY
+   575→
+   576→Emergency decision-making may be accelerated when delay could cause:
+   577→
+   578→- security breach,
+   579→- data loss,
+   580→- archive destruction,
+   581→- major legal exposure,
+   582→- financial fraud,
+   583→- severe service outage.
+   584→
+   585→Emergency decisions must be:
+   586→
+   587→1. documented,
+   588→2. limited to the emergency,
+   589→3. reviewed afterward,
+   590→4. added to the decision log.
+   591→
+   592→Emergency authority must not become a permanent bypass around governance.
+   593→
+   594→---
+   595→
+   596→# 23. DISPUTE RESOLUTION
+   597→
+   598→Disputes should progress through:
+   599→
+   600→### Stage 1 — Direct clarification
+   601→Resolve factual misunderstanding.
+   602→
+   603→### Stage 2 — Domain review
+   604→Relevant expert reviews the issue.
+   605→
+   606→### Stage 3 — Executive review
+   607→Operational disagreement is escalated.
+   608→
+   609→### Stage 4 — Governing review
+   610→Major institutional disputes.
+   611→
+   612→### Stage 5 — Constitutional / legal process
+   613→Fundamental disputes.
+   614→
+   615→For historical disputes, the preferred outcome is often:
+   616→
+   617→> document the evidence and competing interpretations
+   618→
+   619→rather than force a premature single narrative.
+   620→
+   621→---
+   622→
+   623→# 24. RECONSIDERATION & APPEAL
+   624→
+   625→A decision may be reconsidered when:
+   626→
+   627→- new evidence appears,
+   628→- material error is demonstrated,
+   629→- conflict of interest is discovered,
+   630→- applicable law changes,
+   631→- a material risk was omitted,
+   632→- decision authority was exceeded.
+   633→
+   634→Reconsideration does not guarantee reversal.
+   635→
+   636→---
+   637→
+   638→# 25. TRANSPARENCY
+   639→
+   640→165 should maintain appropriate public transparency around:
+   641→
+   642→- governance structure,
+   643→- editorial standards,
+   644→- correction policy,
+   645→- sponsorship principles,
+   646→- major institutional partnerships,
+   647→- archive rights,
+   648→- privacy principles,
+   649→- major changes.
+   650→
+   651→Not every internal decision must be public.
+   652→
+   653→Transparency must be balanced against:
+   654→
+   655→- privacy,
+   656→- security,
+   657→- contractual confidentiality,
+   658→- contributor safety,
+   659→- archive restrictions.
+   660→
+   661→---
+   662→
+   663→# 26. AI GOVERNANCE
+   664→
+   665→AI is a tool, not an independent authority.
+   666→
+   667→AI-generated material involving history or TQN must be subject to human review appropriate to risk.
+   668→
+   669→AI must not be used as the sole source for:
+   670→
+   671→- genealogy claims,
+   672→- spiritual authority,
+   673→- historical attribution,
+   674→- manuscript authenticity,
+   675→- biographies,
+   676→- allegations about people.
+   677→
+   678→For high-risk material:
+   679→
+   680→> **Human source verification is mandatory.**
+   681→
+   682→---
+   683→
+   684→# 27. PUBLIC REPRESENTATION
+   685→
+   686→Only designated representatives may issue statements representing 165 institutionally.
+   687→
+   688→Social media administrators must not automatically have authority to:
+   689→
+   690→- speak for the institution,
+   691→- announce governance decisions,
+   692→- make spiritual claims,
+   693→- announce partnerships,
+   694→- make legal commitments.
+   695→
+   696→Official communications should have a verifiable approval path.
+   697→
+   698→---
+   699→
+   700→# 28. SPIRITUAL AUTHORITY BOUNDARY
+   701→
+   702→165 is an information, heritage, research, education, media, community, and preservation platform.
+   703→
+   704→It must not manufacture or simulate spiritual authority.
+   705→
+   706→165 must not imply:
+   707→
+   708→- digital bai'at,
+   709→- digital talqin,
+   710→- online appointment of mursyid,
+   711→- spiritual ranking through website membership,
+   712→- invented ijazah,
+   713→- invented silsilah,
+   714→- fabricated miracles,
+   715→- fabricated quotations.
+   716→
+   717→Where religious or spiritual teaching is presented, the provenance and nature of the source must be clear.
+   718→
+   719→---
+   720→
+   721→# 29. MEMBERSHIP AUTHORITY
+   722→
+   723→Digital membership grants access to digital platform functions.
+   724→
+   725→It does not confer:
+   726→
+   727→- spiritual status,
+   728→- religious rank,
+   729→- institutional office,
+   730→- authority to represent a TQN institution,
+   731→- authorization to teach on behalf of a TQN authority.
+   732→
+   733→Any institutional role must be granted through a valid institutional process.
+   734→
+   735→---
+   736→
+   737→# 30. SUCCESSION
+   738→
+   739→165 must not depend indefinitely on one individual.
+   740→
+   741→Succession planning should identify:
+   742→
+   743→- mission custodians,
+   744→- executive successors,
+   745→- archive successors,
+   746→- technical successors,
+   747→- credential holders,
+   748→- domain administrators,
+   749→- legal signatories,
+   750→- emergency contacts.
+   751→
+   752→There must be a recoverable record of:
+   753→
+   754→- domains,
+   755→- repositories,
+   756→- credentials,
+   757→- vendor accounts,
+   758→- legal documents,
+   759→- backups,
+   760→- archive masters,
+   761→- licenses,
+   762→- financial records.
+   763→
+   764→Sensitive credentials must **never** be placed directly inside public repository documents.
+   765→
+   766→---
+   767→
+   768→# 31. FOUNDER CONTINUITY PRINCIPLE
+   769→
+   770→Founder continuity is not merely personal control.
+   771→
+   772→It is preservation of:
+   773→
+   774→- institutional memory,
+   775→- original design intent,
+   776→- mission,
+   777→- core values,
+   778→- historical context,
+   779→- architecture.
+   780→
+   781→The goal is:
+   782→
+   783→> **Founder vision preserved without making the organization operationally dependent on the founder's daily presence.**
+   784→
+   785→---
+   786→
+   787→# 32. BOARD / GOVERNING BODY RESPONSIBILITIES
+   788→
+   789→At mature stage, governing oversight should include:
+   790→
+   791→- mission review,
+   792→- executive evaluation,
+   793→- financial oversight,
+   794→- risk oversight,
+   795→- major partnership approval,
+   796→- major technology risk,
+   797→- archive protection,
+   798→- legal compliance,
+   799→- succession,
+   800→- institutional reputation,
+   801→- strategic planning.
+   802→
+   803→Board members should understand fiduciary duties applicable to the legal entity.
+   804→
+   805→---
+   806→
+   807→# 33. MEETING GOVERNANCE
+   808→
+   809→Each formal governance meeting should have:
+   810→
+   811→- agenda,
+   812→- participants,
+   813→- declarations of conflict,
+   814→- decisions,
+   815→- action items,
+   816→- owners,
+   817→- deadlines,
+   818→- unresolved issues.
+   819→
+   820→Minutes should be archived according to retention rules.
+   821→
+   822→---
+   823→
+   824→# 34. DECISION RECORD TEMPLATE
+   825→
+   826→Every material decision receives:
+   827→
+   828→```text
+   829→Decision ID:
+   830→Date:
+   831→Title:
+   832→Problem:
+   833→Context:
+   834→Options Considered:
+   835→Evidence:
+   836→Risks:
+   837→Decision:
+   838→Decision Owner:
+   839→Approver:
+   840→Effective Date:
+   841→Review Date:
+   842→Affected Documents:
+   843→Affected Systems:
+   844→Reversal Conditions:
+   845→Notes:
+   846→```
+   847→
+   848→---
+   849→
+   850→# 35. DECISION QUALITY CHECK
+   851→
+   852→Before approving a significant decision, ask:
+   853→
+   854→### Mission
+   855→Does it protect 165's mission?
+   856→
+   857→### Evidence
+   858→Do we have sufficient evidence?
+   859→
+   860→### Authority
+   861→Is the right person approving?
+   862→
+   863→### Risk
+   864→What can go wrong?
+   865→
+   866→### Reversibility
+   867→Can we undo it?
+   868→
+   869→### Cost
+   870→What is the financial/operational cost?
+   871→
+   872→### Security
+   873→Does it create new security exposure?
+   874→
+   875→### Legal
+   876→Does it create IP/privacy/contract risk?
+   877→
+   878→### Archive
+   879→Does it affect preservation?
+   880→
+   881→### Future
+   882→Will this decision remain sensible at larger scale?
+   883→
+   884→---
+   885→
+   886→# 36. FOUR-KEY GOVERNANCE TEST
+   887→
+   888→No major decision should pass without answering:
+   889→
+   890→> **Who decides?**  
+   891→> **Based on what evidence?**  
+   892→> **Who reviews it?**  
+   893→> **Where is it recorded?**
+   894→
+   895→---
+   896→
+   897→# 37. GOVERNANCE MATURITY MODEL
+   898→
+   899→## Stage 1 — Founder-led
+   900→Founder drives strategy and execution.
+   901→
+   902→## Stage 2 — Founder + domain leads
+   903→Research, archive, tech, finance and editorial functions emerge.
+   904→
+   905→## Stage 3 — Executive governance
+   906→Formal executive roles and delegations.
+   907→
+   908→## Stage 4 — Governing board
+   909→Independent oversight and institutional controls.
+   910→
+   911→## Stage 5 — Mature institution
+   912→Succession, audit, policies, committees, distributed expertise.
+   913→
+   914→## Stage 6 — Legacy institution
+   915→Mission and knowledge survive changes in leadership.
+   916→
+   917→---
+   918→
+   919→# 38. 165 GOVERNANCE NON-NEGOTIABLES
+   920→
+   921→1. No fabricated history.
+   922→2. No fabricated silsilah.
+   923→3. No fabricated quotations.
+   924→4. No hidden commercial influence over scholarship.
+   925→5. No undocumented transfer of core archives.
+   926→6. No critical single-person technical dependency.
+   927→7. No uncontrolled privileged access.
+   928→8. No major governance decision without documentation.
+   929→9. No digital membership presented as spiritual initiation.
+   930→10. No major mission change without constitutional review.
+   931→
+   932→---
+   933→
+   934→# 39. INITIAL AUTHORITY MAP — FOUNDER-LED PHASE
+   935→
+   936→Until a formal governing body exists:
+   937→
+   938→```text
+   939→Founder / Chief Architect
+   940→        │
+   941→        ├── Strategy
+   942→        ├── Mission
+   943→        ├── Brand
+   944→        ├── Architecture
+   945→        └── Reserved powers
+   946→                │
+   947→        ┌───────┼────────┐
+   948→        │       │        │
+   949→   Research  Editorial Archive
+   950→        │       │        │
+   951→        └───────┼────────┘
+   952→                │
+   953→          Technology
+   954→                │
+   955→          Operations
+   956→                │
+   957→             Media
+   958→                │
+   959→           Community
+   960→                │
+   961→            Revenue
+   962→```
+   963→
+   964→Founder remains the final strategic authority for the founder-reserved domain, while routine domain decisions should be delegated as capability grows.
+   965→
+   966→---
+   967→
+   968→# 40. GOVERNANCE TRANSITION TRIGGER
+   969→
+   970→165 should consider formalizing the next governance layer when any of the following occurs:
+   971→
+   972→- team exceeds practical founder-only management capacity,
+   973→- multiple institutional partnerships exist,
+   974→- recurring revenue becomes material,
+   975→- significant donations/grants are received,
+   976→- third-party archives are entrusted to 165,
+   977→- significant personal data is processed,
+   978→- multiple countries are involved,
+   979→- research reputation becomes material,
+   980→- legal entity structure is established,
+   981→- operational risk becomes material.
+   982→
+   983→Governance should evolve based on actual complexity, not prestige.
+   984→
+   985→---
+   986→
+   987→# 41. DOCUMENT DEPENDENCIES
+   988→
+   989→Primary dependencies:
+   990→
+   991→- 001 — Constitution of 165
+   992→- 002 — Operating Constitution
+   993→- 003 — Founder's Charter
+   994→- 008 — Editorial Constitution
+   995→- 009 — Source & Citation Policy
+   996→- 010 — Correction / Retraction / Dispute Policy
+   997→- 011 — Ethics / Conflict / Transparency
+   998→- 012 — Authority / Attribution / Representation
+   999→
+  1000→Document 007 should later be reconciled against the final constitutional wording of Documents 001–006.
+  1001→
+  1002→---
+  1003→
+  1004→# 42. IMPLEMENTATION TASKS
+  1005→
+  1006→## GOVERNANCE FOUNDATION
+  1007→
+  1008→- [ ] Define current legal/organizational structure
+  1009→- [ ] Define current decision-makers
+  1010→- [ ] Define domain leads
+  1011→- [ ] Define approval thresholds
+  1012→- [ ] Create decision log
+  1013→- [ ] Create delegation register
+  1014→- [ ] Create conflict-of-interest declaration
+  1015→- [ ] Create governance meeting template
+  1016→- [ ] Create executive approval matrix
+  1017→- [ ] Create archive access authority matrix
+  1018→
+  1019→## FOUNDER
+  1020→
+  1021→- [ ] Finalize founder reserved powers
+  1022→- [ ] Reconcile with Founder Charter
+  1023→- [ ] Define founder delegation boundaries
+  1024→- [ ] Define succession mechanism
+  1025→- [ ] Define founder representation rules
+  1026→
+  1027→## MATURE GOVERNANCE
+  1028→
+  1029→- [ ] Draft board charter
+  1030→- [ ] Draft advisory council terms of reference
+  1031→- [ ] Draft committee structure
+  1032→- [ ] Draft executive role charters
+  1033→- [ ] Draft annual governance calendar
+  1034→
+  1035→---
+  1036→
+  1037→# 43. DEFINITION OF DONE
+  1038→
+  1039→Document 007 is ready for APPROVAL when:
+  1040→
+  1041→- [ ] founder authority is clearly defined,
+  1042→- [ ] founder limits are documented,
+  1043→- [ ] domain decision rights are documented,
+  1044→- [ ] approval thresholds exist,
+  1045→- [ ] conflict-of-interest process exists,
+  1046→- [ ] dispute escalation exists,
+  1047→- [ ] AI governance boundary exists,
+  1048→- [ ] spiritual authority boundary exists,
+  1049→- [ ] succession principle exists,
+  1050→- [ ] decision-log template exists,
+  1051→- [ ] governance transition criteria exists,
+  1052→- [ ] legal review needs are identified.
+  1053→
+  1054→---
+  1055→
+  1056→# 44. NEXT DOCUMENT
+  1057→
+  1058→**Next:**  
+  1059→### 008 — 165 EDITORIAL CONSTITUTION
+  1060→
+  1061→Purpose:
+  1062→
+  1063→To define exactly how 165 writes, verifies, attributes, publishes, updates, corrects, translates, and distinguishes historical evidence from tradition and editorial interpretation.
+  1064→
+  1065→Document 008 will connect directly to:
+  1066→
+  1067→- History,
+  1068→- Research,
+  1069→- Website,
+  1070→- Social Media,
+  1071→- AI,
+  1072→- Archive,
+  1073→- SEO,
+  1074→- Internationalization.
+  1075→
+  1076→---
+  1077→
+  1078→# 45. SAVE & CONTROL
+  1079→
+  1080→Canonical filename:
+  1081→
+  1082→`007_165_GOVERNANCE_AND_DECISION_RIGHTS_v1_0.md`
+  1083→
+  1084→Canonical repository location:
+  1085→
+  1086→`165/01-CONSTITUTION/007_165_GOVERNANCE_AND_DECISION_RIGHTS.md`
+  1087→
+  1088→Register in:
+  1089→
+  1090→`165/00-CONTROL/000_165_MASTER_SYSTEM_CONTROL_AND_INDEX.md`
+  1091→
+  1092→Also add a change-log entry:
+  1093→
+  1094→```text
+  1095→2026-10-01
+  1096→DOC-007
+  1097→Created 165 Governance & Decision Rights v1.0
+  1098→Status: MASTER DRAFT
+  1099→Next dependency: Documents 001–006 reconciliation
+  1100→Next document: DOC-008
+
+[showing lines 1-1100 of 1101; use offset=1101 with limit to continue reading]
