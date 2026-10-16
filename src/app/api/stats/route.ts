@@ -1,12 +1,19 @@
-import { NextResponse } from 'next/server'
-import { getStats } from '@/lib/queries'
+import { NextRequest } from "next/server";
+import { db } from "@/lib/db";
+import { json, unauthorized, requireAuth } from "@/lib/api-utils";
 
-export async function GET() {
-  try {
-    const stats = await getStats()
-    return NextResponse.json({ stats })
-  } catch (err) {
-    console.error('[api/stats]', err)
-    return NextResponse.json({ error: 'Failed to load stats' }, { status: 500 })
-  }
+export async function GET(req: NextRequest) {
+  const auth = requireAuth(req);
+  if (!auth.ok) return unauthorized();
+  const [posts, pages, portfolio, newMessages, subscribers, pendingComments, media, users] = await Promise.all([
+    db.post.count(),
+    db.page.count(),
+    db.portfolio.count(),
+    db.message.count({ where: { status: "new" } }),
+    db.subscriber.count(),
+    db.comment.count({ where: { status: "pending" } }),
+    db.media.count(),
+    db.admin.count(),
+  ]);
+  return json({ ok: true, stats: { posts, pages, portfolio, newMessages, subscribers, pendingComments, media, users } });
 }
