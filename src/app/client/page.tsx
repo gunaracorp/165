@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
@@ -60,7 +60,9 @@ function fmtDate(s: string | null | undefined) {
 export default function ClientDashboardPage() {
   return (
     <QueryProvider>
-      <ClientDashboardInner />
+      <Suspense fallback={<MarketingLayout><div className="mx-auto max-w-6xl px-4 py-16 text-center text-muted-foreground">Memuat dashboard...</div></MarketingLayout>}>
+        <ClientDashboardInner />
+      </Suspense>
     </QueryProvider>
   );
 }

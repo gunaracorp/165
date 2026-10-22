@@ -10,6 +10,7 @@ import {
   snapshotSearch, snapshotProfile, snapshotStats,
   snapshotGraphData, snapshotTimelineEvents, snapshotGlossaryTerms, snapshotAskIndex,
 } from '@/lib/snapshot'
+import { SANAD_JALUR } from '@/lib/sanad-data'
 
 function logFallback(where: string, err: unknown) {
   const msg = err instanceof Error ? err.message : String(err)
@@ -214,5 +215,12 @@ export async function getAskIndex() {
   } catch (err) {
     logFallback('ask', err)
     return snapshotAskIndex()
+  }
+}
+
+export async function getSanadRegistry() {
+  return {
+    chains: SANAD_JALUR,
+    source: '165 sanad registry',
   }
 }

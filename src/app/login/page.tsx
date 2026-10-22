@@ -1,5 +1,5 @@
 "use client";
-import { useState, type FormEvent } from "react";
+import { Suspense, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Mail, Lock, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
@@ -14,6 +14,10 @@ import { apiFetch } from "@/lib/api-client";
 import { useCustomerStore } from "@/lib/customer-store";
 
 export default function LoginPage() {
+  return <Suspense fallback={<MarketingLayout><div className="mx-auto max-w-md px-4 py-24 text-center text-muted-foreground">Memuat...</div></MarketingLayout>}><LoginInner /></Suspense>;
+}
+
+function LoginInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const next = searchParams.get("next") || "/client";

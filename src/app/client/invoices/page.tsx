@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2, FileText, Search, CreditCard, CheckCircle2 } from "lucide-react";
@@ -51,7 +51,9 @@ const STATUS_TABS = [
 export default function ClientInvoicesPage() {
   return (
     <QueryProvider>
-      <ClientInvoicesInner />
+      <Suspense fallback={<MarketingLayout><div className="mx-auto max-w-6xl px-4 py-16 text-center text-muted-foreground">Memuat invoice...</div></MarketingLayout>}>
+        <ClientInvoicesInner />
+      </Suspense>
     </QueryProvider>
   );
 }
