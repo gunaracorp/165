@@ -2,7 +2,13 @@
 
 // 165 — Breadcrumbs (Engagement Kit): visible trail + BreadcrumbList JSON-LD
 // so search engines read the same hierarchy humans do.
+import { useSyncExternalStore } from 'react'
 import { ChevronRight, Home } from 'lucide-react'
+
+// hydration gate: false saat SSR & render hidrasi pertama, true setelahnya —
+// tanpa set-state-in-effect (aman aturan react-hooks v6).
+const subscribeNoop = () => () => {}
+const useMounted = () => useSyncExternalStore(subscribeNoop, () => true, () => false)
 
 export interface Crumb {
   label: string
@@ -31,8 +37,14 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
     window.dispatchEvent(new HashChangeEvent('hashchange'))
   }
 
+  // Trail mengikuti state SPA yang hanya ada di sisi client (hash/section),
+  // maka render selalu SETELAH mount — tidak pernah ikut dalam perbandingan
+  // hydration. Ini mencegah hydration mismatch (server selalu merender null,
+  // render pertama client pun null, trail muncul seketika setelah hidrasi).
+  const mounted = useMounted()
+
   // halaman beranda tidak butuh trail — sembunyikan sepenuhnya
-  if (items.length === 0) return null
+  if (!mounted || items.length === 0) return null
 
   return (
     <nav aria-label="Breadcrumb" className="no-print mb-4" data-print="hide">

@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Nunito } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
-import { QueryProvider } from "@/components/site/query-provider";
+import { QueryProvider } from "@/components/165/query-provider";
 import { PwaRegister } from "@/components/165/pwa-register";
 import { AnalyticsTracker } from "@/components/165/analytics-tracker";
 
