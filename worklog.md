@@ -323,3 +323,26 @@ Stage Summary:
 - 4 paket fitur baru live dan terverifikasi browser: Ctrl+K Spotlight, PWA+Dark, Admin Analytics, Engagement Kit
 - Warisan bug (getSanadRegistry, i18n shadow, stats konflik, languages registry, duplikat key) seluruhnya tuntas
 - 26 file baru/utama: layout, page, global-search, sw.js, offline.html, pwa-register, install-prompt, analytics-tracker/dashboard/track/summary, share-buttons, breadcrumbs, newsletter-band, languages.ts (rewrite), queries.ts (getSanadRegistry), sitemap/robots/manifest, gen-brand-assets, admin/stats split, jw-i18n
+
+---
+Task ID: purge-jw-hydration-fix
+Agent: Main Orchestrator (Z.ai)
+Task: (1) Perbaiki hydration error di Breadcrumbs; (2) hapus TOTALITAS semua jejak JuraganWebsite (juraganwebsite.web.id) dari repo — pengguna salah upload file JW ke repo 165
+
+Work Log:
+- Investigasi hydration: server merender kondisi 'home' (Breadcrumbs null, HomeSection div.space-y-14) vs client render dengan state SPA lain (tab lama/HMR race). Store i18n & theme sudah SSR-safe (useSyncExternalStore)
+- FIX breadcrumbs.tsx: gate mounted via useSyncExternalStore (subscribeNoop; client true, server false) — trail tak pernah ikut perbandingan hydration; versi pertama (useState+useEffect) menabrak aturan react-hooks/set-state-in-effect (lint v6) → diganti useSyncExternalStore, lint bersih
+- Audit JW menyeluruh: grep 113 file, klasifikasi API per model/lib, konfirmasi admin-auth.ts MILIK 165 (cookie adm165) — JW admin terpisah di /login+/api/auth
+- PURGE: 23 halaman JW, 43+ API JW (+/api/admin/stats & /api/analytics CMS JW), komponen admin/public/site/providers/theme-provider, 10 lib JW + use-translation, public/hosting-api (PHP), blog/, portfolio/, .qa era JW, agent-ctx, gitlink repo-165 (rm --cached; git rm batch pertama gagal transaksional karena fatal submodule lookup → dihapus fisik lalu git add -A)
+- layout.tsx: QueryProvider dialihkan site→165; sitemap.ts ditulis ulang (14 hash-section murni, tanpa DB JW); /api/subscribers native (tanpa api-utils); /api health 165; next.config bersih (tanpa export cPanel JW)
+- Prisma: schema 52→12 model (Entity, NameVariant, Relationship, ClaimSource, SanadLink, CollectionItem, VersionSnapshot, AuditLog, Contribution, VisitEvent, Subscriber); db push sukses (tabel JW didrop, data 165 utuh 58/29/9); seed.ts = pemeriksa bootstrap tanpa data demo
+- package.json → "165-platform"; buang 12 dep mati (next-auth, next-intl, zustand, @dnd-kit/*, @mdxeditor, @reactuses/core, react-syntax-highlighter, uuid, @tanstack/react-table, @hookform/resolvers); bun install OK
+- globals.css: blok HYBRID LAYER JW + parchment-texture dihapus (verifikasi nol pemakaian di 165); logo.svg diganti monogram 165 emerald-brass
+- QA agent-browser: beranda 1440 & 390 = 0 error; deep-link #explore+#manaqib + reload = 0 error & breadcrumb tampil; Ctrl+K "suryalaya" hasil ber-grade; admin qodiriyah165 → tab Analitik (Total Kunjungan/24 Jam/7 Hari); POST newsletter {"ok":true}; dark mode true; sitemap 14 URL 165 & 0 URL JW; /hosting & /api/hosting 404; lint exit 0
+- Commit 2b9d78b (228 file dihapus, 13 diubah, 3 ditambah)
+
+Stage Summary:
+- Repo 100% bebas JuraganWebsite: kode, API, schema DB, seed, config, aset, logo, dependensi — identitas 165 tunggal (Emerald Radiance)
+- Hydration mismatch Breadcrumbs tuntas dengan pola useSyncExternalStore yang aman lint & produksi
+- Fitur lama selamat semua: Ctrl+K, PWA, dark mode, admin+Analitik, newsletter, sanad, 6 bahasa
+- Data: 58 entitas · 29 relasi · 9 sanad · pelanggan newsletter utuh
