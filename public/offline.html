@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Offline — 165</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      background: oklch(0.975 0.009 95); color: oklch(0.26 0.03 165);
+      text-align: center; padding: 2rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: oklch(0.19 0.022 165); color: oklch(0.94 0.01 95); }
+    }
+    .mark {
+      width: 72px; height: 72px; border-radius: 22px; margin: 0 auto 1.25rem;
+      display: grid; place-items: center; font-weight: 800; font-size: 20px; color: #fff;
+      background: linear-gradient(135deg, oklch(0.46 0.105 163), oklch(0.64 0.125 78));
+      box-shadow: 0 12px 30px -10px oklch(0.46 0.11 163 / 0.5);
+    }
+    h1 { font-size: 1.4rem; margin: 0 0 .5rem; }
+    p { max-width: 34rem; line-height: 1.65; opacity: .8; margin: 0 auto 1.5rem; }
+    button {
+      border: 0; cursor: pointer; padding: .7rem 1.4rem; border-radius: 999px;
+      font-weight: 700; color: #fff; background: oklch(0.46 0.105 163);
+      box-shadow: 0 8px 22px -8px oklch(0.46 0.11 163 / .5);
+    }
+    small { display: block; margin-top: 1.5rem; opacity: .55; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark">165</div>
+    <h1>Koneksi terputus — warisan tetap terjaga</h1>
+    <p>
+      Anda sedang offline. Halaman yang pernah dibuka tetap tersedia dari cache
+      pelestari; halaman baru akan tampil kembali begitu koneksi pulih.
+    </p>
+    <button onclick="location.reload()">Coba Lagi</button>
+    <small>165 — TQN Qodiriah Naqsabandiyah · Setiap pernyataan membawa buktinya</small>
+  </main>
+</body>
+</html>
