@@ -75,7 +75,7 @@ const MS: Dict = {
   'lang.hint': 'Bahasa lalai 165 ialah Indonesia. {curated} bahasa dikurasi penuh, {ai} bahasa diterjemahkan mesin AI, dan semua bahasa lain tetap boleh dipilih — antara mukanya mengikuti Bahasa Indonesia. Kandungan dokumen warisan dipaparkan dalam bahasa asalnya.',
 
   // Task 32–33 — Manaqib & Rahasia
-  'nav.manaqib': 'Manaqib', 'nav.rahasia': 'Rahasia',
+  'nav.manaqib': 'Manaqib', 'nav.rahasia': 'Rahasia', 'nav.stories': 'Kisah',
   'sec.manaqib.kicker': 'Manaqib · Ghaus al-A\u2019zam', 'sec.manaqib.title': 'Manaqib Syaikh Abdul Qadir Al-Jailani',
   'sec.rahasia.kicker': 'Rahasia Al-Qur\u2019an & Hadis', 'sec.rahasia.title': 'Rahasia Kitab Suci — dibuka dengan adab',
   'mq.tab.riwayat': 'Riwayat Hidup', 'mq.tab.karya': 'Karya', 'mq.tab.silsilah': 'Silsilah', 'mq.tab.karamah': 'Karamah', 'mq.tab.hikam': 'Hikam', 'mq.tab.tqn': 'Dalam TQN', 'mq.tab.sumber': 'Sumber',
@@ -157,7 +157,7 @@ const JV: Dict = {
   'lang.hint': 'Basa gawan 165 yaiku Indonesia. {curated} basa dikurasi wutuh, {ai} basa diterjemahaké mesin AI, lan kabèh basa liyané isih bisa dipilih — antarmukané nut Basa Indonesia. Isi dokumen warisan ditampilaké ing basa asliné.',
 
   // Task 32–33 — Manaqib & Rahasia
-  'nav.manaqib': 'Manaqib', 'nav.rahasia': 'Rahasia',
+  'nav.manaqib': 'Manaqib', 'nav.rahasia': 'Rahasia', 'nav.stories': 'Carita',
   'sec.manaqib.kicker': 'Manaqib · Ghausul A\u2019zam', 'sec.manaqib.title': 'Manaqib Syekh Abdul Qodir Al-Jaelani',
   'sec.rahasia.kicker': 'Rahasia Al-Qur\u2019an & Hadis', 'sec.rahasia.title': 'Rahasia Kitab Suci — dibuka kanthi adab',
   'mq.tab.riwayat': 'Riwayat Urip', 'mq.tab.karya': 'Karya', 'mq.tab.silsilah': 'Silsilah', 'mq.tab.karamah': 'Karamah', 'mq.tab.hikam': 'Hikam', 'mq.tab.tqn': 'Ing TQN', 'mq.tab.sumber': 'Sumber',
@@ -239,7 +239,7 @@ const SU: Dict = {
   'lang.hint': 'Basa bawaan 165 nyaéta Indonesia. {curated} basa dikurasi lengkep, {ai} basa ditarjamahkeun mesin AI, jeung sakabéh basa séjénna tiasa dipilih — antarmukanana nut Basa Indonesia. Eusi dokumén warisan ditembangkeun dina basa asalna.',
 
   // Task 32–33 — Manaqib & Rahasia
-  'nav.manaqib': 'Manaqib', 'nav.rahasia': 'Rahasia',
+  'nav.manaqib': 'Manaqib', 'nav.rahasia': 'Rahasia', 'nav.stories': 'Carita',
   'sec.manaqib.kicker': 'Manaqib · Ghausul A\u2019zam', 'sec.manaqib.title': 'Manaqib Syékh Abdul Qodir Al-Jaelani',
   'sec.rahasia.kicker': 'Rahasia Al-Qur\u2019an & Hadis', 'sec.rahasia.title': 'Rahasia Kitab Suci — dibuka ku adab',
   'mq.tab.riwayat': 'Riwayat Hirup', 'mq.tab.karya': 'Karya', 'mq.tab.silsilah': 'Silsilah', 'mq.tab.karamah': 'Karamah', 'mq.tab.hikam': 'Hikam', 'mq.tab.tqn': 'Dina TQN', 'mq.tab.sumber': 'Sumber',
@@ -321,7 +321,7 @@ const AR: Dict = {
   'lang.hint': 'اللغة الافتراضية لـ 165 هي الإندونيسية. {curated} لغات منقحة كاملة، و{ai} لغة مترجمة بالذكاء الاصطناعي، وتبقى كل اللغات الأخرى قابلة للاختيار — فتتبع واجهتها اللغة الإندونيسية. ويظهر مضمون وثائق التراث بلغته الأصلية.',
 
   // Task 32–33 — Manaqib & Rahasia
-  'nav.manaqib': 'المناقب', 'nav.rahasia': 'الأسرار',
+  'nav.manaqib': 'المناقب', 'nav.rahasia': 'الأسرار', 'nav.stories': 'قصص',
   'sec.manaqib.kicker': 'المناقب · الغوث الأعظم', 'sec.manaqib.title': 'مناقب الشيخ عبد القادر الجيلاني',
   'sec.rahasia.kicker': 'أسرار القرآن والحديث', 'sec.rahasia.title': 'أسرار الكتاب والسنة — تُفتح بالأدب',
   'mq.tab.riwayat': 'سيرته', 'mq.tab.karya': 'مؤلفاته', 'mq.tab.silsilah': 'سلسلته', 'mq.tab.karamah': 'كراماته', 'mq.tab.hikam': 'حكمه', 'mq.tab.tqn': 'في الطريقة', 'mq.tab.sumber': 'المصادر',

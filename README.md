@@ -70,13 +70,14 @@
 | **Kontribusi / Contribute** | Alur kiriman publik → telaah dewan → publikasi (kontribusi ≠ publikasi) |
 | **Ruang Admin / Admin** | Konsol kurasi internal |
 
-### ✦ Tiga Jalur Sanad TQN (restorasi ber-sumber)
+### ✦ Empat Jalur Sanad TQN (restorasi ber-sumber)
 
 Dari **Master Blueprint §3.4–3.5** yang didepositkan pendiri (baca verbatim di Ruang Dokumen), tiga jalur transmisi TQN ke Jawa tercatat dan tampil display-only dengan grade & sitasi:
 
 1. **Shaykh Abdul Karim Banten** — `165-SANAD-000001`
 2. **Shaykh Ahmad Thalhah Cirebon** — `165-SANAD-000002`
 3. **Shaykh Muhammad Hasbullah Madura** — `165-SANAD-000003`
+4. **Jalur Karawang & Al-Bantani** — `165-SANAD-000004` *(deposit pendiri — sesi 2026)*: Mama Kadzim Asnawi (#38, Menes-Banten) → **Syekh Tuan Guru Aabah Haji Suganda Karawang / Abah Ganda Cikangkung (#39a)** dan **Syekh Abah Haji Sukanta bin Salmin / Sukanta Salmin Labuan al-Banteni (#39b, 1935–2015)**, menamat pada **Majelis Dzikir TQN Cikangkung, Rengasdengklok, Karawang** — ber-sumber daftar bernomor pendiri (S1, Level B) + dossier sumber publik komunitas, disilang-cek "warid ti ahmad kazim bin asnawi banten".
 
 dilanjutkan jaringan pusat **Suryalaya · Rejoso · Mranggen · Pangentongan** — *"the history of TQN is a network, not a single straight line."* Generasi antara yang belum terekam ditandai `[ MATA BLOK ]` — **tidak pernah diprediksi**.
 
@@ -112,7 +113,8 @@ bun install
 
 # basis data
 bun run db:push          # push schema Prisma → SQLite
-bun run sanad:seed       # restorasi 3 jalur sanad (additive, idempoten)
+bun run sanad:seed       # restorasi 3 jalur sanad Blueprint (additive, idempoten)
+bun run karawang:seed   # rekam Jalur Karawang & Al-Bantani — deposit pendiri (additive, idempoten)
 bun run dev              # http://localhost:3000
 ```
 
@@ -150,7 +152,7 @@ Siap Vercel (standalone). Snapshot `heritage-snapshot.json` membuat UI tetap utu
 
 ## 📈 Status Terbuka (jujur)
 
-- **Tercatat:** 8 dokumen kanonik, 3 jalur sanad, entitas & relasi ber-grade, Manaqib lengkap, Rahasia Kitab Suci, 178 bahasa.
+- **Tercatat:** 8 dokumen kanonik, 4 jalur sanad (3 Blueprint + 1 deposit pendiri Karawang & Al-Bantani), entitas & relasi ber-grade, Manaqib lengkap, Rahasia Kitab Suci, Kisah & Hikmah (35 kisah ber-grade), 178 bahasa.
 - **Ditunggu deposit:** Founder's Charter & dokumen yang masih dideklarasikan, dossier ijazah per-generasi (Qadiriyya & Naqshbandiyya), arsip kitab & manuskrip internal, dokumentasi praktik majelis lokal.
 
 ---

@@ -15,6 +15,7 @@ export const CATALOG = {
   'nav.seo': ['SEO', 'SEO'],
   'nav.manaqib': ['Manaqib', 'Manaqib'],
   'nav.rahasia': ['Rahasia', 'Secrets'],
+  'nav.stories': ['Kisah', 'Stories'],
   'nav.contribute': ['Kontribusi', 'Contribute'],
   'nav.admin': ['Ruang Admin', 'Admin Room'],
   'nav.more': ['Lainnya', 'More'],

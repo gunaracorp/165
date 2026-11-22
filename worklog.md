@@ -346,3 +346,25 @@ Stage Summary:
 - Hydration mismatch Breadcrumbs tuntas dengan pola useSyncExternalStore yang aman lint & produksi
 - Fitur lama selamat semua: Ctrl+K, PWA, dark mode, admin+Analitik, newsletter, sanad, 6 bahasa
 - Data: 58 entitas · 29 relasi · 9 sanad · pelanggan newsletter utuh
+
+---
+Task ID: install-165-fullpower-karawang
+Agent: Main Orchestrator (Z.ai) — Master Polymath, Sage Universal, The Ultimate Problem Solver
+Task: Install https://github.com/gunaracorp/165 + sempurnakan full power: rekam Jalur Karawang & Al-Bantani (deposit pendiri sesi ini) + aktifkan ruang Kisah & Hikmah yang tertidur
+
+Work Log:
+- Clone repo gunaracorp/165 (HEAD 9ba772d) → deploy ke /home/z/my-project; bun install (617 paket), db:push sinkron, Prisma Client 6.19.2 di-generate; dev server Next.js 16.1.3 (Turbopack) hidup di :3000, GET / 200
+- Audit data sanad: 3 jalur Blueprint (SANAD-000001..3) tampil, tetapi jalur yang disebut pendiri (Syekh Tuan Guru Aabah Haji Suganda Karawang & Syekh Abah Haji Sukanta bin Salmin) hanya ada sebagai entitas tokoh (PERSON-000008/9/10, Phase 15) TANPA rantai sanad
+- AUDIT KEAMANAN: prisma/data-sanad-global.ts (Task 26) terdeteksi KONFLIK ID dengan dataset aktif (SRC-000003, PERSON-000005/9/10 dideklarasikan berbeda) → TIDAK dijalankan; dataset aktif seed-content + seed-sanad tetap satu-satunya sumber kebenaran
+- Seed baru prisma/seed-karawang.ts (pure-append, idempoten, display-only): 165-SRC-000012 dossier sumber publik komunitas (Kaskus · YouTube · Facebook · TikTok · Scribd), 165-INST-000003 Majelis Dzikir TQN Cikangkung Rengasdengklok Karawang, 165-SANAD-000004 "Jalur Karawang & Al-Bantani" grade B/TRADITIONAL_ACCOUNT dengan 5 mata: Sambas → [ MATA BLOK ] → Mama Kadzim (#38) → Abah Ganda (#39a) & Abah Sukanta (#39b) → Majelis Cikangkung; silang-cek komunitas "warid ti ahmad kazim bin asnawi banten" direkam verbatim sebagai konteks
+- 12 relasi baru (TEACHER_OF ×2, ASSOCIATED_WITH ×5, LOCATED_IN, DOCUMENTS ×4) — semua ber-grade + sourceRef; DB kini: 61 entitas · 41 relasi · 14 mata sanad · 4 jalur
+- Fitur tertidur diaktifkan: ruang "Kisah & Hikmah" (stories.tsx 224 baris + lib/stories.ts 597 baris — 35 kisah ber-grade: Para Nabi 8 · Sufi Dunia 10 · Aulia Nusantara 4 · Kejayaan & Perjuangan 13) dipasang ke NAV, i18n (catalog + MS/JV/SU/AR: Kisah/Carita/Carita/قصص), sitemap hash +1 → 15 URL
+- Cleanup: public/robots.txt statis dihapus (konflik dengan route robots.ts — route kini menyajikan /robots.txt 200)
+- package.json: skrip "karawang:seed" ditambahkan
+- QA Agent Browser: profil 165-SANAD-000004 render penuh (badge Sanad · B · Traditional Account · ID kanonik · summary dua bahasa · tombol tokoh); Sanad Registry #trust kini 4 kartu jalur; #stories render 35 kisah dengan filter genre & badge grade; Tanya 165 menjawab "Abah Ganda Karawang" dengan grade jujur; /api/stats 61/41/4; mobile 390 beranda rapi; 0 page error; lint exit 0
+- README: "Tiga Jalur" → "Empat Jalur Sanad TQN" + skrip karawang:seed + Status Terbuka diperbarui
+
+Stage Summary:
+- Platform ter-install penuh dan live: identitas Emerald Radiance, 4 jalur sanad display-only, ruang Kisah aktif
+- Deposit pendiri jalur Karawang & Al-Bantani terekam sesuai doktrin: ber-sumber, ber-grade, MATA BLOK jujur, tanpa karangan
+- 61 entitas · 41 relasi · 4 jalur sanad · 15 URL sitemap · 35 kisah ber-grade
