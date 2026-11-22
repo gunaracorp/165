@@ -6,7 +6,7 @@
 /* 165 v.4 — display & multilingual fonts (non-inline so variables are emitted) */
 @theme {
   --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
-  --font-arabic: "Amiri", "Scheherazade New", "Noto Naskh Arabic", serif;
+  --font-arabic: var(--font-amiri), "Amiri", "Scheherazade New", "Noto Naskh Arabic", serif;
 }
 
 @theme inline {

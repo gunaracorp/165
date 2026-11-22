@@ -137,6 +137,9 @@ export type SanadNode = {
   /** short key for stable rendering */
   key: string
   name: string
+  /** Arabic-script rendering of the recorded Latin name — transliterasi/penulisan standar,
+   *  BUKAN sumber baru dan BUKAN koreksi fakta. Nama Latin tetap referensi utama. */
+  nameAr?: string
   place?: string
   dates?: string
   role?: string
@@ -152,55 +155,55 @@ export type SanadNode = {
 
 // ---- segment: the Banten/Asnawi transmission recorded in S1 (#38 → #35) ----
 const SEG_BANTEN: SanadNode[] = [
-  { rank: 38, key: 'ahmad-kadzim-asnawi', name: 'Al Faqir Tubagus Haji Ahmad Kadzim Asnawi "Mama Kadzim"', place: 'Menes, Pandeglang, Banten', dates: '±1912 M – ±1982 M', segment: 'KARAWANG_BANTANI', sources: ['S1', 'S7', 'S9'], note: 'Mengambil ilmu tarekat, hirko(h) tasawuf dan ijazah dari #37. Teacher of both recorded terminals #39a (Karawang) and #39b (Al-Bantani). Komunitas mencatatnya sebagai putra #36 Syekh Asnawi Caringin; lahir ±1912 di Menes, wafat ±1982, dimakamkan di Menes (S9).' },
-  { rank: 37, key: 'ahmad-suhari-cibeber', name: 'Syekh KH. Ahmad Suhari', place: 'Cibeber, Banten', segment: 'KARAWANG_BANTANI', sources: ['S1'], note: 'Tahun lahir/wafat belum terdokumentasi publik — terbuka untuk deposit (kolasi Level A).' },
-  { rank: 36, key: 'muhammad-asnawi-caringin', name: 'Syekh KH. Agung Muhammad Asnawi', place: 'Caringin, Labuan, Pandeglang, Banten', dates: '±1850 M – 1937 M (w. 15 Rabiul Awal 1356 H)', segment: 'KARAWANG_BANTANI', sources: ['S1', 'S9'], note: 'Namesake of the TQN Asnawiyah line in Pandeglang (cf. S4, S6). Lahir ±1850 di Kampung Caringin, Labuan (Wikipedia id: Asnawi al-Bantani); dimakamkan di Caringin (S9).' },
-  { rank: 35, key: 'abdul-karim-tanara', name: 'Syekh KH. Agung Abdul Karim al-Bantani', place: 'Lempuyang, Tanara, Serang, Banten / Makkah', dates: 'l. ±1830 M / 1250 H — tahun wafat belum terdokumentasi publik spesifik', segment: 'KARAWANG_BANTANI', sources: ['S1', 'S8', 'S9'], note: 'Identified with Syekh Abdul Karim al-Bantani, khalifah Syekh Khatib Sambas di Tanah Suci dan mursyid TQN terakhir yang menyatukan kepemimpinan seluruh cabang tarekat (S8, S9).' },
+  { rank: 38, key: 'ahmad-kadzim-asnawi', name: 'Al Faqir Tubagus Haji Ahmad Kadzim Asnawi "Mama Kadzim"', nameAr: 'أَحْمَدُ كَاظِمُ أَسْنَوِيُّ', place: 'Menes, Pandeglang, Banten', dates: '±1912 M – ±1982 M', segment: 'KARAWANG_BANTANI', sources: ['S1', 'S7', 'S9'], note: 'Mengambil ilmu tarekat, hirko(h) tasawuf dan ijazah dari #37. Teacher of both recorded terminals #39a (Karawang) and #39b (Al-Bantani). Komunitas mencatatnya sebagai putra #36 Syekh Asnawi Caringin; lahir ±1912 di Menes, wafat ±1982, dimakamkan di Menes (S9).' },
+  { rank: 37, key: 'ahmad-suhari-cibeber', name: 'Syekh KH. Ahmad Suhari', nameAr: 'أَحْمَدُ سُهَارِيُّ', place: 'Cibeber, Banten', segment: 'KARAWANG_BANTANI', sources: ['S1'], note: 'Tahun lahir/wafat belum terdokumentasi publik — terbuka untuk deposit (kolasi Level A).' },
+  { rank: 36, key: 'muhammad-asnawi-caringin', name: 'Syekh KH. Agung Muhammad Asnawi', nameAr: 'مُحَمَّدُ أَسْنَوِيُّ', place: 'Caringin, Labuan, Pandeglang, Banten', dates: '±1850 M – 1937 M (w. 15 Rabiul Awal 1356 H)', segment: 'KARAWANG_BANTANI', sources: ['S1', 'S9'], note: 'Namesake of the TQN Asnawiyah line in Pandeglang (cf. S4, S6). Lahir ±1850 di Kampung Caringin, Labuan (Wikipedia id: Asnawi al-Bantani); dimakamkan di Caringin (S9).' },
+  { rank: 35, key: 'abdul-karim-tanara', name: 'Syekh KH. Agung Abdul Karim al-Bantani', nameAr: 'عَبْدُ الكَرِيمِ البَنْتَانِيُّ', place: 'Lempuyang, Tanara, Serang, Banten / Makkah', dates: 'l. ±1830 M / 1250 H — tahun wafat belum terdokumentasi publik spesifik', segment: 'KARAWANG_BANTANI', sources: ['S1', 'S8', 'S9'], note: 'Identified with Syekh Abdul Karim al-Bantani, khalifah Syekh Khatib Sambas di Tanah Suci dan mursyid TQN terakhir yang menyatukan kepemimpinan seluruh cabang tarekat (S8, S9).' },
 ]
 
 // ---- segment: the Suryalaya transmission recorded in S2 (#37 → #34) ----
 const SEG_SURYALAYA: SanadNode[] = [
-  { rank: 37, key: 'abah-anom', name: 'Syekh KH. Ahmad Shohibulwafa Tajul Arifin "Abah Anom"', place: 'Pondok Pesantren Suryalaya, Pagerageung, Tasikmalaya', dates: '1 Januari 1915 M – 5 September 2011 M (usia 96)', segment: 'SURYALAYA', sources: ['S2', 'S3', 'S9'], note: 'Putra ke-5 Abah Sepuh; lahir 1 Januari 1915 di Patapan Suryalaya, Dusun Godebag, Desa Tanjungkerta, Pagerageung (suryalaya.org riwayat2, S9); diangkat wakil talqin lalu mursyid penerus di Suryalaya; silsilah ke-37 menurut penomoran Suryalaya (S2) dan kesaksian murid (S3). Wakil talqin tersebar di ±35 wilayah termasuk Singapura dan Malaysia (S2). Catatan kejujuran: penerus setelah Abah Anom dipersoalkan secara publik oleh pihak-pihak berbeda — 165 mencatat perbedaan itu tanpa memihak dan tidak menetapkan silsilah ke-38.' },
-  { rank: 36, key: 'abah-sepuh', name: 'Syaikh Abdullah Mubarok bin Nur Muhammad "Abah Sepuh"', place: 'Pondok Pesantren Suryalaya, Tasikmalaya', dates: '1836 M – 25 Januari 1956 M · pendiri pesantren 7 Rajab 1323 H / 5 September 1905 M', segment: 'SURYALAYA', sources: ['S2', 'S9'], note: 'Lahir 1836 di kampung Cicalung, Tarikolot, Sumedang (suryalaya.org riwayat1, S9); menerima khirqah pada usia 72 tahun dari Mama Guru Agung Syaikh Tholhah bin Talabudin (ke-35); silsilah ke-36.' },
-  { rank: 35, key: 'tholhah-talabudin', name: 'Syaikh Tholhah bin Talabudin "Mama Guru Agung"', place: 'Trusmi, Desa Kalisapu, Weru, Cirebon', dates: '±1825 M – 1935 M', segment: 'SURYALAYA', sources: ['S2', 'S9'], note: 'Wakil Syaikh Ahmad Khatib yang melanjutkan pengembangan TQN setelah wafatnya Khatib Sambas (1878 menurut S2); lahir ±1825 di Trusmi, putra KH. Tholabuddin putra KH. Saidin; wafat 1935, dimakamkan di kompleks Kalisapu (NU Online Jabar, S9); silsilah ke-35.' },
+  { rank: 37, key: 'abah-anom', name: 'Syekh KH. Ahmad Shohibulwafa Tajul Arifin "Abah Anom"', nameAr: 'أَحْمَدُ صَحْبُ الوَفَاءِ تَاجُ العَرِفِينَ', place: 'Pondok Pesantren Suryalaya, Pagerageung, Tasikmalaya', dates: '1 Januari 1915 M – 5 September 2011 M (usia 96)', segment: 'SURYALAYA', sources: ['S2', 'S3', 'S9'], note: 'Putra ke-5 Abah Sepuh; lahir 1 Januari 1915 di Patapan Suryalaya, Dusun Godebag, Desa Tanjungkerta, Pagerageung (suryalaya.org riwayat2, S9); diangkat wakil talqin lalu mursyid penerus di Suryalaya; silsilah ke-37 menurut penomoran Suryalaya (S2) dan kesaksian murid (S3). Wakil talqin tersebar di ±35 wilayah termasuk Singapura dan Malaysia (S2). Catatan kejujuran: penerus setelah Abah Anom dipersoalkan secara publik oleh pihak-pihak berbeda — 165 mencatat perbedaan itu tanpa memihak dan tidak menetapkan silsilah ke-38.' },
+  { rank: 36, key: 'abah-sepuh', name: 'Syaikh Abdullah Mubarok bin Nur Muhammad "Abah Sepuh"', nameAr: 'عَبْدُ اللهِ المُبَارَكُ بْنُ نُورِ مُحَمَّدٍ', place: 'Pondok Pesantren Suryalaya, Tasikmalaya', dates: '1836 M – 25 Januari 1956 M · pendiri pesantren 7 Rajab 1323 H / 5 September 1905 M', segment: 'SURYALAYA', sources: ['S2', 'S9'], note: 'Lahir 1836 di kampung Cicalung, Tarikolot, Sumedang (suryalaya.org riwayat1, S9); menerima khirqah pada usia 72 tahun dari Mama Guru Agung Syaikh Tholhah bin Talabudin (ke-35); silsilah ke-36.' },
+  { rank: 35, key: 'tholhah-talabudin', name: 'Syaikh Tholhah bin Talabudin "Mama Guru Agung"', nameAr: 'طَلْحَةُ بْنُ طَلَبُ الدِّينِ', place: 'Trusmi, Desa Kalisapu, Weru, Cirebon', dates: '±1825 M – 1935 M', segment: 'SURYALAYA', sources: ['S2', 'S9'], note: 'Wakil Syaikh Ahmad Khatib yang melanjutkan pengembangan TQN setelah wafatnya Khatib Sambas (1878 menurut S2); lahir ±1825 di Trusmi, putra KH. Tholabuddin putra KH. Saidin; wafat 1935, dimakamkan di kompleks Kalisapu (NU Online Jabar, S9); silsilah ke-35.' },
 ]
 
 // ---- shared spine #34 → #01, recorded in S1 ----
 const SPINE: SanadNode[] = [
-  { rank: 34, key: 'ahmad-khatib-sambas', name: 'Syekh KH. Maulana Ahmad Khotib Sambas', place: 'Sambas (Kalimantan Barat) / Makkah', dates: '1803 M / 1217 H – 1875 M / 1291 H (catatan resmi Suryalaya menulis 1878)', role: 'Pendiri Tarekat Qodiriah wa Naqsabandiyah', founderOf: 'TQN', sources: ['S1', 'S2', 'S3', 'S9'], note: 'Titik temu (convergence point) ketiga jalur: penomoran S1 dan penomoran resmi Suryalaya sama-sama menempatkannya pada urutan ke-34. Lahir Shafar 1217 H di Kampung Asam, Sambas (S9).' },
-  { rank: 33, key: 'syamsuddin-makkah', name: 'Syekh KH. Syamsuddin', place: 'Makkah', sources: ['S1'] },
-  { rank: 32, key: 'murod', name: 'Syekh Al-Alamah Murod', place: 'Makkah', dates: 'w. 1277 H / 1860 M di Madinah', sources: ['S1'] },
-  { rank: 31, key: 'abdul-fattah', name: 'Syekh Abdul Fattah', dates: 'w. 1266 H / 1850 M di Madinah', sources: ['S1'] },
-  { rank: 30, key: 'alim-utsman', name: 'Syekh Alim Utsman', sources: ['S1'] },
-  { rank: 29, key: 'abdul-rohim', name: 'Syekh Abdul Rohim', sources: ['S1'] },
-  { rank: 28, key: 'abu-bakar', name: 'Syekh Abu Bakar', sources: ['S1'] },
-  { rank: 27, key: 'yahya', name: 'Syekh Yahya', sources: ['S1'] },
-  { rank: 26, key: 'hisamuddin', name: 'Syekh Hisamuddin', sources: ['S1'] },
-  { rank: 25, key: 'waliyuddin', name: 'Syekh Waliyuddin', sources: ['S1'] },
-  { rank: 24, key: 'nurruddin', name: 'Syekh Nurruddin', sources: ['S1'] },
-  { rank: 23, key: 'syaripuddin', name: 'Syekh Syaripuddin', sources: ['S1'] },
-  { rank: 22, key: 'syamsuddin-2', name: 'Syekh Syamsuddin', sources: ['S1'], note: 'Angka 22 pertama dalam daftar sumber (angka 20 dilewati sumber).' },
-  { rank: 21, key: 'muhammad-al-hattaq', name: 'Syekh Muhammad Al-Hattaq', sources: ['S1'] },
-  { rank: 19, key: 'abdul-qadir-al-jaelani', name: "Sultoni Al-Aulia'i Sayyidi Syekh Abdul Qodir Al-Jaelani", place: 'Jilan, Persia / Baghdad', dates: '470–561 H / 1077–1166 M', role: 'Pendiri Qodiriah', founderOf: 'QODIRIYAH', sources: ['S1', 'S9'], note: 'Angka 20 dilewati oleh daftar sumber — direproduksi apa adanya. Murid dari #18.' },
-  { rank: 18, key: 'abu-said-mubarak', name: "Syekh Abu Sa'id Mubarak Al-Majzumi", place: 'Baghdad — ribat al-Muzaffariyyah', dates: 'w. ±1119 M (513 H)', sources: ['S1', 'S9'] },
-  { rank: 22, key: 'baha-udin-naqsyabandiyah', name: 'Syekh Muhammad Baha\'udin Al-Naqsyabandiyah', place: 'Qasr al-Arifan, dekat Bukhara', dates: '718–791 H / 1318–1389 M', role: 'Pendiri Naqsabandiyah', founderOf: 'NAQSABANDIYAH', sources: ['S1', 'S9'], note: 'Penyisipan jalur Naqsabandiyah: angka 22 dipakai ulang oleh daftar sumber — direproduksi apa adanya.' },
-  { rank: 17, key: 'hasan-ali-karakhi', name: 'Syekh Hasan Ali Al-Karakhi', sources: ['S1'] },
-  { rank: 16, key: 'abu-al-faraj-turtusi', name: 'Syekh Abu Al-Faraj Al-Turtusi', sources: ['S1'] },
-  { rank: 15, key: 'abdul-wahid-tamimi', name: 'Syekh Abdul Wahid Al-Tamimi', sources: ['S1'] },
-  { rank: 14, key: 'abu-bakar-syibli', name: 'Syekh Abu Bakar Al-Syibli', place: 'Baghdad', dates: 'w. 334 H / 945–946 M', sources: ['S1', 'S9'] },
-  { rank: 13, key: 'junaid-al-bagdadi', name: "Sayyidi To'ifatussufiyah Maulana Abu Qasim Junaidi Al-Bagdadi", place: 'Baghdad', dates: '±830–910 M (w. 297–298 H)', sources: ['S1', 'S9'] },
-  { rank: 12, key: 'sirrullah-saqati', name: 'Syekh SIRRullah Al-Saqati', place: 'Baghdad', dates: 'w. 253 H / 867 M', sources: ['S1', 'S9'] },
-  { rank: 11, key: 'maruf-karakhi', name: "Syekh Ma'ruf Al-Karakhi", place: 'Karkh, Baghdad', dates: 'w. 200 H / 815 M', sources: ['S1', 'S9'] },
-  { rank: 10, key: 'ali-bin-musa-ridho', name: 'Syekh Abu Hasan Ali Bin Musa Ridho', place: 'Madinah / Thus, Persia', dates: '148–203 H / 765–818 M', sources: ['S1', 'S9'] },
-  { rank: 9, key: 'musa-al-kadhim', name: 'Maulana Syekh Musa Al-Kadhim', place: 'Madinah', dates: '128–183 H / 745–799 M', sources: ['S1', 'S9'] },
-  { rank: 8, key: 'jafar-shoddiq', name: "Syekh Al-Imam Ja'far Shoddiq", place: 'Madinah', dates: '80–148 H / 700–765 M', sources: ['S1', 'S9'] },
-  { rank: 7, key: 'muhammad-al-baqir', name: 'Syekh Al-Imam Muhammad Al-Baqir', place: 'Madinah', dates: '57–114 H / 676–733 M', sources: ['S1', 'S9'] },
-  { rank: 6, key: 'zainal-abidin', name: 'Syekh Al-Imam Zainal Abidin', place: 'Madinah', dates: '38–94 H / 659–713 M', sources: ['S1', 'S9'] },
-  { rank: 5, key: 'imam-husain', name: 'Sayyidina Syekh Al-Imam Husain', place: 'Madinah / Karbala', dates: '4–61 H / 626–680 M', role: 'Cucu Rasulullah ﷺ', sources: ['S1', 'S9'] },
-  { rank: 4, key: 'imam-ali', name: 'Sayyidina wa Maulana Syekh Al-Imam Ali Karramallahu Wajhahu', place: 'Makkah / Kufa', dates: '±601–661 M (w. 40 H)', role: 'Menantu Rasulullah ﷺ', sources: ['S1', 'S9'] },
-  { rank: 3, key: 'rasulullah', name: 'Sayyidul Mursaliin — Rasulillahi Muhammad ﷺ', place: 'Makkah / Madinah', dates: '±571–632 M (11 H)', kind: 'RASUL', sources: ['S1', 'S9'] },
-  { rank: 2, key: 'malak-jibril', name: 'Sayyidunaa Malak Jibril ʿalaihissalam', kind: 'APEX', sources: ['S1'] },
-  { rank: 1, key: 'allah', name: 'Robbul Arbab — Allah Subhaanahu wata\'aalaa', kind: 'APEX', sources: ['S1'] },
+  { rank: 34, key: 'ahmad-khatib-sambas', name: 'Syekh KH. Maulana Ahmad Khotib Sambas', nameAr: 'أَحْمَدُ خَطِيبُ السَّمْبَاسِ', place: 'Sambas (Kalimantan Barat) / Makkah', dates: '1803 M / 1217 H – 1875 M / 1291 H (catatan resmi Suryalaya menulis 1878)', role: 'Pendiri Tarekat Qodiriah wa Naqsabandiyah', founderOf: 'TQN', sources: ['S1', 'S2', 'S3', 'S9'], note: 'Titik temu (convergence point) ketiga jalur: penomoran S1 dan penomoran resmi Suryalaya sama-sama menempatkannya pada urutan ke-34. Lahir Shafar 1217 H di Kampung Asam, Sambas (S9).' },
+  { rank: 33, key: 'syamsuddin-makkah', name: 'Syekh KH. Syamsuddin', nameAr: 'شَمْسُ الدِّينِ', place: 'Makkah', sources: ['S1'] },
+  { rank: 32, key: 'murod', name: 'Syekh Al-Alamah Murod', nameAr: 'مُرَادُ', place: 'Makkah', dates: 'w. 1277 H / 1860 M di Madinah', sources: ['S1'] },
+  { rank: 31, key: 'abdul-fattah', name: 'Syekh Abdul Fattah', nameAr: 'عَبْدُ الفَتَّاحِ', dates: 'w. 1266 H / 1850 M di Madinah', sources: ['S1'] },
+  { rank: 30, key: 'alim-utsman', name: 'Syekh Alim Utsman', nameAr: 'عَلِيمُ عُثْمَانُ', sources: ['S1'] },
+  { rank: 29, key: 'abdul-rohim', name: 'Syekh Abdul Rohim', nameAr: 'عَبْدُ الرَّحِيمِ', sources: ['S1'] },
+  { rank: 28, key: 'abu-bakar', name: 'Syekh Abu Bakar', nameAr: 'أَبُو بَكْرٍ', sources: ['S1'] },
+  { rank: 27, key: 'yahya', name: 'Syekh Yahya', nameAr: 'يَحْيَى', sources: ['S1'] },
+  { rank: 26, key: 'hisamuddin', name: 'Syekh Hisamuddin', nameAr: 'حُسَامُ الدِّينِ', sources: ['S1'] },
+  { rank: 25, key: 'waliyuddin', name: 'Syekh Waliyuddin', nameAr: 'وَلِيُّ الدِّينِ', sources: ['S1'] },
+  { rank: 24, key: 'nurruddin', name: 'Syekh Nurruddin', nameAr: 'نُورُ الدِّينِ', sources: ['S1'] },
+  { rank: 23, key: 'syaripuddin', name: 'Syekh Syaripuddin', nameAr: 'شَرِيفُ الدِّينِ', sources: ['S1'] },
+  { rank: 22, key: 'syamsuddin-2', name: 'Syekh Syamsuddin', nameAr: 'شَمْسُ الدِّينِ', sources: ['S1'], note: 'Angka 22 pertama dalam daftar sumber (angka 20 dilewati sumber).' },
+  { rank: 21, key: 'muhammad-al-hattaq', name: 'Syekh Muhammad Al-Hattaq', nameAr: 'مُحَمَّدُ الحَتَّاقُ', sources: ['S1'] },
+  { rank: 19, key: 'abdul-qadir-al-jaelani', name: "Sultoni Al-Aulia'i Sayyidi Syekh Abdul Qodir Al-Jaelani", nameAr: 'مُحِيِّ الدِّينِ عَبْدُ القَادِرِ الجِيلَانِيُّ', place: 'Jilan, Persia / Baghdad', dates: '470–561 H / 1077–1166 M', role: 'Pendiri Qodiriah', founderOf: 'QODIRIYAH', sources: ['S1', 'S9'], note: 'Angka 20 dilewati oleh daftar sumber — direproduksi apa adanya. Murid dari #18.' },
+  { rank: 18, key: 'abu-said-mubarak', name: "Syekh Abu Sa'id Mubarak Al-Majzumi", nameAr: 'أَبُو سَعِيدٍ مُبَارَكُ المَجْزُومِيُّ', place: 'Baghdad — ribat al-Muzaffariyyah', dates: 'w. ±1119 M (513 H)', sources: ['S1', 'S9'], note: 'Dalam literatur klasik dikenal sebagai Abu Sa\u2019id Mubarak al-Mukharrami (أبو سعيد المخرمي), pemegang ribat al-Muzaffariyyah di Baghdad — syaikh tempat Syekh Abdul Qadir al-Jilani menetap dan mengambil dzikir; penulisan Majzumi direkam apa adanya dari S1.' },
+  { rank: 22, key: 'baha-udin-naqsyabandiyah', name: 'Syekh Muhammad Baha\'udin Al-Naqsyabandiyah', nameAr: 'مُحَمَّدُ بَهَاءُ الدِّينِ النَّقْشَبَنْدِيُّ', place: 'Qasr al-Arifan, dekat Bukhara', dates: '718–791 H / 1318–1389 M', role: 'Pendiri Naqsabandiyah', founderOf: 'NAQSABANDIYAH', sources: ['S1', 'S9'], note: 'Penyisipan jalur Naqsabandiyah: angka 22 dipakai ulang oleh daftar sumber — direproduksi apa adanya.' },
+  { rank: 17, key: 'hasan-ali-karakhi', name: 'Syekh Hasan Ali Al-Karakhi', nameAr: 'حَسَنُ عَلِيٍّ الكَرَاخِيُّ', sources: ['S1'] },
+  { rank: 16, key: 'abu-al-faraj-turtusi', name: 'Syekh Abu Al-Faraj Al-Turtusi', nameAr: 'أَبُو الفَرَجِ التَّرْطُوسِيُّ', sources: ['S1'] },
+  { rank: 15, key: 'abdul-wahid-tamimi', name: 'Syekh Abdul Wahid Al-Tamimi', nameAr: 'عَبْدُ الوَاحِدِ التَّمِيمِيُّ', sources: ['S1'] },
+  { rank: 14, key: 'abu-bakar-syibli', name: 'Syekh Abu Bakar Al-Syibli', nameAr: 'أَبُو بَكْرٍ الشِّبْلِيُّ', place: 'Baghdad', dates: 'w. 334 H / 945–946 M', sources: ['S1', 'S9'] },
+  { rank: 13, key: 'junaid-al-bagdadi', name: "Sayyidi To'ifatussufiyah Maulana Abu Qasim Junaidi Al-Bagdadi", nameAr: 'أَبُو القَاسِمِ الجُنَيْدُ البَغْدَادِيُّ', place: 'Baghdad', dates: '±830–910 M (w. 297–298 H)', sources: ['S1', 'S9'] },
+  { rank: 12, key: 'sirrullah-saqati', name: 'Syekh SIRRullah Al-Saqati', nameAr: 'سِرِّي السَّقَطِيُّ', place: 'Baghdad', dates: 'w. 253 H / 867 M', sources: ['S1', 'S9'] },
+  { rank: 11, key: 'maruf-karakhi', name: "Syekh Ma'ruf Al-Karakhi", nameAr: 'مَعْرُوفُ الكَرْخِيُّ', place: 'Karkh, Baghdad', dates: 'w. 200 H / 815 M', sources: ['S1', 'S9'] },
+  { rank: 10, key: 'ali-bin-musa-ridho', name: 'Syekh Abu Hasan Ali Bin Musa Ridho', nameAr: 'عَلِيُّ بْنُ مُوسَى الرِّضَا', place: 'Madinah / Thus, Persia', dates: '148–203 H / 765–818 M', sources: ['S1', 'S9'] },
+  { rank: 9, key: 'musa-al-kadhim', name: 'Maulana Syekh Musa Al-Kadhim', nameAr: 'مُوسَى الكَاظِمُ', place: 'Madinah', dates: '128–183 H / 745–799 M', sources: ['S1', 'S9'] },
+  { rank: 8, key: 'jafar-shoddiq', name: "Syekh Al-Imam Ja'far Shoddiq", nameAr: 'جَعْفَرُ الصَّادِقُ', place: 'Madinah', dates: '80–148 H / 700–765 M', sources: ['S1', 'S9'] },
+  { rank: 7, key: 'muhammad-al-baqir', name: 'Syekh Al-Imam Muhammad Al-Baqir', nameAr: 'مُحَمَّدُ البَاقِرُ', place: 'Madinah', dates: '57–114 H / 676–733 M', sources: ['S1', 'S9'] },
+  { rank: 6, key: 'zainal-abidin', name: 'Syekh Al-Imam Zainal Abidin', nameAr: 'عَلِيُّ زَيْنُ العَابِدِينَ', place: 'Madinah', dates: '38–94 H / 659–713 M', sources: ['S1', 'S9'] },
+  { rank: 5, key: 'imam-husain', name: 'Sayyidina Syekh Al-Imam Husain', nameAr: 'الحُسَيْنُ بْنُ عَلِيٍّ', place: 'Madinah / Karbala', dates: '4–61 H / 626–680 M', role: 'Cucu Rasulullah ﷺ', sources: ['S1', 'S9'] },
+  { rank: 4, key: 'imam-ali', name: 'Sayyidina wa Maulana Syekh Al-Imam Ali Karramallahu Wajhahu', nameAr: 'عَلِيُّ بْنُ أَبِي طَالِبٍ كَرَّمَ اللهُ وَجْهَهُ', place: 'Makkah / Kufa', dates: '±601–661 M (w. 40 H)', role: 'Menantu Rasulullah ﷺ', sources: ['S1', 'S9'] },
+  { rank: 3, key: 'rasulullah', name: 'Sayyidul Mursaliin — Rasulillahi Muhammad ﷺ', nameAr: 'مُحَمَّدٌ رَسُولُ اللهِ ﷺ', place: 'Makkah / Madinah', dates: '±571–632 M (11 H)', kind: 'RASUL', sources: ['S1', 'S9'] },
+  { rank: 2, key: 'malak-jibril', name: 'Sayyidunaa Malak Jibril ʿalaihissalam', nameAr: 'جِبْرِيلُ عَلَيْهِ السَّلَامُ', kind: 'APEX', sources: ['S1'] },
+  { rank: 1, key: 'allah', name: 'Robbul Arbab — Allah Subhaanahu wata\'aalaa', nameAr: 'اللهُ سُبْحَانَهُ وَتَعَالَى', kind: 'APEX', sources: ['S1'] },
 ]
 
 // ---------------- terminals (the two #39 murids recorded in S1) ----------------
@@ -213,6 +216,7 @@ export const SANAD_SPINE = SPINE
 
 const TERMINAL_KARAWANG: SanadNode = {
   rank: 39, key: 'abah-gana-karawang', name: 'Al Faqir Kiyai Haji Syekh "Abah Gana Karawang"',
+  nameAr: 'أَبَا غَانَا',
   place: 'Dusun Cikangkung Timur, Desa Rengasdengklok Utara, Kec. Rengasdengklok, Kab. Karawang, Jawa Barat',
   segment: 'KARAWANG_BANTANI', sources: ['S1', 'S5'],
   note: 'Direkam dalam S1 sebagai murid #38 (Ahmad Kadzim Asnawi, Menes). S5 (komunitas, independen): "abah ganda cikangkung, rengasdengklok, karawang — warid ti ahmad kazim bin asnawi banten". Varian sebutan yang terekam: "Abah Ganda", "Abah Gana", "Mama Suganda" (S5).',
@@ -221,6 +225,7 @@ export const TERMINAL_KARAWANG_NODE = TERMINAL_KARAWANG
 
 const TERMINAL_ALBANTANI: SanadNode = {
   rank: 39, key: 'ahmad-sukanta-salmin', name: 'Syekh KH. Agung Ahmad Sukanta bin Salmin',
+  nameAr: 'أَحْمَدُ سُكَانْتَا بْنُ سَالْمِينْ',
   place: 'Kaduparasi, Labuan, Pandeglang, Banten',
   dates: '1935 M / 1356 H – 2015 M / 1436 H (S4)',
   segment: 'KARAWANG_BANTANI', sources: ['S1', 'S4', 'S6'],
@@ -333,4 +338,101 @@ export const SANAD_POLICY = {
     'Succession note: public records disagree about who (if anyone) continues after Abah Anom in the Suryalaya line. 165 records the disagreement without adjudicating it — no silsilah ke-38 is asserted here.',
   successorNoteId:
     'Catatan suksesi: catatan publik berbeda pendapat tentang siapa (jika ada) penerus Abah Anom di jalur Suryalaya. 165 mencatat perbedaan itu tanpa memutus — silsilah ke-38 tidak ditegaskan di sini.',
+}
+
+// ---------------- tafsir indah — ayat & hadis tentang sanad dan rijalullah ----------------
+//
+// Tafsir band bilingual Arab–Indonesia. Teks Arab direkam dari mushaf/hadis standar;
+// terjemah Indonesia mengikuti gaya terjemah resmi. Catatan tafsir (note) ditulis
+// untuk menjelaskan KAITAN ayat dengan makna sanad TQN — bukan fatwa, bukan keputusan.
+
+export type SanadTafsir = {
+  id: string
+  kind: 'AYAT' | 'HADIS' | 'PERINGATAN AHLUL ILM'
+  ar: string
+  idn: string
+  source: string
+  note: string
+}
+
+export const SANAD_TAFSIR: SanadTafsir[] = [
+  {
+    id: 't1',
+    kind: 'AYAT',
+    ar: '﴿فِي بُيُوتٍ أَذِنَ اللَّهُ أَن تُرْفَعَ وَيُذْكَرَ فِيهَا اسْمُهُ يُسَبِّحُ لَهُ فِيهَا بِالْغُدُوِّ وَالْآصَالِ ۝ رِجَالٌ لَّا تُلْهِيهِمْ تِجَارَةٌ وَلَا بَيْعٌ عَن ذِكْرِ اللَّهِ وَإِقَامِ الصَّلَاةِ وَإِيتَاءِ الزَّكَاةِ يَخَافُونَ يَوْمًا تَتَقَلَّبُ فِيهِ الْقُلُوبُ وَالْأَبْصَارُ﴾',
+    idn: '"Dalam rumah-rumah yang Allah izinkan untuk dimuliakan dan disebut nama-Nya di dalamnya, yang bertasbih kepada-Nya pada waktu pagi dan petang — laki-laki yang tidak dilalaikan oleh perniagaan dan tidak pula oleh jual beli dari mengingat Allah, (dari) mendirikan salat dan menunaikan zakat. Mereka takut pada hari yang pada hari itu mengalihkan hati dan penglihatan."',
+    source: 'QS. An-Nūr [24] : 36–37',
+    note: 'Inilah ayat para Rijālullah yang paling dekat dengan jiwa tharīqah. Peta sanad TQN ini sesungguhnya peta warisan "rumah-rumah yang dimuliakan" itu: dari ribāṭ-ribāṭ Baghdad pada masa Junaid dan al-Jailani, hingga langgar-langgar dzikir di Karawang, Kaduparasi, dan Suryalaya — rumah yang sama, diisi dzikir yang sama, diwariskan lewat tangan yang bersambung.',
+  },
+  {
+    id: 't2',
+    kind: 'AYAT',
+    ar: '﴿أَلَا إِنَّ أَوْلِيَاءَ اللَّهِ لَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ ۝ الَّذِينَ آمَنُوا وَكَانُوا يَتَّقُونَ﴾',
+    idn: '"Ingatlah, sesungguhnya para wali Allah, tidak ada kekhawatiran bagi mereka dan mereka tidak pula bersedih hati — (yaitu) mereka yang beriman dan senantiasa bertakwa."',
+    source: 'QS. Yūnus [10] : 62–63',
+    note: 'Ayat ini menegaskan ukuran kemuliaan seorang syekh: bukan garis keturunan dan bukan popularitas, melainkan iman dan takwa. Sebab itu menghormati para syekh dalam sanad adalah menghormati jalan iman dan takwa yang mereka tafsirkan dengan kehidupan mereka — bukan pemujaan pribadi.',
+  },
+  {
+    id: 't3',
+    kind: 'AYAT',
+    ar: '﴿الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ اللَّهِ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ﴾',
+    idn: '"(Yaitu) orang-orang yang beriman dan hati mereka menjadi tenteram dengan mengingat Allah. Ingatlah, hanya dengan mengingat Allah hati menjadi tenteram."',
+    source: 'QS. Ar-Raʿd [13] : 28',
+    note: 'Denyut terendah dari seluruh silsilah ini adalah dzikir. Dzikir TQN bukan dzikir karangan: dzikirnya diambil dari guru yang mengambil dari gurunya, bersambung tanpa terputus sampai Rasulullah ﷺ — sehingga yang menenteramkan hati bukan sekadar bunyi, melainkan amanah yang bersambung.',
+  },
+  {
+    id: 't4',
+    kind: 'AYAT',
+    ar: '﴿فَوَجَدَا عَبْدًا مِّنْ عِبَادِنَا آتَيْنَاهُ رَحْمَةً مِّنْ عِندِنَا وَعَلَّمْنَاهُ مِن لَّدُنَّا عِلْمًا﴾',
+    idn: '"Maka bertemulah keduanya dengan seorang hamba di antara hamba-hamba Kami, yang telah Kami berikan kepadanya rahmat dari sisi Kami, dan telah Kami ajarkan kepadanya ilmu dari sisi Kami."',
+    source: 'QS. Al-Kahf [18] : 65',
+    note: '"ʿibādanā — hamba-hamba Kami" adalah sumber sebutan Ibadullah; ilmu "min ladunnā — dari sisi Kami" adalah gambaran tertinggi guru ruhani. Tarekat meyakini ilmu seperti ini berpindah melalui sanad yang bersambung: rahmat yang turun dari sisi Allah mengalir lewat tangan-tangan para syekh dalam peta ini.',
+  },
+  {
+    id: 't5',
+    kind: 'AYAT',
+    ar: '﴿قُلْ هَٰذِهِ سَبِيلِي أَدْعُو إِلَى اللَّهِ عَلَى بَصِيرَةٍ أَنَا وَمَنِ اتَّبَعَنِي﴾',
+    idn: '"Katakanlah: Inilah jalanku, aku dan orang-orang yang mengikutiku, kami mengajak kepada Allah dengan bukti yang terang."',
+    source: 'QS. Yūsuf [12] : 108',
+    note: '"Ṣabīlī — jalanku" adalah akar jiwa kata ṭarīqah. Jalan ini tidak pernah dilangkaki sendirian: ia dilangkaki bersama, di atas bekas-bekas langkah para mujaddid dan para syekh dalam sanad, dari Baghdad sampai Banten, sampai Karawang.',
+  },
+  {
+    id: 't6',
+    kind: 'PERINGATAN AHLUL ILM',
+    ar: '"إِنَّمَا هَذَا الْعِلْمُ دِينٌ فَانْظُرُوا عَمَّنْ تَأْخُذُونَ دِينَكُمْ"',
+    idn: '"Sesungguhnya ilmu ini adalah agama, maka perhatikanlah dari siapa kalian mengambil agama kalian."',
+    source: 'Peringatan Ibnu Sīrīn — diriwayatkan pada muqaddimah Shahih Muslim',
+    note: 'Satu kalimat yang memuat seluruh rahasia sanad: mengambil dzikir bukan sekadar memilih teknik, melainkan memilih tangan dari siapa cahaya itu diambil. Sebab itu 165 merekam sanad apa adanya — supaya murid tahu persis dari siapa ia mengambil.',
+  },
+  {
+    id: 't7',
+    kind: 'PERINGATAN AHLUL ILM',
+    ar: '"اَلْأَسَانِيدُ مِنَ الدِّينِ لَوْلَا الْأَسَانِيدُ لَقَالَ مَنْ شَاءَ مَا شَاءَ"',
+    idn: '"Sanad itu bagian dari agama; sekiranya bukan karena sanad, niscaya setiap orang akan berkata sesukanya."',
+    source: 'Abdullah bin al-Mubārak — dikutip pada muqaddimah Shahih Muslim',
+    note: 'Inilah tameng tharīqah dari pemalsuan. Sanad muttashil menjaga murid tidak tercecer pada guruluruhan karangan — dan inilah alasan setiap simpul pada peta ini direkam dengan sumber dan tingkat buktinya, tidak pernah dikarang.',
+  },
+  {
+    id: 't8',
+    kind: 'HADIS',
+    ar: '"مَا جَلَسَ قَوْمٌ يَذْكُرُونَ اللَّهَ عَزَّ وَجَلَّ إِلَّا حَفَّتْهُمُ الْمَلَائِكَةُ وَغَشِيَتْهُمُ السَّكِينَةُ وَأَبْتَدَهُمُ اللَّهُ فِيمَنْ عِنْدَهُ"',
+    idn: '"Tidaklah duduk suatu kaum yang berdzikir kepada Allah Azza wa Jalla, kecuali mereka dikelilingi para malaikat, ketenangan menyelimuti mereka, dan Allah menyebut-beri mereka dalam kumpulan yang ada di sisi-Nya."',
+    source: 'HR. Muslim — Kitab adz-Dzikir wal-Istighfar',
+    note: 'Setiap majelis dzikir TQN hari ini — di Karawang, di Kaduparasi, di Suryalaya — adalah kelanjutan majelis-majelis para syekh dalam peta ini. Malaikat masih mengelilingi, sakinah masih menyelimuti; sanad adalah saksi bahwa majelis itu bukan baru, ia warisan yang bersambung.',
+  },
+]
+
+// ---------------- frasa Arab indah untuk judul & penanda diagram ----------------
+
+export const SANAD_ARABIC = {
+  /** nama tarekat dalam bahasa Arab */
+  orderNameAr: 'الطَّرِيقَةُ القَادِرِيَّةُ النَّقْشَبَنْدِيَّةُ',
+  /** sanad bersambung sampai Rasulullah ﷺ */
+  sanadMuttashilAr: 'السَّنَدُ المُتَّصِلُ إِلَى رَسُولِ اللهِ ﷺ',
+  /** Ibadullah Rijalullah — sebutan indah para pemilik sanad */
+  rijalTitleAr: 'عِبَادُ اللهِ وَرِجَالُ اللهِ',
+  /** silsilah dzikir bersambung */
+  silsilahAr: 'سَلْسِلَةُ الذِّكْرِ المُتَّصِلَةِ',
+  /** satu sanad, tiga jalur */
+  satuTigaAr: 'سَنَدٌ وَاحِدٌ · ثَلَاثَةُ مَسَارِكَ',
 }
