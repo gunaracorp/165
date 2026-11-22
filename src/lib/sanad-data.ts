@@ -118,6 +118,15 @@ export const SANAD_SOURCES: SanadSource[] = [
     verificationStatus: 'DOCUMENTED',
     note: 'Published background on Syekh Abdul Karim al-Bantani (#35 in S1): mursyid TQN of 19th-century Banten; Wikipedia calls him the last mursyid to unite leadership of the whole TQN branch; NU Online profiles him as mursyid from Banten.',
   },
+  {
+    id: 'S9',
+    title: 'Referensi biografi publik terdokumentasi — tanggal lahir/wafat (dates-only enrichment)',
+    publisher: 'suryalaya.org (riwayat1, riwayat2) · Wikipedia (id) · NU Online Jabar · biografi komunitas tersilang',
+    url: 'https://www.suryalaya.org/riwayat2.html',
+    evidenceLevel: 'C',
+    verificationStatus: 'DOCUMENTED',
+    note: 'DATES-ONLY source — it changes no chain position. Recorded dates: Abah Anom lahir 1 Januari 1915 di Suryalaya, wafat 5 September 2011 (suryalaya.org riwayat2 + Wikipedia id); Abah Sepuh lahir 1836 di Cicalung Sumedang, wafat 25 Januari 1956, pendiri Ponpes Suryalaya 5-9-1905 (suryalaya.org riwayat1 + NU Online); Tholhah bin Tholabuddin lahir ±1825 di Trusmi Weru Cirebon, wafat 1935 di Kalisapu (NU Online Jabar + komunitas); Khatib Sambas lahir 1803 (Shafar 1217 H) di Sambas, wafat 1875/1291 H menurut Wikipedia & akademik — catatan resmi Suryalaya (S2) menulis 1878; perbedaan direkam tanpa memutus; Abdul Karim al-Bantani lahir ±1830/1250 H di Lempuyang Tanara (Wikipedia id + NU Online), tahun wafatnya belum terdokumentasi publik spesifik; Asnawi Caringin lahir ±1850 (9-11-1850 per komunitas), wafat 15 Rabiul Awal 1356 H / 1937 di Caringin Labuan (Wikipedia id Asnawi al-Bantani); Mama Kadzim Asnawi lahir ±1912 di Menes, wafat ±1982 (biografi komunitas); Sukanta bin Salmin 1935/1356 H – 2015/1436 H (S4). Tahun syekh klasik & imam ahlul bait (perangkat #4–#19, #22b) dari riwayat biografi standar. Simpul tanpa tanggal = belum terdokumentasi publik — terbuka untuk deposit kolasi Level A.',
+  },
 ]
 
 // ---------------- chain nodes (shared spine, 34 → 1) ----------------
@@ -143,24 +152,24 @@ export type SanadNode = {
 
 // ---- segment: the Banten/Asnawi transmission recorded in S1 (#38 → #35) ----
 const SEG_BANTEN: SanadNode[] = [
-  { rank: 38, key: 'ahmad-kadzim-asnawi', name: 'Al Faqir Tubagus Haji Ahmad Kadzim Asnawi', place: 'Menes, Banten', segment: 'KARAWANG_BANTANI', sources: ['S1', 'S7'], note: 'Mengambil ilmu tarekat, hirko(h) tasawuf dan ijazah dari #37. Teacher of both recorded terminals #39a (Karawang) and #39b (Al-Bantani).' },
-  { rank: 37, key: 'ahmad-suhari-cibeber', name: 'Syekh KH. Ahmad Suhari', place: 'Cibeber, Banten', segment: 'KARAWANG_BANTANI', sources: ['S1'] },
-  { rank: 36, key: 'muhammad-asnawi-caringin', name: 'Syekh KH. Agung Muhammad Asnawi', place: 'Caringin', segment: 'KARAWANG_BANTANI', sources: ['S1'], note: 'Namesake of the TQN Asnawiyah line in Pandeglang (cf. S4, S6).' },
-  { rank: 35, key: 'abdul-karim-tanara', name: 'Syekh KH. Agung Abdul Karim', place: 'Tanara, Banten', segment: 'KARAWANG_BANTANI', sources: ['S1', 'S8'], note: 'Identified with Syekh Abdul Karim al-Bantani, mursyid TQN of 19th-century Banten (S8).' },
+  { rank: 38, key: 'ahmad-kadzim-asnawi', name: 'Al Faqir Tubagus Haji Ahmad Kadzim Asnawi "Mama Kadzim"', place: 'Menes, Pandeglang, Banten', dates: '±1912 M – ±1982 M', segment: 'KARAWANG_BANTANI', sources: ['S1', 'S7', 'S9'], note: 'Mengambil ilmu tarekat, hirko(h) tasawuf dan ijazah dari #37. Teacher of both recorded terminals #39a (Karawang) and #39b (Al-Bantani). Komunitas mencatatnya sebagai putra #36 Syekh Asnawi Caringin; lahir ±1912 di Menes, wafat ±1982, dimakamkan di Menes (S9).' },
+  { rank: 37, key: 'ahmad-suhari-cibeber', name: 'Syekh KH. Ahmad Suhari', place: 'Cibeber, Banten', segment: 'KARAWANG_BANTANI', sources: ['S1'], note: 'Tahun lahir/wafat belum terdokumentasi publik — terbuka untuk deposit (kolasi Level A).' },
+  { rank: 36, key: 'muhammad-asnawi-caringin', name: 'Syekh KH. Agung Muhammad Asnawi', place: 'Caringin, Labuan, Pandeglang, Banten', dates: '±1850 M – 1937 M (w. 15 Rabiul Awal 1356 H)', segment: 'KARAWANG_BANTANI', sources: ['S1', 'S9'], note: 'Namesake of the TQN Asnawiyah line in Pandeglang (cf. S4, S6). Lahir ±1850 di Kampung Caringin, Labuan (Wikipedia id: Asnawi al-Bantani); dimakamkan di Caringin (S9).' },
+  { rank: 35, key: 'abdul-karim-tanara', name: 'Syekh KH. Agung Abdul Karim al-Bantani', place: 'Lempuyang, Tanara, Serang, Banten / Makkah', dates: 'l. ±1830 M / 1250 H — tahun wafat belum terdokumentasi publik spesifik', segment: 'KARAWANG_BANTANI', sources: ['S1', 'S8', 'S9'], note: 'Identified with Syekh Abdul Karim al-Bantani, khalifah Syekh Khatib Sambas di Tanah Suci dan mursyid TQN terakhir yang menyatukan kepemimpinan seluruh cabang tarekat (S8, S9).' },
 ]
 
 // ---- segment: the Suryalaya transmission recorded in S2 (#37 → #34) ----
 const SEG_SURYALAYA: SanadNode[] = [
-  { rank: 37, key: 'abah-anom', name: 'Syekh KH. Ahmad Shohibulwafa Tajul Arifin "Abah Anom"', place: 'Pondok Pesantren Suryalaya, Tasikmalaya', dates: 'w. 5 September 2011 M (usia 96)', segment: 'SURYALAYA', sources: ['S2', 'S3'], note: 'Putra ke-5 Abah Sepuh; diangkat wakil talqin lalu mursyid penerus di Suryalaya; silsilah ke-37 menurut penomoran Suryalaya (S2) dan kesaksian murid (S3). Wakil talqin tersebar di ±35 wilayah termasuk Singapura dan Malaysia (S2). Catatan kejujuran: penerus setelah Abah Anom dipersoalkan secara publik oleh pihak-pihak berbeda — 165 mencatat perbedaan itu tanpa memihak dan tidak menetapkan silsilah ke-38.' },
-  { rank: 36, key: 'abah-sepuh', name: 'Syaikh Abdullah Mubarok bin Nur Muhammad "Abah Sepuh"', place: 'Pondok Pesantren Suryalaya, Tasikmalaya', dates: 'pendiri pesantren, 7 Rajab 1323 H / 5 September 1905 M', segment: 'SURYALAYA', sources: ['S2'], note: 'Menerima khirqah pada usia 72 tahun dari Mama Guru Agung Syaikh Tholhah bin Talabudin (ke-35); silsilah ke-36.' },
-  { rank: 35, key: 'tholhah-talabudin', name: 'Syaikh Tholhah bin Talabudin "Mama Guru Agung"', place: 'Trusmi, Desa Kalisapu, Cirebon', segment: 'SURYALAYA', sources: ['S2'], note: 'Wakil Syaikh Ahmad Khatib yang melanjutkan pengembangan TQN setelah wafatnya Khatib Sambas (1878); silsilah ke-35.' },
+  { rank: 37, key: 'abah-anom', name: 'Syekh KH. Ahmad Shohibulwafa Tajul Arifin "Abah Anom"', place: 'Pondok Pesantren Suryalaya, Pagerageung, Tasikmalaya', dates: '1 Januari 1915 M – 5 September 2011 M (usia 96)', segment: 'SURYALAYA', sources: ['S2', 'S3', 'S9'], note: 'Putra ke-5 Abah Sepuh; lahir 1 Januari 1915 di Patapan Suryalaya, Dusun Godebag, Desa Tanjungkerta, Pagerageung (suryalaya.org riwayat2, S9); diangkat wakil talqin lalu mursyid penerus di Suryalaya; silsilah ke-37 menurut penomoran Suryalaya (S2) dan kesaksian murid (S3). Wakil talqin tersebar di ±35 wilayah termasuk Singapura dan Malaysia (S2). Catatan kejujuran: penerus setelah Abah Anom dipersoalkan secara publik oleh pihak-pihak berbeda — 165 mencatat perbedaan itu tanpa memihak dan tidak menetapkan silsilah ke-38.' },
+  { rank: 36, key: 'abah-sepuh', name: 'Syaikh Abdullah Mubarok bin Nur Muhammad "Abah Sepuh"', place: 'Pondok Pesantren Suryalaya, Tasikmalaya', dates: '1836 M – 25 Januari 1956 M · pendiri pesantren 7 Rajab 1323 H / 5 September 1905 M', segment: 'SURYALAYA', sources: ['S2', 'S9'], note: 'Lahir 1836 di kampung Cicalung, Tarikolot, Sumedang (suryalaya.org riwayat1, S9); menerima khirqah pada usia 72 tahun dari Mama Guru Agung Syaikh Tholhah bin Talabudin (ke-35); silsilah ke-36.' },
+  { rank: 35, key: 'tholhah-talabudin', name: 'Syaikh Tholhah bin Talabudin "Mama Guru Agung"', place: 'Trusmi, Desa Kalisapu, Weru, Cirebon', dates: '±1825 M – 1935 M', segment: 'SURYALAYA', sources: ['S2', 'S9'], note: 'Wakil Syaikh Ahmad Khatib yang melanjutkan pengembangan TQN setelah wafatnya Khatib Sambas (1878 menurut S2); lahir ±1825 di Trusmi, putra KH. Tholabuddin putra KH. Saidin; wafat 1935, dimakamkan di kompleks Kalisapu (NU Online Jabar, S9); silsilah ke-35.' },
 ]
 
 // ---- shared spine #34 → #01, recorded in S1 ----
 const SPINE: SanadNode[] = [
-  { rank: 34, key: 'ahmad-khatib-sambas', name: 'Syekh KH. Maulana Ahmad Khotib Sambas', place: 'Sambas / Makkah', dates: 'w. 1878 M', role: 'Pendiri Tarekat Qodiriah wa Naqsabandiyah', founderOf: 'TQN', sources: ['S1', 'S2', 'S3'], note: 'Titik temu (convergence point) ketiga jalur: penomoran S1 dan penomoran resmi Suryalaya sama-sama menempatkannya pada urutan ke-34.' },
+  { rank: 34, key: 'ahmad-khatib-sambas', name: 'Syekh KH. Maulana Ahmad Khotib Sambas', place: 'Sambas (Kalimantan Barat) / Makkah', dates: '1803 M / 1217 H – 1875 M / 1291 H (catatan resmi Suryalaya menulis 1878)', role: 'Pendiri Tarekat Qodiriah wa Naqsabandiyah', founderOf: 'TQN', sources: ['S1', 'S2', 'S3', 'S9'], note: 'Titik temu (convergence point) ketiga jalur: penomoran S1 dan penomoran resmi Suryalaya sama-sama menempatkannya pada urutan ke-34. Lahir Shafar 1217 H di Kampung Asam, Sambas (S9).' },
   { rank: 33, key: 'syamsuddin-makkah', name: 'Syekh KH. Syamsuddin', place: 'Makkah', sources: ['S1'] },
-  { rank: 32, key: 'murod', name: 'Syekh Al-Alamah Murod', place: 'Makkah — w. 1277 H / 1860 M di Madinah', sources: ['S1'] },
+  { rank: 32, key: 'murod', name: 'Syekh Al-Alamah Murod', place: 'Makkah', dates: 'w. 1277 H / 1860 M di Madinah', sources: ['S1'] },
   { rank: 31, key: 'abdul-fattah', name: 'Syekh Abdul Fattah', dates: 'w. 1266 H / 1850 M di Madinah', sources: ['S1'] },
   { rank: 30, key: 'alim-utsman', name: 'Syekh Alim Utsman', sources: ['S1'] },
   { rank: 29, key: 'abdul-rohim', name: 'Syekh Abdul Rohim', sources: ['S1'] },
@@ -172,24 +181,24 @@ const SPINE: SanadNode[] = [
   { rank: 23, key: 'syaripuddin', name: 'Syekh Syaripuddin', sources: ['S1'] },
   { rank: 22, key: 'syamsuddin-2', name: 'Syekh Syamsuddin', sources: ['S1'], note: 'Angka 22 pertama dalam daftar sumber (angka 20 dilewati sumber).' },
   { rank: 21, key: 'muhammad-al-hattaq', name: 'Syekh Muhammad Al-Hattaq', sources: ['S1'] },
-  { rank: 19, key: 'abdul-qadir-al-jaelani', name: "Sultoni Al-Aulia'i Sayyidi Syekh Abdul Qodir Al-Jaelani", role: 'Pendiri Qodiriah', founderOf: 'QODIRIYAH', sources: ['S1'], note: 'Angka 20 dilewati oleh daftar sumber — direproduksi apa adanya. Murid dari #18.' },
-  { rank: 18, key: 'abu-said-mubarak', name: "Syekh Abu Sa'id Mubarak Al-Majzumi", sources: ['S1'] },
-  { rank: 22, key: 'baha-udin-naqsyabandiyah', name: 'Syekh Muhammad Baha\'udin Al-Naqsyabandiyah', role: 'Pendiri Naqsabandiyah', founderOf: 'NAQSABANDIYAH', sources: ['S1'], note: 'Penyisipan jalur Naqsabandiyah: angka 22 dipakai ulang oleh daftar sumber — direproduksi apa adanya.' },
+  { rank: 19, key: 'abdul-qadir-al-jaelani', name: "Sultoni Al-Aulia'i Sayyidi Syekh Abdul Qodir Al-Jaelani", place: 'Jilan, Persia / Baghdad', dates: '470–561 H / 1077–1166 M', role: 'Pendiri Qodiriah', founderOf: 'QODIRIYAH', sources: ['S1', 'S9'], note: 'Angka 20 dilewati oleh daftar sumber — direproduksi apa adanya. Murid dari #18.' },
+  { rank: 18, key: 'abu-said-mubarak', name: "Syekh Abu Sa'id Mubarak Al-Majzumi", place: 'Baghdad — ribat al-Muzaffariyyah', dates: 'w. ±1119 M (513 H)', sources: ['S1', 'S9'] },
+  { rank: 22, key: 'baha-udin-naqsyabandiyah', name: 'Syekh Muhammad Baha\'udin Al-Naqsyabandiyah', place: 'Qasr al-Arifan, dekat Bukhara', dates: '718–791 H / 1318–1389 M', role: 'Pendiri Naqsabandiyah', founderOf: 'NAQSABANDIYAH', sources: ['S1', 'S9'], note: 'Penyisipan jalur Naqsabandiyah: angka 22 dipakai ulang oleh daftar sumber — direproduksi apa adanya.' },
   { rank: 17, key: 'hasan-ali-karakhi', name: 'Syekh Hasan Ali Al-Karakhi', sources: ['S1'] },
   { rank: 16, key: 'abu-al-faraj-turtusi', name: 'Syekh Abu Al-Faraj Al-Turtusi', sources: ['S1'] },
   { rank: 15, key: 'abdul-wahid-tamimi', name: 'Syekh Abdul Wahid Al-Tamimi', sources: ['S1'] },
-  { rank: 14, key: 'abu-bakar-syibli', name: 'Syekh Abu Bakar Al-Syibli', sources: ['S1'] },
-  { rank: 13, key: 'junaid-al-bagdadi', name: "Sayyidi To'ifatussufiyah Maulana Abu Qasim Junaidi Al-Bagdadi", sources: ['S1'] },
-  { rank: 12, key: 'sirrullah-saqati', name: 'Syekh SIRRullah Al-Saqati', sources: ['S1'] },
-  { rank: 11, key: 'maruf-karakhi', name: "Syekh Ma'ruf Al-Karakhi", sources: ['S1'] },
-  { rank: 10, key: 'ali-bin-musa-ridho', name: 'Syekh Abu Hasan Ali Bin Musa Ridho', sources: ['S1'] },
-  { rank: 9, key: 'musa-al-kadhim', name: 'Maulana Syekh Musa Al-Kadhim', sources: ['S1'] },
-  { rank: 8, key: 'jafar-shoddiq', name: "Syekh Al-Imam Ja'far Shoddiq", sources: ['S1'] },
-  { rank: 7, key: 'muhammad-al-baqir', name: 'Syekh Al-Imam Muhammad Al-Baqir', sources: ['S1'] },
-  { rank: 6, key: 'zainal-abidin', name: 'Syekh Al-Imam Zainal Abidin', sources: ['S1'] },
-  { rank: 5, key: 'imam-husain', name: 'Sayyidina Syekh Al-Imam Husain', role: 'Cucu Rasulullah ﷺ', sources: ['S1'] },
-  { rank: 4, key: 'imam-ali', name: 'Sayyidina wa Maulana Syekh Al-Imam Ali Karramallahu Wajhahu', role: 'Menantu Rasulullah ﷺ', sources: ['S1'] },
-  { rank: 3, key: 'rasulullah', name: 'Sayyidul Mursaliin — Rasulillahi Muhammad ﷺ', kind: 'RASUL', sources: ['S1'] },
+  { rank: 14, key: 'abu-bakar-syibli', name: 'Syekh Abu Bakar Al-Syibli', place: 'Baghdad', dates: 'w. 334 H / 945–946 M', sources: ['S1', 'S9'] },
+  { rank: 13, key: 'junaid-al-bagdadi', name: "Sayyidi To'ifatussufiyah Maulana Abu Qasim Junaidi Al-Bagdadi", place: 'Baghdad', dates: '±830–910 M (w. 297–298 H)', sources: ['S1', 'S9'] },
+  { rank: 12, key: 'sirrullah-saqati', name: 'Syekh SIRRullah Al-Saqati', place: 'Baghdad', dates: 'w. 253 H / 867 M', sources: ['S1', 'S9'] },
+  { rank: 11, key: 'maruf-karakhi', name: "Syekh Ma'ruf Al-Karakhi", place: 'Karkh, Baghdad', dates: 'w. 200 H / 815 M', sources: ['S1', 'S9'] },
+  { rank: 10, key: 'ali-bin-musa-ridho', name: 'Syekh Abu Hasan Ali Bin Musa Ridho', place: 'Madinah / Thus, Persia', dates: '148–203 H / 765–818 M', sources: ['S1', 'S9'] },
+  { rank: 9, key: 'musa-al-kadhim', name: 'Maulana Syekh Musa Al-Kadhim', place: 'Madinah', dates: '128–183 H / 745–799 M', sources: ['S1', 'S9'] },
+  { rank: 8, key: 'jafar-shoddiq', name: "Syekh Al-Imam Ja'far Shoddiq", place: 'Madinah', dates: '80–148 H / 700–765 M', sources: ['S1', 'S9'] },
+  { rank: 7, key: 'muhammad-al-baqir', name: 'Syekh Al-Imam Muhammad Al-Baqir', place: 'Madinah', dates: '57–114 H / 676–733 M', sources: ['S1', 'S9'] },
+  { rank: 6, key: 'zainal-abidin', name: 'Syekh Al-Imam Zainal Abidin', place: 'Madinah', dates: '38–94 H / 659–713 M', sources: ['S1', 'S9'] },
+  { rank: 5, key: 'imam-husain', name: 'Sayyidina Syekh Al-Imam Husain', place: 'Madinah / Karbala', dates: '4–61 H / 626–680 M', role: 'Cucu Rasulullah ﷺ', sources: ['S1', 'S9'] },
+  { rank: 4, key: 'imam-ali', name: 'Sayyidina wa Maulana Syekh Al-Imam Ali Karramallahu Wajhahu', place: 'Makkah / Kufa', dates: '±601–661 M (w. 40 H)', role: 'Menantu Rasulullah ﷺ', sources: ['S1', 'S9'] },
+  { rank: 3, key: 'rasulullah', name: 'Sayyidul Mursaliin — Rasulillahi Muhammad ﷺ', place: 'Makkah / Madinah', dates: '±571–632 M (11 H)', kind: 'RASUL', sources: ['S1', 'S9'] },
   { rank: 2, key: 'malak-jibril', name: 'Sayyidunaa Malak Jibril ʿalaihissalam', kind: 'APEX', sources: ['S1'] },
   { rank: 1, key: 'allah', name: 'Robbul Arbab — Allah Subhaanahu wata\'aalaa', kind: 'APEX', sources: ['S1'] },
 ]
@@ -198,19 +207,27 @@ const SPINE: SanadNode[] = [
 
 export type SanadTerminal = SanadNode & { jalurKey: string }
 
+export const SANAD_SEG_BANTEN = SEG_BANTEN
+export const SANAD_SEG_SURYALAYA = SEG_SURYALAYA
+export const SANAD_SPINE = SPINE
+
 const TERMINAL_KARAWANG: SanadNode = {
   rank: 39, key: 'abah-gana-karawang', name: 'Al Faqir Kiyai Haji Syekh "Abah Gana Karawang"',
   place: 'Dusun Cikangkung Timur, Desa Rengasdengklok Utara, Kec. Rengasdengklok, Kab. Karawang, Jawa Barat',
   segment: 'KARAWANG_BANTANI', sources: ['S1', 'S5'],
   note: 'Direkam dalam S1 sebagai murid #38 (Ahmad Kadzim Asnawi, Menes). S5 (komunitas, independen): "abah ganda cikangkung, rengasdengklok, karawang — warid ti ahmad kazim bin asnawi banten". Varian sebutan yang terekam: "Abah Ganda", "Abah Gana", "Mama Suganda" (S5).',
 }
+export const TERMINAL_KARAWANG_NODE = TERMINAL_KARAWANG
+
 const TERMINAL_ALBANTANI: SanadNode = {
   rank: 39, key: 'ahmad-sukanta-salmin', name: 'Syekh KH. Agung Ahmad Sukanta bin Salmin',
   place: 'Kaduparasi, Labuan, Pandeglang, Banten',
   dates: '1935 M / 1356 H – 2015 M / 1436 H (S4)',
   segment: 'KARAWANG_BANTANI', sources: ['S1', 'S4', 'S6'],
-  note: 'Direkam dalam S1 sebagai murid #38 (Ahmad Kadzim Asnawi, Menes) — satu baris dengan terminal Karawang. Dikenal juga sebagai "Syekh Ahmad Sukanta Salmin Labuan al-Banteni" (S4); TQN Asnawiyah Pandeglang (S6). Disebut "Abah Haji Sukanta" oleh Founder.',
+  note: 'Direkam dalam S1 sebagai murid #38 (Ahmad Kadzim Asnawi, Menes) — satu baris dengan terminal Karawang. Dikenal juga sebagai "Syekh Ahmad Sukanta Salmin Labuan al-Banteni" (S4); TQN Asnawiyah Pandeglang (S6). Disebut "Abah Haji Sukanta" oleh Founder.'
 }
+
+export const TERMINAL_ALBANTANI_NODE = TERMINAL_ALBANTANI
 
 // ---------------- jalur (the three recorded lines) ----------------
 

@@ -368,3 +368,16 @@ Stage Summary:
 - Platform ter-install penuh dan live: identitas Emerald Radiance, 4 jalur sanad display-only, ruang Kisah aktif
 - Deposit pendiri jalur Karawang & Al-Bantani terekam sesuai doktrin: ber-sumber, ber-grade, MATA BLOK jujur, tanpa karangan
 - 61 entitas · 41 relasi · 4 jalur sanad · 15 URL sitemap · 35 kisah ber-grade
+
+---
+Task ID: sanad-diagram-grand
+Agent: Main Orchestrator (Z.ai)
+Task: Diagram sanad lengkap TQN — nama lengkap + tahun, 3 jalur (Karawang, Al-Bantani/Kaduparasi, Suryalaya) + poster PNG
+
+Work Log:
+- Verifikasi tanggal via web (5+5+2 query): Abah Anom 1-1-1915–5-9-2011 (suryalaya.org riwayat2 + Wikipedia id); Abah Sepuh 1836–25-1-1956 (suryalaya.org riwayat1 + NU); Tholhah ±1825–1935 (NU Online Jabar); Khatib Sambas 1803–1875 (Wikipedia/akademik) vs 1878 (S2) — perbedaan direkam tanpa memutus; Abdul Karim al-Bantani l. ±1830/1250 H, wafat tak terdokumentasi; Asnawi Caringin ±1850–1937 (Wikipedia id); Mama Kadzim ±1912–±1982 (komunitas)
+- src/lib/sanad-data.ts: sumber baru S9 (dates-only, level C DOCUMENTED); tanggal klasik ahlul bait & syekh Baghdad (#4–#19, #22b); ekspor SANAD_SPINE/SEG_BANTEN/SEG_SURYALAYA/TERMINAL_*
+- src/components/165/sanad-diagram.tsx (baru): pohon gabungan interaktif — Apex → Qodiriah → penyisipan Naqsabandiah → punggung bersama → konvergensi #34 → 3 jalur terminal; chip: peringkat S1, nama lengkap, peran, tempat, tahun H/M; simpul tanpa tanggal ditampilkan jujur
+- trust.tsx: SanadDiagram dipasang setelah SanadRegistry
+- Poster statis: scripts/dump-sanad.ts (bun → JSON) + scripts/build-sanad-poster.py (HTML Layout C phased vertical → Playwright PNG 3090×5334 @1.5x); fix duplikat #22b di punggung bersama + entitas dobel-escape; PNG di download/peta-sanad-tqn-165.png & public/diagrams/sanad-tqn-165.png (tombol unduh di situs)
+- Verifikasi: lint bersih; screenshot runtime #trust (Playwright) — komponen render sempurna, tanpa duplikat; poster dicek crop per region

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',sans-serif; background:#FFFFFF; color:#101828; -webkit-font-smoothing:antialiased; }
+  #root { width:2060px; margin:0 auto; padding:0; background:#fff; }
+
+  .hero { background:linear-gradient(135deg,#0B2E24 0%,#0F172A 100%); padding:52px 64px; color:#fff; }
+  .hero-badge { display:inline-block; background:rgba(231,201,143,0.14); color:#E7C98F; font-size:13px; font-weight:700; letter-spacing:1.5px; padding:6px 16px; border-radius:999px; margin-bottom:18px; }
+  .hero h1 { font-size:40px; font-weight:800; letter-spacing:-0.5px; }
+  .hero .lede { font-size:16px; color:#B9CFC5; max-width:1400px; line-height:1.65; margin-top:12px; }
+  .hero .meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .m-chip { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); color:#DCE9E3; font-size:13px; font-weight:600; padding:6px 14px; border-radius:999px; font-variant-numeric:tabular-nums; }
+
+  .legend { display:flex; flex-wrap:wrap; gap:20px; align-items:center; margin:26px 64px 8px; padding:14px 22px; background:#F7FAF8; border:1px solid #E3EBE7; border-radius:14px; }
+  .li { display:flex; align-items:center; gap:8px; font-size:13.5px; color:#344054; }
+  .dot { width:14px; height:14px; border-radius:4px; border:2px solid; display:inline-block; }
+  .dot-normal { background:#FFFFFF; border-color:#C7D3CD; }
+  .dot-founder { background:#FFF7ED; border-color:#D97706; }
+  .dot-pivot { background:linear-gradient(135deg,#14532D,#0B2E24); border-color:#14532D; }
+  .dot-apex { background:#FFFBEB; border-color:#B45309; }
+  .dot-nodate-dot { background:#FFFFFF; border-color:#E3E8E4; border-style:dashed; }
+  .mono-chip { font-family:'SFMono-Regular',Menlo,Consolas,monospace; font-size:12px; background:#E7F0EC; color:#1F5E4C; padding:2px 8px; border-radius:6px; }
+
+  .wrap { padding:18px 64px 8px; }
+
+  .phase { background:#F6F9F7; border-radius:18px; padding:24px 28px; border-left:6px solid var(--pc); margin-bottom:0; }
+  .phase-title { font-size:20px; font-weight:800; color:#132E24; letter-spacing:-0.2px; }
+  .phase-no { display:inline-block; background:var(--pc); color:#FFFFFF; font-size:12.5px; font-weight:800; letter-spacing:1px; padding:4px 12px; border-radius:999px; margin-right:12px; vertical-align:middle; }
+  .phase-sub { font-size:14px; color:#5D6F67; font-weight:500; margin-top:8px; }
+
+  .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:18px; }
+  .row2 { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:18px; }
+
+  .chip { background:#FFFFFF; border:1.5px solid #DCE5E0; border-radius:14px; padding:16px 18px; }
+  .chip-head { display:flex; align-items:flex-start; gap:10px; }
+  .rank { flex:0 0 auto; background:#E7F0EC; color:#1F5E4C; font-family:Menlo,Consolas,monospace; font-size:12.5px; font-weight:700; padding:3px 9px; border-radius:999px; margin-top:1px; }
+  .name { font-size:15.5px; font-weight:700; line-height:1.35; color:#101828; }
+  .role { font-size:12.5px; font-weight:700; color:#B45309; margin-top:5px; }
+  .place { font-size:12.5px; color:#5D6F67; margin-top:5px; line-height:1.4; }
+  .place::before { content:"\25B8  "; color:#94A3B8; }
+  .dates { font-family:Menlo,Consolas,monospace; font-size:12.5px; color:#334155; margin-top:6px; }
+  .dates.nodate { font-family:inherit; font-style:italic; color:#9AA6A0; font-size:12px; }
+
+  .chip.founder { background:#FFF7ED; border:2px solid #D97706; }
+  .chip.founder .name { color:#7C2D12; }
+  .chip.apex { background:#FFFBEB; border:2px solid #B45309; }
+  .chip.apex .name { color:#713F12; }
+  .chip.pivot { background:linear-gradient(135deg,#14532D 0%,#0B2E24 100%); border:none; }
+  .chip.pivot .name { color:#FFFFFF; font-size:17px; }
+  .chip.pivot .rank { background:rgba(255,255,255,0.16); color:#FFF; }
+  .chip.pivot .role { color:#E7C98F; }
+  .chip.pivot .place { color:#C7D9D0; }
+  .chip.pivot .place::before { content:"\25B8  "; color:#6E9385; }
+  .chip.pivot .dates { color:#E2EEE8; }
+  .chip.pivot .dates.nodate { color:#9DB8AD; }
+
+  .flow-arrow { display:flex; align-items:center; justify-content:center; gap:10px; padding:16px 0; }
+  .a-glyph { font-size:26px; color:#7C988C; line-height:1; }
+  .a-label { font-size:13.5px; font-weight:700; color:#5D6F67; letter-spacing:0.4px; }
+
+  .jalur3 { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:18px; }
+  .jalur { background:#FFFFFF; border:1.5px solid #DCE5E0; border-radius:16px; padding:18px 20px; }
+  .j-badge { font-family:Menlo,Consolas,monospace; font-size:11.5px; color:#B45309; font-weight:700; }
+  .j-title { font-size:16.5px; font-weight:800; color:#132E24; margin-top:6px; }
+  .j-region { font-size:12.5px; color:#5D6F67; margin-top:4px; }
+  .j-chain { margin-top:14px; }
+  .col-arrow { text-align:center; color:#7C988C; font-size:18px; padding:4px 0; }
+  .p5-note { font-size:13px; color:#4B5563; line-height:1.6; margin-top:16px; padding:12px 16px; background:#FFF; border:1px dashed #C7D3CD; border-radius:12px; }
+
+  .footer { margin:26px 64px 40px; padding:22px 26px; background:#F7FAF8; border:1px solid #E3EBE7; border-radius:14px; }
+  .f-row { font-size:13px; color:#344054; line-height:1.65; margin-bottom:10px; }
+  .f-row strong { color:#132E24; }
+  .f-brand { margin-bottom:0; padding-top:12px; border-top:1px solid #E3EBE7; font-size:12.5px; font-weight:700; color:#1F5E4C; letter-spacing:0.3px; }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="hero">
+    <div class="hero-badge">PLATFORM PENGETAHUAN 165 &#183; REKAM APA ADANYA</div>
+    <h1>Satu Sanad, Tiga Jalur &#8212; Peta Silsilah Lengkap TQN</h1>
+    <div class="lede">Thariqah Qodiriah wa Naqsyabandiyah &#8212; dari Apex (Allah SWT &#8594; Jibril AS &#8594; Rasulullah SAW)
+      melalui punggung Qodiriah, penyisipan Naqsabandiah, dan titik konvergensi #34 Syekh Khatib Sambas (pendiri TQN),
+      turun ke tiga jalur terminal tercatat: <strong style="color:#E7C98F">Karawang</strong> &#183;
+      <strong style="color:#E7C98F">Al-Bantani (Kaduparasi, Labuan)</strong> &#183;
+      <strong style="color:#E7C98F">TQN Suryalaya</strong>. Nama lengkap + tahun terdokumentasi.</div>
+    <div class="meta">
+      <span class="m-chip">34 simpul punggung (S1 #1&#8211;#34)</span>
+      <span class="m-chip">Penyisipan Naqsabandiah (#22b)</span>
+      <span class="m-chip">3 jalur terminal (#39a &#183; #39b &#183; ke-37)</span>
+      <span class="m-chip">Tahun dari referensi publik terdokumentasi (S9)</span>
+      <span class="m-chip">Angka 20 dilewati &#183; 22 dipakai 2&#215; &#8212; apa adanya</span>
+    </div>
+  </div>
+
+  <div class="legend"><div class="li"><span class="dot dot-normal"></span>Simpul rantai</div><div class="li"><span class="dot dot-founder"></span>Pendiri tarekat</div><div class="li"><span class="dot dot-pivot"></span>Titik temu / mursyid pivot</div><div class="li"><span class="dot dot-apex"></span>Apex sanad</div><div class="li"><span class="mono-chip">monospace</span>Tahun terdokumentasi (S9)</div><div class="li"><span class="dot nodate-dot"></span><em>tanpa tanggal = belum terdokumentasi — tidak dikarang</em></div></div>
+
+  <div class="wrap">
+    <div class="phase" style="--pc:#A8C3B6"><div class="phase-title"><span class="phase-no">Fase 1</span>Sumber segala sumber — Apex sanad<div class="phase-sub">Peringkat S1 #1–#2 direkam apa adanya · Rasulullah SAW puncak sanad manusiawi</div></div><div class="row2"><div class="chip apex"><div class="chip-head"><span class="rank">1</span><span class="name">Robbul Arbab — Allah Subhaanahu wata&#x27;aalaa</span></div></div><div class="chip apex"><div class="chip-head"><span class="rank">2</span><span class="name">Sayyidunaa Malak Jibril &#x27;alaihissalam</span></div></div></div><div class="flow-arrow"><span class="a-glyph">&#8595;</span></div><div class="chip pivot"><div class="chip-head"><span class="rank">3</span><span class="name">Sayyidul Mursaliin — Rasulillahi Muhammad SAW</span></div><div class="place">Makkah / Madinah</div><div class="dates">±571–632 M (11 H)</div></div></div>
+    <div class="flow-arrow"><span class="a-glyph">&#8595;</span><span class="a-label">sanad Qodiriah — via Sayyidina Ali</span></div>
+    <div class="phase" style="--pc:#8FB39F"><div class="phase-title"><span class="phase-no">Fase 2</span>Punggung Qodiriah — Sayyidina Ali → Ahlul Bait → para syekh Baghdad<div class="phase-sub">S1 #4 → #19 · tahun klasik dari riwayat biografi standar (S9)</div></div><div class="grid4"><div class="chip"><div class="chip-head"><span class="rank">4</span><span class="name">Sayyidina wa Maulana Syekh Al-Imam Ali Karramallahu Wajhahu</span></div><div class="role">Menantu Rasulullah SAW</div><div class="place">Makkah / Kufa</div><div class="dates">±601–661 M (w. 40 H)</div></div><div class="chip"><div class="chip-head"><span class="rank">5</span><span class="name">Sayyidina Syekh Al-Imam Husain</span></div><div class="role">Cucu Rasulullah SAW</div><div class="place">Madinah / Karbala</div><div class="dates">4–61 H / 626–680 M</div></div><div class="chip"><div class="chip-head"><span class="rank">6</span><span class="name">Syekh Al-Imam Zainal Abidin</span></div><div class="place">Madinah</div><div class="dates">38–94 H / 659–713 M</div></div><div class="chip"><div class="chip-head"><span class="rank">7</span><span class="name">Syekh Al-Imam Muhammad Al-Baqir</span></div><div class="place">Madinah</div><div class="dates">57–114 H / 676–733 M</div></div><div class="chip"><div class="chip-head"><span class="rank">8</span><span class="name">Syekh Al-Imam Ja&#x27;far Shoddiq</span></div><div class="place">Madinah</div><div class="dates">80–148 H / 700–765 M</div></div><div class="chip"><div class="chip-head"><span class="rank">9</span><span class="name">Maulana Syekh Musa Al-Kadhim</span></div><div class="place">Madinah</div><div class="dates">128–183 H / 745–799 M</div></div><div class="chip"><div class="chip-head"><span class="rank">10</span><span class="name">Syekh Abu Hasan Ali Bin Musa Ridho</span></div><div class="place">Madinah / Thus, Persia</div><div class="dates">148–203 H / 765–818 M</div></div><div class="chip"><div class="chip-head"><span class="rank">11</span><span class="name">Syekh Ma&#x27;ruf Al-Karakhi</span></div><div class="place">Karkh, Baghdad</div><div class="dates">w. 200 H / 815 M</div></div><div class="chip"><div class="chip-head"><span class="rank">12</span><span class="name">Syekh SIRRullah Al-Saqati</span></div><div class="place">Baghdad</div><div class="dates">w. 253 H / 867 M</div></div><div class="chip"><div class="chip-head"><span class="rank">13</span><span class="name">Sayyidi To&#x27;ifatussufiyah Maulana Abu Qasim Junaidi Al-Bagdadi</span></div><div class="place">Baghdad</div><div class="dates">±830–910 M (w. 297–298 H)</div></div><div class="chip"><div class="chip-head"><span class="rank">14</span><span class="name">Syekh Abu Bakar Al-Syibli</span></div><div class="place">Baghdad</div><div class="dates">w. 334 H / 945–946 M</div></div><div class="chip"><div class="chip-head"><span class="rank">15</span><span class="name">Syekh Abdul Wahid Al-Tamimi</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="chip"><div class="chip-head"><span class="rank">16</span><span class="name">Syekh Abu Al-Faraj Al-Turtusi</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="chip"><div class="chip-head"><span class="rank">17</span><span class="name">Syekh Hasan Ali Al-Karakhi</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div></div><div class="flow-arrow"><span class="a-glyph">&#8595;</span><span class="a-label">melalui ribat Baghdad</span></div><div class="row2"><div class="chip"><div class="chip-head"><span class="rank">18</span><span class="name">Syekh Abu Sa&#x27;id Mubarak Al-Majzumi</span></div><div class="place">Baghdad — ribat al-Muzaffariyyah</div><div class="dates">w. ±1119 M (513 H)</div></div><div class="chip founder"><div class="chip-head"><span class="rank">19</span><span class="name">Sultoni Al-Aulia&#x27;i Sayyidi Syekh Abdul Qodir Al-Jaelani</span></div><div class="role">Pendiri Qodiriah</div><div class="place">Jilan, Persia / Baghdad</div><div class="dates">470–561 H / 1077–1166 M</div></div></div></div>
+    <div class="flow-arrow"><span class="a-glyph">&#8595;</span><span class="a-label">penyisipan Naqsabandiah</span></div>
+    <div class="phase" style="--pc:#76A28B"><div class="phase-title"><span class="phase-no">Fase 3</span>Penyisipan Naqsabandiah — Syekh Bahauddin an-Naqsyabandiyah<div class="phase-sub">S1 memakai ulang angka 22 untuk pendiri Naqsabandiyah — direkam apa adanya, tidak dinomori ulang</div></div><div class="chip founder"><div class="chip-head"><span class="rank">22</span><span class="name">Syekh Muhammad Baha&#x27;udin Al-Naqsyabandiyah</span></div><div class="role">Pendiri Naqsabandiyah</div><div class="place">Qasr al-Arifan, dekat Bukhara</div><div class="dates">718–791 H / 1318–1389 M</div></div></div>
+    <div class="flow-arrow"><span class="a-glyph">&#8595;</span><span class="a-label">punggung bersama menuju konvergensi</span></div>
+    <div class="phase" style="--pc:#5E9177"><div class="phase-title"><span class="phase-no">Fase 4</span>Punggung bersama — para syekh Baghdad &amp; Makkah (#21 → #34)<div class="phase-sub">Tahun wafat #31 (1266 H / 1850 M) dan #32 (1277 H / 1860 M) terekam pada daftar S1 sendiri</div></div><div class="grid4"><div class="chip"><div class="chip-head"><span class="rank">21</span><span class="name">Syekh Muhammad Al-Hattaq</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="chip"><div class="chip-head"><span class="rank">22</span><span class="name">Syekh Syamsuddin</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="chip"><div class="chip-head"><span class="rank">23</span><span class="name">Syekh Syaripuddin</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="chip"><div class="chip-head"><span class="rank">24</span><span class="name">Syekh Nurruddin</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="chip"><div class="chip-head"><span class="rank">25</span><span class="name">Syekh Waliyuddin</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="chip"><div class="chip-head"><span class="rank">26</span><span class="name">Syekh Hisamuddin</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="chip"><div class="chip-head"><span class="rank">27</span><span class="name">Syekh Yahya</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="chip"><div class="chip-head"><span class="rank">28</span><span class="name">Syekh Abu Bakar</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="chip"><div class="chip-head"><span class="rank">29</span><span class="name">Syekh Abdul Rohim</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="chip"><div class="chip-head"><span class="rank">30</span><span class="name">Syekh Alim Utsman</span></div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="chip"><div class="chip-head"><span class="rank">31</span><span class="name">Syekh Abdul Fattah</span></div><div class="dates">w. 1266 H / 1850 M di Madinah</div></div><div class="chip"><div class="chip-head"><span class="rank">32</span><span class="name">Syekh Al-Alamah Murod</span></div><div class="place">Makkah</div><div class="dates">w. 1277 H / 1860 M di Madinah</div></div><div class="chip"><div class="chip-head"><span class="rank">33</span><span class="name">Syekh KH. Syamsuddin</span></div><div class="place">Makkah</div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div></div><div class="flow-arrow"><span class="a-glyph">&#8595;</span><span class="a-label">titik temu ketiga jalur</span></div><div class="chip pivot"><div class="chip-head"><span class="rank">34</span><span class="name">Syekh KH. Maulana Ahmad Khotib Sambas</span></div><div class="role">Pendiri Tarekat Qodiriah wa Naqsabandiyah</div><div class="place">Sambas (Kalimantan Barat) / Makkah</div><div class="dates">1803 M / 1217 H – 1875 M / 1291 H (catatan resmi Suryalaya menulis 1878)</div></div></div>
+    <div class="flow-arrow"><span class="a-glyph">&#8595;</span><span class="a-label">tiga jalur terminal — murid-penerus tercatat</span></div>
+    <div class="phase" style="--pc:#4A8065"><div class="phase-title"><span class="phase-no">Fase 5</span>Tiga jalur terminal — murid-penerus tercatat<div class="phase-sub">Direkam dari sumber berbeda (S1 &amp; S2), dipertemukan pada #34 Syekh Khatib Sambas</div></div><div class="jalur3"><div class="jalur"><div class="j-badge">S1 #39a · 165-SANAD-000001</div><div class="j-title">Jalur Karawang</div><div class="j-region">Cikangkung, Rengasdengklok, Karawang, Jawa Barat</div><div class="j-chain"><div class="chip pivot"><div class="chip-head"><span class="rank">39</span><span class="name">Al Faqir Kiyai Haji Syekh &quot;Abah Gana Karawang&quot;</span></div><div class="place">Dusun Cikangkung Timur, Desa Rengasdengklok Utara, Kec. Rengasdengklok, Kab. Karawang, Jawa Barat</div><div class="dates nodate">tahun belum terdokumentasi — terbuka untuk deposit (kolasi Level A)</div></div><div class="col-arrow">&#8595;</div><div class="chip"><div class="chip-head"><span class="rank">38</span><span class="name">Al Faqir Tubagus Haji Ahmad Kadzim Asnawi &quot;Mama Kadzim&quot;</span></div><div class="place">Menes, Pandeglang, Banten</div><div class="dates">±1912 M – ±1982 M</div></div></div></div><div class="jalur"><div class="j-badge">S1 #39b · 165-SANAD-000002</div><div class="j-title">Jalur Al-Bantani (Kaduparasi)</div><div class="j-region">Kaduparasi, Labuan, Pandeglang, Banten</div><div class="j-chain"><div class="chip pivot"><div class="chip-head"><span class="rank">39</span><span class="name">Syekh KH. Agung Ahmad Sukanta bin Salmin</span></div><div class="place">Kaduparasi, Labuan, Pandeglang, Banten</div><div class="dates">1935 M / 1356 H – 2015 M / 1436 H (S4)</div></div><div class="col-arrow">&#8595;</div><div class="chip"><div class="chip-head"><span class="rank">38</span><span class="name">Al Faqir Tubagus Haji Ahmad Kadzim Asnawi &quot;Mama Kadzim&quot;</span></div><div class="place">Menes, Pandeglang, Banten</div><div class="dates">±1912 M – ±1982 M</div></div></div></div><div class="jalur"><div class="j-badge">S2 ke-37 · 165-SANAD-000003</div><div class="j-title">Jalur TQN Suryalaya</div><div class="j-region">Suryalaya, Pagerageung, Tasikmalaya, Jawa Barat</div><div class="j-chain"><div class="chip pivot"><div class="chip-head"><span class="rank">37</span><span class="name">Syekh KH. Ahmad Shohibulwafa Tajul Arifin &quot;Abah Anom&quot;</span></div><div class="place">Pondok Pesantren Suryalaya, Pagerageung, Tasikmalaya</div><div class="dates">1 Januari 1915 M – 5 September 2011 M (usia 96)</div></div><div class="col-arrow">&#8595;</div><div class="chip"><div class="chip-head"><span class="rank">36</span><span class="name">Syaikh Abdullah Mubarok bin Nur Muhammad &quot;Abah Sepuh&quot;</span></div><div class="place">Pondok Pesantren Suryalaya, Tasikmalaya</div><div class="dates">1836 M – 25 Januari 1956 M · pendiri pesantren 7 Rajab 1323 H / 5 September 1905 M</div></div><div class="col-arrow">&#8595;</div><div class="chip"><div class="chip-head"><span class="rank">35</span><span class="name">Syaikh Tholhah bin Talabudin &quot;Mama Guru Agung&quot;</span></div><div class="place">Trusmi, Desa Kalisapu, Weru, Cirebon</div><div class="dates">±1825 M – 1935 M</div></div></div></div></div><div class="p5-note">Karawang &amp; Al-Bantani turun dari jalur Banten/Asnawi S1 (#38 &#8594; #35). Suryalaya turun dari penomoran resmi Suryalaya S2 (ke-35 Tholhah &#8594; ke-36 Abah Sepuh &#8594; ke-37 Abah Anom). Suksesi setelah Abah Anom dipersoalkan publik oleh pihak berbeda — 165 mencatat perbedaan itu tanpa memihak.</div></div>
+  </div>
+
+  <div class="footer"><div class="f-row"><strong>Catatan reproduksi setia.</strong> Daftar sumber S1 ("Silsilah TQN di Indonesia Yang Diakui Dunia (Mu'tabaroh)", 13-12-2023) melewati angka 20 dan memakai angka 22 dua kali — sekali di tulang punggung Qodiriah (#22a Syamsuddin), sekali untuk pendiri Naqsabandiyah (#22b Bahauddin). 165 mereproduksi daftar apa adanya dan tidak diam-diam menomorinya ulang.</div><div class="f-row"><strong>Disiplin tanggal (S9).</strong> Tahun hanya dari referensi biografi publik terdokumentasi: suryalaya.org (riwayat1, riwayat2), Wikipedia (id), NU Online Jabar, biografi komunitas tersilang. Perbedaan catatan wafat Khatib Sambas (1875 Wikipedia/akademik vs 1878 suryalaya.org) direkam keduanya tanpa memutus. Simpul tanpa tanggal = belum terdokumentasi publik — terbuka untuk deposit ijazah/manuskrip/katatan talqin lewat alur contribute, tanpa biaya (never pay-to-verify).</div><div class="f-row"><strong>Sumber rantai.</strong> S1 — daftar silsilah bernomor 39&#8594;1 dari Founder (165-SRC-000003, level B). S2 — sejarah resmi TQN suryalaya.org (level C). S4 — excerpt akademik (Sukanta 1935/1356 H &#8211; 2015/1436 H). S9 — referensi tanggal (level C, dates-only).</div><div class="f-row f-brand">165 &#8211; PLATFORM PENGETAHUAN SANAD · sanad terekam ditampilkan APA ADANYA &#8212; catatan tradisi, bukan fakta sejarah terverifikasi, bukan sertifikat legitimasi ruhani &#8212; dirender dari src/lib/sanad-data.ts (satu sumber kebenaran situs)</div></div>
+</div>
+</body>
+</html>

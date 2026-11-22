@@ -8,6 +8,7 @@ import { EVIDENCE_LEVELS, VERIFICATION_STATUSES } from '@/lib/165'
 import { useI18n } from '@/lib/i18n'
 import { EvidenceBadge, HonestNote, Kicker, SectionHeading, StatusBadge } from '../ui'
 import { SanadRegistry } from '../sanad-registry'
+import { SanadDiagram } from '../sanad-diagram'
 
 export function TrustSection({ onOpenEntity }: { onOpenEntity?: (slug: string) => void }) {
   const { t } = useI18n()
@@ -85,6 +86,9 @@ export function TrustSection({ onOpenEntity }: { onOpenEntity?: (slug: string) =
 
       {/* sanad safety */}
       <SanadRegistry onOpenEntity={onOpenEntity} />
+
+      {/* sanad diagram — peta gabungan tiga jalur (S1/S2/S9, display-only) */}
+      <SanadDiagram />
 
       {/* AI policy */}
       <section aria-labelledby="ai-h">
