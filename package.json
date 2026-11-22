@@ -16,6 +16,7 @@
     "i18n:gen": "bun scripts/gen-i18n.ts",
     "sanad:seed": "bun prisma/seed-sanad.ts",
     "karawang:seed": "bun prisma/seed-karawang.ts",
+    "wiridian:seed": "bun prisma/seed-wiridian.ts",
     "seed:all": "bun prisma/seed.ts && bun prisma/seed-heritage.ts && bun prisma/seed-content.ts && bun prisma/seed-manaqib.ts && bun prisma/seed-sanad.ts"
   },
   "dependencies": {

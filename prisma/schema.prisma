@@ -236,3 +236,50 @@ model VisitEvent {
   @@index([kind])
   @@index([createdAt])
 }
+
+// ------------------------------------------------------------
+// WIRIDIAN & BACAAN — CMS-managed readings (Qasidah, Sholawat,
+// Wiridian, Dzikir). Arabic text + Latin transliteration + meaning
+// in Sundanese & Indonesian + meaning-commentary (tafsir majelis).
+// Every entry carries grade & status (Source-First doctrine);
+// display-only — never grants/assesses spiritual legitimacy.
+// ------------------------------------------------------------
+model WiridEntry {
+  id         String   @id @default(cuid())
+  slug       String   @unique
+  order      Int      @default(0)
+  kind       String   @default("QASIDAH") // QASIDAH | SHOLAWAT | WIRIDIAN | DZIKIR | DUAA
+  titleAr    String
+  titleId    String
+  titleSu    String?
+  subtitleId String?
+  ledeId     String?
+  grade      String   @default("B") // A|B|C|D|E|F
+  status     String   @default("TRADITIONAL_ACCOUNT") // DOCUMENTED | TRADITIONAL_ACCOUNT | DISPUTED | UNVERIFIED
+  sourceRef  String?
+  noteId     String?
+  visibility String   @default("PUBLIC") // PUBLIC | PRIVATE
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  verses WiridVerse[]
+
+  @@index([kind])
+  @@index([order])
+}
+
+model WiridVerse {
+  id        String  @id @default(cuid())
+  entryId   String
+  order     Int
+  arabic    String
+  latin     String?
+  meaningSu String?
+  meaningId String?
+  tafsirId  String?
+  tafsirAr  String?
+
+  entry WiridEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
+
+  @@index([entryId, order])
+}

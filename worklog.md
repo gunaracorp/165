@@ -381,3 +381,25 @@ Work Log:
 - trust.tsx: SanadDiagram dipasang setelah SanadRegistry
 - Poster statis: scripts/dump-sanad.ts (bun → JSON) + scripts/build-sanad-poster.py (HTML Layout C phased vertical → Playwright PNG 3090×5334 @1.5x); fix duplikat #22b di punggung bersama + entitas dobel-escape; PNG di download/peta-sanad-tqn-165.png & public/diagrams/sanad-tqn-165.png (tombol unduh di situs)
 - Verifikasi: lint bersih; screenshot runtime #trust (Playwright) — komponen render sempurna, tanpa duplikat; poster dicek crop per region
+
+---
+Task ID: wiridian-bacaan-cms
+Agent: Main Orchestrator (Z.ai) — Master Polymath, Sage Universal, The Ultimate Problem Solver
+Task: CMS WordPress-style + Ruang Bacaan Wiridian ("Ibadallah Rijalallah Aghitsuna li Ajlillah dan seterusnya") — teks Arab + terjemahan makna Bahasa Sunda & Indonesia + tafsir lengkap, untuk para ikhwan & akhwat yang lupa tujuan
+
+Work Log:
+- Verifikasi sumber teks via web: qasidah Ibadallah Rijalallah (Tribun Sumsel 2026 · arsip majelis Scribd 2021 · fadlilsangaji 2014 — silang-cek konsisten 13 bait); Sholawat Nuril Anwar (quran.nu.or.id, dari kitab Abwabul Faraj — Sayyid Muhammad bin Alwi al-Maliki Makkah); dzikir harian pembuka (tqnn.org.uk). Wiridian lengkap TIDAK dikarang: hanya peta alur + lafaz inti, dengan catatan jujur "lafaz & hitungan ikut ijazah murshid"
+- src/data/wiridian/bacaan.ts (~480 baris): 4 entri — Qasidah Ibadallah (13 bait: Arab RTL + Latin + ARTI SUNDA + arti Indonesia + tafsir makna Indonesia per bait + tafsir singkat Arab per bait, rujukan QS 5:35, 42:11, 2:186, 50:16, 3:190-191, hadits tawassul Umar/Bukhari-Muslim, hadits 3 lelaki gua, doa Yunus, hadits Jibril); Sholawat Nuril Anwar; Wiridian TQN (6 tahap alur: Fatihah → Ya 'Azhim ×3 dst → Ibadallah...bi-khairillah wa-jammilillah → la ilaha illallah → Allah → sholawat+Fatihah); Dzikir Harian Pembuka (istighfar ×3, sholawat ×3, 4 kalimat — aman untuk yang belum berijazah). WB_LEDE/WB_ADAB/WB_TUJUAN
+- Prisma: model WiridEntry + WiridVerse (slug, kind QASIDAH/SHOLAWAT/WIRIDIAN/DZIKIR/DUAA, order, titleAr/Id/Su, lede, grade A–F, status, sourceRef, noteId, visibility, verses cascade) — db push sukses
+- prisma/seed-wiridian.ts (idempoten: upsert per slug + refresh verses dari satu sumber kebenaran) + script "wiridian:seed" — dijalankan: 4 entri tersinkron, AuditLog ditulis
+- API: GET /api/wiridian (publik, dari DB + fallback bundled saat DB mati — "ruang tidak boleh gelap"); admin CRUD /api/admin/wiridian (GET list, POST create, PUT sinkron-dari-arsip) & /api/admin/wiridian/[id] (PUT update+verses, DELETE) — semua isAuthed + writeAudit
+- Ruang publik src/components/165/sections/wiridian.tsx: tab per jenis (ikon lucide), kartu entri (Arab kuningan RTL, badge grade+status, lede, sumber, catatan adab), kartu bait (nomor, Arab, Latin, Arti·Sunda highlight hijau-khidr, Arti·Indonesia, tombol "Tafsir makna" expandable → tafsir ID + blok Arab RTL), fallback arsip saat DB mati; dipasang ke NAV ('Bacaan', posisi setelah Kisah), router, i18n catalog (nav.wiridian id/en + sec.wiridian.*; dictionaries su=Bacaan/jv=Waosan/ms=Bacaan/ar=القراءات), sitemap +1 hash → 16 URL
+- CMS tab baru "Bacaan" di Ruang Admin (admin/bacaan.tsx): daftar entri + status visibility, tombol "Bacaan baru" & "Sinkron dari arsip", dialog form lengkap (jenis/urutan/grade/status, judul Arab-Indonesia-Sunda, lede, editor bait: Arab RTL/Latin/arti Sunda/arti Indonesia/tafsir ID/tafsir Arab, tambah-hapus bait, sumber, catatan adab, checkbox privat) — pola WordPress
+- Catatan infra: restart dev server diperlukan setelah prisma generate (client lama di memori tidak punya model baru — db.wiridEntry undefined → fallback bundled); proses background sandbox mati antar-panggilan → QA dijalankan dalam satu sesi bash dengan setsid
+- QA agent-browser (0 page error): beranda 200; nav "Bacaan" → #wiridian render (kicker/title/lede/2 HonestNote/4 tab); 4 tab semua tampil (Qasidah/Sholawat/Wiridian/Dzikir); tafsir expandable = true; mobile 390 & desktop 1280 rapi (badge, Arab kuningan, arti Sunda highlight); /api/wiridian source:db (WiridEntry+WiridVerse query di dev.log); admin login qodiriyah165 → tab Bacaan tampil → 4 entri ter-list dengan Edit/Hapus → dialog "Edit bacaan" terbuka (Bait/Simpan/Batal) → Batal OK; qasidah 13 bait + Nuril Anwar + wiridian 6 tahap + dzikir 3 tahap terverifikasi via innerText
+- lint exit 0; README (skrip wiridian:seed + Status Terbuka) & worklog diperbarui
+
+Stage Summary:
+- CMS WordPress-style lengkap: Ruang Admin kini mengelola registri + bacaan (WiridEntry) dengan CRUD penuh, audit log, visibility, sinkron arsip
+- Ruang "Bacaan" publik hidup: qasidah Ibadallah Rijalallah 13 bait + Nuril Anwar + wiridian TQN + dzikir harian — Arab terlestarikan, Latin, arti Bahasa Sunda & Indonesia, tafsir makna berurut, ber-grade & ber-sumber, display-only
+- Untuk yang lupa tujuan: ruang dibuka & ditutup dengan kompas tujuan; pintu terbuka Dzikir Harian sebelum ijazah

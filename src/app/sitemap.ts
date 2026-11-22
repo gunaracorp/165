@@ -19,6 +19,7 @@ const SECTIONS: { hash: string; priority: number; freq: 'daily' | 'weekly' | 'mo
   { hash: 'manaqib', priority: 0.9, freq: 'weekly' },
   { hash: 'rahasia', priority: 0.8, freq: 'weekly' },
   { hash: 'stories', priority: 0.6, freq: 'weekly' },
+  { hash: 'wiridian', priority: 0.8, freq: 'weekly' },
   { hash: 'media', priority: 0.7, freq: 'weekly' },
   { hash: 'trust', priority: 0.9, freq: 'weekly' },
   { hash: 'about', priority: 0.6, freq: 'monthly' },

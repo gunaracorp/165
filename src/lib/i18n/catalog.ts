@@ -16,6 +16,7 @@ export const CATALOG = {
   'nav.manaqib': ['Manaqib', 'Manaqib'],
   'nav.rahasia': ['Rahasia', 'Secrets'],
   'nav.stories': ['Kisah', 'Stories'],
+  'nav.wiridian': ['Bacaan', 'Readings'],
   'nav.contribute': ['Kontribusi', 'Contribute'],
   'nav.admin': ['Ruang Admin', 'Admin Room'],
   'nav.more': ['Lainnya', 'More'],
@@ -206,6 +207,16 @@ export const CATALOG = {
   'sec.manaqib.title': ['Manaqib Syekh Abdul Qodir Al-Jaelani', 'The Manaqib of Shaykh Abd al-Qadir al-Jilani'],
   'sec.rahasia.kicker': ['Rahasia Al-Qur\u2019an & Hadis', 'Secrets of the Qur\u2019an & Hadith'],
   'sec.rahasia.title': ['Rahasia Kitab Suci — dibuka dengan adab', 'Sacred Secrets — opened with adab'],
+
+  // ---------- ruang bacaan (wiridian) ----------
+  'sec.wiridian.kicker': ['Wiridian & Bacaan TQN', 'TQN Readings & Wiridian'],
+  'sec.wiridian.title': [
+    'Ibadallah Rijalallah — bacaan majelis dengan makna',
+    "'Ibadallah Rijalallah — majelis readings with meaning",
+  ],
+  'sec.wiridian.tafsir': ['Tafsir makna', 'Meaning commentary'],
+  'sec.wiridian.tafsirId': ['Tafsir · Indonesia', 'Tafsir · Indonesian'],
+  'sec.wiridian.kompas': ['Kompas tujuan', 'Compass of purpose'],
   'mq.tab.riwayat': ['Riwayat Hidup', 'Life'],
   'mq.tab.karya': ['Karya', 'Works'],
   'mq.tab.silsilah': ['Silsilah', 'Lineage'],
