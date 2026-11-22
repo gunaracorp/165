@@ -412,3 +412,12 @@ Stage Summary:
 - FITUR PREMIUM "Tasbih Digital 165": penghitung dzikir lingkar-progres (7 kalimat: thayalah, istighfar, tahmid, tasbih, takbir, sholawat, dzikir isyarat — Arab+Latin+arti ID+Sunda), target 33–1000, getaran halus, streak harian & rekor, penyimpanan lokal murni; functional setState agar tap beruntun akurat
 - ROADMAP 99 HARI MENUJU SEMPURNA: 3 fase × 33 hari (Islam→Iman→Ihsan, selaras bilangan tasbih & 99 Asmaul Husna); 99 entri nyata ibadah/ilmu/amal/fitur/warisan; filter tag, penanda selesai per hari (localStorage), tonggak fitur berstatus jujur (chip "Segera" untuk yang direncanakan)
 - i18n: nav.tasbih & nav.roadmap pada katalog; ruang baru terhubung di NAV, menu mobile, sheet Lainnya, manifest shortcut
+
+## Sesi — Lanjutan Premium: Pengingat · Waktu Sholat · Dasbor (2026-11-23)
+- lint exit 0; uji browser: sholat (KEMENAG RI via AlAdhan, kiblat 64,9° Jakarta), dasbor (rekomendasi Ahad→Sholawat), remind card (2 slot + izin notifikasi)
+
+Stage Summary:
+- PENGINGAT WIRID HARIAN (beta, hari-38): kartu di ruang Tasbih — slot pagi & sore dengan jam bebas, izin notifikasi, pemberitahuan lokal via service worker saat aplikasi terbuka; status & jadwal di localStorage
+- WAKTU SHOLAT & KIBLAT (beta, hari-72): ruang baru — jadwal Imsak/Subuh/Terbit/Zuhur/Asar/Terbenam/Magrib/Isya metode KEMENAG RI (AlAdhan) per geolokasi; arah kiblat dihitung lokal menuju Ka'bah dengan jarum kompas; cache perangkat untuk offline; HonestNote deviasi menit
+- DASBOR PERJALANAN + REKOMENDASI HARIAN (beta, hari-55 & 84): ruang baru — rekomendasi amalan per hari pekan (bukan fatwa), rekap roadmap 0-99 + fase aktif, dzikir hari ini, streak & rekor, tugas hari; tautan silang ke Tasbih/Bacaan/Roadmap/Waktu Sholat
+- roadmap99.ts: hari 38/55/72/84 tak lagi bertanda "Segera" (kini nyata); nav.sholat & nav.dasbor masuk katalog i18n; NAV kini 19 ruang

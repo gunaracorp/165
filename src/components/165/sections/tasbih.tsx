@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { HonestNote, SectionHeading } from '../ui'
 import { EASE_OUT, Reveal, motion } from '../motion'
+import { RemindCard } from '../remind'
 
 const STORE_KEY = '165.tasbih.v1'
 
@@ -367,6 +368,11 @@ export function TasbihSection() {
           </Reveal>
         </div>
       </div>
+
+      {/* pengingat wirid harian (beta) */}
+      <Reveal delay={0.12}>
+        <RemindCard />
+      </Reveal>
 
       <Reveal delay={0.15}>
         <HonestNote tone="green">

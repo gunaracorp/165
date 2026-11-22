@@ -25,7 +25,9 @@ import { RahasiaSection } from './sections/rahasia'
 import { StoriesSection } from './sections/stories'
 import { WiridianSection } from './sections/wiridian'
 import { TasbihSection } from './sections/tasbih'
+import { SholatSection } from './sections/sholat'
 import { RoadmapSection } from './sections/roadmap'
+import { DasborSection } from './sections/dasbor'
 import { AppBar } from './app-bar'
 import { TrustSection } from './sections/trust'
 import { AboutSection } from './sections/about'
@@ -46,7 +48,9 @@ const NAV = [
   { key: 'stories', label: 'Stories' },
   { key: 'wiridian', label: 'Bacaan' },
   { key: 'tasbih', label: 'Tasbih' },
+  { key: 'sholat', label: 'Waktu Sholat' },
   { key: 'roadmap', label: 'Roadmap 99' },
+  { key: 'dasbor', label: 'Dasbor' },
   { key: 'media', label: 'Media' },
   { key: 'trust', label: 'Trust & Method' },
   { key: 'about', label: 'About 165' },
@@ -337,7 +341,9 @@ export function InstitutionApp() {
             {section === 'stories' && <StoriesSection />}
             {section === 'wiridian' && <WiridianSection />}
             {section === 'tasbih' && <TasbihSection />}
+            {section === 'sholat' && <SholatSection />}
             {section === 'roadmap' && <RoadmapSection />}
+            {section === 'dasbor' && <DasborSection onNavigate={navigate} />}
             {section === 'media' && <MediaSection onOpenEntity={openEntity} onNavigate={navigate} />}
             {section === 'trust' && <TrustSection onOpenEntity={openEntity} />}
             {section === 'about' && <AboutSection onOpenEntity={openEntity} onNavigate={navigate} />}
