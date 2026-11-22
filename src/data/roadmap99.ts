@@ -114,7 +114,7 @@ export const DAYS: RoadmapDay[] = [
   { d: 42, g: 'fitur', t: 'Tanya165', x: 'Ajukan satu pertanyaan agama pada Tanya165 — jawaban berpijak pada nash, bukan angan.' },
   { d: 43, g: 'ibadah', t: 'Asmaul Husna 56–66', x: 'Hafalan & tafsir singkat — biarkan 10 nama berikutnya lembut di lisan.' },
   { d: 44, g: 'ilmu', t: 'Kholiqliq', x: 'Pelajari konsep kholiqliq dalam TQN Suryalaya — teori dzikir tentang membersihkan hati dari kotoran.' },
-  { d: 45, g: 'fitur', soon: true, t: 'Audio Qasidah (beta)', x: 'Dengarkan rekaman qasidah Ibadallah Rijalallah — nada yang menuntun bait demi bait.' },
+  { d: 45, g: 'fitur', t: 'Audio Qasidah (beta)', x: 'Dengarkan narasi arti bait demi bait (sintesis beta, jujur berlabel) — slot rekaman asli majelis tersedia.' },
   { d: 46, g: 'ibadah', t: 'Latihan Suluk', x: 'Jalankan latihan sesuai pesanan mursyid — suluk adalah perjalanan yang diatur, bukan improvisasi.' },
   { d: 47, g: 'ibadah', t: 'Asmaul Husna 67–77', x: 'Lanjutkan — makin dekat khatam, makin dalam makna tiap huruf.' },
   { d: 48, g: 'fitur', t: 'Statistik Publik', x: 'Baca dashboard analitik publik — transparansi jumlah entitas & arsip, sebagaimana amal yang tampil jujur.' },
@@ -139,7 +139,7 @@ export const DAYS: RoadmapDay[] = [
 
   // ---------- FASE 3 · IHSAN — SEMPURNA (Hari 67–99) ----------
   { d: 67, g: 'ibadah', t: 'Gerbang Ihsan', x: 'Beribadah seolah melihat-Nya; bila tidak mampu, yakinlah Dia melihatmu — seluruh 99 hari bermuara di sini.' },
-  { d: 68, g: 'fitur', soon: true, t: 'Kemasan Toko Aplikasi (beta)', x: 'Versi PWA dipermudah lewat PWABuilder — satu tautan pasang untuk seluruh keluarga besar 165.' },
+  { d: 68, g: 'fitur', t: 'Pasang Aplikasi (beta)', x: 'Tombol pasang langsung di situs untuk Android/iPhone/desktop — aplikasi menempel di layar utama tanpa toko aplikasi.' },
   { d: 69, g: 'ibadah', t: 'Khatam Asmaul Husna Kedua', x: 'Khatam kedua dengan merenungi makna — kali ini nama-nama itu mengenalimu balik.' },
   { d: 70, g: 'warisan', soon: true, t: 'Arsip Manuskrip (beta)', x: 'Jelajahi manuskrip terdigitalisasi — halaman tua yang diselamatkan dari usia.' },
   { d: 71, g: 'amal', t: 'Amal untuk Arwah', x: 'Sedekah & wirid hadiah pahala untuk arwah para pirsah — jalan ini dibangun di atas bahu mereka.' },

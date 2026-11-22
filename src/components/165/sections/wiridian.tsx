@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button'
 import { Reveal, Stagger, StaggerItem } from '../motion'
 import { lastOfflineStamp, saveWiridianOffline } from '@/lib/offline-store'
 import { WB_ADAB, WB_LEDE, WB_TUJUAN, WIRIDIAN_ENTRIES, type WbEntry, type WbVerse } from '@/data/wiridian/bacaan'
+import { QasidahAudioPlayer } from './qasidah-audio'
 
 type ApiEntry = {
   id: string | null
@@ -299,6 +300,19 @@ export function WiridianSection() {
                   {entry.subtitleId && <p className="text-muted-foreground mt-1 text-[13px]">{entry.subtitleId}</p>}
                   {entry.ledeId && <p className="text-foreground/80 mt-3 text-[13.5px] leading-relaxed">{entry.ledeId}</p>}
                 </div>
+
+                {/* audio qasidah — narasi arti beta + slot rekaman majelis (hari ke-45) */}
+                {entry.slug === 'qasidah-ibadallah-rijalallah' && (
+                  <div className="px-4 pt-4 sm:px-6">
+                    <QasidahAudioPlayer
+                      verses={entry.verses.map((v) => ({
+                        order: v.order,
+                        arabic: v.arabic,
+                        meaningId: v.meaningId,
+                      }))}
+                    />
+                  </div>
+                )}
 
                 {/* bait */}
                 <div className="divide-border/50 divide-y px-4 py-4 sm:px-6">

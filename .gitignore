@@ -53,3 +53,4 @@ server.log
 # Skills directory
 /skills/repo-165
 skills/
+tool-results/

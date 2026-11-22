@@ -11,6 +11,7 @@ import counts from '@/data/snapshot-counts.json'
 import { useI18n } from '@/lib/i18n'
 import { EntityCard } from '../entity-card'
 import { Ask165 } from '../ask165'
+import { InstallAppCard } from './install-app'
 import { EvidenceBadge, HonestNote, Kicker, SkeletonCard, StatusBadge, useApi } from '../ui'
 import { cn } from '@/lib/utils'
 
@@ -209,6 +210,9 @@ export function HomeSection({ onOpenEntity, onNavigate }: {
           </button>
         </div>
       </div>
+
+      {/* ---------------- pasang aplikasi (hari ke-68) ---------------- */}
+      <InstallAppCard />
 
       {/* ---------------- honesty banner ---------------- */}
       <HonestNote tone="amber">

@@ -1,12 +1,13 @@
 // 165 — Service Worker v1 "Penjaga Zikir"
 // Strategy:
 //  · static assets (/_next/static, icons, fonts) → cache-first (immutable)
+//  · audio qasidah (/audio/)                    → cache-first (dengar ulang = hidup offline)
 //  · navigations (HTML)         → network-first, offline fallback page
 //  · GET API knowledge surfaces → network-first with stale cache as safety net
 //  · mutations (POST/PUT/PATCH) → always network, never cached
 // Doctrine: offline is a preservation feature — knowledge must survive
 // lost connections, but stale data is never presented as fresh.
-const VERSION = '165-v2'
+const VERSION = '165-v3'
 const STATIC_CACHE = `${VERSION}-static`
 const PAGE_CACHE = `${VERSION}-pages`
 const API_CACHE = `${VERSION}-api`
@@ -33,6 +34,7 @@ function isStaticAsset(url) {
     url.pathname.startsWith('/_next/static/') ||
     url.pathname === '/logo.svg' ||
     url.pathname.startsWith('/icons/') ||
+    url.pathname.startsWith('/audio/') ||
     url.pathname.endsWith('.woff2') ||
     url.pathname.endsWith('.png') ||
     url.pathname.endsWith('.jpg') ||

@@ -431,3 +431,12 @@ Stage Summary:
 - WIRIDIAN OFFLINE PENUH (hari-90 nyata): tombol "Simpan untuk offline" di ruang Bacaan → seluruh bacaan & halaman utama masuk cache SW (165-v2-api/pages), stempel tersimpan per perangkat
 - WAWASAN PRIBADI (hari-95 nyata): tasbih kini mencatat total sepanjang waktu + riwayat 90 hari; Dasbor menampilkan total, rata-rata 7 hari, hari terbaik & grafik 14 hari
 - sitemap.xml kini memuat tasbih, sholat, roadmap, dasbor (20 URL, sumber tunggal src/lib/site-urls.ts)
+
+## Sesi — Audio Qasidah · Pasang Aplikasi (2026-11-23)
+- lint exit 0; uji browser mobile: audio putar/lompat bait/panel bait aktif berfungsi; mode rekaman 404 → fallback arti + pesan jujur; kartu pasang tampil di home
+
+Stage Summary:
+- AUDIO QASIDAH (beta, hari-45 nyata): pemutar "Dengar Arti" di ruang Bacaan pada qasidah Ibadallah Rijalallah — narasi terjemahan makna Indonesia 13 bait + pengantar (14 file MP3 64k, voice sintesis tongtong 0.85×, total 2.2 MB di public/audio/qasidah/arti/); DISIPLIN: yang disintesis hanya ARTI — lantunan Arab tidak pernah dibuat mesin (lafaz ibadah mengikuti majelis/ijazah); panel bait aktif menampilkan Arab RTL + arti; chips pengantar+bait 1–13, prev/next/loop, tempo 0.75–1.25×, progress bar; mode "Rekaman majelis": bila file rekaman diunggah ke /audio/qasidah/rekaman/bait-XX.mp3 tombol langsung hidup — bila belum ada, fallback otomatis ke narasi arti + HonestNote amber "belum tersedia (display-only)"; uji ASR roundtrip: TTS Arab gagal transkrip balik → keputusan etis tidak memakai Arab sintesis; TTS Indonesia terverifikasi jelas
+- PASANG APLIKASI (beta, hari-68 nyata): kartu di Home — beforeinstallprompt ditangkap → tombol "Pasang sekarang" satu ketuk (Chromium/Android); deteksi standalone → "Sudah terpasang"; iPhone → panduan Bagikan → Tambah ke Layar Utama; fallback jujur bila event belum muncul; manifest sudah maskable-ready
+- SW v3: /audio/ masuk cache-first static — sekali dengar, selamanya offline; VERSION dinaikkan 165-v2 → 165-v3
+- roadmap99.ts: hari 45 & 68 tak lagi "Segera" (kini nyata, deskripsi disesuaikan kebenarannya); sisa Segera: manuskrip (70), museum (76), kurasi 178 bahasa (80), akademi (86), sertifikasi kurator (89), peta dunia sanad (92)
