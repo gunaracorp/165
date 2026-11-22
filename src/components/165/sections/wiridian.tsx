@@ -5,13 +5,15 @@
 // (dir="rtl") + transliterasi Latin + arti Bahasa Sunda & Indonesia +
 // tafsir makna berurut. Data dari DB (CMS-managed) dengan fallback
 // arsip bundled — ruang tidak boleh gelap.
-import { useMemo, useState } from 'react'
-import { BookOpenText, Heart, Repeat2, Sparkles, AudioLines, ChevronDown, Compass } from 'lucide-react'
+import { useEffect, useMemo, useState } from 'react'
+import { BookOpenText, Heart, Repeat2, Sparkles, AudioLines, ChevronDown, Compass, Save } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { t } from '@/lib/i18n'
 import type { CatalogKey } from '@/lib/i18n/catalog'
 import { EvidenceBadge, HonestNote, SectionHeading, useApi } from '../ui'
+import { Button } from '@/components/ui/button'
 import { Reveal, Stagger, StaggerItem } from '../motion'
+import { lastOfflineStamp, saveWiridianOffline } from '@/lib/offline-store'
 import { WB_ADAB, WB_LEDE, WB_TUJUAN, WIRIDIAN_ENTRIES, type WbEntry, type WbVerse } from '@/data/wiridian/bacaan'
 
 type ApiEntry = {
@@ -167,6 +169,24 @@ export function WiridianSection() {
   const { data, loading, error } = useApi<{ source: string; entries: ApiEntry[] }>('/api/wiridian')
   const [kind, setKind] = useState<string>('QASIDAH')
   const [openTafsir, setOpenTafsir] = useState<Set<string>>(new Set())
+  const [saving, setSaving] = useState(false)
+  const [offlineMsg, setOfflineMsg] = useState<string | null>(null)
+  const [offlineStamp, setOfflineStamp] = useState<string | null>(null)
+
+  // muat penanda offline setelah mount (pola defer codebase)
+  useEffect(() => {
+    const t = window.setTimeout(() => setOfflineStamp(lastOfflineStamp()), 0)
+    return () => window.clearTimeout(t)
+  }, [])
+
+  const saveOffline = async () => {
+    setSaving(true)
+    setOfflineMsg(null)
+    const res = await saveWiridianOffline()
+    setSaving(false)
+    setOfflineMsg(res.detail)
+    if (res.ok) setOfflineStamp(res.at)
+  }
 
   const entries = useMemo(() => {
     if (error || !data || !data.entries?.length) return fallbackEntries()
@@ -196,6 +216,23 @@ export function WiridianSection() {
         title={t('sec.wiridian.title' as CatalogKey)}
         lede={WB_LEDE.id}
       />
+
+      {/* simpan offline (hari ke-90) */}
+      <div className="border-border/60 bg-card/70 -mt-4 flex flex-wrap items-center justify-between gap-3 rounded-3xl border p-4">
+        <div className="min-w-0">
+          <p className="text-sm font-bold">Wiridian Offline Penuh <span className="text-amber-600 dark:text-amber-400">· Beta</span></p>
+          <p className="text-muted-foreground mt-0.5 text-[11.5px] leading-relaxed">
+            {offlineStamp
+              ? `Tersimpan di perangkat: ${new Date(offlineStamp).toLocaleString('id-ID', { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' })} — bacaan tetap hidup tanpa sinyal.`
+              : 'Simpan seluruh bacaan ke perangkat agar tetap terbaca tanpa sinyal.'}
+          </p>
+        </div>
+        <Button size="sm" className="h-9 shrink-0 rounded-full px-4 text-xs" onClick={saveOffline} disabled={saving}>
+          <Save className={cn('mr-1.5 size-3.5', saving && 'animate-pulse')} aria-hidden />
+          {saving ? 'Menyimpan…' : 'Simpan untuk offline'}
+        </Button>
+      </div>
+      {offlineMsg && <p className="text-muted-foreground -mt-6 text-[11.5px] italic">{offlineMsg}</p>}
 
       <HonestNote tone="green">
         <span className="label-caps text-[10px]">Untuk yang lupa tujuan · </span>

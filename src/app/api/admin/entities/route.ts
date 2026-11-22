@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { isAuthed } from '@/lib/admin-auth'
+import { pingSearchEnginesSoon } from '@/lib/indexnow'
 import { db } from '@/lib/db'
 import { EVIDENCE_KEYS, STATUS_KEYS, TYPE_KEYS, VISIBILITY_KEYS, DATE_PRECISION_KEYS, clean, nextGlobalId, uniqueSlug, writeAudit } from '@/lib/admin-data'
 
@@ -100,6 +101,7 @@ export async function POST(req: NextRequest) {
       },
     })
     await writeAudit('admin', 'CREATE', globalId, `Entity ${type} created via Ruang Admin`)
+    pingSearchEnginesSoon()
 
     return NextResponse.json({ entity: { id: entity.id, globalId, slug, primaryName } }, { status: 201 })
   } catch (err) {

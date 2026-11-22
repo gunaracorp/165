@@ -24,6 +24,10 @@ interface TasbihState {
   best: number
   preset: string
   lastActive: string
+  /** total dzikir sepanjang waktu (semua hari) */
+  total: number
+  /** riwayat jumlah dzikir per tanggal (maks 90 hari terakhir) */
+  hist: Record<string, number>
 }
 
 const PRESETS = [
@@ -106,6 +110,8 @@ function load(): TasbihState {
     best: 0,
     preset: 'thayalah',
     lastActive: '',
+    total: 0,
+    hist: {},
   }
   try {
     const raw = JSON.parse(localStorage.getItem(STORE_KEY) || 'null') as TasbihState | null
@@ -156,13 +162,20 @@ export function TasbihSection() {
       const round = prev.round + 1
       // streak bertambah sekali per hari aktif (butir pertama hari ini)
       const streak = prev.today === 0 ? prev.streak + 1 : prev.streak
+      const dayKey = todayStr()
+      const hist = { ...(prev.hist ?? {}), [dayKey]: (prev.hist?.[dayKey] ?? 0) + 1 }
+      // pangkas riwayat > 90 hari (simpan yang terbaru)
+      const keys = Object.keys(hist).sort()
+      while (keys.length > 90) delete hist[keys.shift() as string]
       return {
         ...prev,
         round: round >= prev.target ? 0 : round,
         today: prev.today + 1,
         streak,
         best: Math.max(prev.best, streak),
-        lastActive: todayStr(),
+        lastActive: dayKey,
+        total: (prev.total ?? 0) + 1,
+        hist,
       }
     })
   }, [])

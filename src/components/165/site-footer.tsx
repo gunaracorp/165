@@ -7,6 +7,7 @@
 
 import type { CatalogKey } from '@/lib/i18n/catalog'
 import { useI18n } from '@/lib/i18n'
+import { SITE_VERSION_LABEL } from '@/data/site-version'
 import { NewsletterBand } from './newsletter-band'
 import type { LucideIcon } from 'lucide-react'
 import {
@@ -194,6 +195,14 @@ export function SiteFooter({ onNavigate }: FooterProps) {
             </p>
             <p className="mx-auto mt-4 max-w-2xl text-[11.5px] leading-relaxed text-white/55">
               {t('footer.colophonNote')}
+            </p>
+
+            {/* versi lengkap — selalu ter-update otomatis (gen-site-version) */}
+            <p className="mx-auto mt-3 max-w-2xl font-mono text-[10.5px] leading-relaxed text-white/45">
+              {SITE_VERSION_LABEL}
+            </p>
+            <p className="mx-auto mt-1.5 max-w-2xl text-[10.5px] leading-relaxed text-white/45">
+              SEO aktif: sitemap.xml · IndexNow (Bing, Yandex, Seznam, Naver) · robots.txt kawal Google &amp; AI-crawler
             </p>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { isAuthed } from '@/lib/admin-auth'
+import { pingSearchEnginesSoon } from '@/lib/indexnow'
 import { db } from '@/lib/db'
 import { clean, writeAudit } from '@/lib/admin-data'
 import { WIRIDIAN_ENTRIES } from '@/data/wiridian/bacaan'
@@ -81,6 +82,7 @@ export async function POST(req: NextRequest) {
       include: { verses: { orderBy: { order: 'asc' } } },
     })
     await writeAudit('admin', 'CREATE', `WIRIDIAN:${slug}`, `Bacaan baru (${kind}, ${verseRows.length} bait).`)
+    pingSearchEnginesSoon()
     return NextResponse.json({ entry: created }, { status: 201 })
   } catch (err) {
     console.error('[api/admin/wiridian POST]', err)
@@ -115,6 +117,7 @@ export async function PUT(req: NextRequest) {
       saved += 1
     }
     await writeAudit('admin', 'SYNC', 'WIRIDIAN', `Sinkron ulang ${saved} entri dari arsip bundled.`)
+    pingSearchEnginesSoon()
     return NextResponse.json({ ok: true, synced: saved })
   } catch (err) {
     console.error('[api/admin/wiridian PUT sync]', err)

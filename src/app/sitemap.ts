@@ -4,35 +4,16 @@ import type { MetadataRoute } from 'next'
 // Doctrine: a URL is only ever listed once its page actually exists —
 // no phantom URLs. The institution ships as a single-route SPA, so every
 // room is a stable, crawlable hash-section on the canonical origin.
+// Sumber seksi: src/lib/site-urls.ts (dipakai bersama IndexNow & panel SEO).
 export const revalidate = 3600
 
-const BASE = 'https://165.web.id'
-
-// institutional hash-sections (SPA rooms) — stable, crawlable anchors
-const SECTIONS: { hash: string; priority: number; freq: 'daily' | 'weekly' | 'monthly' }[] = [
-  { hash: '', priority: 1, freq: 'daily' },
-  { hash: 'explore', priority: 0.9, freq: 'daily' },
-  { hash: 'library', priority: 0.9, freq: 'weekly' },
-  { hash: 'archive', priority: 0.8, freq: 'weekly' },
-  { hash: 'research', priority: 0.8, freq: 'weekly' },
-  { hash: 'academy', priority: 0.7, freq: 'weekly' },
-  { hash: 'manaqib', priority: 0.9, freq: 'weekly' },
-  { hash: 'rahasia', priority: 0.8, freq: 'weekly' },
-  { hash: 'stories', priority: 0.6, freq: 'weekly' },
-  { hash: 'wiridian', priority: 0.8, freq: 'weekly' },
-  { hash: 'media', priority: 0.7, freq: 'weekly' },
-  { hash: 'trust', priority: 0.9, freq: 'weekly' },
-  { hash: 'about', priority: 0.6, freq: 'monthly' },
-  { hash: 'documents', priority: 0.7, freq: 'monthly' },
-  { hash: 'contribute', priority: 0.6, freq: 'monthly' },
-  { hash: 'seo', priority: 0.5, freq: 'monthly' },
-]
+import { SITE_SECTIONS, SITE_BASE } from '@/lib/site-urls'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
-  return SECTIONS.map((s) => ({
-    url: `${BASE}/${s.hash ? '#' + s.hash : ''}`,
+  return SITE_SECTIONS.map((s) => ({
+    url: `${SITE_BASE}/${s.hash ? '#' + s.hash : ''}`,
     lastModified: now,
     changeFrequency: s.freq,
     priority: s.priority,

@@ -421,3 +421,13 @@ Stage Summary:
 - WAKTU SHOLAT & KIBLAT (beta, hari-72): ruang baru — jadwal Imsak/Subuh/Terbit/Zuhur/Asar/Terbenam/Magrib/Isya metode KEMENAG RI (AlAdhan) per geolokasi; arah kiblat dihitung lokal menuju Ka'bah dengan jarum kompas; cache perangkat untuk offline; HonestNote deviasi menit
 - DASBOR PERJALANAN + REKOMENDASI HARIAN (beta, hari-55 & 84): ruang baru — rekomendasi amalan per hari pekan (bukan fatwa), rekap roadmap 0-99 + fase aktif, dzikir hari ini, streak & rekor, tugas hari; tautan silang ke Tasbih/Bacaan/Roadmap/Waktu Sholat
 - roadmap99.ts: hari 38/55/72/84 tak lagi bertanda "Segera" (kini nyata); nav.sholat & nav.dasbor masuk katalog i18n; NAV kini 19 ruang
+
+## Sesi — IndexNow Full SEO · Footer Versi · Offline & Wawasan (2026-11-23)
+- lint exit 0; uji: key file HTTP 200, ping IndexNow 202 Accepted (20 URL), cache offline 35 KB, wawasan hist=10/14 bar
+
+Stage Summary:
+- INDEXNOW FULL SEO: kunci 8a66038f…8d27 + file verifikasi /<key>.txt; lib indexnow (submit ke api.indexnow.org); API /api/indexnow (GET status publik, POST ping khusus admin); AUTO-PING saat entitas/bacaan diterbitkan via Ruang Admin; tab baru "SEO" di Ruang Admin dengan penjelasan sederhana + tombol ping — 202 Accepted terverifikasi; fakta diverifikasi: ping sitemap Google(404)/Bing(410) sudah dinonaktifkan penyedianya → dihapus demi kejujuran, Google/Bing kawal via sitemap+robots
+- FOOTER VERSI LENGKAP: scripts/gen-site-version.ts (version package.json + commit terakhir + waktu WIB) → src/data/site-version.ts, otomatis berjalan pada dev & build; footer menampilkan "165 v0.4.0 · Terakhir diperbarui … · kompos …" + baris SEO aktif; versi dinaikkan 0.2.1 → 0.4.0
+- WIRIDIAN OFFLINE PENUH (hari-90 nyata): tombol "Simpan untuk offline" di ruang Bacaan → seluruh bacaan & halaman utama masuk cache SW (165-v2-api/pages), stempel tersimpan per perangkat
+- WAWASAN PRIBADI (hari-95 nyata): tasbih kini mencatat total sepanjang waktu + riwayat 90 hari; Dasbor menampilkan total, rata-rata 7 hari, hari terbaik & grafik 14 hari
+- sitemap.xml kini memuat tasbih, sholat, roadmap, dasbor (20 URL, sumber tunggal src/lib/site-urls.ts)

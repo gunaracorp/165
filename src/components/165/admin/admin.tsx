@@ -9,7 +9,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import {
   KeyRound, LogOut, LayoutDashboard, LibraryBig, Inbox, Rocket, BookOpenCheck,
-  ShieldCheck, Database, RefreshCw, Lock, BarChart3, ScrollText,
+  ShieldCheck, Database, RefreshCw, Lock, BarChart3, ScrollText, SearchCheck,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -20,6 +20,7 @@ import { cn } from '@/lib/utils'
 import { RegistryPanel } from './registry'
 import { ContributionsPanel, PublishPanel, GuidePanel, DashboardPanel } from './extras'
 import { BacaanPanel } from './bacaan'
+import { IndexNowPanel } from './seo'
 import { AnalyticsDashboard } from '../analytics-dashboard'
 
 export type AdminStats = {
@@ -38,6 +39,7 @@ const TABS = [
   { key: 'analitik', label: 'Analitik', icon: BarChart3 },
   { key: 'registri', label: 'Registri', icon: LibraryBig },
   { key: 'bacaan', label: 'Bacaan', icon: ScrollText },
+  { key: 'seo', label: 'SEO', icon: SearchCheck },
   { key: 'kontribusi', label: 'Kontribusi', icon: Inbox },
   { key: 'terbitkan', label: 'Terbitkan', icon: Rocket },
   { key: 'panduan', label: 'Panduan', icon: BookOpenCheck },
@@ -233,6 +235,7 @@ export function AdminSection() {
       {tab === 'analitik' && <AnalyticsDashboard />}
       {tab === 'registri' && <RegistryPanel dbAvailable={session.dbAvailable} />}
       {tab === 'bacaan' && <BacaanPanel />}
+      {tab === 'seo' && <IndexNowPanel />}
       {tab === 'kontribusi' && <ContributionsPanel dbAvailable={session.dbAvailable} />}
       {tab === 'terbitkan' && <PublishPanel session={session} onRefreshSession={() => load(true)} />}
       {tab === 'panduan' && <GuidePanel dbAvailable={session.dbAvailable} />}

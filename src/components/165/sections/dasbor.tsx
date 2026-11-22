@@ -28,7 +28,7 @@ const REKOM = [
   { day: 6, preset: 'isyarat', name: 'Dzikir Isyarat', target: 300, why: 'Sabtu — diam yang tenang dan dzikir dalam dada.' },
 ] as const
 
-interface TasbihLocal { today?: number; streak?: number; best?: number; target?: number }
+interface TasbihLocal { today?: number; streak?: number; best?: number; target?: number; total?: number; hist?: Record<string, number> }
 interface RemindLocal { pagi?: { on?: boolean }; sore?: { on?: boolean } }
 
 export function DasborSection({ onNavigate }: { onNavigate: (s: string) => void }) {
@@ -64,6 +64,36 @@ export function DasborSection({ onNavigate }: { onNavigate: (s: string) => void 
   )
   const rekom = REKOM[new Date().getDay()]
   const hariNama = ['Ahad', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'][new Date().getDay()]
+
+  // ---- wawasan pribadi: perhitungan dari riwayat lokal ----
+  const NAMA_HARI = ['Ahd', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab']
+  const spark = useMemo(() => {
+    const hist = data?.tasbih.hist ?? {}
+    const out: { label: string; short: string; count: number }[] = []
+    const now = new Date()
+    for (let i = 13; i >= 0; i--) {
+      const d = new Date(now)
+      d.setDate(now.getDate() - i)
+      const key = d.toISOString().slice(0, 10)
+      out.push({ label: key, short: NAMA_HARI[d.getDay()], count: hist[key] ?? 0 })
+    }
+    return out
+  }, [data])
+  const sparkMax = useMemo(() => Math.max(...spark.map((d) => d.count), 1), [spark])
+  const rata7 = useMemo(() => {
+    const last7 = spark.slice(-7)
+    return last7.reduce((a, d) => a + d.count, 0) / 7
+  }, [spark])
+  const bestDay = useMemo(() => {
+    const hist = data?.tasbih.hist ?? {}
+    let best: { label: string; count: number } | null = null
+    for (const [key, count] of Object.entries(hist)) {
+      if (!best || count > best.count) {
+        best = { label: new Date(key).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' }), count }
+      }
+    }
+    return best
+  }, [data])
 
   return (
     <div className="space-y-8">
@@ -164,6 +194,45 @@ export function DasborSection({ onNavigate }: { onNavigate: (s: string) => void 
           </Card>
         </Reveal>
       </div>
+
+      {/* ---- wawasan pribadi (hari ke-95) ---- */}
+      <Reveal delay={0.14}>
+        <Card className="v4-card border-border/70">
+          <CardContent className="p-5 sm:p-6">
+            <div className="flex items-center justify-between gap-2">
+              <p className="label-caps text-muted-foreground text-[10px]">Wawasan Pribadi <span className="text-amber-600 dark:text-amber-400">· Beta</span></p>
+              <span className="text-muted-foreground text-[10.5px]">14 hari terakhir · dari perangkatmu sendiri</span>
+            </div>
+            <div className="mt-4 grid gap-4 sm:grid-cols-3">
+              <div className="bg-secondary/50 rounded-2xl p-3.5">
+                <p className="font-display text-2xl font-bold tabular-nums">{(data?.tasbih.total ?? 0).toLocaleString('id-ID')}</p>
+                <p className="text-muted-foreground mt-0.5 text-[11px]">total dzikir sepanjang waktu</p>
+              </div>
+              <div className="bg-secondary/50 rounded-2xl p-3.5">
+                <p className="font-display text-2xl font-bold tabular-nums">{rata7.toLocaleString('id-ID', { maximumFractionDigits: 1 })}</p>
+                <p className="text-muted-foreground mt-0.5 text-[11px]">rata-rata 7 hari terakhir / hari</p>
+              </div>
+              <div className="bg-secondary/50 rounded-2xl p-3.5">
+                <p className="font-display text-2xl font-bold tabular-nums">{bestDay ? bestDay.count.toLocaleString('id-ID') : '0'}</p>
+                <p className="text-muted-foreground mt-0.5 text-[11px]">hari terbaik{bestDay ? ` · ${bestDay.label}` : ''}</p>
+              </div>
+            </div>
+            {/* grafik batang 14 hari */}
+            <div className="mt-5 flex items-end gap-1.5" role="img" aria-label="Grafik dzikir 14 hari terakhir">
+              {spark.map((d, i) => (
+                <div key={i} className="flex flex-1 flex-col items-center gap-1">
+                  <div
+                    className={cn('w-full rounded-t-md transition-all duration-500', d.count > 0 ? 'bg-primary' : 'bg-secondary')}
+                    style={{ height: `${Math.max(d.count > 0 ? Math.round((d.count / sparkMax) * 64) : 3, 3)}px` }}
+                    title={`${d.label}: ${d.count} butir`}
+                  />
+                  <span className="text-muted-foreground/70 text-[9px] font-semibold">{d.short}</span>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </Reveal>
 
       {/* ---- tugas hari ini ---- */}
       <Reveal delay={0.16}>
