@@ -24,6 +24,9 @@ import { ManaqibSection } from './sections/manaqib'
 import { RahasiaSection } from './sections/rahasia'
 import { StoriesSection } from './sections/stories'
 import { WiridianSection } from './sections/wiridian'
+import { TasbihSection } from './sections/tasbih'
+import { RoadmapSection } from './sections/roadmap'
+import { AppBar } from './app-bar'
 import { TrustSection } from './sections/trust'
 import { AboutSection } from './sections/about'
 import { SeoSection } from './sections/seo'
@@ -42,6 +45,8 @@ const NAV = [
   { key: 'rahasia', label: 'Secrets' },
   { key: 'stories', label: 'Stories' },
   { key: 'wiridian', label: 'Bacaan' },
+  { key: 'tasbih', label: 'Tasbih' },
+  { key: 'roadmap', label: 'Roadmap 99' },
   { key: 'media', label: 'Media' },
   { key: 'trust', label: 'Trust & Method' },
   { key: 'about', label: 'About 165' },
@@ -312,7 +317,7 @@ export function InstitutionApp() {
       </header>
 
       {/* ---------------- main ---------------- */}
-      <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
+      <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 pt-8 pb-28 sm:px-6 sm:pt-10 lg:pb-10">
         <Breadcrumbs items={section === 'home' && !entitySlug ? [] : [{ label: entitySlug ? 'Profil Entitas' : (t(`nav.${section}` as CatalogKey) || section), hash: entitySlug ? undefined : section }]} />
         {entitySlug ? (
           <>
@@ -331,6 +336,8 @@ export function InstitutionApp() {
             {section === 'rahasia' && <RahasiaSection />}
             {section === 'stories' && <StoriesSection />}
             {section === 'wiridian' && <WiridianSection />}
+            {section === 'tasbih' && <TasbihSection />}
+            {section === 'roadmap' && <RoadmapSection />}
             {section === 'media' && <MediaSection onOpenEntity={openEntity} onNavigate={navigate} />}
             {section === 'trust' && <TrustSection onOpenEntity={openEntity} />}
             {section === 'about' && <AboutSection onOpenEntity={openEntity} onNavigate={navigate} />}
@@ -345,6 +352,11 @@ export function InstitutionApp() {
       {/* ---------------- footer v.5 "Emerald Colophon" (sticky bottom via mt-auto) ---------------- */}
       <SiteFooter onNavigate={navigate} />
       <InstallPrompt />
+      <AppBar
+        section={section}
+        sections={[...NAV.map((n) => ({ key: n.key, label: n.label })), { key: 'contribute', label: 'Contribute' }, { key: 'admin', label: 'Admin' }]}
+        onNavigate={navigate}
+      />
       </div>
     </QueryProvider>
   )

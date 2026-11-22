@@ -6,7 +6,7 @@
 //  · mutations (POST/PUT/PATCH) → always network, never cached
 // Doctrine: offline is a preservation feature — knowledge must survive
 // lost connections, but stale data is never presented as fresh.
-const VERSION = '165-v1'
+const VERSION = '165-v2'
 const STATIC_CACHE = `${VERSION}-static`
 const PAGE_CACHE = `${VERSION}-pages`
 const API_CACHE = `${VERSION}-api`
@@ -70,7 +70,7 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(request)
         .then((res) => {
-          if (res.ok && url.pathname.match(/^\/api\/(entities|sanad|graph|stats|search|terms|timeline)/)) {
+          if (res.ok && url.pathname.match(/^\/(api\/)?(entities|sanad|graph|stats|search|terms|timeline|wiridian)/)) {
             const copy = res.clone()
             caches.open(API_CACHE).then((c) => c.put(request, copy))
           }

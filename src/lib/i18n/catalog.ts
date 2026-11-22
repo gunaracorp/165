@@ -17,6 +17,8 @@ export const CATALOG = {
   'nav.rahasia': ['Rahasia', 'Secrets'],
   'nav.stories': ['Kisah', 'Stories'],
   'nav.wiridian': ['Bacaan', 'Readings'],
+  'nav.tasbih': ['Tasbih', 'Tasbih'],
+  'nav.roadmap': ['Roadmap 99', 'Roadmap 99'],
   'nav.contribute': ['Kontribusi', 'Contribute'],
   'nav.admin': ['Ruang Admin', 'Admin Room'],
   'nav.more': ['Lainnya', 'More'],

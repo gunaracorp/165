@@ -403,3 +403,12 @@ Stage Summary:
 - CMS WordPress-style lengkap: Ruang Admin kini mengelola registri + bacaan (WiridEntry) dengan CRUD penuh, audit log, visibility, sinkron arsip
 - Ruang "Bacaan" publik hidup: qasidah Ibadallah Rijalallah 13 bait + Nuril Anwar + wiridian TQN + dzikir harian — Arab terlestarikan, Latin, arti Bahasa Sunda & Indonesia, tafsir makna berurut, ber-grade & ber-sumber, display-only
 - Untuk yang lupa tujuan: ruang dibuka & ditutup dengan kompas tujuan; pintu terbuka Dzikir Harian sebelum ijazah
+
+## Sesi — Versi Aplikasi · Roadmap 99 Hari · Fitur Premium (2026-11-23)
+- lint exit 0; verifikasi visual & fungsional via agent-browser (mobile viewport 390×844)
+
+Stage Summary:
+- VERSI APLIKASI: app-bar bawah ala aplikasi (Home·Bacaan·Tasbih·Roadmap·Lainnya-sheet 20 ruang) di layar kecil; manifest PWA v2 (display_override, launch_handler, shortcut Bacaan/Tasbih/Roadmap/Sanad); service worker 165-v2 cache API wiridian
+- FITUR PREMIUM "Tasbih Digital 165": penghitung dzikir lingkar-progres (7 kalimat: thayalah, istighfar, tahmid, tasbih, takbir, sholawat, dzikir isyarat — Arab+Latin+arti ID+Sunda), target 33–1000, getaran halus, streak harian & rekor, penyimpanan lokal murni; functional setState agar tap beruntun akurat
+- ROADMAP 99 HARI MENUJU SEMPURNA: 3 fase × 33 hari (Islam→Iman→Ihsan, selaras bilangan tasbih & 99 Asmaul Husna); 99 entri nyata ibadah/ilmu/amal/fitur/warisan; filter tag, penanda selesai per hari (localStorage), tonggak fitur berstatus jujur (chip "Segera" untuk yang direncanakan)
+- i18n: nav.tasbih & nav.roadmap pada katalog; ruang baru terhubung di NAV, menu mobile, sheet Lainnya, manifest shortcut
