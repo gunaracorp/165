@@ -453,3 +453,14 @@ Stage Summary:
 - PETA DUNIA SANAD (beta, hari-92 nyata): komponen sanad-world.tsx di ruang Kejujuran (bawah diagram) — simpul SPINE+2 segmen+2 terminal dikelompokkan barat→timur (Asia Tengah/Persia/Irak/Hijaz/Nusantara) dari lapangan `place`; lapisan Diaspora hanya dari fakta tercatat S2 (wakil talqin ±35 wilayah termasuk Singapura & Malaysia); display-only, simpul tak terpetakan diakui apa adanya
 - roadmap99.ts: hari 70/76/80/86/89/92 tak lagi "Segera" → SEMUA 99 hari kini nyata (nol item soon); sw.js v4
 - data baru: src/data/warisan.ts (MANUSKRIP_ENTRIES 5 entri + MUSEUM_KOLEKSI 6 koleksi + meta badge)
+
+## Sesi — SEO Indexing: 495 URL katalog jadi halaman nyata + sitemap penuh (2026-11-23)
+- lint (exit 0); build (exit 0, 488 halaman SSG); commit (pending); push (pending)
+
+Stage Summary:
+- SEO INDEXING (hari ini): seluruh katalog URL 165.web.id yang semula "T/A" di laporan crawl kini jadi halaman Next.js NYATA statis — 488 halaman entri (206 glossary, 78 library, 60 atlas, 78 institution, 22 archive, 44 ask) + 7 halaman indeks (/glossary /library /atlas /institution /archive /ask /artikel)
+- DATA: src/data/pages/ — types.ts (PageEntry + KIND_SCHEMA: DefinedTerm/Book/Place/Organization/CollectionPage/FAQPage) + 11 berkas data (glossary-1..4, library-1..2, atlas, institution-1..2, archive, ask); konten bahasa Indonesia formal-institusional; kejujuran absolut (riwayat berlabel, tanpa tanggal/nama/angka dikarang; wahdatul wujud = isu akademik beradab; ziarah = menghormati + doa, bukan meminta kepada selain Allah)
+- ROUTE: src/lib/seo-routes.tsx (factory generateStaticParams + generateMetadata + IndexRoute/DetailRoute); src/components/165/seo/entity-page.tsx (renderer server, zero client JS, JSON-LD BreadcrumbList + entity per kind); canonical + OG + title per halaman
+- SITEMAP: src/app/sitemap.ts kini 515 URL (20 hash-seksi + 7 indeks + 488 entri); robots.txt tetap allow / ; slug unik 100% (verifikasi scripts/check-pages.ts); related lintas kind di-resolve — 0 tautan mati
+- QA: biome exit 0; eslint exit 0; build SSG sukses (glossary 206 paths, library 78, atlas 60, institution 78, archive 22, ask 44); uji server: /glossary/wirid (title "Wirid · 165", canonical benar, JSON-LD DefinedTerm), /ask (FAQPage), /library/fathul-rabbani (title benar)
+- KOREKSI DATA: dedup glossary (mursyid/naqsabandiyah/mujaddidiyah ganda dihapus; khalidiyyah→khalidiyah); slug hilang dilengkapi manual (12 entri waktu-wirid s.d. zuhud + ijazah + baiat — dua istilah inti)
