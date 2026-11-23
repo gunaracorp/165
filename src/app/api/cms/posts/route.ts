@@ -92,7 +92,8 @@ export async function POST(req: NextRequest) {
       data: {
         type, title, slug, excerpt, content, categoryId, pinned, status,
         coverUrl: typeof b.coverUrl === 'string' && b.coverUrl ? b.coverUrl : null,
-        author: 'Admin 165',
+        // penulis = persona aktif (Peran & Persona) atau default Admin 165
+        author: typeof b.author === 'string' && b.author.trim() ? b.author.trim().slice(0, 60) : 'Admin 165',
         publishedAt: status === 'published' ? new Date() : null,
       },
     })

@@ -65,10 +65,11 @@ const TOOLS: ToolDef[] = [
 ]
 
 export function PostEditor({
-  initial, categories, onSaved, onCancel,
+  initial, categories, authorDefault, onSaved, onCancel,
 }: {
   initial: EditorDraft | null // null = artikel baru
   categories: CmsCategoryRow[]
+  authorDefault?: string // nama persona aktif (Peran & Persona)
   onSaved: () => void
   onCancel: () => void
 }) {
@@ -165,6 +166,8 @@ export function PostEditor({
         coverUrl: draft.coverUrl, pinned: draft.pinned,
         categoryId: draft.categoryId || undefined,
         tags: draft.tags, status: targetStatus,
+        // artikel baru: pakai nama persona aktif bila ada
+        ...(isNew && authorDefault ? { author: authorDefault } : {}),
       }
       const r = await fetch(isNew ? '/api/cms/posts' : `/api/cms/posts/${initial!.id}`, {
         method: isNew ? 'POST' : 'PUT',
@@ -217,6 +220,7 @@ export function PostEditor({
           </Button>
           <span className="text-muted-foreground text-[12px]">
             {type === 'page' ? 'Halaman baru' : 'Artikel baru'} — editor visual
+            {isNew && authorDefault ? ` · penulis: ${authorDefault}` : ''}
           </span>
         </div>
         <div className="flex items-center gap-2">

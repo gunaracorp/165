@@ -8,7 +8,7 @@
 // ============================================================
 import { useCallback, useEffect, useState } from 'react'
 import {
-  BookOpen, FileText, Image as ImageIcon, Inbox, KeyRound, LayoutDashboard,
+  BookOpen, Brain, FileText, Image as ImageIcon, Inbox, KeyRound, LayoutDashboard,
   LayoutGrid, Lock, MessageSquare, Settings, ShieldCheck,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -24,10 +24,11 @@ import { PostEditor, type EditorDraft } from './editor'
 import { TaxonomyPanel } from './taxonomy'
 import { CommentsPanel } from './comments-panel'
 import { MediaPanel } from './media-panel'
+import { PersonaPanel } from './persona-panel'
 import { SettingsPanel } from './settings-panel'
 import type { CmsCategoryRow, CmsOverview } from './types'
 
-type Tab = 'dasbor' | 'artikel' | 'halaman' | 'taksonomi' | 'komentar' | 'media' | 'pengaturan'
+type Tab = 'dasbor' | 'artikel' | 'halaman' | 'taksonomi' | 'komentar' | 'media' | 'peran' | 'pengaturan'
 type View = { mode: 'list' } | { mode: 'edit'; draft: EditorDraft | null }
 
 const MENU: Array<{ key: Tab; label: string; icon: React.ComponentType<{ className?: string }> }> = [
@@ -37,6 +38,7 @@ const MENU: Array<{ key: Tab; label: string; icon: React.ComponentType<{ classNa
   { key: 'taksonomi', label: 'Kategori & Tag', icon: LayoutGrid },
   { key: 'komentar', label: 'Komentar', icon: MessageSquare },
   { key: 'media', label: 'Media', icon: ImageIcon },
+  { key: 'peran', label: 'Peran & Persona', icon: Brain },
   { key: 'pengaturan', label: 'Pengaturan', icon: Settings },
 ]
 
@@ -47,6 +49,7 @@ export function CmsSection() {
   const [view, setView] = useState<View>({ mode: 'list' })
   const [categories, setCategories] = useState<CmsCategoryRow[]>([])
   const [pending, setPending] = useState(0)
+  const [authorDefault, setAuthorDefault] = useState<string | null>(null)
   const [refreshKey, setRefreshKey] = useState(0)
   const [password, setPassword] = useState('')
   const [loginBusy, setLoginBusy] = useState(false)
@@ -89,6 +92,24 @@ export function CmsSection() {
     const t = window.setTimeout(() => { void loadCategories() }, 0)
     return () => window.clearTimeout(t)
   }, [authed, loadCategories, refreshKey])
+
+  // persona aktif (Peran & Persona) → nama penulis artikel baru
+  const loadPersonas = useCallback(async () => {
+    try {
+      const r = await fetch('/api/cms/personas')
+      const j = await r.json().catch(() => ({}))
+      if (r.ok && Array.isArray(j.items)) {
+        const act = j.items.find((p: { active: boolean; name: string }) => p.active)
+        setAuthorDefault(act ? act.name : null)
+      }
+    } catch { /* diam */ }
+  }, [])
+
+  useEffect(() => {
+    if (!authed) return
+    const t = window.setTimeout(() => { void loadPersonas() }, 0)
+    return () => window.clearTimeout(t)
+  }, [authed, loadPersonas, refreshKey])
 
   const login = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -190,7 +211,7 @@ export function CmsSection() {
   return (
     <div className="grid gap-5 lg:grid-cols-[240px_1fr]">
       {/* sidebar (desktop) + tabbar (mobile) */}
-      <aside className="lg:sticky lg:top-24 lg:self-start">
+      <aside className="min-w-0 lg:sticky lg:top-24 lg:self-start">
         <div className="border-border bg-card hidden rounded-2xl border p-2 lg:block">
           <p className="text-muted-foreground px-2.5 py-1.5 text-[11px] font-bold tracking-[0.12em] uppercase">CMS 165</p>
           <nav aria-label="Menu CMS">
@@ -277,6 +298,7 @@ export function CmsSection() {
             key={view.draft?.id ?? 'new'}
             initial={view.draft}
             categories={categories}
+            authorDefault={authorDefault ?? undefined}
             onSaved={async () => {
               setView({ mode: 'list' })
               await afterChange()
@@ -290,6 +312,8 @@ export function CmsSection() {
         {tab === 'komentar' && view.mode === 'list' && <CommentsPanel onChanged={() => void afterChange({ commentChange: true })} />}
 
         {tab === 'media' && view.mode === 'list' && <MediaPanel />}
+
+        {tab === 'peran' && view.mode === 'list' && <PersonaPanel />}
 
         {tab === 'pengaturan' && view.mode === 'list' && <SettingsPanel />}
       </div>

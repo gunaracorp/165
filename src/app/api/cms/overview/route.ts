@@ -6,7 +6,7 @@ import { db } from '@/lib/db'
 export async function GET(req: NextRequest) {
   if (!isAuthed(req)) return NextResponse.json({ error: 'Tidak diizinkan.' }, { status: 401 })
   try {
-    const [posts, published, pages, drafts, categories, tags, media, pendingComments, totalComments, trash] =
+    const [posts, published, pages, drafts, categories, tags, media, pendingComments, totalComments, trash, subscribers, pendingContrib, personaCount, activePersona] =
       await Promise.all([
         db.cmsPost.count({ where: { type: 'post' } }),
         db.cmsPost.count({ where: { type: 'post', status: 'published' } }),
@@ -18,6 +18,10 @@ export async function GET(req: NextRequest) {
         db.cmsComment.count({ where: { status: 'pending' } }),
         db.cmsComment.count(),
         db.cmsPost.count({ where: { status: 'trash' } }),
+        db.subscriber.count({ where: { active: true } }),
+        db.contribution.count({ where: { status: 'SUBMITTED' } }),
+        db.cmsPersona.count(),
+        db.cmsPersona.findFirst({ where: { active: true } }),
       ])
 
     const recentPosts = await db.cmsPost.findMany({
@@ -41,7 +45,11 @@ export async function GET(req: NextRequest) {
         posts, published, pages, drafts, categories, tags, media,
         comments: totalComments, pendingComments, trash,
         views: totalViews._sum.views ?? 0,
+        subscribers, pendingContributions: pendingContrib, personas: personaCount,
       },
+      activePersona: activePersona
+        ? { name: activePersona.name, field: activePersona.field, title: activePersona.title, master: activePersona.master }
+        : null,
       recentPosts: recentPosts.map((p) => ({
         id: p.id, title: p.title, slug: p.slug, status: p.status,
         category: p.category?.name ?? null, comments: p._count.comments,
