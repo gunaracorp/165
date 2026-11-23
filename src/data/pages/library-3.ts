@@ -5,7 +5,7 @@ import type { PageEntry } from './types'
 // 9–22 pada Roadmap 99 internal. Doktrin kejujuran: setiap pernyataan diberi
 // grade — (1) riwayat mapan tarjamah, (2) riwayat manaqib populer,
 // (3) belum diketahui (ditulis jujur, tidak dikarang).
-// Bab yang sudah tayang: 1–3. Bab lain menyusul berurutan.
+// Bab yang sudah tayang: 1–4. Bab lain menyusul berurutan.
 export const ENTRIES: PageEntry[] = [
   {
     slug: 'perjalanan-tuan-syekh-hulu-hilir',
@@ -18,7 +18,7 @@ export const ENTRIES: PageEntry[] = [
       { label: 'Jumlah bab', value: '14 bab — langkah 9 sampai 22 pada peta jalan internal pendiri' },
       { label: 'Bahasa', value: 'Arab dan Indonesia saja, sesuai pesanan pendiri' },
       { label: 'Metode', value: 'Tiga tingkat grade: riwayat mapan, riwayat manaqib populer, belum diketahui' },
-      { label: 'Status', value: 'Bab 1, 2 dan 3 tayang; bab berikutnya diterbitkan berurutan' },
+      { label: 'Status', value: 'Bab 1, 2, 3 dan 4 tayang; bab berikutnya diterbitkan berurutan' },
     ],
     body: [
       {
@@ -41,7 +41,7 @@ export const ENTRIES: PageEntry[] = [
           'Bab 1 — Kelahiran di Jilan dan silsilah syarif (470 H / 1077 M). — TAYANG.',
           'Bab 2 — Masa kecil dan pendidikan awal di Jilan. — TAYANG.',
           'Bab 3 — Keberangkatan ke Baghdad pada usia belia. — TAYANG.',
-          'Bab 4 — Guru-guru dan kurikulum ilmu di Baghdad.',
+          'Bab 4 — Guru-guru dan kurikulum ilmu di Baghdad. — TAYANG.',
           'Bab 5 — Pengambilan thariqah dan penyulaman pertama.',
           'Bab 6 — Zuhud 25 tahun di padang puing.',
           'Bab 7 — Kembali ke Baghdad: dari dakwah hukum ke dakwah hati.',
@@ -62,7 +62,7 @@ export const ENTRIES: PageEntry[] = [
         ],
       },
     ],
-    related: ['perjalanan-bab-1-kelahiran-di-jilan', 'perjalanan-bab-2-masa-kecil-jilan', 'perjalanan-bab-3-keberangkatan-baghdad', 'silsilah', 'manaqib', 'fathul-rabbani'],
+    related: ['perjalanan-bab-1-kelahiran-di-jilan', 'perjalanan-bab-2-masa-kecil-jilan', 'perjalanan-bab-3-keberangkatan-baghdad', 'perjalanan-bab-4-guru-dan-kurikulum-baghdad', 'silsilah', 'manaqib', 'fathul-rabbani'],
   },
   {
     slug: 'perjalanan-bab-1-kelahiran-di-jilan',
@@ -296,6 +296,79 @@ export const ENTRIES: PageEntry[] = [
         ],
       },
     ],
-    related: ['perjalanan-tuan-syekh-hulu-hilir', 'perjalanan-bab-2-masa-kecil-jilan', 'perjalanan-bab-1-kelahiran-di-jilan', 'silsilah', 'manaqib'],
+    related: ['perjalanan-tuan-syekh-hulu-hilir', 'perjalanan-bab-2-masa-kecil-jilan', 'perjalanan-bab-1-kelahiran-di-jilan', 'perjalanan-bab-4-guru-dan-kurikulum-baghdad', 'silsilah', 'manaqib'],
+  },
+  {
+    slug: 'perjalanan-bab-4-guru-dan-kurikulum-baghdad',
+    kind: 'library',
+    title: 'Bab 4 — Guru-Guru & Kurikulum Ilmu di Baghdad (488–513 H)',
+    titleAr: 'البَابُ الرَّابِعُ: أَسَاتِذَتُهُ وَمَنْهَجُ العِلْمِ فِي بَغْدَادَ',
+    category: 'Manaqib & Perjalanan Hulu-Hilir',
+    summary: 'Guru-guru Abdul Qodir Al-Jaelani di Baghdad 488-513 H: fiqih Hanbali, hadits, tafsir — daftar per nama dengan catatan sumber dan grade jujur.',
+    facts: [
+      { label: 'Fase belajar', value: 'Baghdad, sekitar 488-513 H — kerangka riwayat mapan' },
+      { label: 'Guru fiqih Hanbali', value: 'Abu Sa\'id al-Makhzumi (w. 513 H), Abu al-Khattab al-Kaludhani (w. 510 H), Ibnu Aqil (431-513 H) — riwayat mapan' },
+      { label: 'Guru hadits', value: 'Ja\'far as-Sarraj (w. 500 H), Abu Ya\'la ash-Shagir (w. 526 H), Abu Ghalib bin al-Banna (w. sekitar 519 H) — riwayat mapan' },
+      { label: 'Guru tafsir', value: 'Tidak ada nama yang tercatat pada tarjamah klasik — belum diketahui' },
+      { label: 'Amanah madrasah', value: 'Madrasah Bab al-Azaj beralih kepada beliau setelah al-Makhzumi wafat, 513 H — riwayat mapan' },
+      { label: 'Pintu thariqah', value: 'Hammad bin Muslim ad-Dabbas, pembimbing ruhaniah — dibahas utuh pada Bab 5' },
+    ],
+    body: [
+      {
+        h: 'Muqaddimah Arab — Kalimat Pembuka Bab',
+        p: [
+          'بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ. هَذَا البَابُ الرَّابِعُ: أَسَاتِذَتُهُ وَمَنْهَجُ العِلْمِ فِي بَغْدَادَ مَا بَيْنَ سَنَةِ ثَمَانٍ وَثَمَانِينَ وَأَرْبَعِمِائَةٍ وَسَنَةِ ثَلَاثَ عَشْرَةَ وَخَمْسِمِائَةٍ. فِيهِ نَذْكُرُ أَسْمَاءَ أَسَاتِذَتِهِ فِي الفِقْهِ الحَنْبَلِيِّ وَالحَدِيثِ وَاحِداً وَاحِداً مَعَ بَيَانِ مَصْدَرِ كُلِّ اسْمٍ، وَنَقُولُ فِي التَّفْسِيرِ بِصِدْقٍ: لَمْ يَثْبُتْ عِنْدَنَا اسْمُ شَيْخٍ خَاصٍّ، فَنَكْتُبُهُ فِي قَائِمَةِ مَا "لا نَعْلَمُ بِجَازِمٍ".',
+          'Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang. Inilah bab keempat: para guru dan kurikulum ilmu beliau di Baghdad antara tahun 488 dan 513 Hijriah. Di dalamnya kami sebutkan nama para guru beliau dalam fiqih Hanbali dan hadits satu per satu, disertai catatan sumber pada setiap nama. Adapun tafsir, kami katakan dengan jujur: tidak terteguh bagi kami nama gurunya yang khusus, maka kami menuliskannya pada daftar hal yang "kami tidak mengetahuinya secara pasti".',
+        ],
+      },
+      {
+        h: 'Fiqih Hanbali: Poros Kurikulum dan Tiga Gurunya',
+        p: [
+          'Poros studi Tuan Syekh di Baghdad adalah fiqih mazhab Hanbali — mazhab yang di kota itu berakar pada majelis Qadhi Abu Ya\'la al-Kabir (w. 458 H) dan murid-muridnya. Tiga nama guru fiqih berjejak pada catatan tarjamah. Pertama, Abu Sa\'id al-Mubarak bin Ali al-Makhzumi (w. 513 H) — sebagian kitab menulis kunyanya Abu Sa\'d — pemuka Hanbali yang pernah belajar kepada Qadhi Abu Ya\'la dan membangun madrasahnya sendiri di kawasan Bab al-Azaj. Kedua, Abu al-Khattab Mahfuz bin Ahmad al-Kaludhani (w. 510 H), ulama besar Hanbali yang majelis fiqihnya menjadi rujukan para penuntut ilmu di Baghdad, penyusun kitab al-Hidayah (syarah Mukhtashar al-Khiraqi) dan at-Tamhid dalam ushul fiqih. Ketiga, Abu al-Wafa\' Ali bin Aqil (431-513 H), yang dikenal sebagai Ibnu Aqil, imam ushul dan teolog paling cemerlang pada zamannya. Ketiga nama ini masuk tingkat riwayat mapan: catatan tentang mereka berjalan pada literatur tarjamah yang diikuti para ulama mazhab dari masa ke masa.',
+          'كَانَ عِمَادُ دِرَاسَتِهِ بِبَغْدَادَ الفِقْهَ عَلَى مَذْهَبِ الإِمَامِ أَحْمَدَ بْنِ حَنْبَلٍ رَحِمَهُ اللهُ، أَخَذَهُ عَنْ أَبِي سَعِيدٍ المُبَارَكِ بْنِ عَلِيٍّ المَخْزُومِيِّ المُتَوَفَّى سَنَةَ ثَلَاثَ عَشْرَةَ وَخَمْسِمِائَةٍ، وَأَبِي الخَطَّابِ مَحْفُوظِ بْنِ أَحْمَدَ الكَلْوَذَانِيِّ المُتَوَفَّى سَنَةَ عَشْرٍ وَخَمْسِمِائَةٍ، وَأَبِي الوَفَاءِ عَلِيِّ بْنِ عَقِيلٍ المُتَوَفَّى سَنَةَ ثَلَاثَ عَشْرَةَ وَخَمْسِمِائَةٍ، وَهَذِهِ الأَسْمَاءُ مُقَيَّدَةٌ فِي كُتُبِ التَّرَاجِمِ.',
+          'Sebagai konteks kurikulum: pengajaran fiqih Hanbali di Baghdad pada masa itu berporos pada Mukhtashar al-Khiraqi, kitab induk mazhab yang para guru besarnya saling berlomba menjelaskan — Abu al-Khattab sendiri menyusun syarah yang masyhur atasnya. Adapun kitab persis yang dibaca Tuan Syekh pada majelis tiap gurunya, rinciannya tidak tercatat; yang terteguh adalah bidangnya, para gurunya, dan bingkai waktunya. Pembedaan ini penting: platform 165 meneguhkan kurikulum umum sebagai konteks sejarah mazhab, tetapi tidak pernah menambal rincian yang tidak berjejak dengan karangan.',
+        ],
+      },
+      {
+        h: 'Hadits: Majelis Periwayatan dan Tiga Muhaddits',
+        p: [
+          'Baghdad bukan hanya kota fiqih; ia juga kota majelis hadits, tempat para muhaddits membacakan riwayat kepada penuntut ilmu dari segala penjuru dunia Islam. Catatan tarjamah mengerucut pada tiga nama yang menjadi sumber periwayatan hadits Tuan Syekh. Pertama, Abu Muhammad Ja\'far bin Ahmad as-Sarraj (w. 500 H), ahli hadits Baghdad yang dinilai tsiqah atau tepercaya, berpribadian saleh, dan meninggalkan sejumlah karya tulis. Kedua, Abu Ya\'la ash-Shagir (w. 526 H), putra Qadhi Abu Ya\'la al-Kabir; melalui majelis putra inilah beliau bersambung kepada warisan hadits keluarga imam besar mazhab. Ketiga, Abu Ghalib bin al-Banna (w. sekitar 519 H), muhaddits Hanbali yang periwayatannya menjadi pintu bagi banyak ulama generasi sesudahnya. Ketiga nama ini kami catat sebagai riwayat mapan dengan jejak tarjamah.',
+          'وَسَمِعَ الحَدِيثَ بِبَغْدَادَ مِنْ أَبِي مُحَمَّدٍ جَعْفَرِ بْنِ أَحْمَدَ السَّرَّاجِ المُتَوَفَّى سَنَةَ خَمْسِمِائَةٍ، وَأَبِي يَعْلَى الصَّغِيرِ المُتَوَفَّى سَنَةَ سِتٍّ وَعِشْرِينَ وَخَمْسِمِائَةٍ، وَأَبِي غَالِبِ بْنِ البَنَّاءِ المُتَوَفَّى نَحْوَ سَنَةِ تِسْعَ عَشْرَةَ وَخَمْسِمِائَةٍ، وَهُمْ مِنْ أَهْلِ الحِفْظِ وَالأَمَانَةِ، وَأَسْمَاؤُهُمْ مُقَيَّدَةٌ فِي كُتُبِ طَبَقَاتِ الحَنَابِلَةِ.',
+          'Sanad periwayatan bukan formalitas pada masa itu; ia mata rantai amanah yang menjaga keaslian sabda Nabi Muhammad — semoga Allah melimpahkan shalawat dan salam atasnya. Karena para guru hadits Tuan Syekh sendiri adalah tokoh-tokoh yang tercatat dalam kitab-kitab thabaqat, hampir setiap mata rantai pendidikan beliau dapat diperiksa silang — dan itulah sebabnya fase ini menjadi fase paling kaya catatan mapan di antara seluruh fase kehidupan beliau. Sanad-sanad yang beliau terima di majelis-majelis ini kelak mengalir ke majelis dan karya-karya beliau sendiri, sebagaimana dibahas pada Bab 10.',
+        ],
+      },
+      {
+        h: 'Tafsir dan Ilmu-Ilmu Lain: Yang Terteguh dan yang Jujur Belum Diketahui',
+        p: [
+          'Di sinilah seri ini menempatkan kejujuran di atas kelengkapan. Untuk tafsir, tidak ada satu pun nama guru yang tercatat dengan teguh pada kitab-kitab tarjamah klasik sebagai sumber khusus beliau dalam bidang itu; sebagian daftar sekunder memuat tambahan nama, tetapi platform hanya meneguhkan yang berjejak tarjamah, dan sisanya kami biarkan tanpa klaim. Yang justru terteguh adalah arah sebaliknya: pada masa mengajarnya kelak, majelis Tuan Syekh menjadi tempat pengajaran hadits, tafsir, dan fiqih sekaligus — kabar yang berjalan pada catatan biografi — sehingga penguasaan tafsir beliau tampak pada buah karyanya, bukan pada daftar gurunya. Adapun ilmu ushul dan perdebatan teologi, ia adalah udara kota Baghdad itu sendiri, yang antara lain dihembuskan majelis Ibnu Aqil hingga wafatnya pada 513 H.',
+          'أَمَّا التَّفْسِيرُ فَلَمْ يُقَيَّدْ فِي كُتُبِ التَّرَاجِمِ اسْمُ شَيْخٍ خَاصٍّ أَخَذَ عَنْهُ هَذَا العِلْمَ، فَنَكْتُبُ فِيهِ: "لا نَعْلَمُ بِجَازِمٍ"، وَالثَابِتُ بِالعَكْسِ أَنَّ مَجْلِسَهُ فِيمَا بَعْدُ صَارَ مَجْلِسَ حَدِيثٍ وَتَفْسِيرٍ وَفِقْهٍ، فَظَهَرَ مَا لَدَيْهِ مِنْ هَذَا العِلْمِ فِي مَجَالِسِهِ وَكُتُبِهِ.',
+          'Penyajian seperti ini adalah wajah doktrin 165: kekosongan catatan tidak ditambal karangan. Bahwa seorang pemuda dari Jilan kelak menjadi imam yang mengajar tafsir di Baghdad, sementara kitab-kitab tarjamah tidak mencatat nama guru tafsirnya, adalah kenyataan yang kami tulis apa adanya — mungkin ilmu itu ia serap dari majelis-majelis umum yang tidak dinamai kitab, dan "mungkin" tidak pernah kami tulis sebagai "pasti".',
+        ],
+      },
+      {
+        h: 'Peta Waktu Fase Belajar: 488-513 H',
+        p: [
+          'Bingkai waktu fase ini tersusun dari tonggak-tonggak yang masing-masing terteguh: kedatangan di Baghdad tahun 488 H; wafatnya Abu al-Khattab al-Kaludhani tahun 510 H; wafatnya Abu Sa\'id al-Makhzumi dan Ibnu Aqil keduanya pada tahun 513 H; serta beralihnya madrasah Bab al-Azaj kepada tangan Tuan Syekh setelah sang guru wafat — catatan yang berjalan pada tarjamah Hanabilah dan menjadi penanda berakhirnya fase belajar serta mulainya fase amanah mengajar. Dari bingkai inilah kami menulis "sekitar 488-513 H" dengan label riwayat mapan untuk kerangkanya.',
+          'أَمَّا الإِطَارُ الزَّمَنِيُّ فَمَعَالِمُهُ ثَابِتَةٌ: قُدُومُهُ سَنَةَ ثَمَانٍ وَثَمَانِينَ وَأَرْبَعِمِائَةٍ، وَوَفَاةُ الكَلْوَذَانِيِّ سَنَةَ عَشْرٍ وَخَمْسِمِائَةٍ، وَوَفَاةُ المَخْزُومِيِّ وَابْنِ عَقِيلٍ سَنَةَ ثَلَاثَ عَشْرَةَ وَخَمْسِمِائَةٍ، وَانْتِقَالُ المَدْرَسَةِ إِلَيْهِ بَعْدَ وَفَاةِ شَيْخِهَا؛ فَذَلِكَ آخِرُ مَرْحَلَةِ التَّلَقِّي وَأَوَّلُ مَرْحَلَةِ الأَمَانَةِ فِي التَّعْلِيمِ.',
+          'Sejak 513 H itu peran beliau berubah dari murid menjadi pewaris amanah guru — tetapi jangan dibayangkan beliau serta-merta menjadi pengajar besar yang majelisnya sesak; masa pengembaraan ruhaniah, kembali mengajar, dan puncak dakwahnya menyusul dalam bab-bab berikutnya. Titik 513 H dipilih sebagai penutup fase ini karena dua guru terbesarnya wafat pada tahun itu dan amanah madrasah berpindah — bingkai yang tersusun dari catatan-catatan yang masing-masing berdiri sendiri.',
+        ],
+      },
+      {
+        h: 'Yang Jujur Belum Diketahui',
+        p: [
+          'Empat hal tentang fase ini kami nyatakan jujur belum diketahui. Pertama, nama guru tafsir beliau — tidak tercatat pada tarjamah klasik. Kedua, kitab persis yang ia baca pada majelis tiap guru — bidang dan para gurunya terteguh, rincian bacaannya tidak. Ketiga, urutan kronologis majelis-majelisnya — tahun-tahun besarnya diketahui, urutan masuk dan meninggalkan tiap majelis tidak. Keempat, daftar lengkap semua majelis yang pernah ia hadiri — sebagian kitab manaqib memuat daftar yang lebih panjang, tetapi platform hanya meneguhkan nama-nama yang berjejak tarjamah, dan sisanya tidak kami tambahkan sendiri. Sebagaimana bab-bab sebelumnya, kami memilih diam yang jujur daripada cerita yang karangan.',
+          'وَمِمَّا لَمْ يَثْبُتْ عِنْدَنَا: اسْمُ شَيْخِهِ فِي التَّفْسِيرِ، وَأَسْمَاءُ الكُتُبِ الَّتِي قَرَأَهَا فِي كُلِّ مَجْلِسٍ، وَتَرْتِيبُ مَجَالِسِهِ، وَاسْمُ كُلِّ مَجْلِسٍ حَضَرَهُ؛ فَنَقُولُ فِي ذَلِكَ كُلِّهِ: "لا نَعْلَمُ بِجَازِمٍ"، وَالصَّمْتُ الصَّادِقُ خَيْرٌ مِنَ الحِكَايَةِ المَصْنُوعَةِ.',
+          'Doktrin yang sama berlaku untuk angka-angka: kami tidak menulis berapa tahun persis beliau mendalami fiqih dan berapa tahun persis mendalami hadits, karena tidak ada catatannya; yang kami tulis hanyalah bingkai 488-513 H yang tersusun dari tonggak-tonggak yang masing-masing berjejak. Bagi pembaca yang ingin menelusuri sendiri, setiap nama guru pada bab ini dapat dicari dalam kitab-kitab thabaqat Hanabilah dan kamus biografi klasik — kekuatan fase ini justru terletak pada keterlacakannya.',
+        ],
+      },
+      {
+        h: 'Catatan Penutup Bab dan Bab Berikutnya',
+        p: [
+          'Bab 4 menetapkan kerangka paling padat sepanjang seri ini: enam nama guru yang masing-masing berjejak tarjamah — tiga dalam fiqih Hanbali (Abu Sa\'id al-Makhzumi, Abu al-Khattab al-Kaludhani, Ibnu Aqil) dan tiga dalam hadits (Ja\'far as-Sarraj, Abu Ya\'la ash-Shagir, Abu Ghalib bin al-Banna) — ditambah bingkai waktu 488-513 H serta amanah madrasah Bab al-Azaj yang berpindah ke tangan beliau pada 513 H. Satu bidang dinyatakan jujur belum diketahui: nama guru tafsirnya, bersama rincian kitab bacaan, urutan majelis, dan daftar lengkap majelis yang ia hadiri. Tidak ada satu pun nama pada bab ini yang kami karang, dan tidak ada satu pun kelengkapan yang kami tambahkan demi tampan.',
+          'Bab 5 membuka pintu yang lain dari ilmu: pengambilan thariqah dan penyulaman pertama. Nama yang menunggu di sana adalah Hammad bin Muslim ad-Dabbas, pembimbing ruhaniah di Baghdad yang kelak membawa beliau dari kedalaman fiqih dan hadits menuju kedalaman hati. Sebagaimana empat bab sebelumnya, bab kelima ditulis dalam dua bahasa, Arab dan Indonesia, dengan grade sumber yang sama; halaman induk seri selalu memuat status penerbitan bab terbaru.',
+        ],
+      },
+    ],
+    related: ['perjalanan-tuan-syekh-hulu-hilir', 'perjalanan-bab-3-keberangkatan-baghdad', 'perjalanan-bab-2-masa-kecil-jilan', 'silsilah', 'manaqib'],
   },
 ]
