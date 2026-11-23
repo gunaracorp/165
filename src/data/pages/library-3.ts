@@ -5,7 +5,7 @@ import type { PageEntry } from './types'
 // 9–22 pada Roadmap 99 internal. Doktrin kejujuran: setiap pernyataan diberi
 // grade — (1) riwayat mapan tarjamah, (2) riwayat manaqib populer,
 // (3) belum diketahui (ditulis jujur, tidak dikarang).
-// Bab yang sudah tayang: 1. Bab lain menyusul berurutan.
+// Bab yang sudah tayang: 1–2. Bab lain menyusul berurutan.
 export const ENTRIES: PageEntry[] = [
   {
     slug: 'perjalanan-tuan-syekh-hulu-hilir',
@@ -18,7 +18,7 @@ export const ENTRIES: PageEntry[] = [
       { label: 'Jumlah bab', value: '14 bab — langkah 9 sampai 22 pada peta jalan internal pendiri' },
       { label: 'Bahasa', value: 'Arab dan Indonesia saja, sesuai pesanan pendiri' },
       { label: 'Metode', value: 'Tiga tingkat grade: riwayat mapan, riwayat manaqib populer, belum diketahui' },
-      { label: 'Status', value: 'Bab 1 tayang; bab berikutnya diterbitkan berurutan' },
+      { label: 'Status', value: 'Bab 1 dan Bab 2 tayang; bab berikutnya diterbitkan berurutan' },
     ],
     body: [
       {
@@ -39,7 +39,7 @@ export const ENTRIES: PageEntry[] = [
         h: 'Peta 14 Bab Hulu ke Hilir',
         p: [
           'Bab 1 — Kelahiran di Jilan dan silsilah syarif (470 H / 1077 M). — TAYANG.',
-          'Bab 2 — Masa kecil dan pendidikan awal di Jilan.',
+          'Bab 2 — Masa kecil dan pendidikan awal di Jilan. — TAYANG.',
           'Bab 3 — Keberangkatan ke Baghdad pada usia belia.',
           'Bab 4 — Guru-guru dan kurikulum ilmu di Baghdad.',
           'Bab 5 — Pengambilan thariqah dan penyulaman pertama.',
@@ -62,7 +62,7 @@ export const ENTRIES: PageEntry[] = [
         ],
       },
     ],
-    related: ['perjalanan-bab-1-kelahiran-di-jilan', 'silsilah', 'manaqib', 'fathul-rabbani'],
+    related: ['perjalanan-bab-1-kelahiran-di-jilan', 'perjalanan-bab-2-masa-kecil-jilan', 'silsilah', 'manaqib', 'fathul-rabbani'],
   },
   {
     slug: 'perjalanan-bab-1-kelahiran-di-jilan',
@@ -142,6 +142,87 @@ export const ENTRIES: PageEntry[] = [
         ],
       },
     ],
-    related: ['perjalanan-tuan-syekh-hulu-hilir', 'silsilah', 'manaqib', 'futuh-al-ghaib-jilani'],
+    related: ['perjalanan-tuan-syekh-hulu-hilir', 'perjalanan-bab-2-masa-kecil-jilan', 'silsilah', 'manaqib', 'futuh-al-ghaib-jilani'],
+  },
+  {
+    slug: 'perjalanan-bab-2-masa-kecil-jilan',
+    kind: 'library',
+    title: 'Bab 2 — Masa Kecil & Pendidikan Awal di Jilan',
+    titleAr: 'البَابُ الثَّانِي: طُفُولَةُ الشَّيْخِ عَبْدِ القَادِرِ الجِيلَانِيِّ وَتَعْلِيمُهُ الأَوَّلُ فِي جِيلَانَ',
+    category: 'Manaqib & Perjalanan Hulu-Hilir',
+    summary: 'Masa kecil dan pendidikan awal Abdul Qodir Al-Jaelani di Jilan — hafalan Al-Qur\'an sejak kanak-kanak dan bibit zuhud, ditulis Arab-Indonesia ber-grade.',
+    facts: [
+      { label: 'Rentang masa kecil', value: '470 H sampai 488 H — seluruhnya di Jilan (riwayat mapan dari tarjamah klasik)' },
+      { label: 'Keberangkatan ke Baghdad', value: '488 H pada usia sekitar 17–18 tahun — riwayat mapan; perbedaan angka usia dicatat apa adanya' },
+      { label: 'Hafalan Al-Qur\'an', value: 'Sejak kanak-kanak; sebagian manaqib menyebut usia delapan tahun — riwayat manaqib populer' },
+      { label: 'Guru masa kecil', value: 'Nama-nama guru di Jilan tidak tercatat pada tarjamah klasik — belum diketahui, tidak dikarang' },
+      { label: 'Ayah', value: 'Manaqib menyebut Abu Salih Musa wafat saat Tuan Syekh masih kecil — riwayat manaqib populer' },
+      { label: 'Bibit zuhud', value: 'Kecenderungan zuhud dan ibadah sejak remaja — riwayat manaqib populer' },
+    ],
+    body: [
+      {
+        h: 'Muqaddimah Arab — Kalimat Pembuka Bab',
+        p: [
+          'بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ. نَعْرِضُ فِي هَذَا البَابِ الثَّانِي مَرْحَلَةَ الطُّفُولَةِ وَالتَّعْلِيمِ الأَوَّلِ فِي جِيلَانَ: حِفْظَ القُرْآنِ فِي الصِّغَرِ كَمَا جَرَى فِي المَنَاقِبِ المَشْهُورَةِ، وَبِذْرَةَ الزُّهْدِ فِي النَّشْأَةِ، مَعَ تَمْيِيزِ مَا يَقِينُ حُرْفِيُّهُ فِي كُتُبِ التَّرَاجِمِ، مِمَّا هُوَ قِصَّةٌ شَائِعَةٌ فِي المَجَالِسِ، مِمَّا لَمْ يَثْبُتْ فَنَقُولُ فِيهِ: "لا نَعْلَمُ بِجَازِمٍ".',
+          'Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang. Pada bab kedua ini kami menghadirkan masa kanak-kanak dan pendidikan pertama di Jilan: hafalan Al-Qur\'an pada masa kecil sebagaimana berjalan pada kitab-kitab manaqib yang masyhur, dan bibit zuhud pada masa pertumbuhan — sambil membedakan mana yang teguh catatannya pada kitab-kitab tarjamah, mana yang berupa kisah populer di majelis-majelis, dan mana yang tidak berteguh — maka kami katakan atasnya: "kami tidak mengetahuinya secara pasti".',
+        ],
+      },
+      {
+        h: 'Kerangka Waktu: Delapan Belas Tahun Pertama Semua di Jilan',
+        p: [
+          'Kerangka waktu masa kecil Tuan Syekh tidak memiliki catatan tanggal yang rinci, tetapi dua kutub yang mapan membatasinya dengan rapi: beliau lahir di Jilan tahun 470 Hijriah, dan tarjamah klasik mencatat keberangkatannya ke Baghdad pada tahun 488 Hijriah. Ibnu Rajab al-Hanbali — semoga Allah merahmatinya — dalam ad-Dail \'ala Thabaqat al-Hanabilah mencatat kedatangan itu, dan Ibnu Khalikan dalam Wafayat al-A\'yan menyebut usia beliau saat itu di sekitar tujuh belas sampai delapan belas tahun; perbedaan kecil pada angka usia ini kami catat apa adanya, bukan kami paksa menjadi satu. Maka seluruh masa kecil dan pendidikan awal beliau — dari kanak-kanak sampai pemuda — berlangsung di Jilan, dan halaman ini membaca masa itu hanya dari jangkauan sumber yang tersedia.',
+          'لَا نَجِدُ فِي كُتُبِ التَّرَاجِمِ تَوْقِيتاً دَقِيقاً لِسَنَوَاتِ طُفُولَتِهِ، وَلَكِنْ المَشْهُورُ عِنْدَ أَصْحَابِ التَّرَاجِمِ أَنَّهُ قَدِمَ بَغْدَادَ سَنَةَ ثَمَانٍ وَثَمَانِمِائَةٍ وَأَرْبَعِمِائَةٍ فِي حُدُودِ السَّابِعَةَ عَشْرَةَ أَوِ الثَّامِنَةَ عَشْرَةَ مِنْ عُمْرِهِ، فَتَكُونُ سَنَوَاتُ طُفُولَتِهِ وَتَعْلِيمِهِ الأَوَّلِ كُلُّهَا فِي جِيلَانَ.',
+          'Kami tidak menemukan pada kitab-kitab tarjamah penandaan tanggal yang persis untuk tahun-tahun kanak-kanaknya. Namun kabar yang masyhur pada mereka adalah datangnya beliau ke Baghdad pada tahun 488 Hijriah pada sekitar usia tujuh belas atau delapan belas tahun. Dengan demikian seluruh tahun-tahun masa kecil dan pendidikan pertamanya berlangsung di Jilan sampai waktu itu.',
+        ],
+      },
+      {
+        h: 'Hafalan Al-Qur\'an Sejak Kanak-Kanak',
+        p: [
+          'Kisah paling populer tentang masa kecil Tuan Syekh ialah hafalan Al-Qur\'an. Kitab-kitab manaqib dan majelis-majelis manaqib mempopulerkan bahwa beliau menuntaskan hafalan Al-Qur\'an ketika masih kanak-kanak, dan sebagian kitab menyebut usia delapan tahun sebagai usia penuntasan itu. Platform menyajikan kabar ini pada tingkat riwayat manaqib populer: ia hidup kuat pada tradisi jamaah dan kami menghormatinya, tetapi tarjamah klasik tidak mencatat angka usia hafalan, sehingga kami tidak mengangkatnya menjadi fakta arsip. Adab jujur platform berdiri di titik yang sama dengan bab sebelumnya: kisah disajikan dengan labelnya, bukan dengan kepastian yang tidak punya jejak.',
+          'جَرَى فِي المَنَاقِبِ المَشْهُورَةِ أَنَّهُ حَفِظَ القُرْآنَ الكَرِيمَ فِي صِغَرِ سِنِّهِ، وَذَكَرَ بَعْضُ أَصْحَابِ المَنَاقِبِ أَنَّ ذَلِكَ كَانَ فِي حُدُودِ الثَّامِنَةَ مِنْ عُمْرِهِ، وَهَذَا كُلُّهُ مِنْ عُمْدَةِ المَجَالِسِ المَشْهُورَةِ لا مِنْ عُمْدَةِ التَّرَاجِمِ المُحَقَّقَةِ.',
+          'Pada kitab-kitab manaqib yang masyhur berjalan bahwa beliau telah menghafal Al-Qur\'an Al-Karim dalam masa kecilnya, dan sebagian pengarang manaqib menyebut hal itu pada sekitar usia delapan tahun. Seluruh kabar ini bersandar pada majelis-majelis yang masyhur, bukan pada kitab-kitab tarjamah yang dapat dirujuk secara teguh.',
+        ],
+      },
+      {
+        h: 'Lingkungan Belajar di Jilan — dan Nama-Nama yang Jujur Tak Terdata',
+        p: [
+          'Jilan pada abad ke-11 adalah daerah pegunungan di pesisir Laut Kaspia — bukan pusat ilmu seperti Baghdad, Naisabur, atau Isfahan. Dari kerangka waktu ini saja sudah bisa dikatakan dengan jujur bahwa pendidikan pertama beliau berlangsung di majelis-majelis kecil setempat: mengaji mushaf, belajar baca-tulis dan dasar-dasar agama dari para guru kampung halamannya, sebagaimana lazim anak-anak daerah pada zamannya. Kesimpulan semacam ini adalah bacaan wajar atas kerangka waktu mapan, bukan kutipan dari sebuah kitab, dan kami menyatakannya dengan cara itu. Adapun nama-nama guru masa kecilnya: tidak satu nama pun berteguh pada kitab-kitab tarjamah klasik. Sebagian kitab manaqib menyebut seorang guru pertama di Jilan, tetapi jejak nama itu tidak dapat dirujuk pada literatur tarjamah, maka platform memilih menuliskannya apa adanya — belum diketahui — dan tidak mengarang sebuah nama hanya supaya cerita terlihat lengkap.',
+          'أَمَّا أَسَاتِذَتُهُ فِي طُفُولَتِهِ فِي جِيلَانَ فَلَمْ تَثْبُتْ أَسْمَاؤُهُمْ فِي كُتُبِ التَّرَاجِمِ المَحَقَّقَةِ، وَذَكَرَ بَعْضُ أَصْحَابِ المَنَاقِبِ اسْمَ مُعَلِّمٍ أَوَّلٍ عَلَى عَادَتِهِمْ بِلا تَثْبُتٍ، فَنَحْنُ لَا نُسَمِّي أَحَداً مِنْهُمْ، وَنَقُولُ فِي ذَلِكَ كُلِّهِ: "لا نَعْلَمُ بِجَازِمٍ".',
+          'Adapun para gurunya dalam masa kecilnya di Jilan, nama-nama mereka tidak berteguh pada kitab-kitab tarjamah yang terverifikasi. Sebagian pengarang manaqib menyebut nama seorang guru pertama menurut kebiasaan mereka tanpa keteguhan, maka kami tidak menamai seorang pun dari mereka, dan kami mengatakan atas seluruh hal itu: "kami tidak mengetahuinya secara pasti".',
+        ],
+      },
+      {
+        h: 'Wafatnya Sang Ayah dan Tangan Ibu yang Membesarkan',
+        p: [
+          'Tradisi manaqib menggambarkan masa kecil Tuan Syekh sebagai masa tumbuh di bawah asuhan ibunda. Abu Salih Musa — sang ayah — disebut wafat ketika Tuan Syekh masih kanak-kanak, sehingga tangan yang membesarkan dan menandai masa itu adalah tangan Ummul Khair Fatimah, wanita salehah yang telah diperkenalkan pada Bab 1. Tradisi jamaah menjaga gambaran ini dengan penuh hormat: sang ibu yang menumbuhkan adab, dan sang ibu pula yang kelak menyiapkan keberangkatan putranya ke Baghdad — kisah perpisahan itu akan kami hadirkan utuh pada Bab 3. Seluruh potret ini berdiri pada tingkat riwayat manaqib populer: disajikan karena ia bagian hidup dari tradisi majelis, bukan karena catatan arsipnya terteguh.',
+          'جَرَى فِي المَنَاقِبِ أَنَّ أَبَاهُ أَبَا صَالِحٍ مُوسَى تُوُفِّيَ وَابْنُهُ صَغِيرٌ، فَكَبَّرَتْهُ أُمُّهُ أُمُّ الخَيْرِ فَاطِمَةُ رَضِيَ اللهُ عَنْهَا، وَهِيَ الَّتِي أَعَدَّتْهُ لِرِحْلَتِهِ إِلَى بَغْدَادَ عَلَى عَادَةِ أَصْحَابِ المَنَاقِبِ.',
+          'Pada kitab-kitab manaqib berjalan bahwa ayahnya, Abu Salih Musa, wafat ketika anaknya masih kecil, maka ibunya, Ummul Khair Fatimah — semoga Allah rida kepadanya — membesarkannya. Ia pula yang menyiapkan putranya untuk perjalanan ke Baghdad, sebagaimana berjalan pada kisah-kisah yang masyhur.',
+        ],
+      },
+      {
+        h: 'Bibit Zuhud Sejak Remaja',
+        p: [
+          'Tradisi manaqib juga menandai masa remaja beliau sebagai masa tumbuhnya bibit zuhud: digambarkan gemar ibadah, menjauhi permainan yang sia-sia, dan berat hati berbicara tentang dirinya. Bibit inilah yang kelak tumbuh menjadi fase khalwat dan riadhah yang panjang — masa zuhud 25 tahun di padang puing yang akan dibahas utuh pada Bab 6 — sebelum akhirnya menjadi gaya dakwah hati yang menggerakkan Baghdad. Tarjamah klasik pada fase ini memang masih sangat hemat: mereka baru banyak bicara ketika beliau sudah duduk di majelis-majelis ilmu Baghdad, sehingga potret remaja yang saleh ini kami letakkan pada tingkat riwayat manaqib populer. Yang penting dari pembacaan ini ialah kejujurannya: kami menunjukkan dari mana kabar itu berangkat, dan pembaca bebas menimbangnya.',
+          'جَرَى فِي المَنَاقِبِ أَنَّهُ مَالَ إِلَى الزُّهْدِ وَالعِبَادَةِ مُنْذُ نِشَاحَتِهِ: يَعْزِمُ عَلَى طَاعَةِ اللهِ، وَيَبْعُدُ عَمَّا لَا يَنْفَعُ، وَبُذْرَةُ هَذِهِ النِّشَأَةِ بَدَتْ فِي خَمْسَةَ وَعِشْرِينَ سَنَةً مِنْ خَلْوَةٍ وَرِيَاضَةٍ جَرَتْ بَعْدَ تِلْكَ المَرْحَلَةِ، كَمَا سَيَأْتِي فِي مَحَطَّتِهَا مِنْ هَذِهِ الرِّحْلَةِ.',
+          'Pada kitab-kitab manaqib berjalan bahwa beliau condong kepada zuhud dan ibadah sejak masa mudanya: berazam pada ketaatan kepada Allah dan menjauhi apa yang tidak memberi manfaat. Buah dari masa pertumbuhan ini tampak pada dua puluh lima tahun khalwat dan riadhah yang berjalan setelah fase itu, sebagaimana akan datang pada perhentian perjalanan ini.',
+        ],
+      },
+      {
+        h: 'Kisah Populer Lain Masa Kecil — Disajikan dengan Label',
+        p: [
+          'Di luar tema-tema besar di atas, majelis-majelis manaqib menyimpan sejumlah kisah kecil lain tentang masa kecil Tuan Syekh — antara lain gambaran bahwa ia tidak larut bermain seperti anak-anak seusianya, dan tanda-tanda awal kecerdasan serta kelembutan hatinya. Kami tidak menyajikan kisah-kisah itu satu per satu seolah-olah riwayat arsip, sebab tingkat catatannya jelas: kisah majelis yang masyhur, bukan kabar tarjamah yang terteguh. Menyajikannya dengan label jujur jauh lebih mulia daripada menghiasnya seolah-olah fakta yang terekam. Pembaca yang memerlukan ketegasan historiografis kembali ke dua bagian bertingkat riwayat mapan di atas: rentang waktu 470–488 H di Jilan, dan keberangkatan ke Baghdad pada 488 H.',
+          'وَمَا سِوَى هَذَا مِنْ رِوَايَاتِ الطُّفُولَةِ الَّتِي تَتَدَاوَرُهَا المَجَالِسُ فَهُوَ مِنَ القِصَصِ المَشْهُورَةِ عِنْدَ أَصْحَابِ المَنَاقِبِ، نَنْقُلُهُ بِعَلَامَتِهِ عَلَى عَادَتِنَا، وَلَا نَزِيدُ عَلَى حَدِّهِ وَلَا نَدَّعِي مَا لَيْسَ لَنَا فِيهِ بُرْهَانٌ.',
+          'Selain hal-hal tersebut, riwayat-riwayat masa kecil yang beredar di majelis-majelis termasuk kisah yang masyhur pada para pengarang manaqib. Kami menyampaikannya dengan tanda (label) sesuai kebiasaan kami, dan kami tidak melampaui batasnya serta tidak mendakwa apa yang tidak kami miliki atasnya dalil.',
+        ],
+      },
+      {
+        h: 'Catatan Penutup Bab dan Bab Berikutnya',
+        p: [
+          'Bab 2 menetapkan satu kerangka mapan — masa kecil beliau berlangsung seluruhnya di Jilan antara tahun 470 H dan keberangkatan ke Baghdad pada 488 H — serta tiga potret bertingkat riwayat manaqib populer: hafalan Al-Qur\'an sejak kanak-kanak, wafatnya sang ayah dini di bawah asuhan ibunda, dan tumbuhnya bibit zuhud sejak remaja. Satu hal dinyatakan jujur belum diketahui: nama-nama guru masa kecilnya dan rincian kurikulum Jilan. Susunan grade ini melanjutkan disiplin Bab 1, sehingga pembaca selalu tahu di mana ia berdiri: pada kabar terteguh, pada kisah populer, atau pada hal yang belum diketahui.',
+          'Bab 3 meneruskan perjalanan ke peristiwa besar pertama yang keluar dari Jilan: keberangkatan ke Baghdad pada usia belia — perpisahan dengan ibunda, pesan ilmu dan amanah yang dijaga, dan kisah masyhur tentang kejujuran beliau di tengah perjalanan yang dibaca di ribuan majelis. Sebagaimana dua bab sebelumnya, bab ketiga ditulis dalam dua bahasa, Arab dan Indonesia, dengan grade sumber yang sama; halaman induk seri selalu memuat status penerbitan bab terbaru.',
+        ],
+      },
+    ],
+    related: ['perjalanan-tuan-syekh-hulu-hilir', 'perjalanan-bab-1-kelahiran-di-jilan', 'silsilah', 'manaqib'],
   },
 ]
