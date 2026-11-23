@@ -6,7 +6,7 @@ import { db } from '@/lib/db'
 export async function GET(req: NextRequest) {
   if (!isAuthed(req)) return NextResponse.json({ error: 'Tidak diizinkan.' }, { status: 401 })
   try {
-    const [posts, published, pages, drafts, categories, tags, media, pendingComments, totalComments, trash, subscribers, pendingContrib, personaCount, activePersona] =
+    const [posts, published, pages, drafts, categories, tags, media, pendingComments, totalComments, trash, subscribers, pendingContrib, personaCount, activePersona, kitabCount, babCount, babPublished] =
       await Promise.all([
         db.cmsPost.count({ where: { type: 'post' } }),
         db.cmsPost.count({ where: { type: 'post', status: 'published' } }),
@@ -22,6 +22,9 @@ export async function GET(req: NextRequest) {
         db.contribution.count({ where: { status: 'SUBMITTED' } }),
         db.cmsPersona.count(),
         db.cmsPersona.findFirst({ where: { active: true } }),
+        db.cmsKitab.count(),
+        db.cmsBab.count(),
+        db.cmsBab.count({ where: { status: 'published' } }),
       ])
 
     const recentPosts = await db.cmsPost.findMany({
@@ -46,6 +49,7 @@ export async function GET(req: NextRequest) {
         comments: totalComments, pendingComments, trash,
         views: totalViews._sum.views ?? 0,
         subscribers, pendingContributions: pendingContrib, personas: personaCount,
+        kitab: kitabCount, bab: babCount, babPublished,
       },
       activePersona: activePersona
         ? { name: activePersona.name, field: activePersona.field, title: activePersona.title, master: activePersona.master }

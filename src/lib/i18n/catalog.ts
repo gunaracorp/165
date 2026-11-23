@@ -25,6 +25,7 @@ export const CATALOG = {
   'nav.contribute': ['Kontribusi', 'Contribute'],
   'nav.admin': ['Ruang Admin', 'Admin Room'],
   'nav.blog': ['Artikel', 'Blog'],
+  'nav.kitab': ['Kitab', 'Kitab'],
   'nav.cms': ['CMS', 'CMS'],
   'nav.more': ['Lainnya', 'More'],
 

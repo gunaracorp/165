@@ -395,3 +395,47 @@ model CmsPersona {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+// ------------------------------------------------------------
+// CMS — KITAB (buku digital dwibahasa Arab–Indonesia)
+// Satu kitab punya banyak bab; tiap bab menyimpan teks Arab (RTL)
+// dan terjemah Indonesia berdampingan + kunci amalan per bab.
+// Ditulis satu per satu dari CMS (tab "Kitab"), tampil publik di
+// section "Kitab". Diskriminator status: draft | published.
+// ------------------------------------------------------------
+model CmsKitab {
+  id         String   @id @default(cuid())
+  slug       String   @unique
+  order      Int      @default(0)
+  titleAr    String
+  titleId    String
+  subtitleId String?
+  author     String   @default("Master Polymath Sage Universal — Gabungan Dewan Pakar 46")
+  ledeId     String?
+  ledeAr     String?
+  status     String   @default("draft") // draft | published
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  bab CmsBab[]
+
+  @@index([status, order])
+}
+
+model CmsBab {
+  id         String  @id @default(cuid())
+  kitabId    String
+  order      Int     @default(0)
+  titleAr    String
+  titleId    String
+  arabic     String  @default("")
+  indonesian String  @default("")
+  kunciAmal  String? // poin praktik, satu poin per baris
+  status     String  @default("draft") // draft | published
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  kitab CmsKitab @relation(fields: [kitabId], references: [id], onDelete: Cascade)
+
+  @@index([kitabId, order])
+}

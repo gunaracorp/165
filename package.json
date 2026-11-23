@@ -17,6 +17,7 @@
     "sanad:seed": "bun prisma/seed-sanad.ts",
     "karawang:seed": "bun prisma/seed-karawang.ts",
     "wiridian:seed": "bun prisma/seed-wiridian.ts",
+    "kitab:seed": "bun prisma/seed-kitab.ts",
     "seed:all": "bun prisma/seed.ts && bun prisma/seed-heritage.ts && bun prisma/seed-content.ts && bun prisma/seed-manaqib.ts && bun prisma/seed-sanad.ts"
   },
   "dependencies": {

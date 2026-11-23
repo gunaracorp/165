@@ -8,7 +8,7 @@
 // ============================================================
 import { useCallback, useEffect, useState } from 'react'
 import {
-  BookOpen, Brain, FileText, Image as ImageIcon, Inbox, KeyRound, LayoutDashboard,
+  BookMarked, BookOpen, Brain, FileText, Image as ImageIcon, Inbox, KeyRound, LayoutDashboard,
   LayoutGrid, Lock, MessageSquare, Settings, ShieldCheck,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -25,16 +25,18 @@ import { TaxonomyPanel } from './taxonomy'
 import { CommentsPanel } from './comments-panel'
 import { MediaPanel } from './media-panel'
 import { PersonaPanel } from './persona-panel'
+import { KitabPanel } from './kitab-panel'
 import { SettingsPanel } from './settings-panel'
 import type { CmsCategoryRow, CmsOverview } from './types'
 
-type Tab = 'dasbor' | 'artikel' | 'halaman' | 'taksonomi' | 'komentar' | 'media' | 'peran' | 'pengaturan'
+type Tab = 'dasbor' | 'artikel' | 'halaman' | 'kitab' | 'taksonomi' | 'komentar' | 'media' | 'peran' | 'pengaturan'
 type View = { mode: 'list' } | { mode: 'edit'; draft: EditorDraft | null }
 
 const MENU: Array<{ key: Tab; label: string; icon: React.ComponentType<{ className?: string }> }> = [
   { key: 'dasbor', label: 'Dasbor', icon: LayoutDashboard },
   { key: 'artikel', label: 'Artikel', icon: BookOpen },
   { key: 'halaman', label: 'Halaman', icon: FileText },
+  { key: 'kitab', label: 'Kitab', icon: BookMarked },
   { key: 'taksonomi', label: 'Kategori & Tag', icon: LayoutGrid },
   { key: 'komentar', label: 'Komentar', icon: MessageSquare },
   { key: 'media', label: 'Media', icon: ImageIcon },
@@ -306,6 +308,8 @@ export function CmsSection() {
             onCancel={() => setView({ mode: 'list' })}
           />
         )}
+
+        {tab === 'kitab' && view.mode === 'list' && <KitabPanel />}
 
         {tab === 'taksonomi' && view.mode === 'list' && <TaxonomyPanel onChanged={() => void afterChange()} />}
 

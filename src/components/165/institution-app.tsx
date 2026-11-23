@@ -25,6 +25,7 @@ import { RahasiaSection } from './sections/rahasia'
 import { StoriesSection } from './sections/stories'
 import { WiridianSection } from './sections/wiridian'
 import { BlogSection } from './sections/blog'
+import { KitabSection } from './sections/kitab'
 import { CmsSection } from './cms/cms'
 import { TasbihSection } from './sections/tasbih'
 import { SholatSection } from './sections/sholat'
@@ -51,6 +52,7 @@ const NAV = [
   { key: 'stories', label: 'Stories' },
   { key: 'wiridian', label: 'Bacaan' },
   { key: 'blog', label: 'Artikel' },
+  { key: 'kitab', label: 'Kitab' },
   { key: 'cms', label: 'CMS' },
   { key: 'tasbih', label: 'Tasbih' },
   { key: 'sholat', label: 'Waktu Sholat' },
@@ -367,6 +369,7 @@ export function InstitutionApp() {
             {section === 'stories' && <StoriesSection />}
             {section === 'wiridian' && <WiridianSection />}
             {section === 'blog' && <BlogSection slug={blogSlug} onOpenPost={openPost} onBack={() => { setBlogSlug(null); try { history.replaceState(null, '', '#blog') } catch { /* noop */ } }} />}
+            {section === 'kitab' && <KitabSection />}
             {section === 'cms' && <CmsSection />}
             {section === 'tasbih' && <TasbihSection />}
             {section === 'sholat' && <SholatSection />}

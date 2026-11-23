@@ -48,6 +48,7 @@ export type CmsOverview = {
     categories: number; tags: number; media: number
     comments: number; pendingComments: number; trash: number; views: number
     subscribers: number; pendingContributions: number; personas: number
+    kitab: number; bab: number; babPublished: number
   }
   activePersona: { name: string; field: string; title: string | null; master: boolean } | null
   recentPosts: { id: string; title: string; slug: string; status: string; category: string | null; comments: number; updatedAt: string }[]

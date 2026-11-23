@@ -179,7 +179,7 @@ export function PersonaPanel() {
           </div>
           {master.active && (
             <p className="bg-background/70 text-[var(--brass)] mt-4 inline-flex items-center gap-1.5 rounded-full border border-[var(--brass)]/40 px-3 py-1 text-[12px] font-bold">
-              <Sparkles className="size-3.5" aria-hidden /> Aktif — artikel baru terbit dengan nama &ldquo;{master.name}&rdquo;
+              <Sparkles className="size-3.5" aria-hidden /> Aktif — artikel &amp; kitab baru terbit dengan nama &ldquo;{master.name}&rdquo;
             </p>
           )}
         </section>
@@ -236,7 +236,12 @@ export function PersonaPanel() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <h4 className="truncate text-[13.5px] font-bold" title={p.name}>{p.name}</h4>
-                      <p className="text-muted-foreground mt-0.5 line-clamp-1 text-[11.5px] font-semibold">{p.field}</p>
+                      <p className="text-muted-foreground mt-0.5 flex items-center gap-1.5 text-[11.5px] font-semibold">
+                        <span className="truncate">{p.field}</span>
+                        <span className="border-[var(--brass)]/40 bg-[var(--brass-soft)] text-[var(--brass)] inline-flex shrink-0 items-center rounded-full border px-1.5 py-0.5 text-[9.5px] font-bold tracking-wide">
+                          150 tahun
+                        </span>
+                      </p>
                     </div>
                   </div>
                   {p.bio && <p className="text-muted-foreground mt-2 line-clamp-2 text-[12px] leading-relaxed">{p.bio}</p>}

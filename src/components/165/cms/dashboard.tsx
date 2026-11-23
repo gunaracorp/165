@@ -6,8 +6,8 @@
 // ============================================================
 import { useCallback, useEffect, useState } from 'react'
 import {
-  BookOpen, CheckCircle2, ChevronRight, Circle, Crown, FileText, Image as ImageIcon,
-  Inbox, Loader2, Mail, MessageSquare, Plus, RefreshCw, UploadCloud, UserPlus, Eye,
+  BookMarked, BookOpen, CheckCircle2, ChevronRight, Circle, Crown, FileText, Image as ImageIcon,
+  Inbox, Layers, Loader2, Mail, MessageSquare, Plus, RefreshCw, UploadCloud, UserPlus, Eye,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { SkeletonCard } from '../ui'
@@ -16,7 +16,7 @@ import { useToast } from '@/hooks/use-toast'
 import { fmtDateTime } from '@/lib/cms'
 import type { CmsOverview } from './types'
 
-type CmsTabKey = 'dasbor' | 'artikel' | 'halaman' | 'taksonomi' | 'komentar' | 'media' | 'peran' | 'pengaturan'
+type CmsTabKey = 'dasbor' | 'artikel' | 'halaman' | 'kitab' | 'taksonomi' | 'komentar' | 'media' | 'peran' | 'pengaturan'
 
 const COMMENT_TONE: Record<string, string> = {
   pending: 'border-amber-700/30 bg-amber-50 text-amber-900',
@@ -87,6 +87,8 @@ export function CmsDashboard({
     { label: 'Artikel terbit', value: s.published, icon: BookOpen, tab: 'artikel', tone: 'text-emerald-700 bg-emerald-50 border-emerald-700/20' },
     { label: 'Draf artikel', value: s.drafts, icon: FileText, tab: 'artikel', tone: 'text-amber-700 bg-amber-50 border-amber-700/20' },
     { label: 'Halaman', value: s.pages, icon: FileText, tab: 'halaman', tone: 'text-teal-700 bg-teal-50 border-teal-700/20' },
+    { label: 'Kitab (Arab–Indonesia)', value: s.kitab, icon: BookMarked, tab: 'kitab', tone: 'text-[#6b4f18] bg-[var(--brass-soft)] border-[var(--brass)]/30' },
+    { label: 'Bab kitab terbit', value: s.babPublished, icon: Layers, tab: 'kitab', tone: 'text-[#6b4f18] bg-[var(--brass-soft)] border-[var(--brass)]/30' },
     { label: 'Komentar menunggu', value: s.pendingComments, icon: Inbox, tab: 'komentar', tone: 'text-rose-700 bg-rose-50 border-rose-700/20' },
     { label: 'Media tersimpan', value: s.media, icon: ImageIcon, tab: 'media', tone: 'text-stone-700 bg-stone-100 border-stone-400/40' },
     { label: 'Kategori & Tag', value: s.categories + s.tags, icon: MessageSquare, tab: 'taksonomi', tone: 'text-[#6b4f18] bg-[var(--brass-soft)] border-[var(--brass)]/30' },
@@ -100,6 +102,7 @@ export function CmsDashboard({
     { label: 'Aktifkan Peran & Persona (Dewan Pakar 46)', done: s.personas > 0 && data.activePersona !== null, tab: 'peran' },
     { label: 'Terbitkan artikel pertama', done: s.published > 0, tab: 'artikel' },
     { label: 'Buat halaman statis', done: s.pages > 0, tab: 'halaman' },
+    { label: 'Terbitkan kitab pertama (dwibahasa Arab–Indonesia)', done: s.kitab > 0 && s.babPublished > 0, tab: 'kitab' },
     { label: 'Susun kategori & tag', done: s.categories > 0, tab: 'taksonomi' },
     { label: 'Unggah media pertama', done: s.media > 0, tab: 'media' },
     { label: 'Terima pelanggan kabar pertama', done: s.subscribers > 0 },

@@ -25,7 +25,7 @@ const MASTER: PersonaSeed = {
   name: 'Master Polymath Sage Universal',
   field: 'The Ultimate Problem Solver',
   title: 'Gabungan 46 Dewan Pakar Lintas Bidang',
-  bio: 'Peran gabungan seluruh Dewan Pakar 46 — setiap bidang dikuasai dengan pengalaman 150 tahun. Aktifkan untuk menulis artikel dengan nama ini.',
+  bio: 'Peran gabungan seluruh Dewan Pakar 46 — setiap bidang dikuasai dengan pengalaman 150 tahun. Aktifkan untuk menulis artikel dan kitab dwibahasa Arab–Indonesia dengan nama ini.',
   icon: 'crown',
   master: true,
   active: true,
