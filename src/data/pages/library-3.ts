@@ -5,7 +5,7 @@ import type { PageEntry } from './types'
 // 9–22 pada Roadmap 99 internal. Doktrin kejujuran: setiap pernyataan diberi
 // grade — (1) riwayat mapan tarjamah, (2) riwayat manaqib populer,
 // (3) belum diketahui (ditulis jujur, tidak dikarang).
-// Bab yang sudah tayang: 1–2. Bab lain menyusul berurutan.
+// Bab yang sudah tayang: 1–3. Bab lain menyusul berurutan.
 export const ENTRIES: PageEntry[] = [
   {
     slug: 'perjalanan-tuan-syekh-hulu-hilir',
@@ -18,7 +18,7 @@ export const ENTRIES: PageEntry[] = [
       { label: 'Jumlah bab', value: '14 bab — langkah 9 sampai 22 pada peta jalan internal pendiri' },
       { label: 'Bahasa', value: 'Arab dan Indonesia saja, sesuai pesanan pendiri' },
       { label: 'Metode', value: 'Tiga tingkat grade: riwayat mapan, riwayat manaqib populer, belum diketahui' },
-      { label: 'Status', value: 'Bab 1 dan Bab 2 tayang; bab berikutnya diterbitkan berurutan' },
+      { label: 'Status', value: 'Bab 1, 2 dan 3 tayang; bab berikutnya diterbitkan berurutan' },
     ],
     body: [
       {
@@ -40,7 +40,7 @@ export const ENTRIES: PageEntry[] = [
         p: [
           'Bab 1 — Kelahiran di Jilan dan silsilah syarif (470 H / 1077 M). — TAYANG.',
           'Bab 2 — Masa kecil dan pendidikan awal di Jilan. — TAYANG.',
-          'Bab 3 — Keberangkatan ke Baghdad pada usia belia.',
+          'Bab 3 — Keberangkatan ke Baghdad pada usia belia. — TAYANG.',
           'Bab 4 — Guru-guru dan kurikulum ilmu di Baghdad.',
           'Bab 5 — Pengambilan thariqah dan penyulaman pertama.',
           'Bab 6 — Zuhud 25 tahun di padang puing.',
@@ -62,7 +62,7 @@ export const ENTRIES: PageEntry[] = [
         ],
       },
     ],
-    related: ['perjalanan-bab-1-kelahiran-di-jilan', 'perjalanan-bab-2-masa-kecil-jilan', 'silsilah', 'manaqib', 'fathul-rabbani'],
+    related: ['perjalanan-bab-1-kelahiran-di-jilan', 'perjalanan-bab-2-masa-kecil-jilan', 'perjalanan-bab-3-keberangkatan-baghdad', 'silsilah', 'manaqib', 'fathul-rabbani'],
   },
   {
     slug: 'perjalanan-bab-1-kelahiran-di-jilan',
@@ -223,6 +223,79 @@ export const ENTRIES: PageEntry[] = [
         ],
       },
     ],
-    related: ['perjalanan-tuan-syekh-hulu-hilir', 'perjalanan-bab-1-kelahiran-di-jilan', 'silsilah', 'manaqib'],
+    related: ['perjalanan-tuan-syekh-hulu-hilir', 'perjalanan-bab-1-kelahiran-di-jilan', 'perjalanan-bab-3-keberangkatan-baghdad', 'silsilah', 'manaqib'],
+  },
+  {
+    slug: 'perjalanan-bab-3-keberangkatan-baghdad',
+    kind: 'library',
+    title: 'Bab 3 — Keberangkatan ke Baghdad (488 H)',
+    titleAr: 'البَابُ الثَّالِثُ: رِحْلَتُهُ مِنْ جِيلَانَ إِلَى بَغْدَادَ طَلَباً لِلْعِلْمِ',
+    category: 'Manaqib & Perjalanan Hulu-Hilir',
+    summary: 'Keberangkatan Abdul Qodir Al-Jaelani dari Jilan ke Baghdad 488 H — perpisahan dengan ibunda, pesan kejujuran, kisah 40 dinar — ber-grade jujur.',
+    facts: [
+      { label: 'Keberangkatan', value: '488 H dari Jilan ke Baghdad, usia sekitar 17–18 tahun — riwayat mapan' },
+      { label: 'Alasan', value: 'Mencari ilmu agama di pusat pendidikan Islam terbesar zamannya — riwayat mapan' },
+      { label: 'Pesan ibunda', value: 'Wasiat kejujuran sampai akhir hayat; 40 dinar emas dijahit pada pakaian — riwayat manaqib populer' },
+      { label: 'Kisah jalan', value: 'Kejujuran di hadapan perampok; rombongan mereka bertaubat — riwayat manaqib populer' },
+      { label: 'Rute & lama perjalanan', value: 'Tidak tercatat pada tarjamah klasik — belum diketahui' },
+      { label: 'Bertemu ibunda lagi?', value: 'Tidak ada kabar yang terteguh — belum diketahui, tidak dikarang' },
+    ],
+    body: [
+      {
+        h: 'Muqaddimah Arab — Kalimat Pembuka Bab',
+        p: [
+          'بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ. هَذَا البَابُ الثَّالِثُ فِي رِحْلَتِهِ مِنْ جِيلَانَ إِلَى بَغْدَادَ سَنَةَ ثَمَانٍ وَثَمَانِمِائَةٍ وَأَرْبَعِمِائَةٍ طَلَباً لِلْعِلْمِ، فِيهِ وِدَاعُ أُمِّهِ وَوَصِيَّتُهُ بِالصِّدْقِ كَمَا جَرَى فِي المَنَاقِبِ المَشْهُورَةِ، مَعَ تَمْيِيزِ مَا يَقِينُ حُرْفِيُّهُ فِي كُتُبِ التَّرَاجِمِ، مِمَّا هُوَ قِصَّةٌ شَائِعَةٌ فِي المَجَالِسِ، مِمَّا لَمْ يَثْبُتْ فَنَقُولُ فِيهِ: "لا نَعْلَمُ بِجَازِمٍ".',
+          'Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang. Inilah bab ketiga dalam perjalanannya dari Jilan ke Baghdad pada tahun 488 Hijriah demi mencari ilmu — di dalamnya ada perpisahan dengan ibundanya dan wasiat kejujuran yang dijaga, sebagaimana berjalan pada kitab-kitab manaqib yang masyhur — sambil membedakan mana yang teguh catatannya pada kitab-kitab tarjamah, mana yang berupa kisah populer di majelis-majelis, dan mana yang tidak berteguh — maka kami katakan atasnya: "kami tidak mengetahuinya secara pasti".',
+        ],
+      },
+      {
+        h: 'Keputusan Besar: Keluar dari Jilan untuk Ilmu',
+        p: [
+          'Tarjamah klasik meneguhkan bahwa keberangkatan besar itu terjadi pada tahun 488 Hijriah: Ibnu Rajab al-Hanbali mencatatnya dalam ad-Dail \'ala Thabaqat al-Hanabilah, dan Ibnu Khalikan dalam Wafayat al-A\'yan menyebut beliau berangkat pada usia sekitar tujuh belas sampai delapan belas tahun. Tujuannya satu dan tegas: mencari ilmu agama di Baghdad, kota yang pada akhir abad ke-11 itu adalah pusat pendidikan Islam terbesar di dunia — rumah bagi madrasah-madrasah besar, majelis hadits, dan para imam mazhab. Bagi pemuda dari daerah pegunungan yang jauh itu, keputusan keluar dari Jilan demi ilmu adalah keputusan yang mengubah seluruh sisa hidupnya: dari anak daerah menjadi murid di jantung dunia ilmu, dan kelak menjadi guru yang majelisnya didatangi orang dari segala penjuru.',
+          'قَدِمَ بَغْدَادَ سَنَةَ ثَمَانٍ وَثَمَانِمِائَةٍ وَأَرْبَعِمِائَةٍ فِي حُدُودِ السَّابِعَةَ عَشْرَةَ أَوِ الثَّامِنَةَ عَشْرَةَ مِنْ عُمْرِهِ طَلَباً لِلْعِلْمِ، وَبَغْدَادُ فِي ذَلِكَ الزَّمَنِ عَاصِمَةُ الخِلَافَةِ العَبَّاسِيَّةِ وَأَفْخَمُ مَدِينَةِ عِلْمٍ فِي الدِّيَارِ الإِسْلَامِيَّةِ.',
+          'Beliau datang ke Baghdad pada tahun 488 Hijriah pada sekitar usia tujuh belas atau delapan belas tahun demi mencari ilmu, dan Baghdad pada masa itu adalah ibu kota Kekhalifahan Abbasiyah serta kota ilmu paling agung di wilayah dunia Islam.',
+        ],
+      },
+      {
+        h: 'Perpisahan dengan Ibunda dan Pesan yang Dijaga',
+        p: [
+          'Tradisi manaqib menjaga momen perpisahan ini dengan sangat hormat. Sang ibu, Ummul Khair Fatimah, dikisahkan menyiapkan bekal berupa empat puluh dinar emas yang dijahit tersembunyi pada bagian pakaian beliau — sebagian kisah menyebut dijahit pada bagian ketiak — supaya tidak jatuh ke tangan orang jahat di jalan. Pesan yang lebih berharga daripada dinar itu ialah pesan lidah: ibunda berwasiat agar putranya senantiasa jujur dan menjaga lisannya sampai akhir hayat, sehingga dalam tradisi majelis kisah perpisahan ini selalu dibuka dengan kalimat masyhur "jadilah orang yang jujur". Platform menyajikan seluruh potret perpisahan ini pada tingkat riwayat manaqib populer: ia bagian hidup dari tradisi jamaah, dan kami menghormatinya dengan cara menyajikannya apa adanya — dengan labelnya.',
+          'جَرَى فِي المَنَاقِبِ المَشْهُورَةِ أَنَّ أُمَّهُ خَاطَتْ فِي لِبَاطِ إِبْطِهِ أَرْبَعِينَ دِينَاراً ذَهَباً لِمَؤُونَتِهِ، وَوَصَتْهُ بِالصِّدْقِ وَحِفْظِ اللِّسَانِ حَتَّى الْمَوْتِ، فَقَالَتْ لَهُ عَلَى عَادَةِ أَصْحَابِ المَنَاقِبِ: "كُنْ صَادِقاً", وَهَذَا مِنَ القِصَصِ المَشْهُورَةِ لا مِنْ عُمْدَةِ التَّرَاجِمِ.',
+          'Pada kitab-kitab manaqib yang masyhur berjalan bahwa ibundanya menjahit empat puluh dinar emas pada bagian dalam ketiaknya sebagai biaya perjalanannya, dan berwasiat kepadanya dengan kejujuran serta menjaga lisan sampai ajalnya. Ia berkata kepadanya menurut kebiasaan para pengarang manaqib: "jadilah orang yang jujur". Seluruh ini termasuk kisah yang masyhur, bukan sandaran kitab-kitab tarjamah.',
+        ],
+      },
+      {
+        h: 'Kisah Kejujuran di Tengah Perjalanan',
+        p: [
+          'Kisah paling terkenal dari perjalanan ini ialah peristiwa di tengah jalan. Tradisi manaqib mengisahkan bahwa rombongan beliau dihadang sekumpulan perampok yang merampas harta para pengelana; ketika ditanya apakah membawa sesuatu, Tuan Syekh menjawab jujur bahwa ada empat puluh dinar terjahit pada pakaiannya. Para perampok tertawa mendengar kejujuran yang merugikan diri sendiri itu, tetapi jawaban beliau mengguncang mereka: "Ibunda berwasiat agar aku selalu jujur, dan aku tidak mungkin menderhakai wasiatnya." Kisah berjalan bahwa pemimpin perampok menangis, bertobat, dan pengikut-pengikutnya bertaubat bersamanya. Kami menyajikannya sebagai riwayat manaqib populer — kisah yang dibaca di ribuan majelis dan menjadi pelajaran bahwa satu kata "jujur" bisa membalikkan hati sekumpulan pendosa — bukan sebagai kabar arsip yang terteguh.',
+          'وَجَرَى فِي المَنَاقِبِ أَنَّ نَاساً مِنَ اللُّصُوصِ اعْتَرَضُوهُ فِي طَرِيقِهِ فَسَأَلُوهُ عَمَّا مَعَهُ، فَقَالَ: مَعِي أَرْبَعُونَ دِينَاراً مَخِيطَةٌ فِي لِبَاطِ إِبْطِي، قَالُوا: مَا حَمَلَكَ عَلَى هَذَا؟ قَالَ: وَصَتْنِي أُمِّي أَنْ أَكُونَ صَادِقاً، فَبَكِيَ رَئِيسُهُمْ وَتَابَ وَتَابَتْ مَعَهُ صُحْبَتُهُ، وَهَذَا مِنْ أَشْهَرِ القِصَصِ فِي المَجَالِسِ.',
+          'Pada kitab-kitab manaqib berjalan bahwa sekumpulan perampok menghadangnya di jalannya lalu bertanya apa yang dibawanya. Ia menjawab: ada empat puluh dinar terjahit pada bagian dalam ketiakku. Mereka bertanya: apa yang membuatmu mengatakannya? Ia menjawab: ibundaku berwasiat agar aku menjadi orang yang jujur. Maka pemimpin mereka menangis dan bertobat, dan rombongannya bertaubat bersamanya — dan ini termasuk kisah paling masyhur di majelis-majelis.',
+        ],
+      },
+      {
+        h: 'Kedatangan di Baghdad: Pintu Fase Pendidikan Besar',
+        p: [
+          'Yang berteguh dari akhir perjalanan ini ialah kedatangan beliau di Baghdad pada tahun 488 Hijriah dan akses langsungnya ke majelis-majelis ilmu: tarjamah klasik melanjutkan kisah dengan masa belajar fiqih dan hadits di bawah para guru besar kota itu. Baghdad pada zamannya adalah ibu kota Kekhalifahan Abbasiyah — pusat madrasah, pustaka, dan perdebatan ilmu — sehingga langkah pertama beliau di kota itu adalah langkah masuk ke jantung ilmu agama dunia. Kerangka inilah yang membuat keberangkatan ke Baghdad menjadi simpul penting perjalanan hulu-ke-hilir: di titik ini bab masa kecil berakhir dan bab pendidikan besar dimulai. Daftar guru-gurunya dan kurikulum yang ditempuhnya kami hadirkan utuh pada Bab 4.',
+          'وَلَمَّا وَرَدَ بَغْدَادَ أَقْبَلَ عَلَى مَجَالِسِ العِلْمِ يَتَلَقَّى الفِقْهَ وَالحَدِيثَ، فَكَانَتْ رِحْلَتُهُ فَاتِحَةً لِمَرْحَلَةِ طُلُوعِهِ فِي أَكْبَرِ مَدِينَةِ عِلْمٍ فِي دَارِ الإِسْلَامِ، وَذِكْرُ أَسَاتِذَتِهِ يَأْتِي فِي البَابِ الرَّابِعِ مِنْ هَذِهِ الرِّحْلَةِ.',
+          'Saat beliau tiba di Baghdad, ia menuruti majelis-majelis ilmu untuk menuntut fiqih dan hadits, maka perjalanannya menjadi pembuka fase kebangkitannya di kota ilmu terbesar dalam wilayah dunia Islam. Adapun penulisan para gurunya akan datang pada bab keempat dari perjalanan ini.',
+        ],
+      },
+      {
+        h: 'Yang Jujur Belum Diketahui',
+        p: [
+          'Ada beberapa hal tentang perjalanan ini yang platform sampaikan dengan jujur belum diketahui. Jalur persis yang dilalui dari Jilan ke Baghdad tidak tercatat pada tarjamah klasik; bulan keberangkatan dan lama perjalanan juga tidak terteguh. Adapun apakah beliau sempat bertemu ibundanya lagi setelah perpisahan itu, tidak ada kabar yang bisa kami rujuk dengan teguh — sebagian tradisi menyebut hal-hal yang berbeda, dan platform memilih diam daripada menambah satu versi lagi tanpa jejak. Kesediaan mengatakan "belum diketahui" adalah bagian dari adab yang kami jaga di seluruh seri ini: lebih terhormat diam dengan jujur daripada mengarang kabar.',
+          'أَمَّا طَرِيقُ سَفَرِهِ وَشَهْرُ وُصُولِهِ وَمُدَّةُ الرِّحْلَةِ، وَهَلْ لَقِيَ أُمَّهُ بَعْدُ أَمْ لَا، فَلَمْ تَثْبُتْ فِي كُتُبِ التَّرَاجِمِ خَبَرٌ يُعْتَمَدُ عَلَيْهِ، فَنَقُولُ فِي ذَلِكَ كُلِّهِ: "لا نَعْلَمُ بِجَازِمٍ", وَالصِّدْقُ فِي مَا لَا نَعْلَمُهُ أَفْضَلُ مِنِ افْتِرَاءِ خَبَرٍ.',
+          'Adapun jalur perjalanannya, bulan kedatangannya, lama perjalanannya, dan apakah ia bertemu ibundanya kemudian atau tidak — semua itu tidak berteguh pada kitab-kitab tarjamah dengan kabar yang dapat diandalkan, maka kami mengatakan atas semuanya: "kami tidak mengetahuinya secara pasti". Kejujuran atas apa yang tidak kami ketahui lebih baik daripada mengarang kabar.',
+        ],
+      },
+      {
+        h: 'Catatan Penutup Bab dan Bab Berikutnya',
+        p: [
+          'Bab 3 menetapkan satu kerangka mapan — keberangkatan dari Jilan ke Baghdad pada tahun 488 H untuk mencari ilmu, pada usia sekitar 17–18 tahun — dan dua potret bertingkat riwayat manaqib populer: perpisahan dengan ibunda beserta pesan kejujuran dan empat puluh dinar yang dijahit, serta kisah pertobatan rombongan perampok di tengah jalan. Rute persis, bulan keberangkatan, lama perjalanan, dan pertemuan berikutnya dengan sang ibu dinyatakan jujur belum diketahui. Grade demi grade seri ini berdiri di tempat yang sama seperti dua bab sebelumnya, sehingga pembaca selalu tahu di mana ia berdiri: pada kabar terteguh, pada kisah populer, atau pada hal yang belum diketahui.',
+          'Bab 4 membuka pintu fase terbesar dari pendidikan beliau: guru-guru dan kurikulum ilmu di Baghdad — fiqih mazhab Hanbali, hadits, dan tafsir — dengan daftar guru yang kami catat per nama beserta catatan sumbernya, karena fase inilah yang paling kaya catatan mapan di antara semua fase kehidupan beliau. Sebagaimana tiga bab sebelumnya, bab keempat ditulis dalam dua bahasa, Arab dan Indonesia, dengan grade sumber yang sama; halaman induk seri selalu memuat status penerbitan bab terbaru.',
+        ],
+      },
+    ],
+    related: ['perjalanan-tuan-syekh-hulu-hilir', 'perjalanan-bab-2-masa-kecil-jilan', 'perjalanan-bab-1-kelahiran-di-jilan', 'silsilah', 'manaqib'],
   },
 ]
