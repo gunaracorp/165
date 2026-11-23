@@ -3,6 +3,7 @@
 // 165 — Institution App Shell (single-route SPA per sandbox constraint)
 // Header nav v.4 (floating glass pill + self-measuring overflow nav) · section router · entity profile overlay · sticky footer
 import { useCallback, useEffect, useRef, useState } from 'react'
+import dynamic from 'next/dynamic'
 import { Menu, Search, ShieldCheck, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { initLanguage, useI18n } from '@/lib/i18n'
@@ -13,32 +14,50 @@ import { Breadcrumbs } from './breadcrumbs'
 import { ShareButtons } from './share-buttons'
 import { InstallPrompt } from './install-prompt'
 import { SiteFooter } from './site-footer'
-import { EntityProfile } from './entity-profile'
 import { QueryProvider } from './query-provider'
 import { HomeSection } from './sections/home'
-import { ExploreSection } from './sections/explore'
-import { ArchiveSection, LibrarySection, MediaSection } from './sections/library'
-import { ResearchSection } from './sections/research'
-import { AcademySection } from './sections/academy'
-import { ManaqibSection } from './sections/manaqib'
-import { RahasiaSection } from './sections/rahasia'
-import { StoriesSection } from './sections/stories'
-import { WiridianSection } from './sections/wiridian'
-import { BlogSection } from './sections/blog'
-import { KitabSection } from './sections/kitab'
-import { CmsSection } from './cms/cms'
-import { TasbihSection } from './sections/tasbih'
-import { SholatSection } from './sections/sholat'
-import { RoadmapSection } from './sections/roadmap'
-import { DasborSection } from './sections/dasbor'
 import { AppBar } from './app-bar'
-import { TrustSection } from './sections/trust'
-import { LanguagesSection } from './sections/languages'
-import { AboutSection } from './sections/about'
-import { SeoSection } from './sections/seo'
-import { DocumentsSection } from './sections/documents'
-import { ContributeSection } from './sections/contribute'
-import { AdminSection } from './admin/admin'
+
+// v.4-perf — code-split: hanya HomeSection yang dimuat di bundle awal (dilihat
+// pengunjung saat first paint). Semua seksi lain diunduh on-demand lewat
+// next/dynamic, sehingga recharts (Dasbor/Admin), framer-motion, react-markdown
+// dan cmdk tidak lagi membebani LCP/TBT halaman depan.
+function SectionSkeleton() {
+  return (
+    <div aria-hidden className="animate-pulse space-y-4 py-6">
+      <div className="bg-muted h-8 w-40 rounded-full" />
+      <div className="bg-muted h-4 w-3/4 max-w-md rounded-full" />
+      <div className="bg-muted h-44 rounded-3xl" />
+      <div className="bg-muted h-44 rounded-3xl" />
+    </div>
+  )
+}
+
+const ExploreSection = dynamic(() => import('./sections/explore').then((m) => m.ExploreSection), { loading: () => <SectionSkeleton /> })
+const LibrarySection = dynamic(() => import('./sections/library').then((m) => m.LibrarySection), { loading: () => <SectionSkeleton /> })
+const ArchiveSection = dynamic(() => import('./sections/library').then((m) => m.ArchiveSection), { loading: () => <SectionSkeleton /> })
+const MediaSection = dynamic(() => import('./sections/library').then((m) => m.MediaSection), { loading: () => <SectionSkeleton /> })
+const ResearchSection = dynamic(() => import('./sections/research').then((m) => m.ResearchSection), { loading: () => <SectionSkeleton /> })
+const AcademySection = dynamic(() => import('./sections/academy').then((m) => m.AcademySection), { loading: () => <SectionSkeleton /> })
+const ManaqibSection = dynamic(() => import('./sections/manaqib').then((m) => m.ManaqibSection), { loading: () => <SectionSkeleton /> })
+const RahasiaSection = dynamic(() => import('./sections/rahasia').then((m) => m.RahasiaSection), { loading: () => <SectionSkeleton /> })
+const StoriesSection = dynamic(() => import('./sections/stories').then((m) => m.StoriesSection), { loading: () => <SectionSkeleton /> })
+const WiridianSection = dynamic(() => import('./sections/wiridian').then((m) => m.WiridianSection), { loading: () => <SectionSkeleton /> })
+const BlogSection = dynamic(() => import('./sections/blog').then((m) => m.BlogSection), { loading: () => <SectionSkeleton /> })
+const KitabSection = dynamic(() => import('./sections/kitab').then((m) => m.KitabSection), { loading: () => <SectionSkeleton /> })
+const CmsSection = dynamic(() => import('./cms/cms').then((m) => m.CmsSection), { loading: () => <SectionSkeleton /> })
+const TasbihSection = dynamic(() => import('./sections/tasbih').then((m) => m.TasbihSection), { loading: () => <SectionSkeleton /> })
+const SholatSection = dynamic(() => import('./sections/sholat').then((m) => m.SholatSection), { loading: () => <SectionSkeleton /> })
+const RoadmapSection = dynamic(() => import('./sections/roadmap').then((m) => m.RoadmapSection), { loading: () => <SectionSkeleton /> })
+const DasborSection = dynamic(() => import('./sections/dasbor').then((m) => m.DasborSection), { loading: () => <SectionSkeleton /> })
+const TrustSection = dynamic(() => import('./sections/trust').then((m) => m.TrustSection), { loading: () => <SectionSkeleton /> })
+const LanguagesSection = dynamic(() => import('./sections/languages').then((m) => m.LanguagesSection), { loading: () => <SectionSkeleton /> })
+const AboutSection = dynamic(() => import('./sections/about').then((m) => m.AboutSection), { loading: () => <SectionSkeleton /> })
+const SeoSection = dynamic(() => import('./sections/seo').then((m) => m.SeoSection), { loading: () => <SectionSkeleton /> })
+const DocumentsSection = dynamic(() => import('./sections/documents').then((m) => m.DocumentsSection), { loading: () => <SectionSkeleton /> })
+const ContributeSection = dynamic(() => import('./sections/contribute').then((m) => m.ContributeSection), { loading: () => <SectionSkeleton /> })
+const AdminSection = dynamic(() => import('./admin/admin').then((m) => m.AdminSection), { loading: () => <SectionSkeleton /> })
+const EntityProfile = dynamic(() => import('./entity-profile').then((m) => m.EntityProfile), { loading: () => <SectionSkeleton /> })
 
 const NAV = [
   { key: 'home', label: 'Home' },

@@ -12,9 +12,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* v.4 — Nunito: rounded, friendly, smooth (self-hosted via next/font) */
-  --font-sans: var(--font-nunito), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono);
+  /* v.4-perf — Nunito muka utama (self-hosted via next/font); Geist dihapus, fallback langsung ke system */
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -125,7 +125,7 @@
   body {
     @apply bg-background text-foreground;
     /* v.4 — explicit chain: font vars live on <body> (next/font), so resolve here */
-    font-family: var(--font-nunito), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
     font-feature-settings: "liga" 1, "kern" 1;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;

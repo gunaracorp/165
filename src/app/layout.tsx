@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Amiri, Geist, Geist_Mono, Nunito } from "next/font/google";
+import { Amiri, Nunito } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
@@ -7,15 +7,9 @@ import { QueryProvider } from "@/components/165/query-provider";
 import { PwaRegister } from "@/components/165/pwa-register";
 import { AnalyticsTracker } from "@/components/165/analytics-tracker";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// v.4-perf — Geist & Geist Mono dihapus: tak pernah dipakai sebagai muka aktif
+// (Nunito selalu lebih dulu di --font-sans), jadi 4 file woff2 tidak lagi diunduh.
+// Mono kini pakai system stack; see globals.css --font-mono.
 
 // 165 v.4 — Nunito: rounded, friendly, smooth UI face (self-hosted)
 const nunito = Nunito({
@@ -163,10 +157,9 @@ export default function RootLayout({
     <html lang="id" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOT }} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
       </head>
       <body
-        className={`${nunito.variable} ${amiri.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className={`${nunito.variable} ${amiri.variable} antialiased bg-background text-foreground`}
       >
         <QueryProvider>
           {children}

@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   typescript: { ignoreBuildErrors: true },
   reactStrictMode: false,
+  // PSI hygiene: no fingerprinting header, keep gzip on
+  poweredByHeader: false,
 };
 
 export default nextConfig;
