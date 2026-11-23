@@ -9,7 +9,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import {
   KeyRound, LogOut, LayoutDashboard, LibraryBig, Inbox, Rocket, BookOpenCheck,
-  ShieldCheck, Database, RefreshCw, Lock, BarChart3, ScrollText, SearchCheck,
+  ShieldCheck, Database, RefreshCw, Lock, BarChart3, ScrollText, SearchCheck, Route,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -21,6 +21,7 @@ import { RegistryPanel } from './registry'
 import { ContributionsPanel, PublishPanel, GuidePanel, DashboardPanel } from './extras'
 import { BacaanPanel } from './bacaan'
 import { IndexNowPanel } from './seo'
+import { Roadmap99Panel } from './roadmap-99'
 import { AnalyticsDashboard } from '../analytics-dashboard'
 
 export type AdminStats = {
@@ -36,6 +37,7 @@ export type SessionData = {
 
 const TABS = [
   { key: 'dasbor', label: 'Dasbor', icon: LayoutDashboard },
+  { key: 'roadmap99', label: 'Roadmap 99', icon: Route },
   { key: 'analitik', label: 'Analitik', icon: BarChart3 },
   { key: 'registri', label: 'Registri', icon: LibraryBig },
   { key: 'bacaan', label: 'Bacaan', icon: ScrollText },
@@ -232,6 +234,7 @@ export function AdminSection() {
 
       {/* panels */}
       {tab === 'dasbor' && <DashboardPanel session={session} onGoTo={setTab} />}
+      {tab === 'roadmap99' && <Roadmap99Panel />}
       {tab === 'analitik' && <AnalyticsDashboard />}
       {tab === 'registri' && <RegistryPanel dbAvailable={session.dbAvailable} />}
       {tab === 'bacaan' && <BacaanPanel />}
