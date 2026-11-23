@@ -66,6 +66,15 @@ function entityJsonLd(entry: PageEntry) {
   return base
 }
 
+// Deteksi paragraf yang dominan huruf Arab — dirender RTL dengan muka Amiri
+// (v.4 — mendukung seri manaqib dua bahasa: Arab + Indonesia).
+function isArabicPara(text: string): boolean {
+  const letters = (text.match(/\p{L}/gu) ?? []).length
+  if (letters === 0) return false
+  const arabic = (text.match(/[\u0600-\u06FF]/g) ?? []).length
+  return arabic / letters > 0.5
+}
+
 export function EntityPage({ entry }: { entry: PageEntry }) {
   const related = resolveRelated(entry)
   const idxUrl = KIND_PATH[entry.kind]
@@ -89,7 +98,7 @@ export function EntityPage({ entry }: { entry: PageEntry }) {
       <h1 className="text-3xl font-bold leading-tight text-neutral-900 sm:text-4xl dark:text-neutral-50">
         {entry.title}
         {entry.titleAr ? (
-          <span className="mt-2 block font-serif text-2xl font-normal text-neutral-600 sm:text-3xl dark:text-neutral-300" lang="ar" dir="rtl">{entry.titleAr}</span>
+          <span className="font-arabic mt-2 block text-2xl font-normal leading-relaxed text-neutral-600 sm:text-3xl dark:text-neutral-300" lang="ar" dir="rtl">{entry.titleAr}</span>
         ) : null}
       </h1>
 
@@ -116,7 +125,11 @@ export function EntityPage({ entry }: { entry: PageEntry }) {
             <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-50">{s.h}</h2>
             <div className="mt-3 space-y-4">
               {s.p.map((para, i) => (
-                <p key={i} className="leading-relaxed text-neutral-700 dark:text-neutral-300">{para}</p>
+                isArabicPara(para) ? (
+                  <p key={i} lang="ar" dir="rtl" className="font-arabic text-right text-[17px] leading-loose text-neutral-700 dark:text-neutral-300">{para}</p>
+                ) : (
+                  <p key={i} className="leading-relaxed text-neutral-700 dark:text-neutral-300">{para}</p>
+                )
               ))}
             </div>
           </section>

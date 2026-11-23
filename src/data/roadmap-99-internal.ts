@@ -60,7 +60,7 @@ export const ROADMAP_99: RoadmapStep[] = [
   { n: 8, fase: 1, judul: 'App-shell v.4 & navigasi pil', detail: 'Header pil kaca mengukur dirinya sendiri, seksi hash-router, AppBar bawah di mobile.', status: 'selesai' },
 
   // ---------------- FASE 2 — Al-Jaelani hulu ke hilir (9–22) ----------------
-  { n: 9, fase: 2, judul: 'Bab 1 — Kelahiran di Jilan & silsilah syarif (470 H / 1077 M)', detail: 'Lahir di Jilan, Persia; silsilah syarif dari kedua jalur keluarga — ditulis dengan grade sumber manaqib.', status: 'direncanakan' },
+  { n: 9, fase: 2, judul: 'Bab 1 — Kelahiran di Jilan & silsilah syarif (470 H / 1077 M)', detail: 'TAYANG di /library/perjalanan-bab-1-kelahiran-di-jilan (ar+id, ber-grade). Seri beranda: /library/perjalanan-tuan-syekh-hulu-hilir.', status: 'berjalan' },
   { n: 10, fase: 2, judul: 'Bab 2 — Masa kecil & pendidikan awal di Jilan', detail: 'Hafalan Al-Qur\'an dan bibit zuhud sejak remaja; narasi ditandai: mana riwayat kuat, mana kisah populer.', status: 'direncanakan' },
   { n: 11, fase: 2, judul: 'Bab 3 — Keberangkatan ke Baghdad (usia 18)', detail: 'Perpisahan dengan ibunda, pesan ilmu dan amanah; jalur perjalanan Jilan–Baghdad digambarkan di atlas.', status: 'direncanakan' },
   { n: 12, fase: 2, judul: 'Bab 4 — Guru-guru & kurikulum ilmu di Baghdad', detail: 'Fiqih Hanbali, hadits, tafsir; daftar guru dengan catatan sumber per nama.', status: 'direncanakan' },
@@ -138,7 +138,7 @@ export const ROADMAP_99: RoadmapStep[] = [
   { n: 74, fase: 7, judul: 'robots.txt & kebijakan crawler AI', detail: 'Mesin pencari dan AI assistant dibuka untuk pengetahuan; API/admin tertutup.', status: 'selesai' },
   { n: 75, fase: 7, judul: 'IndexNow (Bing & sekutu)', detail: 'Ping satu klik dari tab SEO admin; endpoint /api/indexnow hidup.', status: 'selesai' },
   { n: 76, fase: 7, judul: 'Optimasi PageSpeed Insights', detail: 'JS halaman depan 2.590 KB → 894 KB (code-split semua seksi + font bersih).', status: 'selesai' },
-  { n: 77, fase: 7, judul: 'Google Search Console: submit & request indexing', detail: 'Properti 165.web.id, submit sitemap, URL Inspection untuk halaman utama dan 490+ entri.', status: 'direncanakan' },
+  { n: 77, fase: 7, judul: 'Google Search Console: submit & request indexing', detail: 'BERJALAN: sitemap diverifikasi hidup, URL baru dikirim via IndexNow otomatis. Menunggu akses Search Console dari pendiri untuk request indexing 490+ URL.', status: 'berjalan' },
   { n: 78, fase: 7, judul: 'Internal linking antar entri', detail: 'Setiap profil menautkan entri terkait — crawler menyusuri jaringan sanad.', status: 'berjalan' },
   { n: 79, fase: 7, judul: 'Validasi rich results', detail: 'Tes FAQ dan Article di Rich Results Test sampai semua hijau.', status: 'direncanakan' },
   { n: 80, fase: 7, judul: 'Kartu sosial per bagian', detail: 'og-image khusus per seksi/library — saat dibagikan ke WhatsApp/Telegram tampak rapi.', status: 'berjalan' },

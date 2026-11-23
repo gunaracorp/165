@@ -7,6 +7,7 @@ import { ENTRIES as GLOSSARY_3 } from './glossary-3'
 import { ENTRIES as GLOSSARY_4 } from './glossary-4'
 import { ENTRIES as LIBRARY_1 } from './library-1'
 import { ENTRIES as LIBRARY_2 } from './library-2'
+import { ENTRIES as LIBRARY_3 } from './library-3'
 import { ENTRIES as ATLAS } from './atlas'
 import { ENTRIES as INSTITUTION_1 } from './institution-1'
 import { ENTRIES as INSTITUTION_2 } from './institution-2'
@@ -17,7 +18,7 @@ export * from './types'
 
 export const ALL_PAGE_ENTRIES: PageEntry[] = [
   ...GLOSSARY_1, ...GLOSSARY_2, ...GLOSSARY_3, ...GLOSSARY_4,
-  ...LIBRARY_1, ...LIBRARY_2,
+  ...LIBRARY_1, ...LIBRARY_2, ...LIBRARY_3,
   ...ATLAS,
   ...INSTITUTION_1, ...INSTITUTION_2,
   ...ARCHIVE,
