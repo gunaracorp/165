@@ -138,7 +138,7 @@ export const ROADMAP_99: RoadmapStep[] = [
   { n: 74, fase: 7, judul: 'robots.txt & kebijakan crawler AI', detail: 'Mesin pencari dan AI assistant dibuka untuk pengetahuan; API/admin tertutup.', status: 'selesai' },
   { n: 75, fase: 7, judul: 'IndexNow (Bing & sekutu)', detail: 'Ping satu klik dari tab SEO admin; endpoint /api/indexnow hidup.', status: 'selesai' },
   { n: 76, fase: 7, judul: 'Optimasi PageSpeed Insights', detail: 'JS halaman depan 2.590 KB → 894 KB (code-split semua seksi + font bersih).', status: 'selesai' },
-  { n: 77, fase: 7, judul: 'Google Search Console: submit & request indexing', detail: 'BERJALAN: sitemap diverifikasi hidup, URL baru dikirim via IndexNow otomatis. Menunggu akses Search Console dari pendiri untuk request indexing 490+ URL.', status: 'berjalan' },
+  { n: 77, fase: 7, judul: 'Google Search Console: submit & request indexing', detail: 'BERJALAN: 517 URL terkirim ke IndexNow (Bing/Yandex/Seznam/Naver, HTTP 200, verifikasi key sukses) + sitemap.xml 517 URL hidup. Menunggu akses Search Console dari pendiri untuk request indexing Google.', status: 'berjalan' },
   { n: 78, fase: 7, judul: 'Internal linking antar entri', detail: 'Setiap profil menautkan entri terkait — crawler menyusuri jaringan sanad.', status: 'berjalan' },
   { n: 79, fase: 7, judul: 'Validasi rich results', detail: 'Tes FAQ dan Article di Rich Results Test sampai semua hijau.', status: 'direncanakan' },
   { n: 80, fase: 7, judul: 'Kartu sosial per bagian', detail: 'og-image khusus per seksi/library — saat dibagikan ke WhatsApp/Telegram tampak rapi.', status: 'berjalan' },
