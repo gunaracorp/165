@@ -9,6 +9,7 @@ import { useI18n } from '@/lib/i18n'
 import { EvidenceBadge, HonestNote, Kicker, SectionHeading, StatusBadge } from '../ui'
 import { SanadRegistry } from '../sanad-registry'
 import { SanadDiagram } from '../sanad-diagram'
+import { SanadWorld } from '../sanad-world'
 
 export function TrustSection({ onOpenEntity }: { onOpenEntity?: (slug: string) => void }) {
   const { t } = useI18n()
@@ -89,6 +90,9 @@ export function TrustSection({ onOpenEntity }: { onOpenEntity?: (slug: string) =
 
       {/* sanad diagram — peta gabungan tiga jalur (S1/S2/S9, display-only) */}
       <SanadDiagram />
+
+      {/* peta dunia sanad — beta (hari ke-92): pengelompokan geografis simpul tercatat */}
+      <SanadWorld />
 
       {/* AI policy */}
       <section aria-labelledby="ai-h">

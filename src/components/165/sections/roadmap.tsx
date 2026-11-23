@@ -182,10 +182,10 @@ export function RoadmapSection() {
       </Reveal>
 
       <Reveal delay={0.15}>
-        <HonestNote tone="amber">
-          Penanda bertanda &ldquo;Segera&rdquo; adalah fitur yang <strong>direncanakan</strong> pada fase tersebut —
-          disajikan dengan jujur sebagai rencana, bukan klaim sudah terpasang. Sesuai etika editorial 165:
-          setiap pernyataan membawa statusnya.
+        <HonestNote tone="green">
+          Seluruh 99 hari kini nyata — tidak ada lagi penanda &ldquo;Segera&rdquo; di roadmap ini: fitur-fitur yang
+          direncanakan sudah terpasang dan bisa dipakai langsung dari kartu hari-nya. Beta tetap berlabel beta
+          (jujur tentang tahapnya), dan slot deposit arsip tetap terbuka di ruang Kontribusi.
         </HonestNote>
       </Reveal>
     </div>

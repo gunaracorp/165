@@ -440,3 +440,16 @@ Stage Summary:
 - PASANG APLIKASI (beta, hari-68 nyata): kartu di Home — beforeinstallprompt ditangkap → tombol "Pasang sekarang" satu ketuk (Chromium/Android); deteksi standalone → "Sudah terpasang"; iPhone → panduan Bagikan → Tambah ke Layar Utama; fallback jujur bila event belum muncul; manifest sudah maskable-ready
 - SW v3: /audio/ masuk cache-first static — sekali dengar, selamanya offline; VERSION dinaikkan 165-v2 → 165-v3
 - roadmap99.ts: hari 45 & 68 tak lagi "Segera" (kini nyata, deskripsi disesuaikan kebenarannya); sisa Segera: manuskrip (70), museum (76), kurasi 178 bahasa (80), akademi (86), sertifikasi kurator (89), peta dunia sanad (92)
+
+## Sesi — Warisan & Akademi: 6 item "Segera" terakhir jadi nyata (2026-11-23)
+- lint (pending); commit (pending)
+
+Stage Summary:
+- ARSIP MANUSKRIP (beta, hari-70 nyata): ruang Arsip kini 3 tab — Dokumen | Manuskrip | Museum; tab Manuskrip = koleksi terdigitalisasi berbasis arsip NYATA (sanad S1, Nuril Anwar, qasidah Ibadallah Rijalallah audio-beta, manaqib tradisi-cetak, dokumen kendali 165) dengan badge tingkat bukti + status digitalisasi; tanpa satu pun manuskrip dikarang; slot scan halaman asli menunggu deposit
+- MUSEUM DIGITAL (beta, hari-76 nyata): tab Museum di ruang Arsip — koleksi tayang (bacaan CMS, diagram sanad 39 simpul, audio narasi arti 14 berkas, peta bahasa) berdampingan jujur dengan slot deposit nol (fotografi majelis, oral history Level D) — tanpa pads
+- AKADEMI 165 (beta, hari-86 nyata): ruang Akademi kini kurikulum berjenjang 4 tahap (Ikhwan Baru → Murid Bacaan → Santri Sanad → Kurator Muda), tiap modul tombol "buka ruang" ke ruang tayang + rentang hari Roadmap 99; glossary tetap live
+- SERTIFIKASI KURATOR (beta, hari-89 nyata): blok syarat 4 poin (3 sumbangan lolos telaah, 1 koreksi terdokumentasi, paham tingkat bukti A–F, membedakan klaim/tradisi/fakta) + HonestNote: sertifikasi ARSIP 165, bukan ijazah thariqat — keijazaan hanya dari mursyid via baiat
+- KURASI 178 BAHASA (beta, hari-80 nyata): panel "Kurasi dewan lintas bahasa" di ruang Bahasa — alur 3 pintu (draf mesin → telaah dewan → tayang & pantau) + statistik native/assisted/prep/total dari registri
+- PETA DUNIA SANAD (beta, hari-92 nyata): komponen sanad-world.tsx di ruang Kejujuran (bawah diagram) — simpul SPINE+2 segmen+2 terminal dikelompokkan barat→timur (Asia Tengah/Persia/Irak/Hijaz/Nusantara) dari lapangan `place`; lapisan Diaspora hanya dari fakta tercatat S2 (wakil talqin ±35 wilayah termasuk Singapura & Malaysia); display-only, simpul tak terpetakan diakui apa adanya
+- roadmap99.ts: hari 70/76/80/86/89/92 tak lagi "Segera" → SEMUA 99 hari kini nyata (nol item soon); sw.js v4
+- data baru: src/data/warisan.ts (MANUSKRIP_ENTRIES 5 entri + MUSEUM_KOLEKSI 6 koleksi + meta badge)

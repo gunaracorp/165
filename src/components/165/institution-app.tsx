@@ -30,6 +30,7 @@ import { RoadmapSection } from './sections/roadmap'
 import { DasborSection } from './sections/dasbor'
 import { AppBar } from './app-bar'
 import { TrustSection } from './sections/trust'
+import { LanguagesSection } from './sections/languages'
 import { AboutSection } from './sections/about'
 import { SeoSection } from './sections/seo'
 import { DocumentsSection } from './sections/documents'
@@ -54,6 +55,7 @@ const NAV = [
   { key: 'media', label: 'Media' },
   { key: 'trust', label: 'Trust & Method' },
   { key: 'about', label: 'About 165' },
+  { key: 'languages', label: 'Bahasa' },
   { key: 'documents', label: 'Dokumen' },
   { key: 'seo', label: 'SEO' },
 ] as const
@@ -335,7 +337,7 @@ export function InstitutionApp() {
             {section === 'library' && <LibrarySection onOpenEntity={openEntity} onNavigate={navigate} />}
             {section === 'archive' && <ArchiveSection onOpenEntity={openEntity} onNavigate={navigate} />}
             {section === 'research' && <ResearchSection onOpenEntity={openEntity} onNavigate={navigate} />}
-            {section === 'academy' && <AcademySection onOpenEntity={openEntity} />}
+            {section === 'academy' && <AcademySection onOpenEntity={openEntity} onNavigate={navigate} />}
             {section === 'manaqib' && <ManaqibSection onOpenEntity={openEntity} />}
             {section === 'rahasia' && <RahasiaSection />}
             {section === 'stories' && <StoriesSection />}
@@ -347,6 +349,7 @@ export function InstitutionApp() {
             {section === 'media' && <MediaSection onOpenEntity={openEntity} onNavigate={navigate} />}
             {section === 'trust' && <TrustSection onOpenEntity={openEntity} />}
             {section === 'about' && <AboutSection onOpenEntity={openEntity} onNavigate={navigate} />}
+            {section === 'languages' && <LanguagesSection onNavigate={navigate} />}
             {section === 'documents' && <DocumentsSection onNavigate={navigate} />}
             {section === 'seo' && <SeoSection onNavigate={navigate} />}
             {section === 'contribute' && <ContributeSection />}

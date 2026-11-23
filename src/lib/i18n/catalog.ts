@@ -11,6 +11,7 @@ export const CATALOG = {
   'nav.media': ['Media', 'Media'],
   'nav.trust': ['Kepercayaan', 'Trust'],
   'nav.about': ['Tentang', 'About'],
+  'nav.languages': ['Bahasa', 'Languages'],
   'nav.documents': ['Dokumen', 'Documents'],
   'nav.seo': ['SEO', 'SEO'],
   'nav.manaqib': ['Manaqib', 'Manaqib'],

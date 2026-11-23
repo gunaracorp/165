@@ -250,6 +250,55 @@ export function LanguagesSection({ onNavigate }: { onNavigate: (section: string)
         </div>
       </section>
 
+      {/* kurasi dewan — beta (roadmap hari ke-80): mesin menerjemahkan, manusia menjaga makna */}
+      <section aria-labelledby="kurasi-h" className="border-border bg-card/40 rounded-md border px-5 py-6 sm:px-7">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h2 id="kurasi-h" className="font-display flex items-center gap-2 text-lg font-semibold tracking-tight sm:text-xl">
+            <ShieldCheck className="size-4.5 text-[var(--khidr)]" aria-hidden />
+            Kurasi dewan lintas bahasa
+            <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[9.5px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">Beta</span>
+          </h2>
+          <span className="text-muted-foreground font-mono text-[10.5px]">Roadmap hari 80</span>
+        </div>
+        <p className="text-muted-foreground mt-2 max-w-3xl text-[13.5px] leading-relaxed">
+          Mesin yang menerjemahkan, manusia yang menjaga makna — terutama untuk teks ibadah. Registri {counts.total} bahasa
+          bergerak lewat tiga pintu; tidak ada bahasa yang lompat.
+        </p>
+
+        {/* alur tiga langkah */}
+        <ol className="mt-4 grid gap-2.5 sm:grid-cols-3">
+          {[
+            ['1 · Draf mesin', 'Sistem menyusun draf terjemahan awal dari registri istilah — kasar, berlabel, tidak pernah tayang langsung.'],
+            ['2 · Telaah dewan', 'Penelaah memeriksa makna & istilah; teks ibadah (bacaan, qasidah) selalu lewat kurasi konten berbasis sumber majelis.'],
+            ['3 · Tayang & pantau', 'Baru setelah itu bahasa tayang penuh — dan koreksi tetap terbuka selamanya dari ruang Kontribusi.'],
+          ].map(([judul, isi]) => (
+            <li key={judul} className="border-border bg-background/60 rounded-md border p-3.5">
+              <p className="label-caps text-[10px]">{judul}</p>
+              <p className="text-muted-foreground mt-1.5 text-[12.5px] leading-relaxed">{isi}</p>
+            </li>
+          ))}
+        </ol>
+
+        {/* status per bahasa */}
+        <div className="border-border/70 mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          {[
+            { label: 'Penutur asli (native)', n: counts.native },
+            { label: 'Dibantu mesin + telaah (assisted)', n: counts.assisted },
+            { label: 'Disiapkan, belum ditelaah (prep)', n: counts.prep },
+            { label: 'Total registri', n: counts.total },
+          ].map((s) => (
+            <div key={s.label} className="bg-secondary/50 rounded-md border border-border/60 px-3 py-2.5 text-center">
+              <p className="font-display text-lg font-semibold tabular-nums">{s.n}</p>
+              <p className="text-muted-foreground/80 mt-0.5 text-[10.5px] leading-tight">{s.label}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-muted-foreground/70 mt-3 text-[11.5px] leading-relaxed">
+          Kurasi berlanjut bertahap mengikuti pemakaian nyata — prioritas pada bahasa yang paling banyak
+          dipakai pengunjung, bukan pada angka yang bagus di kertas.
+        </p>
+      </section>
+
       {/* adopt a language */}
       <section className="border-[var(--brass)]/35 bg-secondary/50 rounded-md border px-5 py-6 sm:px-8">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center">

@@ -7,7 +7,7 @@
 //  · mutations (POST/PUT/PATCH) → always network, never cached
 // Doctrine: offline is a preservation feature — knowledge must survive
 // lost connections, but stale data is never presented as fresh.
-const VERSION = '165-v3'
+const VERSION = '165-v4'
 const STATIC_CACHE = `${VERSION}-static`
 const PAGE_CACHE = `${VERSION}-pages`
 const API_CACHE = `${VERSION}-api`
