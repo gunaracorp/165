@@ -24,6 +24,8 @@ export const CATALOG = {
   'nav.dasbor': ['Dasbor', 'Dashboard'],
   'nav.contribute': ['Kontribusi', 'Contribute'],
   'nav.admin': ['Ruang Admin', 'Admin Room'],
+  'nav.blog': ['Artikel', 'Blog'],
+  'nav.cms': ['CMS', 'CMS'],
   'nav.more': ['Lainnya', 'More'],
 
   // ---------- kepala halaman ----------

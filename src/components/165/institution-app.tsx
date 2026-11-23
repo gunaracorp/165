@@ -24,6 +24,8 @@ import { ManaqibSection } from './sections/manaqib'
 import { RahasiaSection } from './sections/rahasia'
 import { StoriesSection } from './sections/stories'
 import { WiridianSection } from './sections/wiridian'
+import { BlogSection } from './sections/blog'
+import { CmsSection } from './cms/cms'
 import { TasbihSection } from './sections/tasbih'
 import { SholatSection } from './sections/sholat'
 import { RoadmapSection } from './sections/roadmap'
@@ -48,6 +50,8 @@ const NAV = [
   { key: 'rahasia', label: 'Secrets' },
   { key: 'stories', label: 'Stories' },
   { key: 'wiridian', label: 'Bacaan' },
+  { key: 'blog', label: 'Artikel' },
+  { key: 'cms', label: 'CMS' },
   { key: 'tasbih', label: 'Tasbih' },
   { key: 'sholat', label: 'Waktu Sholat' },
   { key: 'roadmap', label: 'Roadmap 99' },
@@ -69,6 +73,7 @@ const VALID_SECTIONS: readonly string[] = [
 export function InstitutionApp() {
   const [section, setSection] = useState<SectionKey>('home')
   const [entitySlug, setEntitySlug] = useState<string | null>(null)
+  const [blogSlug, setBlogSlug] = useState<string | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const [moreOpen, setMoreOpen] = useState(false)
   // v.4 self-measuring nav: items that do not fit flow into the "···" pill
@@ -87,6 +92,7 @@ export function InstitutionApp() {
   const navigate = useCallback((s: string) => {
     setSection(s as SectionKey)
     setEntitySlug(null)
+    setBlogSlug(null)
     setMenuOpen(false)
     setMoreOpen(false)
     try { history.replaceState(null, '', s === 'home' ? '#' : `#${s}`) } catch { /* noop */ }
@@ -95,6 +101,13 @@ export function InstitutionApp() {
   const openEntity = useCallback((slug: string) => {
     setEntitySlug(slug)
     setMenuOpen(false)
+  }, [])
+
+  const openPost = useCallback((slug: string) => {
+    setBlogSlug(slug)
+    setEntitySlug(null)
+    setMenuOpen(false)
+    try { history.replaceState(null, '', `#blog/${slug}`) } catch { /* noop */ }
   }, [])
 
   // GlobalSearch bridge: spotlight results dispatch '165:open-entity'
@@ -160,13 +173,24 @@ export function InstitutionApp() {
     }
   }, [moreOpen])
 
-  // deep-link support: /#admin opens the admin room (deferred setState keeps hooks rules happy)
+  // deep-link support: /#admin opens the admin room, /#blog/{slug}
+  // opens one article (deferred setState keeps hooks rules happy)
   useEffect(() => {
     const applyHash = () => {
       const h = window.location.hash.replace('#', '')
+      if (h.startsWith('blog/')) {
+        const slug = h.slice('blog/'.length)
+        if (slug) {
+          setSection('blog')
+          setBlogSlug(slug)
+          setEntitySlug(null)
+          return
+        }
+      }
       if (h && VALID_SECTIONS.includes(h)) {
         setSection(h as SectionKey)
         setEntitySlug(null)
+        if (h !== 'blog') setBlogSlug(null)
       }
     }
     const t = window.setTimeout(applyHash, 0)
@@ -324,7 +348,7 @@ export function InstitutionApp() {
 
       {/* ---------------- main ---------------- */}
       <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 pt-8 pb-28 sm:px-6 sm:pt-10 lg:pb-10">
-        <Breadcrumbs items={section === 'home' && !entitySlug ? [] : [{ label: entitySlug ? 'Profil Entitas' : (t(`nav.${section}` as CatalogKey) || section), hash: entitySlug ? undefined : section }]} />
+        <Breadcrumbs items={section === 'home' && !entitySlug ? [] : [{ label: entitySlug ? 'Profil Entitas' : (blogSlug && section === 'blog' ? 'Artikel' : (t(`nav.${section}` as CatalogKey) || section)), hash: entitySlug ? undefined : (blogSlug && section === 'blog' ? 'blog' : section) }]} />
         {entitySlug ? (
           <>
             <div className="mb-5 flex justify-end"><ShareButtons title="165 — Profil Entitas" text="Profil entitas ber-grade dari platform pengetahuan 165" /></div>
@@ -342,6 +366,8 @@ export function InstitutionApp() {
             {section === 'rahasia' && <RahasiaSection />}
             {section === 'stories' && <StoriesSection />}
             {section === 'wiridian' && <WiridianSection />}
+            {section === 'blog' && <BlogSection slug={blogSlug} onOpenPost={openPost} onBack={() => { setBlogSlug(null); try { history.replaceState(null, '', '#blog') } catch { /* noop */ } }} />}
+            {section === 'cms' && <CmsSection />}
             {section === 'tasbih' && <TasbihSection />}
             {section === 'sholat' && <SholatSection />}
             {section === 'roadmap' && <RoadmapSection />}

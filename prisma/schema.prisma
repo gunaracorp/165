@@ -283,3 +283,94 @@ model WiridVerse {
 
   @@index([entryId, order])
 }
+
+// ------------------------------------------------------------
+// CMS — WordPress-style content management ("CMS 165").
+// POST = artikel blog, PAGE = halaman statis (satu tabel, diskriminator).
+// Content disimpan sebagai HTML raksasa-aman dari editor visual.
+// Media disimpan base64 di SQLite + disajikan via /api/cms/media/[id]/raw.
+// Pengaturan situs berupa pasangan key-value (CmsSetting).
+// ------------------------------------------------------------
+model CmsPost {
+  id          String    @id @default(cuid())
+  type        String    @default("post") // post | page
+  title       String
+  slug        String    @unique
+  excerpt     String?
+  content     String    @default("")
+  coverUrl    String?
+  status      String    @default("draft") // draft | published | trash
+  pinned      Boolean   @default(false)
+  author      String    @default("Admin 165")
+  categoryId  String?
+  views       Int       @default(0)
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  category CmsCategory?  @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  tags     CmsPostTag[]
+  comments CmsComment[]
+
+  @@index([type, status])
+  @@index([status, publishedAt])
+}
+
+model CmsCategory {
+  id    String @id @default(cuid())
+  name  String @unique
+  slug  String @unique
+  desc  String?
+
+  posts CmsPost[]
+}
+
+model CmsTag {
+  id   String @id @default(cuid())
+  name String @unique
+  slug String @unique
+
+  posts CmsPostTag[]
+}
+
+model CmsPostTag {
+  postId String
+  tagId  String
+
+  post CmsPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag  CmsTag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+}
+
+model CmsComment {
+  id        String   @id @default(cuid())
+  postId    String
+  name      String
+  email     String?
+  body      String
+  status    String   @default("pending") // pending | approved | spam | trash
+  createdAt DateTime @default(now())
+
+  post CmsPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@index([postId])
+  @@index([status])
+}
+
+model CmsMedia {
+  id        String   @id @default(cuid())
+  filename  String
+  mime      String
+  size      Int
+  data      String // base64 payload
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model CmsSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
