@@ -154,6 +154,7 @@ Siap Vercel (standalone). Snapshot `heritage-snapshot.json` membuat UI tetap utu
 ## 📈 Status Terbuka (jujur)
 
 - **Tercatat:** 8 dokumen kanonik, 4 jalur sanad (3 Blueprint + 1 deposit pendiri Karawang & Al-Bantani), entitas & relasi ber-grade, Manaqib lengkap, Rahasia Kitab Suci, Kisah & Hikmah (35 kisah ber-grade), **Wiridian & Bacaan (qasidah Ibadallah Rijalallah 13 bait — tanpa arti Sunda per permintaan Founder —, Nuril Anwar, wiridian TQN, dzikir harian — Arab + Latin + arti Sunda & Indonesia + tafsir makna, CMS-managed)**, 178 bahasa.
+- **Deposit baiat langsung (28 Nov 2026):** al-faqir TN H. Gugun Gunara — murid yang langsung berbaiat kepada Mama Agung KH Syekh Ahmad Sukanta bin Salmin (Kaduparasi, Labuan, Banten) & Mama Agung KH Abah Karawanggana (Dusun Cikangkung, Rengasdengklok, Karawang) — terekam ber-grade (165-CLM-000005, Level B, display-only); peran al-faqir: pengumpul berkas & penulis untuk ikhwan & akhwat ("yang pasti banyak salahnya"); koreksi: WA 0813-1651-6524 (atas permintaan pendiri).
 - **Ditunggu deposit:** Founder's Charter & dokumen yang masih dideklarasikan, dossier ijazah per-generasi (Qadiriyya & Naqshbandiyya), arsip kitab & manuskrip internal, dokumentasi praktik majelis lokal.
 
 ---

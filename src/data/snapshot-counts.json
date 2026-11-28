@@ -1,22 +1,23 @@
 {
- "entities": 49,
- "relations": 32,
- "sanadChains": 3,
+ "entities": 93,
+ "relations": 73,
+ "sanadChains": 4,
  "contributions": 1,
  "byType": {
-  "BOOK": 6,
-  "CLAIM": 3,
+  "BOOK": 9,
+  "CLAIM": 5,
   "COLLECTION": 1,
-  "DOCUMENT": 1,
-  "EVENT": 2,
-  "INSTITUTION": 1,
-  "PERSON": 7,
-  "PLACE": 3,
+  "DOCUMENT": 4,
+  "EVENT": 9,
+  "INSTITUTION": 3,
+  "MANUSCRIPT": 4,
+  "PERSON": 12,
+  "PLACE": 10,
   "RESEARCH": 1,
-  "SANAD": 3,
-  "SOURCE": 8,
-  "TERM": 10,
+  "SANAD": 4,
+  "SOURCE": 13,
+  "TERM": 15,
   "TRADITION": 3
  },
- "exportedAt": "2026-10-04T20:53:54.881Z"
+ "exportedAt": "2026-11-28T04:12:13.937Z"
 }

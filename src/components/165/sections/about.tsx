@@ -1,7 +1,7 @@
 'use client'
 
 // 165 — ABOUT: Institution · Founder · Governance · Ethics & Method · Contact
-import { Landmark, ScrollText, ShieldCheck, User, Mail } from 'lucide-react'
+import { Landmark, ScrollText, ShieldCheck, User, Mail, MessageCircle } from 'lucide-react'
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
 import { useI18n } from '@/lib/i18n'
@@ -105,6 +105,25 @@ function FounderPane({ onOpenEntity }: { onOpenEntity: (slug: string) => void })
       {loading ? <SkeletonCard /> : founder ? (
         <div className="max-w-md"><EntityCard entity={founder} onOpen={onOpenEntity} /></div>
       ) : null}
+
+      {/* Catatan al-faqir — deposit langsung pendiri (165-SRC-000013 · CLM-000005, 28 Nov 2026) */}
+      <section aria-labelledby="alfaqir-h" className="border-[var(--khidr)]/50 bg-card/60 max-w-3xl rounded-md border-l-2 p-5">
+        <Kicker>Catatan al-faqir — deposit langsung pendiri · 28 November 2026</Kicker>
+        <h3 id="alfaqir-h" className="font-display mt-1.5 text-[15px] font-semibold">Baiat langsung &amp; peran al-faqir</h3>
+        <div className="mt-2.5 space-y-2.5 text-[13.5px] leading-relaxed">
+          <p className="text-foreground/85">
+            TN H. Gugun Gunara adalah murid yang langsung berbaiat kepada{' '}
+            <strong>Mama Agung KH Syekh Ahmad Sukanta bin Salmin</strong> (Kaduparasi, Labuan, Banten) dan{' '}
+            <strong>Mama Agung KH Abah Karawanggana</strong> (Dusun Cikangkung, Rengasdengklok, Karawang, Jawa Barat)
+            — terekam pada jalur Karawang &amp; Al-Bantani (terminal #39a/#39b, display-only).
+          </p>
+          <p className="text-muted-foreground">
+            &ldquo;Yang pasti banyak salahnya&rdquo; — al-faqir mengumpulkan semua berkas dan menuliskannya di sini
+            khusus untuk ikhwan &amp; akhwat. Jika ada koreksi, silakan hubungi langsung al-faqir Gugun Gunara
+            via WhatsApp <a href="https://wa.me/6281316516524" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2">0813-1651-6524</a>.
+          </p>
+        </div>
+      </section>
     </div>
   )
 }
@@ -187,9 +206,25 @@ function ContactPane({ onNavigate }: { onNavigate: (s: string) => void }) {
         with the governance instruments. In the meantime, the contribution workflow is the institutional channel:
         every submission receives a permanent reference and enters the editorial workflow.
       </HonestNote>
-      <button onClick={() => onNavigate('contribute')} className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 items-center gap-2 rounded-sm px-5 text-sm font-medium transition-colors">
-        <Mail className="size-4" aria-hidden /> Submit knowledge, a source, or a correction
-      </button>
+      <HonestNote tone="green">
+        <strong>Saluran koreksi langsung — atas permintaan langsung pendiri.</strong> Koreksi atas tulisan al-faqir
+        Gugun Gunara (pengumpul berkas &amp; penulis rekaman di 165 — &ldquo;yang pasti banyak salahnya&rdquo;)
+        dapat disampaikan langsung via WhatsApp 0813-1651-6524. Nomor ini dipublikasikan karena permintaan eksplisit
+        pemilik nomor sendiri — bukan penyingkapan oleh sistem.
+      </HonestNote>
+      <div className="flex flex-wrap gap-2">
+        <a
+          href="https://wa.me/6281316516524"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 items-center gap-2 rounded-sm px-5 text-sm font-medium transition-colors"
+        >
+          <MessageCircle className="size-4" aria-hidden /> WA al-faqir Gugun Gunara — koreksi langsung
+        </a>
+        <button onClick={() => onNavigate('contribute')} className="border-border hover:border-[var(--brass)]/50 inline-flex h-10 items-center gap-2 rounded-sm border px-5 text-sm font-medium transition-colors">
+          <Mail className="size-4" aria-hidden /> Jalur kontribusi institusional
+        </button>
+      </div>
     </div>
   )
 }

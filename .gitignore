@@ -54,3 +54,6 @@ server.log
 /skills/repo-165
 skills/
 tool-results/
+
+# DB dev yang terbuat otomatis oleh pengecekan sqlite
+prisma/*.db

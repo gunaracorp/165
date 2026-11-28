@@ -16,6 +16,18 @@
  *     komunitas publik (Kaskus · YouTube · Facebook · TikTok) yang sebelumnya
  *     belum punya rekaman sumber.
  *
+ * PENAMBAHAN (sesi koreksi Founder, 28 Nov 2026) — deposit baiat langsung:
+ *   - Sumber 165-SRC-000013: pernyataan tertulis al-faqir TN H. Gugun Gunara
+ *     — murid yang langsung berbaiat kepada Mama Agung KH Syekh Ahmad Sukanta
+ *     bin Salmin (Kaduparasi, Labuan, Banten) dan Mama Agung KH Abah
+ *     Karawanggana (Dusun Cikangkung, Rengasdengklok, Karawang, Jawa Barat);
+ *     peran al-faqir: mengumpulkan seluruh berkas & menuliskannya di 165
+ *     khusus ikhwan & akhwat — "yang pasti banyak salahnya"; saluran koreksi:
+ *     WA al-faqir Gugun Gunara 0813-1651-6524 (dipublikasikan atas permintaan
+ *     langsung pendiri).
+ *   - Klaim 165-CLM-000003 + relasi STUDENT_OF pendiri → kedua mursyid
+ *     (Level B, TRADITIONAL_ACCOUNT — pernyataan orang pertama, display-only).
+ *
  * DISIPLIN (NON-NEGOTIABLE — sama dengan seed-sanad.ts):
  *   - PURE APPEND: tidak ada entitas lama yang diubah atau dihapus.
  *   - TIDAK ada nama mata rantai yang dikarang. Urutan Kadzim → terminal
@@ -30,9 +42,10 @@
 import { PrismaClient } from '@prisma/client'
 
 const SRC_BLUEPRINT = '165-SRC-000003' // deposit pendiri (S1) — Master Blueprint v1.0
-const SRC_DOSIER = '165-SRC-000012' // dossier sumber publik komunitas (baru)
+const SRC_DOSIER = '165-SRC-000012' // dossier sumber publik komunitas (ada)
 const SRC_AKADEMIK = '165-SRC-000006' // kutipan akademik Sukanta Salmin (ada)
 const SRC_MEDIA = '165-SRC-000011' // profil media Mama Kadzim (ada)
+const SRC_BAIAT = '165-SRC-000013' // deposit langsung al-faqir: pernyataan baiat & saluran koreksi (baru)
 
 type EntityUpsert = {
   globalId: string; slug: string; type: string; primaryName: string
@@ -105,6 +118,48 @@ const entities: EntityUpsert[] = [
       depositBasis: 'Permintaan langsung Founder — jalur TQN 165 melalui Syekh Tuan Guru Aabah Haji Suganda Karawang & Syekh Abah Haji Sukanta bin Salmin.',
     },
   },
+
+  // ---------- SUMBER: DEPOSIT LANGSUNG AL-FAQIR (baiat & saluran koreksi) ----------
+  {
+    globalId: SRC_BAIAT, slug: 'deposit-baiat-pendiri-karawang-albantani', type: 'SOURCE',
+    primaryName: 'Deposit pendiri langsung — pernyataan baiat & saluran koreksi al-faqir TN H. Gugun Gunara (direkam 28 November 2026)',
+    subtitle: 'Pernyataan orang pertama pendiri 165 — direkam verbatim atas perintah pendiri; display-only',
+    summary: 'First-person written deposit by the Founder, al-faqir Tuan Haji Gugun Gunara (recorded on 28 November 2026): he is a murid who took baiat directly to Mama Agung KH Syekh Ahmad Sukanta bin Salmin (Kaduparasi, Labuan, Banten) and to Mama Agung KH Abah Karawanggana (Dusun Cikangkung, Rengasdengklok, Karawang, Jawa Barat). Al-faqir collects all the documents and writes them here specifically for ikhwan & akhwat — "yang pasti banyak salahnya" (there are surely many mistakes in his writing). Corrections may be sent directly to al-faqir Gugun Gunara via WhatsApp 0813-1651-6524 — published at the Founder\'s own explicit request. The written statement itself is DOCUMENTED as a deposit; the baiat events it reports remain a first-person traditional account (TRADITIONAL_ACCOUNT at claim level).',
+    summaryId: 'Deposit tertulis orang pertama dari pendiri, al-faqir Tuan Haji Gugun Gunara (direkam 28 November 2026): beliau adalah murid yang langsung berbaiat kepada Mama Agung KH Syekh Ahmad Sukanta bin Salmin (Kaduparasi, Labuan, Banten) dan Mama Agung KH Abah Karawanggana (Dusun Cikangkung, Rengasdengklok, Karawang, Jawa Barat). Al-faqir mengumpulkan semua berkas dan menuliskannya di sini khusus untuk ikhwan & akhwat — "yang pasti banyak salahnya". Koreksi dapat disampaikan langsung ke al-faqir Gugun Gunara via WhatsApp 0813-1651-6524 — dipublikasikan atas permintaan langsung pendiri. Pernyataan tertulisnya sendiri DOCUMENTED sebagai deposit; peristiwa baiat yang dilaporkan tetap riwayat orang pertama (TRADITIONAL_ACCOUNT pada tingkat klaim).',
+    evidenceLevel: 'B', verificationStatus: 'DOCUMENTED',
+    details: {
+      sourceType: 'FOUNDER_DIRECT_DEPOSIT',
+      recordedAt: '2026-11-28',
+      depositedBy: 'TN H. Gugun Gunara — al-faqir (165-PERSON-000001)',
+      verbatimAsDeposited: 'tn h gugun gunara adalah murid yang langsung berbaiat kepada mama agung kh syekh ahmad sukanta bin salmin labuan banten kaduparasi - juga berbaiat kepada mama agung kh abah karawanggana - karawang - dusun cikangkung - rengasdengklok - jawa barat — yang pasti banyak salahnya — al-faqir adalah mengumpulkan semua berkas dan menuliskannya di sini khusus ikhwan akhwat — jika ada koreksi bisa hubungi langsung ke wa al-faqir gugun gunara',
+      correctionChannel: 'WhatsApp al-faqir Gugun Gunara: 0813-1651-6524 (dipublikasikan atas permintaan langsung pendiri — keputusan pendiri sebagai subjek data atas data pribadinya sendiri)',
+      privacyNote: 'Nomor WA dipublikasikan KARENA permintaan eksplisit pemilik nomor (pendiri) untuk kepentingan koreksi ikhwan & akhwat — bukan penyingkapan oleh sistem.',
+      displayOnly: true,
+    },
+  },
+
+  // ---------- KLAIM: BAIAT LANGSUNG PENDIRI (display-only) ----------
+  {
+    globalId: '165-CLM-000005', slug: 'baiat-pendiri-karawang-albantani', type: 'CLAIM',
+    primaryName: 'Klaim: TN H. Gugun Gunara berbaiat langsung kepada Mama Agung KH Syekh Ahmad Sukanta bin Salmin & Mama Agung KH Abah Karawanggana',
+    subtitle: 'Pernyataan orang pertama pendiri (deposit langsung, 28 November 2026) — display-only; tanpa menilai legitimasi',
+    summary: 'Claim recorded from the Founder\'s first-person written deposit (165-SRC-000013): al-faqir TN H. Gugun Gunara is a murid who took baiat directly to (1) Mama Agung KH Syekh Ahmad Sukanta bin Salmin — Kaduparasi, Labuan, Banten — the recorded terminal #39b of the Karawang & Al-Bantani line (165-PERSON-000009); and (2) Mama Agung KH Abah Karawanggana — Dusun Cikangkung, Rengasdengklok, Karawang, Jawa Barat — the name as deposited, consistent with the recorded Cikangkung terminal #39a (165-PERSON-000010) and the community\'s recorded mention "Syeikh Kh. Krawang(e) … Cikangkung Karawang". DISPLAY-ONLY: this claim is a first-person traditional account; it confers, evaluates and ranks no spiritual legitimacy, and is not a verified ijazah record. The Founder also states his role honestly: al-faqir collects the documents and writes them here for ikhwan & akhwat — "yang pasti banyak salahnya" — corrections are welcome via the deposited WhatsApp channel.',
+    summaryId: 'Klaim terekam dari deposit tertulis orang pertama pendiri (165-SRC-000013): al-faqir TN H. Gugun Gunara adalah murid yang langsung berbaiat kepada (1) Mama Agung KH Syekh Ahmad Sukanta bin Salmin — Kaduparasi, Labuan, Banten — terminal #39b jalur Karawang & Al-Bantani yang terekam (165-PERSON-000009); dan (2) Mama Agung KH Abah Karawanggana — Dusun Cikangkung, Rengasdengklok, Karawang, Jawa Barat — nama sesuai deposit, konsisten dengan terminal Cikangkung #39a yang terekam (165-PERSON-000010) dan sebutan komunitas "Syeikh Kh. Krawang(e) … Cikangkung Karawang". DISPLAY-ONLY: klaim ini riwayat orang pertama; tidak memberi, menilai, atau memeringkat legitimasi spiritual, dan bukan rekaman ijazah terverifikasi. Pendiri juga menyatakan perannya dengan jujur: al-faqir mengumpulkan berkas dan menuliskannya di sini untuk ikhwan & akhwat — "yang pasti banyak salahnya" — koreksi dipersilakan via saluran WhatsApp yang didepositkan.',
+    evidenceLevel: 'B', verificationStatus: 'TRADITIONAL_ACCOUNT',
+    details: {
+      subjectRef: '165-PERSON-000001',
+      mursyid: {
+        '#39b (Labuan al-Bantani)': '165-PERSON-000009',
+        '#39a (Cikangkung, Karawang)': '165-PERSON-000010',
+      },
+      nameNote: 'Nama "Mama Agung KH Abah Karawanggana" direkam apa adanya dari deposit; konsisten dengan terminal #39a (Abah Ganda Cikangkung) dan sebutan komunitas "Syeikh Kh. Krawang(e)" — tanpa penegasan identitas di luar deposit.',
+      placeNote: 'Kaduparasi, Labuan, Banten (#39b) · Dusun Cikangkung, Rengasdengklok, Karawang, Jawa Barat (#39a) — sesuai deposit.',
+      roleOfAlFaqir: 'Mengumpulkan semua berkas dan menuliskannya di 165 — khusus ikhwan & akhwat.',
+      humilityNote: 'Yang pasti banyak salahnya — koreksi dipersilakan.',
+      correctionChannel: 'WA al-faqir Gugun Gunara 0813-1651-6524 (wa.me/6281316516524)',
+      displayOnly: true,
+    },
+  },
 ]
 
 // ---------- RELASI (eksplisit; tidak ada yang disimpulkan) ----------
@@ -121,6 +176,11 @@ const relationships = [
   { from: SRC_DOSIER, to: '165-INST-000003', predicate: 'DOCUMENTS', level: 'D', status: 'TRADITIONAL_ACCOUNT', source: SRC_DOSIER, context: 'Entri direktori Kaskus mencatat majelis Cikangkung Timur secara bernama dan beralamat.' },
   { from: SRC_AKADEMIK, to: '165-PERSON-000009', predicate: 'DOCUMENTS', level: 'C', status: 'DOCUMENTED', source: SRC_AKADEMIK, context: 'Kutipan akademik: "Syekh Ahmad Sukanta Salmin Labuan al-Banteni RA (1935 M/1356 H – 2015 M/1436 H)" — nama & rentang tahun.' },
   { from: SRC_MEDIA, to: '165-PERSON-000008', predicate: 'DOCUMENTS', level: 'C', status: 'DOCUMENTED', source: SRC_MEDIA, context: 'Profil media Pandeglang News: ulama sufi penjaga kesinambungan TQN di Banten.' },
+  // deposit baiat langsung al-faqir (28 Nov 2026) — pernyataan orang pertama, display-only
+  { from: '165-PERSON-000001', to: '165-PERSON-000009', predicate: 'STUDENT_OF', level: 'B', status: 'TRADITIONAL_ACCOUNT', source: SRC_BAIAT, context: 'Deposit langsung al-faqir (28 Nov 2026): berbaiat langsung kepada Mama Agung KH Syekh Ahmad Sukanta bin Salmin — Kaduparasi, Labuan, Banten — terminal #39b jalur Al-Bantani yang terekam. Pernyataan orang pertama pendiri — display-only, bukan ijazah terverifikasi.' },
+  { from: '165-PERSON-000001', to: '165-PERSON-000010', predicate: 'STUDENT_OF', level: 'B', status: 'TRADITIONAL_ACCOUNT', source: SRC_BAIAT, context: 'Deposit langsung al-faqir (28 Nov 2026): berbaiat langsung kepada Mama Agung KH Abah Karawanggana — Dusun Cikangkung, Rengasdengklok, Karawang, Jawa Barat. Nama sesuai deposit; konsisten dengan terminal #39a (Abah Ganda Cikangkung) dan sebutan komunitas "Syeikh Kh. Krawang(e)". Display-only.' },
+  { from: SRC_BAIAT, to: '165-CLM-000005', predicate: 'DOCUMENTS', level: 'B', status: 'DOCUMENTED', source: SRC_BAIAT, context: 'Deposit tertulis pendiri mendokumentasikan pernyataan baiatnya sendiri — pernyataan DOCUMENTED sebagai deposit; isinya tetap TRADITIONAL_ACCOUNT.' },
+  { from: SRC_BAIAT, to: '165-PERSON-000001', predicate: 'DOCUMENTS', level: 'B', status: 'DOCUMENTED', source: SRC_BAIAT, context: 'Pernyataan tertulis pendiri tentang status muridnya (baiat ke dua mursyid) dan perannya: pengumpul berkas & penulis rekaman 165 untuk ikhwan & akhwat — dengan disclaimer "yang pasti banyak salahnya".' },
 ]
 
 // ---------- MATA SANAD (display-only; [ MATA BLOK ] jujur untuk yang belum terekam) ----------
@@ -185,9 +245,9 @@ export async function seedKarawang(prisma: PrismaClient) {
   let created = 0
   const idByGlobal: Record<string, string> = {}
   for (const g of [
-    SRC_BLUEPRINT, SRC_AKADEMIK, SRC_MEDIA,
-    '165-PERSON-000008', '165-PERSON-000009', '165-PERSON-000010',
-    '165-PLACE-000010', SRC_DOSIER, '165-INST-000003', '165-SANAD-000004',
+    SRC_BLUEPRINT, SRC_AKADEMIK, SRC_MEDIA, SRC_BAIAT,
+    '165-PERSON-000001', '165-PERSON-000008', '165-PERSON-000009', '165-PERSON-000010',
+    '165-PLACE-000010', SRC_DOSIER, '165-INST-000003', '165-SANAD-000004', '165-CLM-000005',
   ]) {
     const found = await prisma.entity.findUnique({ where: { globalId: g } })
     if (found) idByGlobal[g] = found.id
@@ -230,6 +290,21 @@ export async function seedKarawang(prisma: PrismaClient) {
     await prisma.relationship.create({
       data: { fromEntityId: from, toEntityId: to, predicate: r.predicate, evidenceLevel: r.level, verificationStatus: r.status, context: r.context, sourceRef: r.source },
     })
+  }
+
+  // 2b) stance klaim → sumber (CLM-000003 didukung deposit langsung al-faqir)
+  const claimBaiat = idByGlobal['165-CLM-000005']
+  const srcBaiatRow = idByGlobal[SRC_BAIAT]
+  if (claimBaiat && srcBaiatRow) {
+    const dupStance = await prisma.claimSource.findFirst({ where: { claimEntityId: claimBaiat, sourceEntityId: srcBaiatRow } })
+    if (!dupStance) {
+      await prisma.claimSource.create({
+        data: {
+          claimEntityId: claimBaiat, sourceEntityId: srcBaiatRow, stance: 'SUPPORTED_BY',
+          note: 'Dukungan tunggal = pernyataan orang pertama pendiri (Level B sebagai deposit langsung); peristiwa baiat tetap TRADITIONAL_ACCOUNT — display-only.',
+        },
+      })
+    }
   }
 
   // 3) mata rantai — idempoten per jalur
