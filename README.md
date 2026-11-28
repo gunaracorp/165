@@ -115,7 +115,7 @@ bun install
 bun run db:push          # push schema Prisma → SQLite
 bun run sanad:seed       # restorasi 3 jalur sanad Blueprint (additive, idempoten)
 bun run karawang:seed   # rekam Jalur Karawang & Al-Bantani — deposit pendiri (additive, idempoten)
-bun run wiridian:seed   # Wiridian & Bacaan (qasidah Ibadallah, Nuril Anwar, wiridian, dzikir harian) — Arab+Sunda+Indonesia+tafsir
+bun run wiridian:seed   # Wiridian & Bacaan (qasidah Ibadallah, Nuril Anwar, wiridian, dzikir harian) — qasidah tanpa arti Sunda; sisanya Arab+Sunda+Indonesia+tafsir
 bun run dev              # http://localhost:3000
 ```
 
@@ -153,7 +153,7 @@ Siap Vercel (standalone). Snapshot `heritage-snapshot.json` membuat UI tetap utu
 
 ## 📈 Status Terbuka (jujur)
 
-- **Tercatat:** 8 dokumen kanonik, 4 jalur sanad (3 Blueprint + 1 deposit pendiri Karawang & Al-Bantani), entitas & relasi ber-grade, Manaqib lengkap, Rahasia Kitab Suci, Kisah & Hikmah (35 kisah ber-grade), **Wiridian & Bacaan (qasidah Ibadallah Rijalallah 13 bait, Nuril Anwar, wiridian TQN, dzikir harian — Arab + Latin + arti Sunda & Indonesia + tafsir makna, CMS-managed)**, 178 bahasa.
+- **Tercatat:** 8 dokumen kanonik, 4 jalur sanad (3 Blueprint + 1 deposit pendiri Karawang & Al-Bantani), entitas & relasi ber-grade, Manaqib lengkap, Rahasia Kitab Suci, Kisah & Hikmah (35 kisah ber-grade), **Wiridian & Bacaan (qasidah Ibadallah Rijalallah 13 bait — tanpa arti Sunda per permintaan Founder —, Nuril Anwar, wiridian TQN, dzikir harian — Arab + Latin + arti Sunda & Indonesia + tafsir makna, CMS-managed)**, 178 bahasa.
 - **Ditunggu deposit:** Founder's Charter & dokumen yang masih dideklarasikan, dossier ijazah per-generasi (Qadiriyya & Naqshbandiyya), arsip kitab & manuskrip internal, dokumentasi praktik majelis lokal.
 
 ---

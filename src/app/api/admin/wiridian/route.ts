@@ -98,8 +98,10 @@ export async function PUT(req: NextRequest) {
     let saved = 0
     for (const e of WIRIDIAN_ENTRIES) {
       const data = {
+        slug: e.slug, // sebelumnya hilang — tombol "Sinkron dari arsip" gagal runtime & tsc
         order: e.order, kind: e.kind, titleAr: e.titleAr, titleId: e.titleId,
-        titleSu: e.titleSu, subtitleId: e.subtitleId, ledeId: e.ledeId,
+        titleSu: e.titleSu ?? null, // null eksplisit — undefined akan dilewati upsert
+        subtitleId: e.subtitleId, ledeId: e.ledeId,
         grade: e.grade, status: e.status, sourceRef: e.sourceRef, noteId: e.noteId,
         visibility: 'PUBLIC',
       }
@@ -110,7 +112,8 @@ export async function PUT(req: NextRequest) {
       await db.wiridVerse.createMany({
         data: e.verses.map((v) => ({
           entryId: entry.id, order: v.order, arabic: v.arabic, latin: v.latin,
-          meaningSu: v.meaningSu, meaningId: v.meaningId, tafsirId: v.tafsirId,
+          meaningSu: v.meaningSu ?? null, // null eksplisit (qasidah: tanpa arti Sunda)
+          meaningId: v.meaningId, tafsirId: v.tafsirId,
           tafsirAr: v.tafsirAr ?? null,
         })),
       })

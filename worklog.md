@@ -464,3 +464,13 @@ Stage Summary:
 - SITEMAP: src/app/sitemap.ts kini 515 URL (20 hash-seksi + 7 indeks + 488 entri); robots.txt tetap allow / ; slug unik 100% (verifikasi scripts/check-pages.ts); related lintas kind di-resolve — 0 tautan mati
 - QA: biome exit 0; eslint exit 0; build SSG sukses (glossary 206 paths, library 78, atlas 60, institution 78, archive 22, ask 44); uji server: /glossary/wirid (title "Wirid · 165", canonical benar, JSON-LD DefinedTerm), /ask (FAQPage), /library/fathul-rabbani (title benar)
 - KOREKSI DATA: dedup glossary (mursyid/naqsabandiyah/mujaddidiyah ganda dihapus; khalidiyyah→khalidiyah); slug hilang dilengkapi manual (12 entri waktu-wirid s.d. zuhud + ijazah + baiat — dua istilah inti)
+
+## Sesi — Koreksi Founder: arti Sunda qasidah Ibadallah Rijalallah dihapus (2026-11-28)
+- lint (exit 0); tsc wiridian/bacaan (0 error, error lain pra-ada & diabaikan build); commit (pending); push (pending)
+
+Stage Summary:
+- PERMINTAAN FOUNDER: lapisan Bahasa Sunda pada qasidah Ibadallah Rijalallah dinilai tidak sesuai → DIHAPUS seluruhnya; entri lain (Nuril Anwar, wiridian TQN, dzikir harian) arti Sunda-nya TIDAK disentuh karena sudah sesuai
+- bacaan.ts: 13 meaningSu qasidah + titleSu dihapus; type WbVerse.meaningSu & WbEntry.titleSu opsional + catatan disiplin di header; arti Indonesia & tafsir (ID+Ar) tetap utuh per bait
+- SINKRON: prisma/seed-wiridian.ts dijalankan ulang (idempoten, 4 entri) — DB qasidah kini 0 arti Sunda & titleSu null; ?? null eksplisit di seed + PUT "Sinkron dari arsip" (undefined akan dilewati upsert — nilai lama tak terhapus) + fallback API & fallbackEntries UI
+- BUGFIX LATEN: PUT /api/admin/wiridian (tombol "Sinkron dari arsip") kekurangan slug pada upsert data → pasti gagal runtime & tsc; kini diperbaiki
+- QA agent-browser (0 page error): tab Qasidah = 13 bait, Arti·Sunda 0, Arti·Indonesia 13, Latin 13, Tafsir 13, teks Sunda lama tak ada; tab Wiridian = 6 arti Sunda tetap; tab Dzikir = 3 tetap; Sholawat = tetap; /api/wiridian source:db terverifikasi

@@ -14,6 +14,9 @@
 //    JUJUR sebagai perbedaan; amalan lengkap mengikuti ijazah & rapel
 //    murshid masing-masing (adab tarekat).
 //  - Semua rekaman DISPLAY-ONLY: tidak memberi/menilai legitimasi spiritual.
+//  - PERMINTAAN FOUNDER: lapisan Bahasa Sunda (titleSu & arti Sunda)
+//    pada qasidah Ibadallah Rijalallah DIHAPUS karena tidak sesuai;
+//    entri lain (Nuril Anwar, wiridian, dzikir harian) tetap lengkap.
 //
 // Sumber utama qasidah: transkripsi majelis publik (Tribun Sumsel 2026,
 // arsip lirik majelis Scribd 2021, catatan fadlilsangaji 2014) — silang-cek
@@ -33,7 +36,7 @@ export type WbVerse = {
   order: number
   arabic: string
   latin: string
-  meaningSu: string // arti Bahasa Sunda
+  meaningSu?: string // arti Bahasa Sunda (opsional — qasidah Ibadallah: dihapus, tidak sesuai; permintaan Founder)
   meaningId: string // arti Bahasa Indonesia
   tafsirId: string // tafsir lengkap (Indonesia)
   tafsirAr?: string // tafsir singkat (Arab)
@@ -45,7 +48,7 @@ export type WbEntry = {
   order: number
   titleAr: string
   titleId: string
-  titleSu: string
+  titleSu?: string
   subtitleId: string
   ledeId: string
   grade: WbGrade
@@ -69,7 +72,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
   order: 1,
   titleAr: 'عِبَادَ اللهِ رِجَالَ اللهِ',
   titleId: "Qasidah 'Ibadallah Rijalallah Aghitsuna li Ajlillah",
-  titleSu: 'Qasidah Ibadallah Rijalallah — Pitulung alatan ka Allah',
   subtitleId: 'Pembuka majelis dzikr TQN — tawassul kepada para penolong karena Allah',
   ledeId:
     "Sebelum dzikir dimulai, majelis TQN berdiri dalam satu kalimat: kepada siapa kami meminta? Jawabnya tuntas dan beradab — kepada para hamba Allah yang Allah cintai, tetapi permohonannya digantung pada Allah: aghitsuna li ajlillah, 'tolonglah kami karena Allah'. Qasidah ini mengajarkan arah permohonan sejak bait pertama, supaya ikhwan & akhwat tidak pernah lupa tujuan.",
@@ -84,7 +86,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       order: 1,
       arabic: 'عِبَادَ اللهِ رِجَالَ اللهِ',
       latin: "'Ibadallahi rijalallah",
-      meaningSu: 'Éé para narawadul Allah, éé para salakéwan Allah.',
       meaningId: 'Wahai para hamba Allah, wahai para lelaki (wali-wali) Allah.',
       tafsirId:
         "Majelis dibuka dengan memanggil dua gelar sekaligus: 'ibad (hamba) dan rijal (lelaki yang berdiri tegak). 'Rijalallah' bukan sekadar laki-laki biasa — dalam khazanah para mufassir ia adalah orang-orang yang hatinya berdiri di hadapan Allah sehingga lidah mereka hanya menyebut-Nya dan langkah mereka hanya menuju-Nya. Inilah adab pertama dzikir: kita menoleh kepada manusia, tetapi dengan mata yang melihat Allah di dalamnya. Umar bin Khattab r.a. pernah meminta hujan melalui Ibnu Abbas — 'ya Allah, kami dahulu meminta melalui Nabi-Mu, sekarang melalui paman Nabi-Mu' — dan hujan turun (muttafaq alaih). Jadi pintunya manusia yang dicintai Allah, Gudangnya tetap Allah.",
@@ -95,8 +96,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       order: 2,
       arabic: 'عِبَادَ اللهِ رِجَالَ اللهِ أَغِيْثُوْنَا لِأَجْلِ اللهِ … لِأَجْلِ اللهِ',
       latin: "'Ibadallahi rijalallahi aghithuna li-ajlillah … li-ajlillah",
-      meaningSu:
-        'Éé para narawadul Allah, éé para salakéwan Allah — pitulunglah abdi sadaya alatan ka Allah … alatan ka Allah.',
       meaningId:
         'Wahai para hamba Allah, wahai para wali Allah — tolonglah kami, karena Allah … karena Allah.',
       tafsirId:
@@ -108,8 +107,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       order: 3,
       arabic: 'وَكُونُوا أَوْلَانَا لِلَّهِ عَسَى نَخْطَى بِفَضْلِ اللهِ',
       latin: 'Wakunu aulana lillah, asa nakhtha bifadhlillah',
-      meaningSu:
-        'Jadikeun panulung bagi abdi sadaya alatan ka Allah, mudah-mudahan mentasan heula ku karunia Allah.',
       meaningId:
         'Jadilah karena Allah pelaku (penolong) bagi kami; mudah-mudahan kami melangkah dengan karunia Allah.',
       tafsirId:
@@ -121,8 +118,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       order: 4,
       arabic: 'عَلَى الكَافِي صَلَاةُ اللهِ ، عَلَى الشَافِي سَلَامُ اللهِ',
       latin: "'Alal-kafi shalatullah, 'alal-shafi salamullah",
-      meaningSu:
-        'Shalawat Allah ka Nabi nu ngacukupan, salam Allah ka Nabi nu ngubaran.',
       meaningId:
         'Shalawat Allah atas Nabi Yang Cukup; salam Allah atas Nabi Yang Penyembuh.',
       tafsirId:
@@ -134,8 +129,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       order: 5,
       arabic: 'بِمُحْيِي الدِّيْنِ خَلَصْنَا مِنَ البَلْوَى يَا اللهِ',
       latin: 'Bimuhyiddin khalasna minal-balwa ya Allah',
-      meaningSu:
-        'Ku mukti agama — Muhyiddin — karangankeun abdi sadaya ti sagala bala, é Allah.',
       meaningId:
         'Dengan perantaraan Muhyiddin (penghidup agama), selamatkanlah kami dari segala bala, ya Allah.',
       tafsirId:
@@ -148,8 +141,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       arabic:
         'وَيَا أَقْطَابُ وَيَا أَنْجَابُ وَيَا سَادَاتُ وَيَا أَحْبَابُ … وَيَا أَحْبَابُ',
       latin: 'Wa ya aqthab, wa ya anjab, wa ya sadat, wa ya ahabb … wa ya ahabb',
-      meaningSu:
-        'Éé para kutub, éé para anjab, éé para pamingpin, éé nu dipikanyaah ku Allah.',
       meaningId:
         'Wahai para kutub (poros-poros para wali), wahai para anjab (penjaga setegak paku), wahai para sayyid (pemimpin), wahai para kekasih-Nya.',
       tafsirId:
@@ -161,8 +152,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       order: 7,
       arabic: 'وَأَنْتُمْ يَا أُلِي الأَلْبَابِ تَعَالَوْا وَانْصُرُوا لِلَّهِ',
       latin: "Wa antum ya ulil-albab, ta'alaw wanshuru lillah",
-      meaningSu:
-        'Sartabisa — éé nu gaduh haté hadéat (ulul albab) — sumping, nulungan alatan ka Allah.',
       meaningId:
         'Dan kalian, wahai para ulul albab (pemilik hati yang cerdas), datanglah dan tolonglah karena Allah.',
       tafsirId:
@@ -175,8 +164,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       arabic:
         'سَأَلْنَاكُمْ سَأَلْنَاكُمْ وَلِلزُّلْفَى رَجَوْنَكُمْ … رَجَوْنَكُمْ',
       latin: "Sa'alnakum sa'alnakum, wa-liz-zulfa rajaunakum … rajaunakum",
-      meaningSu:
-        'Abdi naros ka sileuleuleung — ku deukeutna ka Allah, miharep ka sileuleuleung.',
       meaningId:
         'Kami meminta kepada kalian, kami meminta kepada kalian, dan karena kedekatan kepada Allah kami berharap kepada kalian.',
       tafsirId:
@@ -188,8 +175,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       order: 9,
       arabic: 'وَفِي أَمْرٍ قَصَدْنَاكُمْ فَشُدُّوا عَزْمَكُمْ لِلَّهِ',
       latin: "Wa fi amrin qashadnakum, fashuddu 'azmakum lillah",
-      meaningSu:
-        'Dina sakarireun abdi sadaya nungtun ka sileuleuleung — kuatkeun azam, tujuan urang alatan ka Allah.',
       meaningId:
         'Dan dalam urusan yang menuntun kami kepada kalian, teguhkanlah tujuan (azam) kalian karena Allah.',
       tafsirId:
@@ -202,8 +187,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       arabic:
         'فَيَا رَبِّي بِسَادَاتِ تَحَقَّقْ لِي إِشَارَتِي … إِشَارَتِي',
       latin: 'Fa ya rabbi bisadati tahaqqaq li isharati … isharati',
-      meaningSu:
-        'Éé Gusti, ku berkah para pamingpinna — hijikeun bagi abdi sadaya isyaratna.',
       meaningId:
         'Maka ya Rabb-ku, dengan (keberkahan) para sayyid, wujudkanlah bagi aku isyarat (petunjuk-Mu).',
       tafsirId:
@@ -215,8 +198,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       order: 11,
       arabic: 'عَسَى تَأْتِي بِشَارَةٍ وَيَصْفُ وَقْتُنَا لِلَّهِ',
       latin: "Asa ta'ti bisyarah, wayashfu waqtuna lillah",
-      meaningSu:
-        'Mudah-mudahan datang kabagjaan, bari nyucikeun waktu abdi sadaya alatan ka Allah.',
       meaningId:
         'Mudah-mudahan ia datang membawa kebahagiaan, dan menyucikan waktu kami karena Allah.',
       tafsirId:
@@ -229,8 +210,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       arabic:
         'بِكَشْفِ الْحِجَابِ عَنْ عَيْنِي وَرَفْعِ البَيْنِ مِنْ بَيْنِ … مِنْ بَيْنِ',
       latin: "Bikashfil-hijabi 'an 'ayni, wa raf'il-bayni min bayni … min bayni",
-      meaningSu:
-        'Ku kabukana panyalindungan ti panon abdi sadaya, jeung kahapusan hahalangan di antara urang.',
       meaningId:
         'Dengan terbukanya tirai dari mataku, dan terangkatnya penghalang-penghalang di antara kami.',
       tafsirId:
@@ -243,8 +222,6 @@ const QASIDAH_IBADALLAH: WbEntry = {
       arabic:
         'وَطَمْسِي الكَيْفِيَّةِ وَالعَيْنِ بِنُوْرِ الوَجْهِ يَا اللهُ',
       latin: 'Wa thamsil-kayfiyyati wal-ayni binuril-wajhi ya Allah',
-      meaningSu:
-        "Jeung mahapusan panasaran 'kumaha' jeung 'kumana' (nanaon ka Allah), ku cahaya rahayat-Nya, é Allah.",
       meaningId:
         'Dan hapuskanlah (keraguan tentang) bagaimana dan di mana, dengan cahaya wajah (Dzat)-Nya, ya Allah.',
       tafsirId:

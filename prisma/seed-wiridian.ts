@@ -9,10 +9,14 @@
  * Yang DILAKUKAN seed ini:
  *   - Mendaftarkan 4 entri bacaan (WiridEntry + WiridVerse):
  *       1. Qasidah 'Ibadallah Rijalallah Aghitsuna li Ajlillah (13 bait)
+ *          — tanpa arti Bahasa Sunda (dihapus per permintaan Founder:
+ *          terjemahan Sunda qasidah dinilai tidak sesuai; arti Indonesia
+ *          & tafsir tetap)
  *       2. Sholawat Nuril Anwar (kitab Abwabul Faraj — Sayyid Muhammad
- *          bin Alwi al-Maliki)
- *       3. Wiridian TQN — peta alur & lafaz inti (6 tahap)
+ *          bin Alwi al-Maliki) — arti Sunda tetap
+ *       3. Wiridian TQN — peta alur & lafaz inti (6 tahap) — arti Sunda tetap
  *       4. Dzikir Harian Pembuka (untuk semua — sebelum ijazah tarekat)
+ *          — arti Sunda tetap
  *
  * DISIPLIN (satu tingkat dengan seed-sanad / seed-karawang):
  *   - PURE APPEND + REFRESH VERSE: entri di-upsert berdasarkan slug
@@ -36,7 +40,7 @@ export async function seedWiridian(prisma: PrismaClient): Promise<number> {
       kind: e.kind,
       titleAr: e.titleAr,
       titleId: e.titleId,
-      titleSu: e.titleSu,
+      titleSu: e.titleSu ?? null, // null eksplisit — undefined akan dilewati upsert
       subtitleId: e.subtitleId,
       ledeId: e.ledeId,
       grade: e.grade,
@@ -60,7 +64,7 @@ export async function seedWiridian(prisma: PrismaClient): Promise<number> {
         order: v.order,
         arabic: v.arabic,
         latin: v.latin,
-        meaningSu: v.meaningSu,
+        meaningSu: v.meaningSu ?? null, // null eksplisit (qasidah: tanpa arti Sunda)
         meaningId: v.meaningId,
         tafsirId: v.tafsirId,
         tafsirAr: v.tafsirAr ?? null,
@@ -74,7 +78,7 @@ export async function seedWiridian(prisma: PrismaClient): Promise<number> {
       actor: 'seed-wiridian',
       action: 'UPSERT',
       target: 'WIRIDIAN',
-      detail: `${saved} entri bacaan (qasidah Ibadallah 13 bait, Nuril Anwar, wiridian 6 tahap, dzikir harian) — Arab + Sunda + Indonesia + tafsir, display-only.`,
+      detail: `${saved} entri bacaan (qasidah Ibadallah 13 bait — tanpa arti Sunda per permintaan Founder, Nuril Anwar, wiridian 6 tahap, dzikir harian) — Arab + Indonesia + tafsir, display-only.`,
     },
   })
 
@@ -89,7 +93,7 @@ if (isDirect) {
   seedWiridian(prisma)
     .then(() =>
       console.log(
-        'Wiridian & bacaan terekam — Arab + Latin + Sunda + Indonesia + tafsir, display-only, idempoten.',
+        'Wiridian & bacaan terekam — Arab + Latin + Indonesia + tafsir (qasidah tanpa arti Sunda per permintaan Founder), display-only, idempoten.',
       ),
     )
     .finally(() => prisma.$disconnect())
